@@ -61,7 +61,7 @@
             }
         }
     ],
-    "cooking_methods": [
+    "cooking-methods": [
         {
             "id": 1,
             "name": {

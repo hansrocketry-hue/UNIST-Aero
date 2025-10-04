@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}식재료 추가 - 우주 식량 관리 시스템{% endblock %}
+
+{% block content %}
+    <h1>식재료 (Ingredient) 추가</h1>
+    <form method="POST">
+        <label for="name_kor">이름 (한국어):</label><br>
+        <input type="text" id="name_kor" name="name_kor" required><br><br>
+
+        <label for="name_eng">이름 (영어):</label><br>
+        <input type="text" id="name_eng" name="name_eng" required><br><br>
+
+        <label for="research_ids">관련 연구 ID (쉼표로 구분):</label><br>
+        <input type="text" id="research_ids" name="research_ids"><br><br>
+
+        <label for="calories">칼로리 (단위 질량 당):</label><br>
+        <input type="number" step="any" id="calories" name="calories" required><br><br>
+
+        <label for="details">영양 정보 세부사항:</label><br>
+        <textarea id="details" name="details" rows="4"></textarea><br><br>
+
+        <label for="production_time">생산 소요 시간:</label><br>
+        <input type="text" id="production_time" name="production_time"><br><br>
+
+        <button type="submit">추가하기</button>
+    </form>
+{% endblock %}

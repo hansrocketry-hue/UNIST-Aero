@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}조리 방법 추가{% endblock %}
+
+{% block content %}
+    <h1>조리 방법 (Cooking Method) 추가</h1>
+    <form method="POST">
+        <label for="name_kor">이름 (한국어):</label><br>
+        <input type="text" id="name_kor" name="name_kor" required><br><br>
+
+        <label for="name_eng">이름 (영어):</label><br>
+        <input type="text" id="name_eng" name="name_eng" required><br><br>
+
+        <label for="desc_kor">설명 (한국어):</label><br>
+        <textarea id="desc_kor" name="desc_kor" rows="4" required></textarea><br><br>
+
+        <label for="desc_eng">설명 (영어):</label><br>
+        <textarea id="desc_eng" name="desc_eng" rows="4" required></textarea><br><br>
+
+        <label for="research_ids">관련 연구 ID (쉼표로 구분):</label><br>
+        <input type="text" id="research_ids" name="research_ids"><br><br>
+
+        <button type="submit">추가하기</button>
+    </form>
+{% endblock %}

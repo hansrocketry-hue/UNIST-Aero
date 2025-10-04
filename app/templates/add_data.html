@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}데이터 추가 - 우주 식량 관리 시스템{% endblock %}
+
+{% block content %}
+    <h1>데이터 추가</h1>
+    <p>어떤 종류의 데이터를 추가하시겠습니까?</p>
+    <ul>
+        <li><a href="{{ url_for('add_data.add_ingredient_route') }}">식재료 (Ingredient)</a></li>
+        <li><a href="{{ url_for('add_data.add_cooking_method_route') }}">조리 방법 (Cooking Method)</a></li>
+        <li><a href="{{ url_for('add_data.add_research_data_route') }}">연구 자료 (Research Data)</a></li>
+        <li><a href="{{ url_for('add_data.add_dish_route') }}">요리 (Dish)</a></li>
+    </ul>
+{% endblock %}

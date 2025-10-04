@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}연구 자료 추가{% endblock %}
+
+{% block content %}
+    <h1>연구 자료 (Research Data) 추가</h1>
+    <form method="POST">
+        <label for="title">제목:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="link">링크 또는 출처:</label><br>
+        <input type="text" id="link" name="link" required><br><br>
+
+        <label for="summary_kor">요약 (한국어):</label><br>
+        <textarea id="summary_kor" name="summary_kor" rows="4" required></textarea><br><br>
+
+        <label for="summary_eng">요약 (영어):</label><br>
+        <textarea id="summary_eng" name="summary_eng" rows="4" required></textarea><br><br>
+
+        <button type="submit">추가하기</button>
+    </form>
+{% endblock %}

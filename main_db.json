@@ -1,0 +1,110 @@
+{
+    "research_data": [
+        {
+            "id": 1,
+            "data": "NASA-STD-3001: Space Flight Human-System Standard",
+            "summary": {
+                "kor": "저중력 환경에서 물 주입을 통한 건조 식품 복원 기술은 안정적임.",
+                "eng": "Technology for restoring dried food through water injection in a low-gravity environment is stable."
+            }
+        },
+        {
+            "id": 2,
+            "data": "J. Food Sci. 2023, 88, 123-130: Nutritional and Sensory Properties of Freeze-Dried Bibimbap for Long-Term Space Missions",
+            "summary": {
+                "kor": "동결 건조 비빔밥은 장기 보관 시 영양 손실이 적고, 수화 시 맛과 질감이 잘 복원됨.",
+                "eng": "Freeze-dried bibimbap shows less nutritional loss during long-term storage and restores its taste and texture well upon hydration."
+            }
+        },
+        {
+            "id": 3,
+            "data": "테스트 링크!",
+            "summary": {
+                "kor": "무언가 신기한 연구",
+                "eng": "영어 못해서 신기한 연구라고 한글로 작성!"
+            }
+        }
+    ],
+    "foods-first": [
+        {
+            "id": 1,
+            "name": {
+                "kor": "동결 건조 비빔밥",
+                "eng": "Freeze-Dried Bibimbap"
+            },
+            "research_ids": [
+                2
+            ],
+            "nutrition_info": {
+                "nutrients_per_unit_mass": {
+                    "protein": 15,
+                    "carbohydrates": 60,
+                    "fat": 10
+                },
+                "calories": 350
+            }
+        },
+        {
+            "id": 2,
+            "name": {
+                "kor": "소고기 분말",
+                "eng": "beef steak lol"
+            },
+            "research_ids": [
+                3
+            ],
+            "nutrition_info": {
+                "nutrients_per_unit_mass": {
+                    "에라 모르겠다는 데이터": 20
+                },
+                "calories": 200.0
+            }
+        }
+    ],
+    "cooking_methods": [
+        {
+            "id": 1,
+            "name": {
+                "kor": "수화",
+                "eng": "Hydration"
+            },
+            "description": {
+                "kor": "동결 건조된 식품에 정수된 물을 주입하여 원상태로 복원.",
+                "eng": "Restores freeze-dried food to its original state by injecting purified water."
+            },
+            "research_ids": [
+                1
+            ]
+        }
+    ],
+    "foods-second": [
+        {
+            "id": 1,
+            "name": {
+                "kor": "우주 비빔밥",
+                "eng": "Space Bibimbap"
+            },
+            "required_ingredient_ids": [
+                1
+            ],
+            "required_cooking_method_ids": [
+                1
+            ],
+            "image_url": "http://example.com/images/space_bibimbap.jpg"
+        },
+        {
+            "id": 2,
+            "name": {
+                "kor": "물에 불린 소고기",
+                "eng": "cow flows on water"
+            },
+            "required_ingredient_ids": [
+                2
+            ],
+            "required_cooking_method_ids": [
+                1
+            ],
+            "image_url": "dummy.com"
+        }
+    ]
+}

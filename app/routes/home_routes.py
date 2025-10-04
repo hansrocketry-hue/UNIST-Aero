@@ -1,6 +1,8 @@
-from flask import Blueprint, render_template, session, redirect, url_for
-from user_db_handler import get_user_by_id
+from flask import Blueprint, render_template, session, redirect, url_for, request, flash
+from user_db_handler import get_user_by_id, update_user
 from datetime import datetime, timedelta
+import json
+import os
 
 bp = Blueprint('home', __name__, url_prefix='/')
 
@@ -76,3 +78,51 @@ def index():
         today_timeline=today_timeline,
         yesterday_timeline=yesterday_timeline
     )
+
+# Helper to load main database for ingredients
+def load_main_db():
+    db_path = os.path.join(os.path.dirname(__file__), '..', '..' , 'main_db.json')
+    try:
+        with open(db_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+@bp.route('/edit_profile', methods=['GET', 'POST'])
+def edit_profile():
+    if 'user_id' not in session:
+        return redirect(url_for('auth.login'))
+
+    user_id = session['user_id']
+    user = get_user_by_id(user_id)
+
+    if request.method == 'POST':
+        try:
+            height = int(request.form['height'])
+            weight = int(request.form['weight'])
+            like_ids = [int(x) for x in request.form.getlist('like')]
+            forbid_ids = [int(x) for x in request.form.getlist('forbid')]
+
+            update_fields = {
+                'height': height,
+                'weight': weight,
+                'like': like_ids,
+                'forbid': forbid_ids
+            }
+            
+            if update_user(user_id, update_fields):
+                flash('프로필이 성공적으로 업데이트되었습니다.', 'success')
+                return redirect(url_for('home.index'))
+            else:
+                flash('프로필 업데이트에 실패했습니다.', 'danger')
+        except ValueError:
+            flash('키와 몸무게는 숫자로 입력해야 합니다.', 'danger')
+        except Exception as e:
+            flash(f'오류가 발생했습니다: {e}', 'danger')
+        
+        return redirect(url_for('home.edit_profile'))
+
+    # GET request
+    main_db = load_main_db()
+    all_ingredients = main_db.get('ingredient', [])
+    return render_template('edit_profile.html', user=user, all_ingredients=all_ingredients)

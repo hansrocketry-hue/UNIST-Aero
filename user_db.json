@@ -116,6 +116,7 @@
         "gender": "male",
         "activity_level": 4,
         "like": [
+            1,
             2
         ],
         "forbid": [

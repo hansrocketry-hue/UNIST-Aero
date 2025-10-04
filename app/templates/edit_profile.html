@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<style>
+    .edit-profile-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: #2e1c82;
+        border-radius: 15px;
+        color: #ffffff;
+    }
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 20pt;
+        color: #ffd835;
+        font-family: "Apple Braille", sans-serif;
+    }
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #6c35c4;
+        background-color: #0e1544;
+        color: #ffffff;
+        font-size: 16pt;
+    }
+    .form-group select {
+        height: 200px;
+    }
+    .btn-submit {
+        background-color: #ffd835;
+        color: #0e1544;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18pt;
+        font-family: "Apple Braille", sans-serif;
+        width: 100%;
+    }
+</style>
+
+<div class="edit-profile-container">
+    <h1 class="header-title" style="text-align: center; font-size: 32pt; color: #ffd835; font-family: 'Apple Braille', sans-serif;">Edit Profile</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" name="height" value="{{ user.height }}" required>
+        </div>
+        <div class="form-group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" name="weight" value="{{ user.weight }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="like">Liked Ingredients</label>
+            <select id="like" name="like" multiple required>
+                {% for ingredient in all_ingredients %}
+                    <option value="{{ ingredient.id }}" {% if ingredient.id in user.like %}selected{% endif %}>
+                        {{ ingredient.name.kor }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="forbid">Forbidden Ingredients</label>
+            <select id="forbid" name="forbid" multiple required>
+                {% for ingredient in all_ingredients %}
+                    <option value="{{ ingredient.id }}" {% if ingredient.id in user.forbid %}selected{% endif %}>
+                        {{ ingredient.name.kor }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

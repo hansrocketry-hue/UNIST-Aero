@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from .auth_routes import login_required
 import database_handler as db
+from datetime import datetime
 
 bp = Blueprint('add_data', __name__, url_prefix='/add')
 
@@ -129,12 +130,22 @@ def add_storaged_ingredient_route():
             mass_g = int(request.form['mass_g'])
             expiration_date = request.form['expiration_date']
             production_end_date = request.form['production_end_date']
+            processing_type = request.form['processing_type']
+
+            try:
+                datetime.strptime(expiration_date, '%Y-%m-%d')
+                datetime.strptime(production_end_date, '%Y-%m-%d')
+            except ValueError:
+                flash("날짜 형식이 올바르지 않습니다. YYYY-MM-DD 형식으로 입력해주세요.", 'danger')
+                all_ingredients = db.load_db().get('ingredient', [])
+                return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
 
             db.add_storaged_ingredient(
                 storage_id=storage_id,
                 mass_g=mass_g,
                 expiration_date=expiration_date,
-                production_end_date=production_end_date
+                production_end_date=production_end_date,
+                processing_type=processing_type
             )
             flash(f"보관 식재료가 성공적으로 추가되었습니다.", 'success')
             return redirect(url_for('add_data.add_storaged_ingredient_route'))

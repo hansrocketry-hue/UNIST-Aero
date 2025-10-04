@@ -43,15 +43,17 @@ def add_ingredient(name, research_ids, nutrition_info, production_time):
     print(f"New ingredient '{name.get('kor', 'N/A')}' added with ID {new_id}.")
     return new_id
 
-def add_storaged_ingredient(storage_id, mass_g, expiration_date, production_end_date):
+def add_storaged_ingredient(storage_id, mass_g, expiration_date, production_end_date, processing_type):
     db = load_db()
     new_id = _get_next_id(db, 'storaged-ingredient')
     new_item = {
         "id": new_id,
         "storage-id": storage_id,
         "mass_g": mass_g,
+        "start_date": production_end_date,
         "expiration_date": expiration_date,
-        "production_end_date": production_end_date
+        "production_end_date": production_end_date,
+        "processing_type": processing_type
     }
     db['storaged-ingredient'].append(new_item)
     save_db(db)

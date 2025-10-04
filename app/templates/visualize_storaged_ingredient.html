@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Storaged Ingredient Visualization{% endblock %}
+
+{% block content %}
+<style>
+    .progress-bar-container {
+        width: 100%;
+        background-color: #f3f3f3;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+    .progress-bar {
+        width: 0; /* Default width */
+        height: 20px;
+        background-color: #4caf50;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 20px;
+        color: white;
+    }
+    .progress-marker {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 10px solid #f44336;
+        margin-top: -10px; /* Adjust to align with the bar */
+    }
+</style>
+
+<h1>Storaged Ingredient Visualization</h1>
+
+{% for item in storaged_ingredients %}
+<div>
+    <h2>{{ item.name }}</h2>
+    <p>Mass: {{ item.mass_g }}g</p>
+    
+    <p>Production/Storage Start: {{ item.start_date }}</p>
+    <p>Expiration Date: {{ item.expiration_date }}</p>
+
+    <div class="progress-bar-container">
+        <div class="progress-bar" style="width: {{ item.progress }}%;">
+            {{ '%.2f'|format(item.progress) }}%
+        </div>
+    </div>
+    <div class="progress-marker" style="left: {{ item.progress }}%;"></div>
+    
+    <hr>
+</div>
+{% endfor %}
+{% endblock %}

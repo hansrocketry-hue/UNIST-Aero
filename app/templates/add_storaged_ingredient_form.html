@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}보관 식재료 추가{% endblock %}
+
+{% block content %}
+    <h1>보관 식재료 (Storaged Ingredient) 추가</h1>
+    <form method="POST">
+        <label for="storage_id">식재료 종류:</label><br>
+        <select id="storage_id" name="storage_id" required>
+            <option value="" disabled selected>-- 식재료 선택 --</option>
+            {% for ingredient in all_ingredients %}
+                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }} (ID: {{ ingredient.id }})</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="mass_g">보유 질량 (g):</label><br>
+        <input type="number" id="mass_g" name="mass_g" required><br><br>
+
+        <label for="expiration_date">보관 기한:</label><br>
+        <input type="date" id="expiration_date" name="expiration_date" required><br><br>
+
+        <label for="production_end_date">생산 종료일:</label><br>
+        <input type="date" id="production_end_date" name="production_end_date" required><br><br>
+
+        <button type="submit">추가하기</button>
+    </form>
+{% endblock %}

@@ -17,8 +17,12 @@
         <label for="desc_eng">설명 (영어):</label><br>
         <textarea id="desc_eng" name="desc_eng" rows="4" required></textarea><br><br>
 
-        <label for="research_ids">관련 연구 ID (쉼표로 구분):</label><br>
-        <input type="text" id="research_ids" name="research_ids"><br><br>
+        <label for="research_ids">관련 연구 ID:</label><br>
+        <select id="research_ids" name="research_ids" multiple size="5">
+            {% for research in all_research %}
+                <option value="{{ research.id }}">{{ research.reference_data.title }} (ID: {{ research.id }})</option>
+            {% endfor %}
+        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
 
         <button type="submit">추가하기</button>
     </form>

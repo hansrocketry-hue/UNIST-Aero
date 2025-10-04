@@ -17,11 +17,19 @@
         <label for="image_url">이미지 URL:</label><br>
         <input type="text" id="image_url" name="image_url"><br><br>
 
-        <label for="required_ingredient_ids">필요한 재료 ID (쉼표로 구분):</label><br>
-        <input type="text" id="required_ingredient_ids" name="required_ingredient_ids"><br><br>
+        <label for="required_ingredient_ids">필요한 재료:</label><br>
+        <select id="required_ingredient_ids" name="required_ingredient_ids" multiple size="5">
+            {% for ingredient in all_ingredients %}
+                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }} (ID: {{ ingredient.id }})</option>
+            {% endfor %}
+        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
 
-        <label for="required_cooking_method_ids">필요한 조리 방법 ID (쉼표로 구분):</label><br>
-        <input type="text" id="required_cooking_method_ids" name="required_cooking_method_ids"><br><br>
+        <label for="required_cooking_method_ids">필요한 조리 방법:</label><br>
+        <select id="required_cooking_method_ids" name="required_cooking_method_ids" multiple size="5">
+            {% for method in all_cooking_methods %}
+                <option value="{{ method.id }}">{{ method.name.kor }} (ID: {{ method.id }})</option>
+            {% endfor %}
+        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
 
         <label for="calories">칼로리:</label><br>
         <input type="number" step="any" id="calories" name="calories" required><br><br>

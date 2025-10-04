@@ -4,6 +4,11 @@
 
 {% block content %}
 <style>
+    .ingredient-item {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
     .progress-bar-container {
         width: 100%;
         background-color: #f3f3f3;
@@ -33,7 +38,7 @@
 <h1>Storaged Ingredient Visualization</h1>
 
 {% for item in storaged_ingredients %}
-<div>
+<div class="ingredient-item">
     <h2>{{ item.name }}</h2>
     <p>Mass: {{ item.mass_g }}g</p>
     
@@ -46,8 +51,6 @@
         </div>
     </div>
     <div class="progress-marker" style="left: {{ item.progress }}%;"></div>
-    
-    <hr>
 </div>
 {% endfor %}
 {% endblock %}

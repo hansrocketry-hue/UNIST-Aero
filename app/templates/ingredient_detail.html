@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}식재료 상세 정보{% endblock %}
+
+{% block content %}
+    {% if ingredient %}
+        <h1>{{ ingredient.name.kor }}</h1>
+        <p><strong>ID:</strong> {{ ingredient.id }}</p>
+        <h2>Name</h2>
+        <ul>
+            {% for lang, text in ingredient.name.items() %}
+                <li><strong>{{ lang.upper() }}:</strong> {{ text }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Calories:</strong> {{ ingredient.nutrition_info.calories }}</p>
+        <p><strong>Production Time:</strong> {{ ingredient.production_time }}</p>
+        
+        <h2>Related Research</h2>
+        <ul>
+            {% for research_id in ingredient.research_ids %}
+                <li><a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research_id }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h2>Used in Dishes</h2>
+        {% if related_dishes %}
+            <ul>
+                {% for dish in related_dishes %}
+                    <li>{{ dish.name.kor }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Not used in any dishes.</p>
+        {% endif %}
+    {% else %}
+        <h1>Ingredient not found.</h1>
+    {% endif %}
+{% endblock %}

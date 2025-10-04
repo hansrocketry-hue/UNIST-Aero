@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}연구 자료 상세 정보{% endblock %}
+
+{% block content %}
+    {% if research %}
+        <h1>{{ research.reference_data.title }}</h1>
+        <p><strong>ID:</strong> {{ research.id }}</p>
+        <p><strong>Link:</strong> <a href="{{ research.reference_data.link }}" target="_blank">{{ research.reference_data.link }}</a></p>
+        <h2>Summary</h2>
+        <ul>
+            {% for lang, text in research.summary.items() %}
+                <li><strong>{{ lang.upper() }}:</strong> {{ text }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Related Ingredients</h2>
+        {% if related_ingredients %}
+            <ul>
+                {% for ingredient in related_ingredients %}
+                    <li><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ingredient.id) }}">{{ ingredient.name.kor }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No related ingredients found.</p>
+        {% endif %}
+
+        <h2>Related Cooking Methods</h2>
+        {% if related_cooking_methods %}
+            <ul>
+                {% for method in related_cooking_methods %}
+                    <li><a href="{{ url_for('visualize.cooking_method_detail', method_id=method.id) }}">{{ method.name.kor }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No related cooking methods found.</p>
+        {% endif %}
+    {% else %}
+        <h1>Research data not found.</h1>
+    {% endif %}
+{% endblock %}

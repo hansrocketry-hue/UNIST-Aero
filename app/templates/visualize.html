@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block title %}데이터 시각화{% endblock %}
+
+{% block content %}
+    <h1>데이터 시각화</h1>
+
+    <h2>연구 자료 (Research Data)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Link</th>
+                <th>Summary (kor)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data['research-data'] %}
+            <tr>
+                <td><a href="{{ url_for('visualize.research_detail', research_id=item.id) }}">{{ item.id }}</a></td>
+                <td>{{ item.reference_data.title }}</td>
+                <td><a href="{{ item.reference_data.link }}" target="_blank">{{ item.reference_data.link }}</a></td>
+                <td>{{ item.summary.kor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>식재료 (Ingredient)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name (kor)</th>
+                <th>Research IDs</th>
+                <th>Calories</th>
+                <th>Production Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data['ingredient'] %}
+            <tr>
+                <td><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=item.id) }}">{{ item.id }}</a></td>
+                <td>{{ item.name.kor }}</td>
+                <td>
+                    {% for research_id in item.research_ids %}
+                        <a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research_id }}</a>
+                    {% endfor %}
+                </td>
+                <td>{{ item.nutrition_info.calories }}</td>
+                <td>{{ item.production_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>조리 방법 (Cooking Methods)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name (kor)</th>
+                <th>Description (kor)</th>
+                <th>Research IDs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data['cooking-methods'] %}
+            <tr>
+                <td><a href="{{ url_for('visualize.cooking_method_detail', method_id=item.id) }}">{{ item.id }}</a></td>
+                <td>{{ item.name.kor }}</td>
+                <td>{{ item.description.kor }}</td>
+                <td>
+                    {% for research_id in item.research_ids %}
+                        <a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research_id }}</a>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>요리 (Dish)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name (kor)</th>
+                <th>Type</th>
+                <th>Image</th>
+                <th>Required Ingredients</th>
+                <th>Required Cooking Methods</th>
+                <th>Calories</th>
+                <th>Cooking Instructions (kor)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data['dish'] %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name.kor }}</td>
+                <td>{{ item.type }}</td>
+                <td>
+                    {% if item.image_url %}
+                        <img src="{{ item.image_url }}" alt="{{ item.name.kor }}" width="100">
+                    {% endif %}
+                </td>
+                <td>
+                    {% for ing_id in item.required_ingredient_ids %}
+                        <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ing_id }}</a>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for method_id in item.required_cooking_method_ids %}
+                        <a href="{{ url_for('visualize.cooking_method_detail', method_id=method_id) }}">{{ method_id }}</a>
+                    {% endfor %}
+                </td>
+                <td>{{ item.nutrition_info.calories }}</td>
+                <td>{{ item.cooking_instructions.kor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

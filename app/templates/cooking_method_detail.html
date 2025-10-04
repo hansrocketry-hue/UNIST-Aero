@@ -4,6 +4,7 @@
 
 {% block content %}
     {% if method %}
+        <p><em>Category: Cooking Method</em></p>
         <h1>{{ method.name.kor }}</h1>
         <p><strong>ID:</strong> {{ method.id }}</p>
         <h2>Name</h2>
@@ -22,7 +23,11 @@
         <h2>Related Research</h2>
         <ul>
             {% for research_id in method.research_ids %}
-                <li><a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research_id }}</a></li>
+                {% for research in research_data %}
+                    {% if research.id == research_id %}
+                        <li><a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research.reference_data.title }}</a></li>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
         </ul>
 

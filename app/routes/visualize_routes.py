@@ -25,19 +25,31 @@ def research_detail(research_id):
 @bp.route('/ingredient/<int:ingredient_id>')
 def ingredient_detail(ingredient_id):
     """식재료 상세 페이지"""
-    ingredient_data = db.load_db().get('ingredient', [])
+    all_data = db.load_db()
+    ingredient_data = all_data.get('ingredient', [])
     ingredient = next((item for item in ingredient_data if item['id'] == ingredient_id), None)
-    # Get related dishes
-    dishes = db.load_db().get('dish', [])
-    related_dishes = [d for d in dishes if ingredient_id in d.get('required_ingredient_ids', [])]
-    return render_template('ingredient_detail.html', ingredient=ingredient, related_dishes=related_dishes)
+    
+    related_dishes = []
+    if ingredient:
+        dishes = all_data.get('dish', [])
+        related_dishes = [d for d in dishes if ingredient_id in d.get('required_ingredient_ids', [])]
+
+    research_data = all_data.get('research-data', [])
+    
+    return render_template('ingredient_detail.html', ingredient=ingredient, related_dishes=related_dishes, research_data=research_data)
 
 @bp.route('/cooking-method/<int:method_id>')
 def cooking_method_detail(method_id):
     """조리 방법 상세 페이지"""
-    cooking_method_data = db.load_db().get('cooking-methods', [])
+    all_data = db.load_db()
+    cooking_method_data = all_data.get('cooking-methods', [])
     method = next((item for item in cooking_method_data if item['id'] == method_id), None)
-    # Get related dishes
-    dishes = db.load_db().get('dish', [])
-    related_dishes = [d for d in dishes if method_id in d.get('required_cooking_method_ids', [])]
-    return render_template('cooking_method_detail.html', method=method, related_dishes=related_dishes)
+    
+    related_dishes = []
+    if method:
+        dishes = all_data.get('dish', [])
+        related_dishes = [d for d in dishes if method_id in d.get('required_cooking_method_ids', [])]
+
+    research_data = all_data.get('research-data', [])
+    
+    return render_template('cooking_method_detail.html', method=method, related_dishes=related_dishes, research_data=research_data)

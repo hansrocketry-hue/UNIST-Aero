@@ -4,6 +4,7 @@
 
 {% block content %}
     {% if research %}
+        <p><em>Category: Research Data</em></p>
         <h1>{{ research.reference_data.title }}</h1>
         <p><strong>ID:</strong> {{ research.id }}</p>
         <p><strong>Link:</strong> <a href="{{ research.reference_data.link }}" target="_blank">{{ research.reference_data.link }}</a></p>

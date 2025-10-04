@@ -144,3 +144,8 @@ form button {
     text-decoration: none;
     font-family: "Apple Braille", sans-serif;
 }
+
+/* Specific style for the nutrition charts grid */
+.nutrition-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}

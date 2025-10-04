@@ -15,8 +15,7 @@
 
     <!-- Nutrition Status Section -->
     <div class="section">
-        <h2 class="section-title">Daily Nutrition Status</h2>
-        <div class="grid-container">
+        <div class="grid-container nutrition-grid">
             {% for nutrient, data in nutrition_progress.items() %}
             <div class="chart-card">
                 <canvas id="chart-{{ nutrient }}"></canvas>

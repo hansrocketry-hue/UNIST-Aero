@@ -1,0 +1,22 @@
+{
+    "ingredients": [
+        {
+            "id": 1,
+            "main_db_food_id": null,
+            "name": "감자",
+            "mass_g": 2000,
+            "quantity": 10,
+            "expiration_date": "2025-12-31",
+            "cultivation_period": "90일"
+        },
+        {
+            "id": 2,
+            "main_db_food_id": null,
+            "name": "쌀",
+            "mass_g": 10000,
+            "quantity": -1,
+            "expiration_date": "2026-10-01",
+            "cultivation_period": "120일"
+        }
+    ]
+}

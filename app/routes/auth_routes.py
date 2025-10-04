@@ -53,7 +53,25 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if add_user(username, password):
+        age = request.form.get('age')
+        activity_level = request.form.get('activity_level')
+        try:
+            age = int(age)
+            activity_level = int(activity_level)
+            if activity_level < 1 or activity_level > 5:
+                raise ValueError
+        except (TypeError, ValueError):
+            flash('나이와 활동지수는 숫자로, 활동지수는 1~5로 입력해주세요.')
+            return render_template('register.html')
+        user_info = {
+            'name': username,
+            'password': password,
+            'age': age,
+            'activity_level': activity_level,
+            'like': [],
+            'forbid': []
+        }
+        if add_user(username, user_info):
             flash('회원가입 성공! 로그인 해주세요.')
             return redirect(url_for('auth.login'))
         else:
@@ -64,12 +82,35 @@ def register():
 def update():
     if request.method == 'POST':
         username = request.form['username']
-        new_password = request.form['new_password']
-        if update_user(username, new_password):
-            flash('비밀번호가 성공적으로 변경되었습니다.')
-            return redirect(url_for('auth.login'))
+        update_fields = {}
+        new_password = request.form.get('new_password')
+        new_age = request.form.get('new_age')
+        new_activity_level = request.form.get('new_activity_level')
+        if new_password:
+            update_fields['password'] = new_password
+        if new_age:
+            try:
+                update_fields['age'] = int(new_age)
+            except ValueError:
+                flash('나이는 숫자로 입력해주세요.')
+                return render_template('update.html')
+        if new_activity_level:
+            try:
+                val = int(new_activity_level)
+                if val < 1 or val > 5:
+                    raise ValueError
+                update_fields['activity_level'] = val
+            except ValueError:
+                flash('활동지수는 1~5의 숫자로 입력해주세요.')
+                return render_template('update.html')
+        if update_fields:
+            if update_user(username, update_fields):
+                flash('정보가 성공적으로 변경되었습니다.')
+                return redirect(url_for('auth.login'))
+            else:
+                flash('존재하지 않는 아이디입니다.')
         else:
-            flash('존재하지 않는 아이디입니다.')
+            flash('변경할 정보가 없습니다.')
     return render_template('update.html')
 
 

@@ -1,0 +1,20 @@
+{
+    "admin": {
+        "name" : "admin",
+        "height" : 123,
+        "weight" : 123,
+        "gender" : "male",
+
+        "like" : [1],
+        "forbid" : [2],
+        
+        "health" : {
+            "carbohydrate" : 123,
+            "protein" : 123,
+            "fat" : 123,
+            "vitamin" : 123,
+            "dietery_fiber" : 123
+        }
+
+    }
+}

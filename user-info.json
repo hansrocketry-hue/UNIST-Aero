@@ -19,5 +19,14 @@
             "gender": "male",
             "preferred_food": "1"
         }
+    },
+    "test1": {
+        "password": "1q2w3e4r",
+        "profile": {
+            "height": "240",
+            "weight": "100",
+            "gender": "male",
+            "preferred_food": "가나다, 치킨"
+        }
     }
 }

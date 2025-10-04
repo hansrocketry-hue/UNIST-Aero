@@ -16,17 +16,30 @@ def add_data_home():
 def add_ingredient_route():
     if request.method == 'POST':
         try:
-            lang_codes = request.form.getlist('lang_codes')
-            lang_names = request.form.getlist('lang_names')
-            name_dict = dict(zip(lang_codes, lang_names))
+            name_codes = request.form.getlist('name_codes')
+            name_names = request.form.getlist('name_names')
+            name_dict = dict(zip(name_codes, name_names))
+
+            if not name_dict or not any(name_dict.values()):
+                flash('최소 하나 이상의 언어로 이름을 입력해야 합니다.', 'danger')
+                return redirect(url_for('add_data.add_ingredient_route'))
 
             research_ids = [int(x) for x in request.form.getlist('research_ids')]
-            calories = float(request.form['calories'])
             details = request.form['details']
             production_time = request.form['production_time']
             
-            nutrition_info = {"calories": calories, "nutrients_per_unit_mass": {}, "details": details}
-            
+            nutrient_names = request.form.getlist('nutrient_name')
+            nutrient_values = request.form.getlist('nutrient_value')
+            nutrients_per_unit_mass = {name: float(value) for name, value in zip(nutrient_names, nutrient_values) if name and value}
+
+            calories = nutrients_per_unit_mass.pop('Calories', 0.0)
+
+            nutrition_info = {
+                "calories": calories,
+                "nutrients_per_unit_mass": nutrients_per_unit_mass,
+                "details": details
+            }
+
             db.add_ingredient(
                 name=name_dict,
                 research_ids=research_ids,
@@ -40,7 +53,8 @@ def add_ingredient_route():
             flash(f"오류가 발생했습니다: {e}", 'danger')
 
     all_research = db._load_table('research-data')
-    return render_template('add_ingredient_form.html', all_research=all_research)
+    nutrition_categories = db.get_nutrition_categories()
+    return render_template('add_ingredient_form.html', all_research=all_research, nutrition_categories=nutrition_categories)
 
 @bp.route('/cooking-method', methods=['GET', 'POST'])
 def add_cooking_method_route():

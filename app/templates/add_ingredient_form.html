@@ -9,13 +9,6 @@
         <div id="name-fields"></div>
         <button type="button" id="add-name-btn">이름 추가</button><br><br>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const addNameField = createDynamicLanguageFields('name-fields', 'name', '이름');
-                document.getElementById('add-name-btn').addEventListener('click', addNameField);
-            });
-        </script>
-
         <label for="research_ids">관련 연구 ID:</label><br>
         <select id="research_ids" name="research_ids" multiple size="5">
             {% for research in all_research %}
@@ -23,8 +16,9 @@
             {% endfor %}
         </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
 
-        <label for="calories">칼로리 (단위 질량 당):</label><br>
-        <input type="number" step="any" id="calories" name="calories" required><br><br>
+        <label>영양 정보 (그램 당):</label><br>
+        <div id="nutrition-fields"></div>
+        <button type="button" id="add-nutrition-btn">영양 정보 추가</button><br><br>
 
         <label for="details">영양 정보 세부사항:</label><br>
         <textarea id="details" name="details" rows="4"></textarea><br><br>
@@ -34,4 +28,60 @@
 
         <button type="submit">추가하기</button>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // Dynamic language fields for name
+                const addNameField = createDynamicLanguageFields('name-fields', 'name', '이름');
+                document.getElementById('add-name-btn').addEventListener('click', addNameField);
+            } catch (e) {
+                console.error(e);
+                alert('Error initializing name fields. Please refresh the page.');
+            }
+
+            // Dynamic nutrition fields
+            const nutritionCategories = {{ nutrition_categories | tojson }};
+            const nutritionFieldsContainer = document.getElementById('nutrition-fields');
+            const addNutritionBtn = document.getElementById('add-nutrition-btn');
+
+            function addNutritionField() {
+                const fieldRow = document.createElement('div');
+                fieldRow.className = 'nutrition-field-row';
+
+                const select = document.createElement('select');
+                select.name = 'nutrient_name';
+                nutritionCategories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category.name;
+                    option.textContent = `${category.name} (${category.unit})`;
+                    select.appendChild(option);
+                });
+
+                const valueInput = document.createElement('input');
+                valueInput.type = 'number';
+                valueInput.step = 'any';
+                valueInput.name = 'nutrient_value';
+                valueInput.placeholder = '값';
+                valueInput.required = true;
+
+                const removeBtn = document.createElement('button');
+                removeBtn.type = 'button';
+                removeBtn.textContent = '삭제';
+                removeBtn.addEventListener('click', () => {
+                    fieldRow.remove();
+                });
+
+                fieldRow.appendChild(select);
+                fieldRow.appendChild(valueInput);
+                fieldRow.appendChild(removeBtn);
+                nutritionFieldsContainer.appendChild(fieldRow);
+            }
+
+            addNutritionBtn.addEventListener('click', addNutritionField);
+
+            // Add one nutrition field by default
+            addNutritionField();
+        });
+    </script>
 {% endblock %}

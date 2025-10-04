@@ -88,6 +88,10 @@ def add_research_data(reference_data, summary):
     print(f"New research data added with ID {new_id}.")
     return new_id
 
+def get_nutrition_categories():
+    with open('nutrition_category.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
+
 def add_dish(dish_type, name, image_url, required_ingredient_ids, required_cooking_method_ids, nutrition_info, cooking_instructions=None):
     data = _load_table('dish')
     new_id = _get_next_id('dish')

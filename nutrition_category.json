@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Calories",
+        "unit": "kcal",
+        "recommended_daily_intake": 2000
+    },
+    {
+        "name": "Carbohydrates",
+        "unit": "g",
+        "recommended_daily_intake": 250
+    },
+    {
+        "name": "Protein",
+        "unit": "g",
+        "recommended_daily_intake": 55
+    },
+    {
+        "name": "Fat",
+        "unit": "g",
+        "recommended_daily_intake": 65
+    },
+    {
+        "name": "Saturated Fat",
+        "unit": "g",
+        "recommended_daily_intake": 20
+    },
+    {
+        "name": "Dietary Fiber",
+        "unit": "g",
+        "recommended_daily_intake": 28
+    },
+    {
+        "name": "Sodium",
+        "unit": "g",
+        "recommended_daily_intake": 2
+    },
+    {
+        "name": "Vitamin B1 (Thiamin)",
+        "unit": "mg",
+        "recommended_daily_intake": 1.2
+    },
+    {
+        "name": "Vitamin B2 (Riboflavin)",
+        "unit": "mg",
+        "recommended_daily_intake": 1.3
+    },
+    {
+        "name": "Vitamin B3 (Niacin)",
+        "unit": "mg",
+        "recommended_daily_intake": 15
+    },
+    {
+        "name": "Vitamin B6",
+        "unit": "mg",
+        "recommended_daily_intake": 1.5
+    },
+    {
+        "name": "Folate",
+        "unit": "mcg",
+        "recommended_daily_intake": 400
+    },
+    {
+        "name": "Vitamin B12",
+        "unit": "mcg",
+        "recommended_daily_intake": 2.4
+    },
+    {
+        "name": "Vitamin C",
+        "unit": "mg",
+        "recommended_daily_intake": 82.5
+    },
+    {
+        "name": "Vitamin D",
+        "unit": "mcg",
+        "recommended_daily_intake": 15
+    }
+]

@@ -1,8 +1,114 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}홈 - 우주 식량 관리 시스템{% endblock %}
+{% block title %}Crew Profile - {{ user.name }}{% endblock %}
 
 {% block content %}
-    <h1>우주 식량 관리 시스템</h1>
-    <p>좌측 상단의 메뉴를 통해 데이터베이스를 관리하세요.</p>
+<style>
+    /* Styles are now in style.css, but keeping this for quick reference if needed */
+    /* It's better to have all styles in the external CSS file */
+</style>
+
+<div class="profile-container">
+    <div class="header">
+        <h1>{{ user.name }}'s Crew Profile</h1>
+    </div>
+
+    <!-- Nutrition Status Section -->
+    <div class="section">
+        <h2 class="section-title">Daily Nutrition Status</h2>
+        <div class="grid-container">
+            {% for nutrient, data in nutrition_progress.items() %}
+            <div class="chart-card">
+                <canvas id="chart-{{ nutrient }}"></canvas>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Recommended Food Section -->
+    <div class="section">
+        <h2 class="section-title">Recommended Meals</h2>
+        <div class="grid-container">
+            {% for food in recommended_food %}
+            <div class="food-card">
+                <img src="{{ food.image }}" alt="{{ food.name }}">
+                <h5>{{ food.name }}</h5>
+                <a href="#" class="btn-details">Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Food Timeline Section -->
+    <div class="section">
+        <h2 class="section-title">Intake Log</h2>
+        <div class="grid-container">
+            <div class="timeline-card">
+                <h4>Today</h4>
+                {% if today_timeline and today_timeline.intake %}
+                    {% for item in today_timeline.intake %}
+                    <div class="timeline-item">
+                        <span>{{ item.food_name }}</span>
+                        <span>{{ item.time }}</span>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No intake recorded today.</p>
+                {% endif %}
+            </div>
+            <div class="timeline-card">
+                <h4>Yesterday</h4>
+                {% if yesterday_timeline and yesterday_timeline.intake %}
+                    {% for item in yesterday_timeline.intake %}
+                    <div class="timeline-item">
+                        <span>{{ item.food_name }}</span>
+                        <span>{{ item.time }}</span>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No intake recorded yesterday.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const nutritionData = {{ nutrition_progress | tojson }};
+    
+    for (const nutrient in nutritionData) {
+        const data = nutritionData[nutrient];
+        const ctx = document.getElementById('chart-' + nutrient).getContext('2d');
+        
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [nutrient, 'Remaining'],
+                datasets: [{
+                    data: [data.percentage, 100 - data.percentage > 0 ? 100 - data.percentage : 0],
+                    backgroundColor: ['#ffd835', '#6c35c4'],
+                    borderColor: '#2e1c82',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: `${nutrient.charAt(0).toUpperCase() + nutrient.slice(1)}`,
+                        color: '#ffffff',
+                        font: { size: 16, family: "Apple Braille" }
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+    }
+});
+</script>
 {% endblock %}

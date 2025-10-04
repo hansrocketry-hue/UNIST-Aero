@@ -67,3 +67,80 @@ form button {
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* User Profile Page Styles */
+.profile-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #2e1c82;
+    border-radius: 15px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.header h1 {
+    font-size: 32pt;
+    color: #ffd835;
+    font-family: "Apple Braille", sans-serif;
+}
+.section {
+    background-color: #6c35c4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.section-title {
+    font-size: 24pt;
+    color: #ffd835;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ffd835;
+    padding-bottom: 0.5rem;
+    font-family: "Apple Braille", sans-serif;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.chart-card, .timeline-card, .food-card {
+    background-color: #2e1c82;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.timeline-card h4 {
+    color: #ffd835;
+    font-family: "Apple Braille", sans-serif;
+}
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #6c35c4;
+    font-family: "Apple Braille", sans-serif;
+}
+.food-card {
+    text-align: center;
+}
+.food-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.food-card h5 {
+    margin: 0.5rem 0;
+    font-size: 20pt;
+    font-family: "Apple Braille", sans-serif;
+}
+.btn-details {
+    background-color: #ffd835;
+    color: #0e1544;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Apple Braille", sans-serif;
+}

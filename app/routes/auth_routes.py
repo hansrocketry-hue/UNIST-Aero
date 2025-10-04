@@ -45,8 +45,13 @@ def login():
         username = request.form['username']
         password = request.form['password']
         if um.verify_user(username, password):
-            session['user'] = {'username': username}
-            return redirect(url_for('home.index'))
+            user = um.get_user_by_username(username)
+            if user:
+                session['user_id'] = user['id']
+                session['user'] = {'username': user['username'], 'id': user['id']}
+                return redirect(url_for('home.index'))
+            else:
+                flash('사용자 정보를 가져오는 데 실패했습니다.', 'danger')
         else:
             flash('사용자 이름 또는 비밀번호가 올바르지 않습니다.', 'danger')
     return render_template('login.html')

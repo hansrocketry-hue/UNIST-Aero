@@ -90,28 +90,875 @@
         }
     ],
     "research-data": [
-        {
-            "id": 1,
-            "reference_data": {
-                "link": "NASA-STD-3001",
-                "title": "Space Flight Human-System Standard"
+                {
+                "id": 1,
+                "reference_data": {
+                    "link": "https://www.researchgate.net/publication/343905740_Kale_Review_on_nutritional_composition_bio-active_compounds_anti-nutritional_factors_health_beneficial_properties_and_value-added_products",
+                    "title": "Kale: Review on Nutritional Composition, Bio-active Compounds, Anti-nutritional Factors (2020)"
+                },
+                "summary": {
+                    "kor": "케일의 비타민, 미네랄, 항산화·항영양소 분석",
+                    "eng": "Cale's vitamins, minerals, anti -oxids analysis"
+                }
             },
-            "summary": {
-                "kor": "저중력 환경에서 물 주입을 통한 건조 식품 복원 기술은 안정적임.",
-                "eng": "Technology for restoring dried food through water injection in a low-gravity environment is stable."
-            }
-        },
-        {
-            "id": 2,
-            "reference_data": {
-                "link": "J. Food Sci. 2023, 88, 123-130",
-                "title": "Nutritional and Sensory Properties of Freeze-Dried Bibimbap for Long-Term Space Missions"
+            {
+                "id": 2,
+                "reference_data": {
+                    "link": "https://www.ars.usda.gov/plains-area/gfnd/gfhnrc/docs/news-articles/2013/dark-green-leafy-vegetables",
+                    "title": "USDA ARS “Dark Green Leafy Vegetables” (2013)"
+                },
+                "summary": {
+                    "kor": "케일, 청경채, 상추 등 비타민 A, C, K, 엽산 함량",
+                    "eng": "Vitamins A, C, K, Folic acid content such as kale, bok chop, and lettuce"
+                }
             },
-            "summary": {
-                "kor": "동결 건조 비빔밥은 장기 보관 시 영양 손실이 적고, 수화 시 맛과 질감이 잘 복원됨.",
-                "eng": "Freeze-dried bibimbap shows less nutritional loss during long-term storage and restores its taste and texture well upon hydration."
+            {
+                "id": 3,
+                "reference_data": {
+                    "link": "https://fns-prod.azureedge.us/sites/default/files/resource-files/100494 - Rice Long Grain Parboiled  Enriched.pdf",
+                    "title": "USDA FNS “Rice Long Grain Parboiled Enriched” (공식 PDF)"
+                },
+                "summary": {
+                    "kor": "백미·현미 영양 성분표 (단백질, 비타민 B군, 철 등)",
+                    "eng": "White and brown rice nutrition ingredients (protein, vitamin B group, iron, etc.)"
+                }
+            },
+            {
+                "id": 4,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7823427/",
+                    "title": "Nutritional Composition and Bioactive Compounds in Tomatoes (PMC, 2021)"
+                },
+                "summary": {
+                    "kor": "토마토의 라이코펜, 비타민 C, 항산화 성분 리뷰",
+                    "eng": "Tomato's lycopene, vitamin C, antioxidants review"
+                }
+            },
+            {
+                "id": 5,
+                "reference_data": {
+                    "link": "https://en.wikipedia.org/wiki/Black_rice",
+                    "title": "Wikipedia “Black Rice” (USDA 영양 포함)"
+                },
+                "summary": {
+                    "kor": "단백질, 철, 식이섬유 등 검정쌀 성분",
+                    "eng": "Protein, iron, dietary fiber, etc."
+                }
+            },
+            {
+                "id": 6,
+                "reference_data": {
+                    "link": "https://tools.myfooddata.com/nutrition-comparison/168875-168878/100g-100g",
+                    "title": "MyFoodData Nutrition Comparison Tool"
+                },
+                "summary": {
+                    "kor": "조리된 백미와 현미의 비타민·미네랄 비교",
+                    "eng": "Vitamins and mineral comparison of cooked white rice and brown rice"
+                }
+            },
+            {
+                "id": 7,
+                "reference_data": {
+                    "link": "https://www.ars.usda.gov/news-events/news/research-news/2024/how-might-tomatoes-provide-health-benefits/",
+                    "title": "USDA ARS “How Might Tomatoes Provide Health Benefits?” (2024)"
+                },
+                "summary": {
+                    "kor": "토마토 섭취 후 대사 및 유전자 변화",
+                    "eng": "Tomatoes and dialogue and genetic changes"
+                }
+            },
+            {
+                "id": 8,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11020932/",
+                    "title": "Nutrients and non-essential metals in darkibor kale grown at different conditions (PMC, 2024)"
+                },
+                "summary": {
+                    "kor": "케일의 재배 조건별 비타민·무기질 변동",
+                    "eng": "Vitamin and mineral fluctuations by cultivation condition of kale"
+                }
+            },
+            {
+                "id": 9,
+                "reference_data": {
+                    "link": "https://www.cabidigitallibrary.org/doi/pdf/10.5555/20220170143",
+                    "title": "Preparation and Nutritional Enhancement of Instant Tomato Soup Mix (CABI)"
+                },
+                "summary": {
+                    "kor": "토마토 스프 믹스 제조 및 영양 강화 방법",
+                    "eng": "Tomato soup mix manufacturing and nutritional reinforcement method"
+                }
+            },
+            {
+                "id": 10,
+                "reference_data": {
+                    "link": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2022.1034115/full",
+                    "title": "The nutritional composition of the vegetable soybean (maodou) and …"
+                },
+                "summary": {
+                    "kor": "성숙콩 vs 풋콩 비교: 단백질, 지질, isoflavone 변화 등 분석됨",
+                    "eng": "Mature Bean VS Put Kong Comparison: Protein, Lipid, ISOFLAVONE Changes, etc."
+                }
+            },
+            {
+                "id": 11,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/pii/S2666154321001678",
+                    "title": "A review on plant-based proteins from soybean: Health benefits and …"
+                },
+                "summary": {
+                    "kor": "대두 단백질, 건강 효과, 처리 과정 영향 등 포괄 분석",
+                    "eng": "Comprehensive analysis such as soy protein, health effect, and processing process"
+                }
+            },
+            {
+                "id": 12,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/pii/S0377840120304351",
+                    "title": "Chemical composition, protein quality and nutritive value of …"
+                },
+                "summary": {
+                    "kor": "종류별 대두 박(meal) 간 화학 조성, 아미노산 차이 등 분석됨",
+                    "eng": "Analyzed, such as the creation of chemistry between the types of soybeans and the difference in amino acids"
+                }
+            },
+            {
+                "id": 13,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11473172/",
+                    "title": "Nutritional and Functional Composition of Barley Varieties From …"
+                },
+                "summary": {
+                    "kor": "보리 품종별 탄수화물, 단백질, 미네랄 조성 비교",
+                    "eng": "Barley varieties by carbohydrate, protein, mineral comparison"
+                }
+            },
+            {
+                "id": 14,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/pii/S2666154323001849",
+                    "title": "Barley phytochemicals and health promoting benefits"
+                },
+                "summary": {
+                    "kor": "보리의 페놀, 플라보노이드 등 생리활성 성분 분석",
+                    "eng": "Analysis of physiological components such as phenols of barley, flavonoids"
+                }
+            },
+            {
+                "id": 15,
+                "reference_data": {
+                    "link": "https://www.medicalnewstoday.com/articles/295268",
+                    "title": "Barley: Nutrition, health benefits, and more"
+                },
+                "summary": {
+                    "kor": "보리의 전반적 영양 프로파일과 건강 효과 정리",
+                    "eng": "Barley's overall nutritional profile and health effect"
+                }
+            },
+            {
+                "id": 16,
+                "reference_data": {
+                    "link": "None",
+                    "title": "Nutritional and Bioactive Compounds of Bok-choy: Beneficial Effects …"
+                },
+                "summary": {
+                    "kor": "비타민, 미네랄, 섬유소, 플라보노이드 등 구성 정리됨",
+                    "eng": "Vitamins, minerals, fiber, flavonoids, etc. are organized"
+                }
+            },
+            {
+                "id": 17,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7410185/",
+                    "title": "Genetic and physiological regulation of folate in pak choi (Brassica …)"
+                },
+                "summary": {
+                    "kor": "배추류 유전자 다양성에 따른 엽산 수준 차이 분석",
+                    "eng": "Analysis of folic acid levels according to cabbage genetic diversity"
+                }
+            },
+            {
+                "id": 18,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11899586/",
+                    "title": "Impact of Anaerobic Fermentation Liquid on Bok Choy and …"
+                },
+                "summary": {
+                    "kor": "필드 시험에서 Bok Choy 비타민 C 변화 관찰됨",
+                    "eng": "BOK CHOY Vitamin C Change Observations on the field exam"
+                }
+            },
+            {
+                "id": 19,
+                "reference_data": {
+                    "link": "https://edis.ifas.ufl.edu/publication/HS1337",
+                    "title": "Bok Choy, an Asian Leafy Green Vegetable Emerging in Florida"
+                },
+                "summary": {
+                    "kor": "Bok Choy의 비타민 C, B1, B2, 나이아신, 엽산 수치 포함됨",
+                    "eng": "Vitamins C, B1, B2, Niacin, Folic acid levels of bok choy are included"
+                }
+            },
+            {
+                "id": 20,
+                "reference_data": {
+                    "link": "None",
+                    "title": "Nutritional and post-harvest quality preservation of mushrooms"
+                },
+                "summary": {
+                    "kor": "수확 후 버섯의 영양소 보존 방법 (건조, 보관 등) 연구됨.  ",
+                    "eng": "After harvesting, the nutrient preservation method (drying, storage, etc.) is studied."
+                }
+            },
+            {
+                "id": 21,
+                "reference_data": {
+                    "link": "None",
+                    "title": "Calcium Enrichment in Edible Mushrooms: A Review"
+                },
+                "summary": {
+                    "kor": "버섯에 칼슘을 강화해서 재배했을 때의 성장, 대사물 변화 연구됨.  ",
+                    "eng": "Growth when cultivated by strengthening calcium in mushrooms and changes in metabolites."
+                }
+            },
+            {
+                "id": 22,
+                "reference_data": {
+                    "link": "None",
+                    "title": "Kale: Review on nutritional composition, bio-active compounds, anti-nutritional factors, health beneficial properties and value-added products"
+                },
+                "summary": {
+                    "kor": "케일의 비타민·미네랄·섬유·항영양소 등 광범위 정리됨.  ",
+                    "eng": "Kale's vitamins, minerals, textiles, and anti -lime are organized."
+                }
+            },
+            {
+                "id": 23,
+                "reference_data": {
+                    "link": "None",
+                    "title": "Improving the Health-Benefits of Kales (Brassica oleracea var. acephala)"
+                },
+                "summary": {
+                    "kor": "케일의 식물성 영양소, 항산화물질(폴리페놀, 글루코시놀레이트 등) 분석됨.  ",
+                    "eng": "Cale's vegetable nutrients, antioxidants (polyphenols, glucocinolates, etc.) are analyzed."
+                }
+            },
+            {
+                "id": 24,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/pii/S2405844022033813",
+                    "title": "Nutritional and Post-Harvest Quality Preservation of Mushrooms (ScienceDirect, 2022)"
+                },
+                "summary": {
+                    "kor": "수확 후 영양소 보존·건조·보관 연구",
+                    "eng": "After harvesting, preservation, drying, and storage study"
+                }
+            },
+            {
+                "id": 25,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10052545/",
+                    "title": "버섯의 칼슘 강화 재배 및 대사 영향"
+                },
+                "summary": {
+                    "kor": "None",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 26,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7823427/",
+                    "title": "Nutritional Composition and Bioactive Compounds in Tomatoes (PMC, 2021)"
+                },
+                "summary": {
+                    "kor": "토마토의 라이코펜, 비타민 C, 미네랄 성분",
+                    "eng": "Tomato's lycopene, vitamin C, minerals"
+                }
+            },
+            {
+                "id": 27,
+                "reference_data": {
+                    "link": "https://www.ars.usda.gov/news-events/news/research-news/2024/how-might-tomatoes-provide-health-benefits/",
+                    "title": "토마토 섭취 후 대사·유전자 변화"
+                },
+                "summary": {
+                    "kor": "None",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 28,
+                "reference_data": {
+                    "link": "https://fns-prod.azureedge.us/sites/default/files/resource-files/100494 - Rice Long Grain Parboiled  Enriched.pdf",
+                    "title": "Rice Long Grain Parboiled Enriched (USDA FNS, 공식 PDF)"
+                },
+                "summary": {
+                    "kor": "백미/현미 영양성분 및 비타민 B군 수치",
+                    "eng": "White America/Brown rice nutrition and vitamin B group figures"
+                }
+            },
+            {
+                "id": 29,
+                "reference_data": {
+                    "link": "https://tools.myfooddata.com/nutrition-comparison/168875-168878/100g-100g",
+                    "title": "백미와 현미의 비타민·미네랄 비교"
+                },
+                "summary": {
+                    "kor": "None",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 30,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10511166/",
+                    "title": "Nutritional Composition of Potatoes and Their Role in Health (PMC, 2023)"
+                },
+                "summary": {
+                    "kor": "감자의 비타민 C, 칼륨, 섬유소, 단백질 함량 요약",
+                    "eng": "Summary of vitamin C, potassium, fiber, and protein content of potatoes"
+                }
+            },
+            {
+                "id": 31,
+                "reference_data": {
+                    "link": "https://www.spacedaily.com/news/food-02j.html",
+                    "title": "ISS Advanced Astroculture, seed-to-seed 재배"
+                },
+                "summary": {
+                    "kor": "우주에서 대두를 씨앗부터 수확까지 완전 재배 성공 기록됨 (83개 씨앗 수확 등)  ",
+                    "eng": "Fully cultivated success from the universe to the harvesting of soybeans (83 seeds, etc.)"
+                }
+            },
+            {
+                "id": 32,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/abs/pii/S0273117705002346",
+                    "title": "GENEX (STS-87) 실험"
+                },
+                "summary": {
+                    "kor": "ISS에서 대두 유묘(초기 식물체)의 뿌리 성장 특성 실험됨 — 뿌리 길이 변화 관찰됨  ",
+                    "eng": "In ISS, the root growth characteristics of the soybean tomb (initial plant) — the root length change observation."
+                }
+            },
+            {
+                "id": 33,
+                "reference_data": {
+                    "link": "https://en.wikipedia.org/wiki/Vegetable_Production_System",
+                    "title": "NASA Veggie 시스템 (ISS)"
+                },
+                "summary": {
+                    "kor": "상추, 케일 등 잎채소가 ISS에서 재배된 사례 있음. 우주에서 직접 먹은 기록도 있음.  ",
+                    "eng": "Leaf vegetables such as lettuce and kale have been grown in ISS. There are also records that were eaten directly in space."
+                }
+            },
+            {
+                "id": 34,
+                "reference_data": {
+                    "link": "https://astrobiology.com/2021/04/seven-ways-the-international-space-station-helps-us-study-plant-growth-in-space.html",
+                    "title": "ISS 다양한 실험 (lettuce, mustard, bok choy 등)"
+                },
+                "summary": {
+                    "kor": "잎채소 작물 여러 종류가 ISS 내에서 테스트되어 재배 가능성 확인됨.  ",
+                    "eng": "Several types of leafy vegetable crops are tested within ISS to confirm the possibility of cultivation."
+                }
+            },
+            {
+                "id": 35,
+                "reference_data": {
+                    "link": "https://www.spacedaily.com/news/iss-science-02c.html",
+                    "title": "Advanced Astroculture experiments"
+                },
+                "summary": {
+                    "kor": "우주에서 1세대 → 2세대로 이어지는 식물 재배 실험 존재 보고됨 (콩 실험 내 일부 기록)  ",
+                    "eng": "It has been reported to be a plant cultivation experiment that leads from space to first generation → 2nd generation (some records within the bean experiment)"
+                }
+            },
+            {
+                "id": 36,
+                "reference_data": {
+                    "link": "https://en.wikipedia.org/wiki/TROPI",
+                    "title": "TROPI 실험 (Arabidopsis)"
+                },
+                "summary": {
+                    "kor": "ISS에서 Arabidopsis (작은 모델 식물)를 사용해 빛 조건과 중력 조합 하에서 뿌리/식물 반응 실험됨.  ",
+                    "eng": "In ISS, Arabidopsis (small model plant) is used to test root/plant reaction under light conditions and gravity combination."
+                }
+            },
+            {
+                "id": 37,
+                "reference_data": {
+                    "link": "https://www.nasa.gov/science-research/nasa-plant-researchers-explore-question-of-deep-space-food-crops/",
+                    "title": "NASA 기사 “NASA Plant Researchers Explore Deep-Space Food Crops”"
+                },
+                "summary": {
+                    "kor": "케일, 상추, 감자, 콩류을 우주 및 극한 환경 식재 후보로 연구 중임. 감자도 지상 시험에서 우주 조건 모사 환경 하에서 연구됨.  ",
+                    "eng": "Kale, lettuce, potatoes, and beans are being studied as a candidate for planting space and extreme environment. Potatoes are also studied under the space conditions of the space conditions."
+                }
+            },
+            {
+                "id": 38,
+                "reference_data": {
+                    "link": "https://arxiv.org/abs/2505.16890",
+                    "title": "Inkspot 변종 토마토 (외계 재배 조건 모사)"
+                },
+                "summary": {
+                    "kor": "달/화성 토양 유사 환경 하에서 스트레스 저항성 변종 토마토 실험됨 — 우주 적용 가능성 탐구됨.",
+                    "eng": "Stress resistance variant tomato experiments under the moon/Mars soil -like environment - exploration of the possibility of space application."
+                }
+            },
+            {
+                "id": 39,
+                "reference_data": {
+                    "link": "https://pubmed.ncbi.nlm.nih.gov/11541357/",
+                    "title": "Development and growth of potato tubers in microgravity"
+                },
+                "summary": {
+                    "kor": "우주선 STS-73 실험에서 감자 절편을 재배 → 초기 잎·뿌리 반응 관찰됨.  ",
+                    "eng": "In the spaceship STS-73 experiment, cultivate potatoes → Initial leaf and root reactions."
+                }
+            },
+            {
+                "id": 40,
+                "reference_data": {
+                    "link": "https://ntrs.nasa.gov/citations/20040120699",
+                    "title": "Structure of potato tubers formed during spaceflight"
+                },
+                "summary": {
+                    "kor": "우주에서 형성된 감자 조직이 지상과 구조상 유사함.  ",
+                    "eng": "Potato tissues formed in space are similar in terms of ground with ground."
+                }
+            },
+            {
+                "id": 41,
+                "reference_data": {
+                    "link": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2020.00199/full",
+                    "title": "Microbiological and Nutritional Analysis of Lettuce Crops Grown in Space"
+                },
+                "summary": {
+                    "kor": "ISS Veggie 시스템에서 상추를 재배, 영양소 및 미생물 특성 분석됨.  ",
+                    "eng": "Cultivating lettuce from the ISS Veggie system, nutrients and microbial characteristics analysis."
+                }
+            },
+            {
+                "id": 42,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8537831/",
+                    "title": "Spatial Characterization of Microbial Communities on Multi-Species Leafy Greens Grown … ISS"
+                },
+                "summary": {
+                    "kor": "ISS 내 다종 잎채소 재배 시 미생물 군집 특성 분석됨.  ",
+                    "eng": "Microbial cluster characteristics analysis when cultivating multi -leaf vegetables in ISS."
+                }
+            },
+            {
+                "id": 43,
+                "reference_data": {
+                    "link": "https://www.tandfonline.com/doi/full/10.1080/17429145.2023.2292220",
+                    "title": "Pick-and-Eat Space Crop Production Flight Testing on the ISS"
+                },
+                "summary": {
+                    "kor": "ISS Veggie에서 여러 잎채소를 비행 실험으로 재배해 먹을 수 있게 함.  ",
+                    "eng": "In ISS VEGGIE, multiple leaf vegetables can be grown by flight experiments."
+                }
+            },
+            {
+                "id": 44,
+                "reference_data": {
+                    "link": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2020.00417/full",
+                    "title": "Design of a Module for Cultivation of Tuberous Plants in Microgravity (PFPU)"
+                },
+                "summary": {
+                    "kor": "ESA MELiSSA 계획 하에 감자/고구마 같은 덩이줄기 작물을 우주 환경용 모듈 설계 중.  ",
+                    "eng": "ESA Melissa is designing a mud crop like potatoes/sweet potatoes under the ESA Melissa plan."
+                }
+            },
+            {
+                "id": 45,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/abs/pii/S2214552420300134",
+                    "title": "CultCube: Experiments in autonomous in-orbit cultivation"
+                },
+                "summary": {
+                    "kor": "궤도 상에서 자율 재배 시스템 실험, 식물 재배 환경 모듈 연구됨.  ",
+                    "eng": "Autonomous cultivation system experiment, plant cultivation environment module on track."
+                }
+            },
+            {
+                "id": 46,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6607005/",
+                    "title": "Microgravity research in plants (리뷰)"
+                },
+                "summary": {
+                    "kor": "미세중력 조건에서 각종 작물, 유전자 발현 반응, 재배 가능성 종합 분석됨.  ",
+                    "eng": "In the micro -gravity conditions, various crops, genetic expression reactions, and cultivation can be analyzed."
+                }
+            },
+            {
+                "id": 47,
+                "reference_data": {
+                    "link": "https://arxiv.org/abs/2505.16890",
+                    "title": "Inkspot: A stress-resilient, anthocyanin rich, dwarf tomato variant for off-world cultivation"
+                },
+                "summary": {
+                    "kor": "달/우주 유사 조건 하 토마토 변종 ‘Inkspot’의 내성 실험.  ",
+                    "eng": "Resistance experiments of 'INKSPOT', a tomato variant under the moon/space similar conditions."
+                }
+            },
+            {
+                "id": 48,
+                "reference_data": {
+                    "link": "https://en.wikipedia.org/wiki/SVET_plant_growth_system",
+                    "title": "SVET plant growth system"
+                },
+                "summary": {
+                    "kor": "Mir 모듈 SVET에서 Brassica rapa 재배 성공 (Mir 환경)  ",
+                    "eng": "MIR module svet brassica rapa cultivation success (MIR environment)"
+                }
+            },
+            {
+                "id": 49,
+                "reference_data": {
+                    "link": "https://www.esa.int/gsp/ACT/doc/ARI/ARI Study Report/ACT-RPT-HAB-ARI-16-6101-Fungi_structures.pdf",
+                    "title": "자실체(mushroom fruiting body)와 균사체(mycelia)의 공간 구조, 성장 가능성, 미세중력 조건 하에서의 구조 변화 등을 연구"
+                },
+                "summary": {
+                    "kor": "NaN",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 50,
+                "reference_data": {
+                    "link": "https://www.davidmoore.org.uk/Assets/Printed_documents/my_reprints/1991_Moore_mushrooms_in_microgravityMycologist.pdf",
+                    "title": "방향성(gravity sensing), 버섯의 기울기 응답(gravitropism), 중력이 없는 조건에서의 자실체 형성 가능성 탐구"
+                },
+                "summary": {
+                    "kor": "NaN",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 51,
+                "reference_data": {
+                    "link": "None",
+                    "title": "최초로 우주에서 굴뚝버섯(oyster mushroom)을 자랄지 실험 계획됨. microgravity 하에서 fruiting 가능성 확인 시도"
+                },
+                "summary": {
+                    "kor": "NaN",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 52,
+                "reference_data": {
+                    "link": "https://www.swinburne.edu.au/news/2024/08/swinburne-led-fungi-experiment-blasts-off-to-the-international-space-station/",
+                    "title": "이들 버섯 균사체(mycelium) 샘플이 ISS로 보내져 microgravity 하에서 성장 반응을 관찰할 계획"
+                },
+                "summary": {
+                    "kor": "NaN",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 53,
+                "reference_data": {
+                    "link": "https://www.nasa.gov/news-release/nasa-advances-research-to-grow-habitats-in-space-from-fungi/",
+                    "title": "버섯 균사체 구조를 사용해 우주 또는 달/화성 표면 위에서 **거주지 구조물(Mycotecture)**을 성장시키는 개념 연구"
+                },
+                "summary": {
+                    "kor": "NaN",
+                    "eng": ""
+                }
+            },
+            {
+                "id": 54,
+                "reference_data": {
+                    "link": "https://journals.physiology.org/doi/full/10.1152/ajpregu.1999.276.6.R1739",
+                    "title": "Stein et al. 1999, Shuttle"
+                },
+                "summary": {
+                    "kor": "우주비행사(16일 비행)의 에너지 섭취량(1,943 ± 179 kcal/day) 및 에너지 적자(−1,355 kcal/day) 분석. 체중 2.6 ± 0.4 kg 감소 기록.",
+                    "eng": "Analysis of astronaut (16-day flight) energy intake (1,943 ± 179 kcal/day) and energy deficit (−1,355 kcal/day). Recorded a weight loss of 2.6 ± 0.4 kg."
+                }
+            },
+            {
+                "id": 55,
+                "reference_data": {
+                    "link": "https://journals.physiology.org/doi/abs/10.1152/jappl.1996.81.1.82",
+                    "title": "Stein et al. 1996, Nitrogen metabolism"
+                },
+                "summary": {
+                    "kor": "Shuttle 우주비행 중 에너지 섭취 감소 및 질소 균형 변화에 따른 약 1 kg의 근육량 손실 분석.",
+                    "eng": "Analysis of ~1 kg muscle loss due to reduced energy intake and nitrogen balance changes during Shuttle spaceflight."
+                }
+            },
+            {
+                "id": 56,
+                "reference_data": {
+                    "link": "https://www.nature.com/articles/s41526-024-00360-0",
+                    "title": "ENERGY Study (ISS, Le Roux 2024)"
+                },
+                "summary": {
+                    "kor": "ISS 장기 체류 시 체중 감소(−1.2 kg)와 기질 산화 패턴 변화(탄수화물 기여율 65%로 증가, 지방 산화율 감소) 분석.",
+                    "eng": "Analysis of weight loss (−1.2 kg) and substrate oxidation pattern change (carbohydrate contribution increased to 65%, fat oxidation decreased) during long-duration stay on the ISS."
+                }
+            },
+            {
+                "id": 57,
+                "reference_data": {
+                    "link": "https://www.sae.org/papers/physiological-experience-shuttle-eva-951592",
+                    "title": "Waligora et al. 1995, EVA"
+                },
+                "summary": {
+                    "kor": "Shuttle EVA 활동 시 급격한 에너지 소비를 기록(대사율 194 kcal/hr).",
+                    "eng": "Recorded rapid energy consumption during Shuttle EVA activities (metabolic rate 194 kcal/hr)."
+                }
+            },
+            {
+                "id": 58,
+                "reference_data": {
+                    "link": "https://www.mdpi.com/2072-6643/14/1/194",
+                    "title": "Tang et al. 2022, Long-term nutrition review"
+                },
+                "summary": {
+                    "kor": "장기 우주비행 시 만성적 섭취 부족 문제 보고: 평균 섭취량이 지구 대비 25–30% 감소.",
+                    "eng": "Reported chronic under-consumption during long-duration spaceflight: average intake reduced by 25–30% compared to Earth."
+                }
+            },
+            {
+                "id": 59,
+                "reference_data": {
+                    "link": "https://share.google/pTGzZLdCUo0BcXhGt",
+                    "title": "NASA JSC Nutrition Req. 2020, 탐사 미션 기준"
+                },
+                "summary": {
+                    "kor": "NASA 탐사 미션 기준 영양 권장량 제시: 지방 20–35%, 남성 2,800–3,200 kcal/day, 여성 2,000–2,400 kcal/day.",
+                    "eng": "NASA exploration mission nutritional requirements: fat 20–35%, men 2,800–3,200 kcal/day, women 2,000–2,400 kcal/day."
+                }
+            },
+            {
+                "id": 60,
+                "reference_data": {
+                    "link": "https://onlinelibrary.wiley.com/doi/full/10.1002/ejsp.2297",
+                    "title": "Cooper et al. 2017"
+                },
+                "summary": {
+                    "kor": "우주 식품 109종의 3년 저장 후 비타민 C, B1의 심각한 손실 및 B2, E의 일부 안정성 확인.",
+                    "eng": "After 3 years of storage, severe loss of vitamins C and B1, and partial stability of B2 and E observed in 109 space food items."
+                }
+            },
+            {
+                "id": 61,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/pii/S0022316622023100",
+                    "title": "Douglas et al. 2020, ISS 식단 시스템"
+                },
+                "summary": {
+                    "kor": "ISS 식단 시스템에서 우주비행사 선택 가능 식품은 20%에 불과해 다양성 부족으로 인한 메뉴 피로 및 섭취 저하 문제 제기.",
+                    "eng": "Only 20% of the ISS diet system allows astronaut choice, leading to menu fatigue and reduced intake due to lack of variety."
+                }
+            },
+            {
+                "id": 62,
+                "reference_data": {
+                    "link": "https://www.nature.com/articles/s41526-025-00490-z",
+                    "title": "Feeding the cosmos, Nature 2025"
+                },
+                "summary": {
+                    "kor": "우주 재배 작물의 칼슘, 마그네슘 등 미네랄 밀도가 낮아 영양 밀도 보완 필요성 언급.",
+                    "eng": "Mentioned the need for nutritional density supplement as space-grown crops have low mineral density (e.g., calcium, magnesium)."
+                }
+            },
+            {
+                "id": 63,
+                "reference_data": {
+                    "link": "https://share.google/QNHPpmkhHlzK1OdD5",
+                    "title": "NASA Food System Report (Douglas 2023)"
+                },
+                "summary": {
+                    "kor": "ISS 식품의 유통기한(1.5–3년) 이후 영양소 및 품질 저하 위험, 장기 탐사 임무에서의 저장 안정성 한계 지적.",
+                    "eng": "Risk of nutrient and quality degradation after the ISS food shelf life (1.5–3 years), pointing out limits in storage stability for long-duration exploration missions."
+                }
+            },
+            {
+                "id": 64,
+                "reference_data": {
+                    "link": "https://www.researchgate.net/publication/339268435_Meal_Replacement_in_Isolated_and_Confined_Mission_Environments_Consumption_Acceptability_and_Implications_for_Physical_and_Behavioral_Health",
+                    "title": "Sirmons et al. 2020, 폐쇄 환경, 30일"
+                },
+                "summary": {
+                    "kor": "폐쇄 환경 실험(n=21, 30일)에서 평균 섭취량 ~2,200 kcal/day. 참가자 68%가 2주차 이후 식단의 단조로움을 보고.",
+                    "eng": "In a confined environment experiment (n=21, 30 days), average intake was ~2,200 kcal/day. 68% of participants reported menu monotony after week 2."
+                }
+            },
+            {
+                "id": 65,
+                "reference_data": {
+                    "link": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.02571/pdf",
+                    "title": "Landon et al. 2019, NASA HERA 실험"
+                },
+                "summary": {
+                    "kor": "NASA HERA 실험에서 공동 식사 시 응집력 +25% 증가, 식사 분리 시 갈등 2배 증가. 식단이 사회적 응집력 자원임을 시사.",
+                    "eng": "NASA HERA experiment showed a 25% increase in cohesion during communal meals, and a 2x increase in conflict when meals were separate. Implied that diet is a resource for social cohesion."
+                }
+            },
+            {
+                "id": 66,
+                "reference_data": {
+                    "link": "https://pubmed.ncbi.nlm.nih.gov/23564976/",
+                    "title": "Guly 2012, Polar anaemia"
+                },
+                "summary": {
+                    "kor": "남극 탐험대 사례: 체중 손실 7–12%, Hb <10 g/dL, 섭취 <1,500 kcal/day. 영양 결핍이 빈혈 및 심부전 위험을 시사.",
+                    "eng": "Antarctic expedition example: 7–12% weight loss, Hb <10 g/dL, intake <1,500 kcal/day. Suggested risk of anemia and heart failure due to nutritional deficiency."
+                }
+            },
+            {
+                "id": 67,
+                "reference_data": {
+                    "link": "https://www.ubcpress.ca/polar-journeys",
+                    "title": "Feeney 1997, Polar journeys"
+                },
+                "summary": {
+                    "kor": "극지 탐험 사례: 배급량 ~3,500 kcal/day (지방 50% 이상), 체중 감소 5–15%. 비타민 결핍으로 괴혈병 발생 사례 언급.",
+                    "eng": "Polar journey example: Ration ~3,500 kcal/day (50%+ fat), 5–15% weight loss. Mentioned scurvy cases due to vitamin deficiency."
+                }
+            },
+            {
+                "id": 68,
+                "reference_data": {
+                    "link": "https://ui.adsabs.harvard.edu/abs/2016arXiv161000703E/abstract",
+                    "title": "Catalano 2016, 리뷰"
+                },
+                "summary": {
+                    "kor": "영양이 내분비, 면역, 근골격계에 복합적 영향을 미치므로 통합적 접근의 필요성 강조.",
+                    "eng": "Emphasized the need for an integrated approach as nutrition complexly affects endocrine, immune, and musculoskeletal systems."
+                }
+            },
+            {
+                "id": 69,
+                "reference_data": {
+                    "link": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2019.00173/full",
+                    "title": "Frontiers 2019, Exercise countermeasures"
+                },
+                "summary": {
+                    "kor": "식이 섭취가 평균 20–25% 부족한 점을 지적하며, 운동과 영양을 병행하는 대책의 필요성을 언급.",
+                    "eng": "Pointed out an average 20–25% lack of dietary intake, and mentioned the need for countermeasures combining exercise and nutrition."
+                }
+            },
+            {
+                "id": 70,
+                "reference_data": {
+                    "link": "https://www.mdpi.com/2076-3417/15/16/9220",
+                    "title": "Functional foods in space (MDPI 2025)"
+                },
+                "summary": {
+                    "kor": "폴리페놀, 플라보노이드와 같은 비영양소의 항산화 및 면역 보조 역할 강조.",
+                    "eng": "Emphasized the antioxidant and immune-support roles of non-nutrients like polyphenols and flavonoids."
+                }
+            },
+            {
+                "id": 71,
+                "reference_data": {
+                    "link": "https://www.mdpi.com/2075-1729/12/4/495",
+                    "title": "Microbiome in astronauts (PMC 2022)"
+                },
+                "summary": {
+                    "kor": "ISS 체류 우주비행사(n=9)의 장내 미생물 다양성 감소 및 피부/구강 미생물 변화 분석. 영양 흡수와 면역에 장내균의 중요성 강조.",
+                    "eng": "Analysis of reduced gut microbial diversity and skin/oral microbial changes in ISS astronauts (n=9). Emphasized the importance of gut bacteria for nutrient absorption and immunity."
+                }
+            },
+            {
+                "id": 72,
+                "reference_data": {
+                    "link": "https://journals.sagepub.com/doi/abs/10.1177/014107680209500315",
+                    "title": "Bayliss 2002, Franklin 북극 탐험"
+                },
+                "summary": {
+                    "kor": "프랭클린 북극 탐험대 129명 전원 사망 사례 언급. 비타민 C <10 mg/day 섭취 및 납 중독 등 미량영양소 결핍의 치명적인 사례.",
+                    "eng": "Mentioned the catastrophic case of the Franklin Arctic expedition where all 129 members died. A fatal example of micronutrient deficiency (e.g., vitamin C <10 mg/day intake, lead poisoning)."
+                }
+            },
+            {
+                "id": 73,
+                "reference_data": {
+                    "link": "https://pubmed.ncbi.nlm.nih.gov/9240919/",
+                    "title": "Friedl & Hoyt 1997, 군 야전식 (MRE)"
+                },
+                "summary": {
+                    "kor": "군 야전식(MRE) 설계 칼로리(3,600 kcal/day) 대비 실제 섭취량(~2,400 kcal/day)이 낮고, 단백질 섭취량(~120 g)도 지적. 실제 섭취량이 요구량보다 낮음.",
+                    "eng": "Noted that actual intake (~2,400 kcal/day) was lower than the designed caloric content (3,600 kcal/day) of MREs, and protein intake (~120 g) was also pointed out. Actual intake is lower than required."
+                }
+            },
+            {
+                "id": 74,
+                "reference_data": {
+                    "link": "https://www.sciencedirect.com/science/article/pii/S0094576508001550",
+                    "title": "Smith et al. 2019, ISS 영양 대사"
+                },
+                "summary": {
+                    "kor": "ISS 평균 섭취량 ~2,400 kcal/day, 단백질 권장량 1.2–1.5 g/kg/day, 비타민 D, K 필요량 증가 지적. ISS/탐사에서 단백질 및 비타민 강화 필요.",
+                    "eng": "Pointed out ISS average intake ~2,400 kcal/day, protein recommendation 1.2–1.5 g/kg/day, and increased need for vitamins D and K. Highlighted the need for protein and vitamin supplementation in ISS/exploration."
+                }
+            },
+            {
+                "id": 75,
+                "reference_data": {
+                    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC535077/",
+                    "title": "Bown 2003, Scurvy"
+                },
+                "summary": {
+                    "kor": "역사적 항해 사례: 비타민 C <10 mg/day 섭취 시 사망률 50% 이상 사례 존재. 비타민 C 안정성 확보의 중요성 강조.",
+                    "eng": "Historical voyage example: Cases of >50% mortality with vitamin C <10 mg/day intake. Emphasized the importance of securing vitamin C stability."
+                }
+            },
+            {
+                "id": 76,
+                "reference_data": {
+                    "link": "https://journals.sagepub.com/doi/full/10.1580/1080-6032%282005%2916%5B172%3AAMSVCF%5D2.0.CO%3B2",
+                    "title": "Reynolds 2001, 고산·극지 환경"
+                },
+                "summary": {
+                    "kor": "고산 및 극지 환경에서 비타민 C/E 요구량이 25–50% 증가하고, 헤모글로빈 증가 및 철분 대사 변화 관찰됨. 극한 환경이 우주 환경과 유사함을 시사.",
+                    "eng": "Observed a 25–50% increase in vitamin C/E requirements in high-altitude and polar environments, along with increased hemoglobin and changes in iron metabolism. Suggested that extreme environments are similar to the space environment."
+                }
+            },
+                {
+                "id": 77,
+                "reference_data": {
+                    "link": "https://www.nasa.gov/wp-content/uploads/2023/04/nutritional-biochemistry-of-space-flight.pdf",
+                    "title": "NUTRITIONAL BIOCHEMISTRY OF SPACE FLIGHT"
+                },
+                "summary": {
+                    "kor": "우주 비행 도중 필요한 필수 영양소",
+                    "eng": "Essential nutrients needed during space flight"
+                }
+            },
+                {
+                "id": 78,
+                "reference_data": {
+                    "link": "https://ntrs.nasa.gov/citations/20250001897",
+                    "title": "Space Crop Considerations for Human Exploration"
+                },
+                "summary": {
+                    "kor": "Ohalo III는 화물·에너지·보관제약을 줄이면서 우주인에게 영양·심리적 이득을 제공할 수 있는 실험용 보충 작물 재배 시스템으로, ISS에서 작물 성장·안전성·자원 교환을 검증해 장기 유인 탐사 식량 문제를 해결하려는 프로젝트입니다.",
+                    "eng": "Ohalo III is an experimental supplementary crop cultivation system that can provide nutritional and psychological benefits to astronauts while reducing cargo, energy, and storage constraints. It is a project to verify crop growth, safety, and resource exchange on the ISS and solve the problem of long-term manned exploration food."
+                }
+            },
+            {
+                "id": 79,
+                "reference_data": {
+                    "link": "https://www.researchgate.net/profile/Emmanuel-Ok-2/publication/387728284_Impact_of_Heat_Processing_Boiling_Roasting_Frying_on_Nutrient_Retention/links/6779b7b6894c55208542f971/Impact-of-Heat-Processing-Boiling-Roasting-Frying-on-Nutrient-Retention.pdf",
+                    "title": "Impact of Heat Processing (Boiling, Roasting, Frying)on Nutrient Retention"
+                },
+                "summary": {
+                    "kor": "끓이기, 굽기, 튀기기와 같은 열처리 조리법은 식품의 안전성과 기호성을 높이지만 수용성 비타민과 항산화제 손실 등 영양 성분 유지에 큰 영향을 미치므로, 적절한 조리 방법 선택이 필수적이다.",
+                    "eng": "Heat processing methods such as boiling, roasting, and frying improve food safety and palatability but significantly affect nutrient retention, making the choice of cooking technique crucial for maximizing nutritional value."
+                }
             }
-        }
     ],
     "dish": [
         {

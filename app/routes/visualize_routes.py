@@ -9,61 +9,58 @@ bp = Blueprint('visualize', __name__, url_prefix='/visualize')
 @bp.route('/')
 def visualize_home():
     """데이터 시각화 메인 페이지"""
-    data = db.load_db()
+    # 분할 DB에 맞게 각 테이블별로 불러오기
+    data = {
+        'ingredient': db._load_table('ingredient'),
+        'storaged-ingredient': db._load_table('storaged-ingredient'),
+        'cooking-methods': db._load_table('cooking-methods'),
+        'research-data': db._load_table('research-data'),
+        'dish': db._load_table('dish'),
+    }
     return render_template('visualize.html', data=data)
 
 @bp.route('/research/<int:research_id>')
 def research_detail(research_id):
     """연구 자료 상세 페이지"""
-    research_data = db.load_db().get('research-data', [])
+    research_data = db._load_table('research-data')
     research = next((item for item in research_data if item['id'] == research_id), None)
     # Get related ingredients
-    ingredients = db.load_db().get('ingredient', [])
+    ingredients = db._load_table('ingredient')
     related_ingredients = [ing for ing in ingredients if research_id in ing.get('research_ids', [])]
     # Get related cooking methods
-    cooking_methods = db.load_db().get('cooking-methods', [])
+    cooking_methods = db._load_table('cooking-methods')
     related_cooking_methods = [cm for cm in cooking_methods if research_id in cm.get('research_ids', [])]
     return render_template('research_detail.html', research=research, related_ingredients=related_ingredients, related_cooking_methods=related_cooking_methods)
 
 @bp.route('/ingredient/<int:ingredient_id>')
 def ingredient_detail(ingredient_id):
     """식재료 상세 페이지"""
-    all_data = db.load_db()
-    ingredient_data = all_data.get('ingredient', [])
+    ingredient_data = db._load_table('ingredient')
     ingredient = next((item for item in ingredient_data if item['id'] == ingredient_id), None)
-    
     related_dishes = []
     if ingredient:
-        dishes = all_data.get('dish', [])
+        dishes = db._load_table('dish')
         related_dishes = [d for d in dishes if ingredient_id in d.get('required_ingredient_ids', [])]
-
-    research_data = all_data.get('research-data', [])
-    
+    research_data = db._load_table('research-data')
     return render_template('ingredient_detail.html', ingredient=ingredient, related_dishes=related_dishes, research_data=research_data)
 
 @bp.route('/cooking-method/<int:method_id>')
 def cooking_method_detail(method_id):
     """조리 방법 상세 페이지"""
-    all_data = db.load_db()
-    cooking_method_data = all_data.get('cooking-methods', [])
+    cooking_method_data = db._load_table('cooking-methods')
     method = next((item for item in cooking_method_data if item['id'] == method_id), None)
-    
     related_dishes = []
     if method:
-        dishes = all_data.get('dish', [])
+        dishes = db._load_table('dish')
         related_dishes = [d for d in dishes if method_id in d.get('required_cooking_method_ids', [])]
-
-    research_data = all_data.get('research-data', [])
-    
+    research_data = db._load_table('research-data')
     return render_template('cooking_method_detail.html', method=method, related_dishes=related_dishes, research_data=research_data)
 
 @bp.route('/storaged-ingredient')
 def visualize_storaged_ingredient():
     """Storaged ingredient visualization page"""
-    db_data = db.load_db()
-    storaged_ingredients = db_data.get('storaged-ingredient', [])
-    ingredients = db_data.get('ingredient', [])
-    
+    storaged_ingredients = db._load_table('storaged-ingredient')
+    ingredients = db._load_table('ingredient')
     processed_storaged_ingredients = []
     today = datetime.now()
 
@@ -75,9 +72,8 @@ def visualize_storaged_ingredient():
         start_date_str = item.get('start_date')
         if not start_date_str:
             continue
-        
         start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
-        
+
         expiration_date = None
         if 'expiration_date' in item and item['expiration_date']:
             try:

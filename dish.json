@@ -1,0 +1,5 @@
+[
+    {"id": 1, "type": "Main Course", 
+    "name": {"kor": "우주 비빔밥", "eng": "Space Bibimbap"}, 
+    "image_url": "http://example.com/images/space_bibimbap.jpg", "required_ingredient_ids": [1], "required_cooking_method_ids": [1], "nutrition_info": {"nutrients_per_unit_mass": {}, "calories": 350}, "cooking_instructions": "동결 건조 비빔밥에 뜨거운 물을 붓고 10분간 기다립니다."}
+]

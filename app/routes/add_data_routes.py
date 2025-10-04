@@ -39,7 +39,7 @@ def add_ingredient_route():
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
 
-    all_research = db.load_db().get('research-data', [])
+    all_research = db._load_table('research-data')
     return render_template('add_ingredient_form.html', all_research=all_research)
 
 @bp.route('/cooking-method', methods=['GET', 'POST'])
@@ -65,7 +65,7 @@ def add_cooking_method_route():
             return redirect(url_for('add_data.add_cooking_method_route'))
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
-    all_research = db.load_db().get('research-data', [])
+    all_research = db._load_table('research-data')
     return render_template('add_cooking_method_form.html', all_research=all_research)
 
 @bp.route('/research-data', methods=['GET', 'POST'])
@@ -118,8 +118,8 @@ def add_dish_route():
             return redirect(url_for('add_data.add_dish_route'))
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
-    all_ingredients = db.load_db().get('ingredient', [])
-    all_cooking_methods = db.load_db().get('cooking-methods', [])
+    all_ingredients = db._load_table('ingredient')
+    all_cooking_methods = db._load_table('cooking-methods')
     return render_template('add_dish_form.html', all_ingredients=all_ingredients, all_cooking_methods=all_cooking_methods)
 
 @bp.route('/storaged-ingredient', methods=['GET', 'POST'])
@@ -137,7 +137,7 @@ def add_storaged_ingredient_route():
                 datetime.strptime(production_end_date, '%Y-%m-%d')
             except ValueError:
                 flash("날짜 형식이 올바르지 않습니다. YYYY-MM-DD 형식으로 입력해주세요.", 'danger')
-                all_ingredients = db.load_db().get('ingredient', [])
+                all_ingredients = db._load_table('ingredient')
                 return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
 
             db.add_storaged_ingredient(
@@ -151,5 +151,5 @@ def add_storaged_ingredient_route():
             return redirect(url_for('add_data.add_storaged_ingredient_route'))
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
-    all_ingredients = db.load_db().get('ingredient', [])
+    all_ingredients = db._load_table('ingredient')
     return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)

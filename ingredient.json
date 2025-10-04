@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": {"kor": "동결 건조 비빔밥", "eng": "Freeze-Dried Bibimbap"},
+        "research_ids": [2],
+        "nutrition_info": {"nutrients_per_unit_mass": {"protein": 15, "carbohydrates": 60, "fat": 10}, "calories": 350, "details": "비타민 및 무기질 포함"},
+        "production_time": "N/A"
+    },
+    {
+        "id": 2,
+        "name": {"kor": "소고기 분말", "eng": "Dried beef powder"},
+        "research_ids": [3],
+        "nutrition_info": {"nutrients_per_unit_mass": {"protein": 50, "fat": 30}, "calories": 200, "details": "고단백 식품"},
+        "production_time": "N/A"
+    },
+    {
+        "id": 3,
+        "name": {"kor": "허승혁", "eng": "허승혁"},
+        "research_ids": [1, 2],
+        "nutrition_info": {"calories": 100.0, "nutrients_per_unit_mass": {}, "details": "고기"},
+        "production_time": "20"
+    }
+]

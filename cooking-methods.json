@@ -1,0 +1,3 @@
+[
+    {"id": 1, "name": {"kor": "수화", "eng": "Hydration"}, "description": {"kor": "동결 건조된 식품에 정수된 물을 주입하여 원상태로 복원.", "eng": "Restores freeze-dried food to its original state by injecting purified water."}, "research_ids": [1]}
+]

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>추가 정보 입력 - 우주 음식 데이터베이스</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>추가 정보 입력</h1>
+        <p>회원가입의 마지막 단계입니다. 프로필을 완성해주세요.</p>
+
+        <div class="form-container" style="margin: 20px auto; float: none;">
+            <form action="{{ url_for('complete_profile') }}" method="post">
+                <label for="height">키 (cm):</label>
+                <input type="number" id="height" name="height" required>
+
+                <label for="weight">몸무게 (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+
+                <label for="gender">성별:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">남성</option>
+                    <option value="female">여성</option>
+                    <option value="other">기타</option>
+                </select>
+
+                <label for="preferred_food">선호 음식:</label>
+                <textarea id="preferred_food" name="preferred_food" placeholder="좋아하는 음식을 쉼표(,)로 구분하여 입력하세요."></textarea>
+
+                <button type="submit">정보 제출</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

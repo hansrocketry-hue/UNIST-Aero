@@ -1,0 +1,23 @@
+{
+    "ㅈㄷㅎㅈ": {
+        "password": "wegwge"
+    },
+    "hansrocketry": {
+        "password": "abcdefu0920!",
+        "profile": {
+            "height": "180",
+            "weight": "180",
+            "gender": "male",
+            "preferred_food": "양식, 중식"
+        }
+    },
+    "한승호": {
+        "password": "gktsmgh",
+        "profile": {
+            "height": "1",
+            "weight": "1",
+            "gender": "male",
+            "preferred_food": "1"
+        }
+    }
+}

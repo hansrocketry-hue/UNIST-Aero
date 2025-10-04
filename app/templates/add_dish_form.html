@@ -5,11 +5,19 @@
 {% block content %}
     <h1>요리 (Dish) 추가</h1>
     <form method="POST">
-        <label for="name_kor">이름 (한국어):</label><br>
-        <input type="text" id="name_kor" name="name_kor" required><br><br>
+        <label>이름 (다중 언어):</label><br>
+        <div id="name-fields"></div>
+        <button type="button" id="add-name-btn">이름 추가</button><br><br>
 
-        <label for="name_eng">이름 (영어):</label><br>
-        <input type="text" id="name_eng" name="name_eng" required><br><br>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addNameField = createDynamicLanguageFields('name-fields', 'name', '이름');
+            document.getElementById('add-name-btn').addEventListener('click', addNameField);
+
+            const addCookingInstructionsField = createDynamicLanguageFields('cooking-instructions-fields', 'cooking_instructions', '조리 방법 설명');
+            document.getElementById('add-cooking-instructions-btn').addEventListener('click', addCookingInstructionsField);
+        });
+    </script>
 
         <label for="dish_type">타입:</label><br>
         <input type="text" id="dish_type" name="dish_type" required><br><br>
@@ -34,8 +42,9 @@
         <label for="calories">칼로리:</label><br>
         <input type="number" step="any" id="calories" name="calories" required><br><br>
 
-        <label for="cooking_instructions">조리 방법 설명:</label><br>
-        <textarea id="cooking_instructions" name="cooking_instructions" rows="4"></textarea><br><br>
+        <label>조리 방법 설명 (다중 언어):</label><br>
+        <div id="cooking-instructions-fields"></div>
+        <button type="button" id="add-cooking-instructions-btn">조리 방법 설명 추가</button><br><br>
 
         <button type="submit">추가하기</button>
     </form>

@@ -1,19 +1,24 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
+from .auth_routes import login_required
 import database_handler as db
 
 bp = Blueprint('add_data', __name__, url_prefix='/add')
 
 @bp.route('/')
+@login_required
 def add_data_home():
     """데이터 추가 메인 페이지"""
     return render_template('add_data.html')
 
 @bp.route('/ingredient', methods=['GET', 'POST'])
+@login_required
 def add_ingredient_route():
     if request.method == 'POST':
         try:
-            name_kor = request.form['name_kor']
-            name_eng = request.form['name_eng']
+            lang_codes = request.form.getlist('lang_codes')
+            lang_names = request.form.getlist('lang_names')
+            name_dict = dict(zip(lang_codes, lang_names))
+
             research_ids = [int(x) for x in request.form.getlist('research_ids')]
             calories = float(request.form['calories'])
             details = request.form['details']
@@ -22,12 +27,13 @@ def add_ingredient_route():
             nutrition_info = {"calories": calories, "nutrients_per_unit_mass": {}, "details": details}
             
             db.add_ingredient(
-                name={"kor": name_kor, "eng": name_eng},
+                name=name_dict,
                 research_ids=research_ids,
                 nutrition_info=nutrition_info,
                 production_time=production_time
             )
-            flash(f"'{name_kor}'이(가) 성공적으로 추가되었습니다.", 'success')
+            
+            flash(f"'{name_dict.get('kor', list(name_dict.values())[0])}'이(가) 성공적으로 추가되었습니다.", 'success')
             return redirect(url_for('add_data.add_ingredient_route'))
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
@@ -39,18 +45,22 @@ def add_ingredient_route():
 def add_cooking_method_route():
     if request.method == 'POST':
         try:
-            name_kor = request.form['name_kor']
-            name_eng = request.form['name_eng']
-            desc_kor = request.form['desc_kor']
-            desc_eng = request.form['desc_eng']
+            name_codes = request.form.getlist('name_codes')
+            name_names = request.form.getlist('name_names')
+            name_dict = dict(zip(name_codes, name_names))
+
+            desc_codes = request.form.getlist('desc_codes')
+            desc_names = request.form.getlist('desc_names')
+            desc_dict = dict(zip(desc_codes, desc_names))
+
             research_ids = [int(x) for x in request.form.getlist('research_ids')]
 
             db.add_cooking_method(
-                name={"kor": name_kor, "eng": name_eng},
-                description={"kor": desc_kor, "eng": desc_eng},
+                name=name_dict,
+                description=desc_dict,
                 research_ids=research_ids
             )
-            flash(f"'{name_kor}' 조리 방법이 성공적으로 추가되었습니다.", 'success')
+            flash(f"'{name_dict.get('kor', list(name_dict.values())[0])}' 조리 방법이 성공적으로 추가되었습니다.", 'success')
             return redirect(url_for('add_data.add_cooking_method_route'))
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
@@ -63,12 +73,13 @@ def add_research_data_route():
         try:
             link = request.form['link']
             title = request.form['title']
-            summary_kor = request.form['summary_kor']
-            summary_eng = request.form['summary_eng']
+            summary_codes = request.form.getlist('summary_codes')
+            summary_names = request.form.getlist('summary_names')
+            summary_dict = dict(zip(summary_codes, summary_names))
 
             db.add_research_data(
                 reference_data={"link": link, "title": title},
-                summary={"kor": summary_kor, "eng": summary_eng}
+                summary=summary_dict
             )
             flash(f"'{title}' 연구 자료가 성공적으로 추가되었습니다.", 'success')
             return redirect(url_for('add_data.add_research_data_route'))
@@ -81,24 +92,28 @@ def add_dish_route():
     if request.method == 'POST':
         try:
             dish_type = request.form['dish_type']
-            name_kor = request.form['name_kor']
-            name_eng = request.form['name_eng']
+            name_codes = request.form.getlist('name_codes')
+            name_names = request.form.getlist('name_names')
+            name_dict = dict(zip(name_codes, name_names))
+
             image_url = request.form['image_url']
             req_ing_ids = [int(x) for x in request.form.getlist('required_ingredient_ids')]
             req_cook_ids = [int(x) for x in request.form.getlist('required_cooking_method_ids')]
             calories = float(request.form['calories'])
-            cooking_instructions = request.form['cooking_instructions']
+            cooking_instructions_codes = request.form.getlist('cooking_instructions_codes')
+            cooking_instructions_names = request.form.getlist('cooking_instructions_names')
+            cooking_instructions_dict = dict(zip(cooking_instructions_codes, cooking_instructions_names))
 
             db.add_dish(
                 dish_type=dish_type,
-                name={"kor": name_kor, "eng": name_eng},
+                name=name_dict,
                 image_url=image_url,
                 required_ingredient_ids=req_ing_ids,
                 required_cooking_method_ids=req_cook_ids,
                 nutrition_info={"calories": calories, "nutrients_per_unit_mass": {}},
-                cooking_instructions=cooking_instructions
+                cooking_instructions=cooking_instructions_dict
             )
-            flash(f"'{name_kor}' 요리가 성공적으로 추가되었습니다.", 'success')
+            flash(f"'{name_dict.get('kor', list(name_dict.values())[0])}' 요리가 성공적으로 추가되었습니다.", 'success')
             return redirect(url_for('add_data.add_dish_route'))
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')

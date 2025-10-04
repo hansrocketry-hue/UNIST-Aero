@@ -9,7 +9,13 @@
 <body>
     <nav>
         <a href="{{ url_for('home.index') }}">홈</a>
-        <a href="{{ url_for('add_data.add_data_home') }}">데이터 추가</a>
+        {% if session.user %}
+            <a href="{{ url_for('add_data.add_data_home') }}">데이터 추가</a>
+            <a href="{{ url_for('auth.logout') }}">로그아웃 ({{ session.user.username }})</a>
+        {% else %}
+            <a href="{{ url_for('auth.login') }}">로그인</a>
+            <a href="{{ url_for('auth.signup') }}">회원가입</a>
+        {% endif %}
     </nav>
     <main>
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -23,5 +29,6 @@
         {% endwith %}
         {% block content %}{% endblock %}
     </main>
+    <script src="{{ url_for('static', filename='js/dynamic_language_fields.js') }}"></script>
 </body>
 </html>

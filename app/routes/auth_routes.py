@@ -1,149 +1,59 @@
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+from functools import wraps
+import user_manager as um
+import database_handler as db
 
-from flask import Blueprint, render_template, request, redirect, url_for, flash
-from user_db_handler import add_user, authenticate_user, update_user, update_like_list, update_forbid_list, delete_user
+bp = Blueprint('auth', __name__, url_prefix='/auth')
 
-auth_bp = Blueprint('auth', __name__)
+def login_required(f):
+    """로그인된 사용자인지 확인하는 데코레이터"""
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user' not in session:
+            return redirect(url_for('auth.login'))
+        return f(*args, **kwargs)
+    return decorated_function
 
-# forbid 리스트 수정 라우트
-@auth_bp.route('/update_forbid', methods=['GET', 'POST'])
-def update_forbid():
+@bp.route('/signup', methods=['GET', 'POST'])
+def signup():
     if request.method == 'POST':
-        username = request.form['username']
         try:
-            new_forbid = request.form.getlist('forbid')
-            new_forbid = [int(x) for x in new_forbid]
-        except Exception:
-            flash('forbid 리스트 형식이 올바르지 않습니다.')
-            return render_template('update_forbid.html')
-        if update_forbid_list(username, new_forbid):
-            flash('forbid 리스트가 성공적으로 변경되었습니다.')
-        else:
-            flash('존재하지 않는 아이디입니다.')
-    return render_template('update_forbid.html')
+            username = request.form['username']
+            password = request.form['password']
+            name = request.form['name']
+            height = int(request.form['height'])
+            weight = int(request.form['weight'])
+            gender = request.form['gender']
+            activity_level = int(request.form['activity_level'])
+            like_ids = [int(x) for x in request.form.getlist('like_ids')]
+            forbid_ids = [int(x) for x in request.form.getlist('forbid_ids')]
 
-# 회원 탈퇴 라우트
-@auth_bp.route('/delete_account', methods=['GET', 'POST'])
-def delete_account():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        if authenticate_user(username, password):
-            if delete_user(username):
-                flash('회원 탈퇴가 완료되었습니다.')
+            if um.add_user(username, password, name, height, weight, gender, like_ids, forbid_ids, activity_level):
+                flash('회원가입이 완료되었습니다. 로그인해주세요.', 'success')
                 return redirect(url_for('auth.login'))
             else:
-                flash('탈퇴 처리 중 오류가 발생했습니다.')
-        else:
-            flash('아이디 또는 비밀번호가 올바르지 않습니다.')
-    return render_template('delete_account.html')
+                flash('이미 존재하는 사용자 이름입니다.', 'danger')
+        except Exception as e:
+            flash(f"입력 중 오류가 발생했습니다: {e}", 'danger')
+    
+    all_ingredients = db.load_db().get('ingredient', [])
+    return render_template('signup.html', all_ingredients=all_ingredients)
 
-@auth_bp.route('/login', methods=['GET', 'POST'])
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if authenticate_user(username, password):
+        if um.verify_user(username, password):
+            session['user'] = {'username': username}
             return redirect(url_for('home.index'))
         else:
-            flash('로그인 실패: 아이디 또는 비밀번호가 올바르지 않습니다.')
+            flash('사용자 이름 또는 비밀번호가 올바르지 않습니다.', 'danger')
     return render_template('login.html')
 
-@auth_bp.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        age = request.form.get('age')
-        activity_level = request.form.get('activity_level')
-        try:
-            age = int(age)
-            activity_level = int(activity_level)
-            if activity_level < 1 or activity_level > 5:
-                raise ValueError
-        except (TypeError, ValueError):
-            flash('나이와 활동지수는 숫자로, 활동지수는 1~5로 입력해주세요.')
-            return render_template('register.html')
-        user_info = {
-            'name': username,
-            'password': password,
-            'age': age,
-            'activity_level': activity_level,
-            'like': [],
-            'forbid': []
-        }
-        if add_user(username, user_info):
-            flash('회원가입 성공! 로그인 해주세요.')
-            return redirect(url_for('auth.login'))
-        else:
-            flash('이미 존재하는 아이디입니다.')
-    return render_template('register.html')
-
-@auth_bp.route('/update', methods=['GET', 'POST'])
-def update():
-    if request.method == 'POST':
-        username = request.form['username']
-        update_fields = {}
-        new_password = request.form.get('new_password')
-        new_age = request.form.get('new_age')
-        new_activity_level = request.form.get('new_activity_level')
-        if new_password:
-            update_fields['password'] = new_password
-        if new_age:
-            try:
-                update_fields['age'] = int(new_age)
-            except ValueError:
-                flash('나이는 숫자로 입력해주세요.')
-                return render_template('update.html')
-        if new_activity_level:
-            try:
-                val = int(new_activity_level)
-                if val < 1 or val > 5:
-                    raise ValueError
-                update_fields['activity_level'] = val
-            except ValueError:
-                flash('활동지수는 1~5의 숫자로 입력해주세요.')
-                return render_template('update.html')
-        if update_fields:
-            if update_user(username, update_fields):
-                flash('정보가 성공적으로 변경되었습니다.')
-                return redirect(url_for('auth.login'))
-            else:
-                flash('존재하지 않는 아이디입니다.')
-        else:
-            flash('변경할 정보가 없습니다.')
-    return render_template('update.html')
-
-
-# like 리스트 수정 라우트
-@auth_bp.route('/update_like', methods=['GET', 'POST'])
-def update_like():
-    if request.method == 'POST':
-        username = request.form['username']
-        try:
-            new_like = request.form.getlist('like')
-            new_like = [int(x) for x in new_like]
-        except Exception:
-            flash('like 리스트 형식이 올바르지 않습니다.')
-            return render_template('update_like.html')
-        if update_like_list(username, new_like):
-            flash('like 리스트가 성공적으로 변경되었습니다.')
-        else:
-            flash('존재하지 않는 아이디입니다.')
-    return render_template('update_like.html')
-
-# forbid 리스트 수정 라우트
-@auth_bp.route('/update_forbid', methods=['GET', 'POST'])
-def update_forbid():
-    if request.method == 'POST':
-        username = request.form['username']
-        try:
-            new_forbid = request.form.getlist('forbid')
-            new_forbid = [int(x) for x in new_forbid]
-        except Exception:
-            flash('forbid 리스트 형식이 올바르지 않습니다.')
-            return render_template('update_forbid.html')
-        if update_forbid_list(username, new_forbid):
-            flash('forbid 리스트가 성공적으로 변경되었습니다.')
-        else:
-            flash('존재하지 않는 아이디입니다.')
-    return render_template('update_forbid.html')
+@bp.route('/logout')
+@login_required
+def logout():
+    session.pop('user', None)
+    flash('로그아웃되었습니다.', 'success')
+    return redirect(url_for('auth.login'))

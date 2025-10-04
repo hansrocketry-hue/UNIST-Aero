@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}회원가입{% endblock %}
+
+{% block content %}
+    <h1>회원가입</h1>
+    <form method="POST">
+        <label for="username">로그인 ID:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">비밀번호:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="name">이름:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="height">키 (cm):</label><br>
+        <input type="number" id="height" name="height" required><br><br>
+
+        <label for="weight">몸무게 (kg):</label><br>
+        <input type="number" id="weight" name="weight" required><br><br>
+
+        <label for="gender">성별:</label><br>
+        <select id="gender" name="gender" required>
+            <option value="male">남성</option>
+            <option value="female">여성</option>
+        </select><br><br>
+
+        <label for="activity_level">활동 수준 (1-5):</label><br>
+        <input type="number" id="activity_level" name="activity_level" min="1" max="5" required><br><br>
+
+        <label for="like_ids">선호 재료:</label><br>
+        <select id="like_ids" name="like_ids" multiple size="5">
+            {% for ingredient in all_ingredients %}
+                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }}</option>
+            {% endfor %}
+        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
+
+        <label for="forbid_ids">금지 재료:</label><br>
+        <select id="forbid_ids" name="forbid_ids" multiple size="5">
+            {% for ingredient in all_ingredients %}
+                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }}</option>
+            {% endfor %}
+        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
+
+        <button type="submit">가입하기</button>
+    </form>
+{% endblock %}

@@ -5,11 +5,16 @@
 {% block content %}
     <h1>식재료 (Ingredient) 추가</h1>
     <form method="POST">
-        <label for="name_kor">이름 (한국어):</label><br>
-        <input type="text" id="name_kor" name="name_kor" required><br><br>
+        <label>이름 (다중 언어):</label><br>
+        <div id="name-fields"></div>
+        <button type="button" id="add-name-btn">이름 추가</button><br><br>
 
-        <label for="name_eng">이름 (영어):</label><br>
-        <input type="text" id="name_eng" name="name_eng" required><br><br>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const addNameField = createDynamicLanguageFields('name-fields', 'name', '이름');
+                document.getElementById('add-name-btn').addEventListener('click', addNameField);
+            });
+        </script>
 
         <label for="research_ids">관련 연구 ID:</label><br>
         <select id="research_ids" name="research_ids" multiple size="5">

@@ -38,6 +38,23 @@
                 "details": "고단백 식품"
             },
             "production_time": "N/A"
+        },
+        {
+            "id": 3,
+            "name": {
+                "kor": "허승혁",
+                "eng": "허승혁"
+            },
+            "research_ids": [
+                1,
+                2
+            ],
+            "nutrition_info": {
+                "calories": 100.0,
+                "nutrients_per_unit_mass": {},
+                "details": "고기"
+            },
+            "production_time": "20"
         }
     ],
     "storaged-ingredient": [
@@ -136,6 +153,26 @@
                 "calories": 200
             },
             "cooking_instructions": null
+        },
+        {
+            "id": 3,
+            "type": "dd",
+            "name": {
+                "kor": "물에 젖은 허승혁",
+                "eng": "물에 젖은 허승혁"
+            },
+            "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fnamu.wiki%2Fw%2F%25EC%259D%25B4%25EB%25AF%25B8%25EC%25A7%2580%2528%25EA%25B0%2595%25EC%2582%25AC%2529&psig=AOvVaw33nlvPFREU_uw_mZ_lR3oE&ust=1759651000260000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCODM9vaIipADFQAAAAAdAAAAABAE",
+            "required_ingredient_ids": [
+                3
+            ],
+            "required_cooking_method_ids": [
+                1
+            ],
+            "nutrition_info": {
+                "calories": 102.0,
+                "nutrients_per_unit_mass": {}
+            },
+            "cooking_instructions": ""
         }
     ]
 }

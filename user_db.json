@@ -1,23 +1,42 @@
-{
-    "admin": {
-        "name" : "admin",
-        "password" : "admin",
-        "height" : 123,
-        "weight" : 123,
-        "gender" : "male",
-        "age" : 123,
-        "activity_level" : 5,
-
-        "like" : [1],
-        "forbid" : [2],
-        
-        "health" : {
-            "carbohydrate" : 123,
-            "protein" : 123,
-            "fat" : 123,
-            "vitamin" : 123,
-            "dietery_fiber" : 123
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "name": "admin",
+        "password_hash": "scrypt:32768:8:1$hZpF2EG9jPLNoNNS$8d6811acf8a118e051385aac40b3db8be87cdf3ca3f2c922542fecefd9c327146d9a221a6fbc54d24ffb365b1690ad66e8d7ded6098140e67d70af1147f6f0f3",
+        "height": 123,
+        "weight": 123,
+        "gender": "male",
+        "activity_level": 5,
+        "like": [
+            1
+        ],
+        "forbid": [
+            2
+        ],
+        "health": {
+            "carbohydrate": 123,
+            "protein": 123,
+            "fat": 123,
+            "vitamin": 123,
+            "dietery_fiber": 123
         }
-
+    },
+    {
+        "id": 2,
+        "username": "admin2",
+        "password_hash": "scrypt:32768:8:1$KToZgAAX2NTLeRkU$37e7deeba1c764f85482745e628c94909d9f17b3a8e9f06d302ac2873ef37566575b6835b1a03144059552d0bd0c0c5e812e7cba85ee3c0aa48cbcf80acc3ea9",
+        "name": "짭찬영",
+        "height": 170,
+        "weight": 75,
+        "gender": "male",
+        "activity_level": 4,
+        "like": [
+            2
+        ],
+        "forbid": [
+            1
+        ],
+        "health": {}
     }
-}
+]

@@ -5,17 +5,23 @@
 {% block content %}
     <h1>조리 방법 (Cooking Method) 추가</h1>
     <form method="POST">
-        <label for="name_kor">이름 (한국어):</label><br>
-        <input type="text" id="name_kor" name="name_kor" required><br><br>
+        <label>이름 (다중 언어):</label><br>
+        <div id="name-fields"></div>
+        <button type="button" id="add-name-btn">이름 추가</button><br><br>
 
-        <label for="name_eng">이름 (영어):</label><br>
-        <input type="text" id="name_eng" name="name_eng" required><br><br>
+        <label>설명 (다중 언어):</label><br>
+        <div id="desc-fields"></div>
+        <button type="button" id="add-desc-btn">설명 추가</button><br><br>
 
-        <label for="desc_kor">설명 (한국어):</label><br>
-        <textarea id="desc_kor" name="desc_kor" rows="4" required></textarea><br><br>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const addNameField = createDynamicLanguageFields('name-fields', 'name', '이름');
+                document.getElementById('add-name-btn').addEventListener('click', addNameField);
 
-        <label for="desc_eng">설명 (영어):</label><br>
-        <textarea id="desc_eng" name="desc_eng" rows="4" required></textarea><br><br>
+                const addDescField = createDynamicLanguageFields('desc-fields', 'desc', '설명');
+                document.getElementById('add-desc-btn').addEventListener('click', addDescField);
+            });
+        </script>
 
         <label for="research_ids">관련 연구 ID:</label><br>
         <select id="research_ids" name="research_ids" multiple size="5">

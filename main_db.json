@@ -1,0 +1,141 @@
+{
+    "ingredient": [
+        {
+            "id": 1,
+            "name": {
+                "kor": "동결 건조 비빔밥",
+                "eng": "Freeze-Dried Bibimbap"
+            },
+            "research_ids": [
+                2
+            ],
+            "nutrition_info": {
+                "nutrients_per_unit_mass": {
+                    "protein": 15,
+                    "carbohydrates": 60,
+                    "fat": 10
+                },
+                "calories": 350,
+                "details": "비타민 및 무기질 포함"
+            },
+            "production_time": "N/A"
+        },
+        {
+            "id": 2,
+            "name": {
+                "kor": "소고기 분말",
+                "eng": "beef steak lol"
+            },
+            "research_ids": [
+                3
+            ],
+            "nutrition_info": {
+                "nutrients_per_unit_mass": {
+                    "protein": 50,
+                    "fat": 30
+                },
+                "calories": 200,
+                "details": "고단백 식품"
+            },
+            "production_time": "N/A"
+        }
+    ],
+    "storaged-ingredient": [
+        {
+            "id": 1,
+            "storage-id": null,
+            "mass_g": 2000,
+            "expiration_date": "2025-12-31",
+            "production_end_date": "2024-01-01"
+        },
+        {
+            "id": 2,
+            "storage-id": null,
+            "mass_g": 10000,
+            "expiration_date": "2026-10-01",
+            "production_end_date": "2024-01-01"
+        }
+    ],
+    "cooking-methods": [
+        {
+            "id": 1,
+            "name": {
+                "kor": "수화",
+                "eng": "Hydration"
+            },
+            "description": {
+                "kor": "동결 건조된 식품에 정수된 물을 주입하여 원상태로 복원.",
+                "eng": "Restores freeze-dried food to its original state by injecting purified water."
+            },
+            "research_ids": [
+                1
+            ]
+        }
+    ],
+    "research-data": [
+        {
+            "id": 1,
+            "reference_data": {
+                "link": "NASA-STD-3001",
+                "title": "Space Flight Human-System Standard"
+            },
+            "summary": {
+                "kor": "저중력 환경에서 물 주입을 통한 건조 식품 복원 기술은 안정적임.",
+                "eng": "Technology for restoring dried food through water injection in a low-gravity environment is stable."
+            }
+        },
+        {
+            "id": 2,
+            "reference_data": {
+                "link": "J. Food Sci. 2023, 88, 123-130",
+                "title": "Nutritional and Sensory Properties of Freeze-Dried Bibimbap for Long-Term Space Missions"
+            },
+            "summary": {
+                "kor": "동결 건조 비빔밥은 장기 보관 시 영양 손실이 적고, 수화 시 맛과 질감이 잘 복원됨.",
+                "eng": "Freeze-dried bibimbap shows less nutritional loss during long-term storage and restores its taste and texture well upon hydration."
+            }
+        }
+    ],
+    "dish": [
+        {
+            "id": 1,
+            "type": "Main Course",
+            "name": {
+                "kor": "우주 비빔밥",
+                "eng": "Space Bibimbap"
+            },
+            "image_url": "http://example.com/images/space_bibimbap.jpg",
+            "required_ingredient_ids": [
+                1
+            ],
+            "required_cooking_method_ids": [
+                1
+            ],
+            "nutrition_info": {
+                "nutrients_per_unit_mass": {},
+                "calories": 350
+            },
+            "cooking_instructions": "동결 건조 비빔밥에 뜨거운 물을 붓고 10분간 기다립니다."
+        },
+        {
+            "id": 2,
+            "type": "Main Course",
+            "name": {
+                "kor": "물에 불린 소고기",
+                "eng": "cow flows on water"
+            },
+            "image_url": "dummy.com",
+            "required_ingredient_ids": [
+                2
+            ],
+            "required_cooking_method_ids": [
+                1
+            ],
+            "nutrition_info": {
+                "nutrients_per_unit_mass": {},
+                "calories": 200
+            },
+            "cooking_instructions": null
+        }
+    ]
+}

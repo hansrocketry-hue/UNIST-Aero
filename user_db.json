@@ -1,6 +1,7 @@
 {
     "admin": {
         "name" : "admin",
+        "password" : "admin",
         "height" : 123,
         "weight" : 123,
         "gender" : "male",

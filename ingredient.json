@@ -2,104 +2,1500 @@
     {
         "id": 1,
         "name": {
-            "kor": "동결 건조 비빔밥",
-            "eng": "Freeze-Dried Bibimbap"
+            "kor": "쌀",
+            "eng": "Rice"
         },
         "research_ids": [
-            2
+            5
         ],
-        "nutrition_info": {
-            "nutrients_per_unit_mass": {
-                "protein": 15,
-                "carbohydrates": 60,
-                "fat": 10
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.072
             },
-            "calories": 350,
-            "details": "비타민 및 무기질 포함"
-        },
-        "production_time": "N/A"
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0016
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0002
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0016
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.032
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.16
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "90–120"
     },
     {
         "id": 2,
         "name": {
-            "kor": "소고기 분말",
-            "eng": "Dried beef powder"
+            "kor": "밀",
+            "eng": "Wheat"
         },
         "research_ids": [
-            3
+            62
         ],
-        "nutrition_info": {
-            "nutrients_per_unit_mass": {
-                "protein": 50,
-                "fat": 30
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.068
             },
-            "calories": 200,
-            "details": "고단백 식품"
-        },
-        "production_time": "N/A"
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0006
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.04
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.4
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "70-90"
     },
     {
         "id": 3,
         "name": {
-            "kor": "허승혁",
-            "eng": "허승혁"
+            "kor": "감자",
+            "eng": "Potato"
         },
         "research_ids": [
-            1,
-            2
+            30,
+            37,
+            39,
+            40,
+            44
         ],
-        "nutrition_info": {
-            "calories": 100.0,
-            "nutrients_per_unit_mass": {},
-            "details": "고기"
-        },
-        "production_time": "20"
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.008
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0002
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.00022
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0008
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0003
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.011
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.16
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.2
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "70–90"
     },
     {
         "id": 4,
-        "name": {},
-        "research_ids": [],
-        "nutrition_info": {
-            "Calories": 100.0,
-            "Protein": 0.9,
-            "Carbohydrates": 0.9
+        "name": {
+            "kor": "퀴노아",
+            "eng": "Quinoa"
         },
-        "production_time": "0.1"
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.072
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0024
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.00112
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0036
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0022
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.012
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.9
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.02
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "90–120"
     },
     {
         "id": 5,
-        "name": {},
-        "research_ids": [],
-        "nutrition_info": {
-            "Vitamin B12": 34.0,
-            "Calories": 12.0
+        "name": {
+            "kor": "보리",
+            "eng": "Barley"
         },
-        "production_time": ""
+        "research_ids": [
+            13,
+            14,
+            15
+        ],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.064
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0012
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0014
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.05
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0036
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.46
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "90–120"
     },
     {
         "id": 6,
         "name": {
-            "kor": "dfadf"
+            "kor": "청경채",
+            "eng": ""
         },
-        "research_ids": [],
-        "nutrition_info": {
-            "Calories": 342.0
-        },
-        "production_time": ""
+        "research_ids": [
+            2
+        ],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0008
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0018
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.92
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.5
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "25–30"
     },
     {
         "id": 7,
         "name": {
-            "kor": "완벽한 식재료"
+            "kor": "케일",
+            "eng": "Kale"
         },
         "research_ids": [
-            1
+            1,
+            2,
+            8,
+            22,
+            23,
+            33,
+            37
         ],
-        "nutrition_info": {
-            "calories": 12312.0,
-            "nutrients_per_unit_mass": {},
-            "details": ""
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0006
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0006
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0018
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.018
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 1.8
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 1.2
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "25–35"
+    },
+    {
+        "id": 8,
+        "name": {
+            "kor": "상추",
+            "eng": ""
         },
-        "production_time": "232"
+        "research_ids": [
+            2,
+            33,
+            37,
+            41
+        ],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0002
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0006
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0014
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.008
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0014
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.7
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.2
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "20–30"
+    },
+    {
+        "id": 9,
+        "name": {
+            "kor": "무",
+            "eng": ""
+        },
+        "research_ids": [
+            8,
+            63
+        ],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.0064
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0014
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.5
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.24
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "20–25"
+    },
+    {
+        "id": 10,
+        "name": {
+            "kor": "토마토",
+            "eng": "Tomato"
+        },
+        "research_ids": [
+            4,
+            7,
+            9,
+            26,
+            38,
+            47
+        ],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0001
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.00015
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0006
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0002
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.15
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.14
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "60–90"
+    },
+    {
+        "id": 11,
+        "name": {
+            "kor": "가지",
+            "eng": "Eggplant"
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.0025
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0001
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0003
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0005
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0008
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.22
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.02
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "70–90"
+    },
+    {
+        "id": 12,
+        "name": {
+            "kor": "호박",
+            "eng": "Pumpkin"
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.0025
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0001
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.00012
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0007
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0005
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0014
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.3
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.2
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "50–70"
+    },
+    {
+        "id": 13,
+        "name": {
+            "kor": "버섯",
+            "eng": "Mushroom"
+        },
+        "research_ids": [
+            20,
+            21
+        ],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.008
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0008
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.04
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0018
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.4
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.04
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.1
+            }
+        ],
+        "production_time": "20–30"
+    },
+    {
+        "id": 14,
+        "name": {
+            "kor": "양파",
+            "eng": "Onion"
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.008
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.00032
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0002
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0014
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.3
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.08
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "90–120"
+    },
+    {
+        "id": 15,
+        "name": {
+            "kor": "마늘",
+            "eng": ""
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.15
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0005
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.3
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.1
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "90–120"
+    },
+    {
+        "id": 16,
+        "name": {
+            "kor": "칠리페퍼",
+            "eng": ""
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.3
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.005
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.02
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.005
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 1.0
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 1.5
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "60–90"
+    },
+    {
+        "id": 17,
+        "name": {
+            "kor": "김·미역",
+            "eng": ""
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.4
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.04
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.032
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.04
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 3.6
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.4
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.1
+            }
+        ],
+        "production_time": "90–180"
+    },
+    {
+        "id": 18,
+        "name": {
+            "kor": "대두",
+            "eng": ""
+        },
+        "research_ids": [
+            11,
+            12,
+            31,
+            32
+        ],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.072
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0064
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0018
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0044
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0026
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.016
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 2.4
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.06
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "100–120"
+    },
+    {
+        "id": 19,
+        "name": {
+            "kor": "배양육",
+            "eng": ""
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.1
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.008
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0016
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.05
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.12
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.03
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "(지구 생산)"
+    },
+    {
+        "id": 20,
+        "name": {
+            "kor": "치즈 분말",
+            "eng": ""
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.2
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0125
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0025
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.005
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0025
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.25
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.03
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.025
+            }
+        ],
+        "production_time": "(지구 생산)"
+    },
+    {
+        "id": 21,
+        "name": {
+            "kor": "오일 (대두/올리브)",
+            "eng": ""
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.9
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "(지구 생산)"
+    },
+    {
+        "id": 22,
+        "name": {
+            "kor": "소금",
+            "eng": ""
+        },
+        "research_ids": [],
+        "nutrition_info": [
+            {
+                "name": "Calories",
+                "unit": "kcal",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Protein",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "unit": "g",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B6",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Folate",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B12",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "unit": "mg",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "unit": "mcg",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": "–"
     }
 ]

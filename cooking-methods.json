@@ -1,3 +1,9 @@
 [
-    {"id": 1, "name": {"kor": "수화", "eng": "Hydration"}, "description": {"kor": "동결 건조된 식품에 정수된 물을 주입하여 원상태로 복원.", "eng": "Restores freeze-dried food to its original state by injecting purified water."}, "research_ids": [1]}
+    {"id": 1, "name": {"kor": "삶기", "eng": "Boiling"}, "description": {"kor": "재수화 한 후 푸드 워머를 이용해 끓입니다", "eng": "Boil using a food warmer"}, "research_ids": [1, 4, 6, 12, 13, 15, 31, 33, 34, 38]},
+    {"id": 2, "name": {"kor": "찌기", "eng": "Steaming"}, "description": {"kor": "재수화 한후 푸드워머로 찝니다", "eng": "After rehydration, steam it in a food warmer."}, "research_ids": [2, 3, 7, 8, 9, 14, 21, 22, 26, 27, 28, 32]},
+    {"id": 3, "name": {"kor": "섞기", "eng": "Mixing"}, "description": {"kor": "밀폐 용기에서 페이스트가 될때까지 섞는다", "eng": "Mix in an airtight container until a paste forms."}, "research_ids": [5, 10]},
+    {"id": 4, "name": {"kor": "푸드 워머 가열", "eng": "Food warmer heating"}, "description": {"kor": "푸드 워머를 이용하여 가열합니다", "eng": "Heat using a food warmer"}, "research_ids": [11, 17, 18, 23, 24, 25, 29, 35, 36, 39, 40]},
+    {"id": 6, "name": {"kor": "굽기", "eng": "Frying"}, "description": {"kor": "재료를 프라이 합니다", "eng": "Fry the ingredients"}, "research_ids": [19]},
+    {"id": 7, "name": {"kor": "재수화", "eng": "Rehydration"}, "description": {"kor": "재수화합니다", "eng": "Rehydrate"}, "research_ids": [20, 30]},
+    {"id": 8, "name": {"kor": "동결 건조", "eng": "Freeze-drying"}, "description": {"kor": "압착 후 저온 건조 합니다", "eng": "After pressing, it is dried at low temperature."}, "research_ids": [37]}
 ]

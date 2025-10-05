@@ -16,6 +16,9 @@ Once the installation is complete, close the CMD window.
 Double-click the STARTAPP.bat file to run it. Then, hold down the Control key and click the URL http://127.0.0.1:5000.
 This will launch the webpage we created locally!
 
+4. Test Account
+You can test the account without registering by entering  text_user  as both the ID and password.
+
 (한국어)
 
 안녕하세요! 우리 웹기반의 데모는 Python 기반으로 동작하며 데모를 실행하기 위해서는 아래와 같은 단계를 따르시면 됩니다!
@@ -33,3 +36,6 @@ pip install flask
 3. Bat 파일 열기 : 
 STARTAPP.bat 파일을 더블 클릭해서 실행해주세요. 그리고 출력되는 http://127.0.0.1:5000라는 주소를 컨트롤 키를 누른 채 클릭해 접속해주세요.
 그럼 로컬에서 저희가 만든 웹페이지가 실행됩니다!
+
+4. 테스트용 계정
+아이디, 패스워드 모두 text_user를 입력하면 회원가입 없이 테스트를 진행할 수 있습니다.

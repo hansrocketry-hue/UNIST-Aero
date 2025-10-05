@@ -124,7 +124,7 @@ def update_ingredient_nutrition_reference(ingredient_id, nutrition_id):
     _save_table('nutrition', nutrition_data)
     _save_table('ingredient', ingredient_data)
 
-def add_storaged_ingredient(storage_id, mass_g, start_date, mode, processing_type=None, end_date=None, 
+def add_storaged_ingredient(storage_id, mass_g, start_date, mode, processing_type=None,
                           expiration_date=None, min_end_date=None, max_end_date=None):
     data = _load_table('storaged-ingredient')
     ingredients = _load_table('ingredient')
@@ -141,8 +141,8 @@ def add_storaged_ingredient(storage_id, mass_g, start_date, mode, processing_typ
         if not min_end_date or not max_end_date:
             raise ValueError("Production mode requires both min_end_date and max_end_date")
     else:
-        if not end_date or not expiration_date:
-            raise ValueError("Storage mode requires both end_date and expiration_date")
+        if not expiration_date:
+            raise ValueError("Storage mode requires expiration_date")
     
     new_id = _get_next_id('storaged-ingredient')
     new_item = {
@@ -159,7 +159,6 @@ def add_storaged_ingredient(storage_id, mass_g, start_date, mode, processing_typ
         new_item["min_end_date"] = min_end_date
         new_item["max_end_date"] = max_end_date
     else:
-        new_item["end_date"] = end_date
         new_item["expiration_date"] = expiration_date
     data.append(new_item)
     _save_table('storaged-ingredient', data)

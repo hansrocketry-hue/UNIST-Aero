@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const endDateInput = document.getElementById('end_date');
     const modeStorage = document.getElementById('mode_storage');
     const modeProduction = document.getElementById('mode_production');
+    const expirationInput = document.getElementById('expiration_date');
     
     function formatDate(date) {
         return date.toISOString().split('T')[0];
@@ -12,42 +13,31 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateEndDateConstraints() {
         const selectedOption = storageIdSelect.options[storageIdSelect.selectedIndex];
         const isProduction = modeProduction.checked;
+        if (!startDateInput.value) return;
         const startDate = new Date(startDateInput.value);
-        
+
         if (isProduction) {
-            const minTime = parseInt(selectedOption.dataset.minTime);
-            const maxTime = parseInt(selectedOption.dataset.maxTime);
-            
-            if (minTime && maxTime) {
+            const minTime = parseInt(selectedOption.dataset.minTime) || 0;
+            const maxTime = parseInt(selectedOption.dataset.maxTime) || 0;
+
+            if (minTime >= 0 && maxTime >= minTime) {
                 const minEndDate = new Date(startDate);
                 minEndDate.setDate(startDate.getDate() + minTime);
-                
+
                 const maxEndDate = new Date(startDate);
                 maxEndDate.setDate(startDate.getDate() + maxTime);
-                
-                endDateInput.min = formatDate(minEndDate);
-                endDateInput.max = formatDate(maxEndDate);
-                
-                // Add or update helper text
-                const helperText = document.getElementById('end-date-helper');
-                if (!helperText) {
-                    const helper = document.createElement('small');
-                    helper.id = 'end-date-helper';
-                    helper.style.display = 'block';
-                    helper.style.marginTop = '5px';
-                    endDateInput.parentNode.insertBefore(helper, endDateInput.nextSibling);
-                }
-                helperText.textContent = `생산 기간: ${minTime}~${maxTime}일 (${formatDate(minEndDate)} ~ ${formatDate(maxEndDate)})`;
+
+                // Populate production min/max fields
+                const minInput = document.getElementById('min_end_date');
+                const maxInput = document.getElementById('max_end_date');
+                if (minInput) minInput.value = formatDate(minEndDate);
+                if (maxInput) maxInput.value = formatDate(maxEndDate);
             }
         } else {
-            // For storage mode, end date should be same as start date
-            endDateInput.value = startDateInput.value;
-            endDateInput.disabled = true;
-            
-            // Remove helper text if exists
-            const helperText = document.getElementById('end-date-helper');
-            if (helperText) {
-                helperText.remove();
+            // For storage mode, set expiration_date minimum to start date
+            if (expirationInput) {
+                expirationInput.min = formatDate(startDate);
+                // Do not auto-fill expiration, but make it required by the HTML form
             }
         }
     }
@@ -76,17 +66,25 @@ document.addEventListener('DOMContentLoaded', function() {
             storageIdSelect.value = '';
         }
         
-        // Update end date field
-        endDateInput.disabled = !isProduction;
-        if (!isProduction && startDateInput.value) {
-            endDateInput.value = startDateInput.value;
+        // Toggle storage-only fields and production date display
+        document.querySelectorAll('.storage-only').forEach(el => el.style.display = isProduction ? 'none' : 'block');
+        const prodDiv = document.getElementById('production_dates');
+        if (prodDiv) prodDiv.style.display = isProduction ? 'block' : 'none';
+        // Ensure expiration_date required state changes with mode
+        if (expirationInput) {
+            if (isProduction) {
+                expirationInput.removeAttribute('required');
+            } else {
+                expirationInput.setAttribute('required', '');
+            }
         }
         
         // Update labels
         document.querySelector('label[for="start_date"]').textContent = 
             isProduction ? '생산 시작일:' : '보관 시작일:';
-        document.querySelector('label[for="end_date"]').textContent = 
-            isProduction ? '생산 종료일:' : '보관 시작일:';
+        // expiration label only shown in storage mode; production shows min/max inputs
+        const expLabel = document.querySelector('label[for="expiration_date"]');
+        if (expLabel) expLabel.textContent = isProduction ? '' : '보관 기한:';
         
         if (startDateInput.value) {
             updateEndDateConstraints();

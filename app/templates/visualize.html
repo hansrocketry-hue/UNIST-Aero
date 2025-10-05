@@ -20,147 +20,252 @@
     }
 </style>
     <h1>데이터 시각화</h1>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            th, td {
+                border-bottom: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            tr:hover {background-color: #f5f5f5;}
+            th {
+                background-color: #f2f2f2;
+            }
+            .category-btns {
+                margin-bottom: 20px;
+            }
+            .category-btns button {
+                margin-right: 10px;
+                padding: 8px 16px;
+                border: none;
+                background: #e0e0e0;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .category-btns button.active {
+                background: #1976d2;
+                color: #fff;
+            }
+            .category-table {
+                display: none;
+            }
+            #search-bar {
+                margin-bottom: 20px;
+                padding: 8px;
+                width: 300px;
+                font-size: 16px;
+            }
+        </style>
 
-    <h2>연구 자료 (Research Data)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Link</th>
-                <th>Summary (kor)</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in data['research-data'] %}
-            <tr>
-                <td><a href="{{ url_for('visualize.research_detail', research_id=item.id) }}">{{ item.reference_data.title }}</a></td>
-                <td><a href="{{ item.reference_data.link }}" target="_blank">{{ item.reference_data.link }}</a></td>
-                <td>{{ item.summary.kor }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <div class="category-btns">
 
-    <h2>식재료 (Ingredient)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Name (kor)</th>
-                <th>Research IDs</th>
-                <th>Calories</th>
-                <th>Production Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in data['ingredient'] %}
-            <tr>
-                <td><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=item.id) }}">{{ item.name.kor }}</a></td>
-                <td>
-                    {% for research_id in item.research_ids %}
-                        {% for research in data['research-data'] %}
-                            {% if research.id == research_id %}
-                                <a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research.reference_data.title }}</a><br>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                </td>
-                <td>
-                    {% if item.nutrition_info %}
-                        {% for nutrient in item.nutrition_info %}
-                            {% if nutrient.name == 'Calories' %}
-                                {{ nutrient.amount_per_unit_mass }}
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                </td>
-                <td>{{ item.production_time }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            <button type="button" class="active" onclick="showCategory('research')">연구자료</button>
+            <button type="button" onclick="showCategory('ingredient')">식재료</button>
+            <button type="button" onclick="showCategory('cooking')">조리방법</button>
+            <button type="button" onclick="showCategory('dish')">요리</button>
+        </div>
+        <div style="margin-bottom:20px;">
+            <input type="text" id="search-bar" placeholder="검색어를 입력하세요..." style="margin-right:8px;" onkeydown="if(event.key==='Enter'){filterTable();}">
+            <button type="button" onclick="filterTable()">검색</button>
+        </div>
 
-    <h2>조리 방법 (Cooking Methods)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Name (kor)</th>
-                <th>Description (kor)</th>
-                <th>Research IDs</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in data['cooking-methods'] %}
-            <tr>
-                <td><a href="{{ url_for('visualize.cooking_method_detail', method_id=item.id) }}">{{ item.name.kor }}</a></td>
-                <td>{{ item.description.kor }}</td>
-                <td>
-                    {% for research_id in item.research_ids %}
-                        {% for research in data['research-data'] %}
-                            {% if research.id == research_id %}
-                                <a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research.reference_data.title }}</a><br>
-                            {% endif %}
-                        {% endfor %}
+        <div id="category-research" class="category-table">
+            <h2>연구 자료 (Research Data)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Link</th>
+                        <th>Summary (kor)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data['research-data'] %}
+                    <tr>
+                        <td><a href="{{ url_for('visualize.research_detail', research_id=item.id) }}">{{ item.reference_data.title }}</a></td>
+                        <td><a href="{{ item.reference_data.link }}" target="_blank">{{ item.reference_data.link }}</a></td>
+                        <td>{{ item.summary.kor }}</td>
+                    </tr>
                     {% endfor %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
 
-    <h2>요리 (Dish)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Name (kor)</th>
-                <th>Required Ingredients</th>
-                <th>Required Cooking Methods</th>
-                <th>Calories</th>
-                <th>Cooking Instructions (kor)</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in data['dish'] %}
-            <tr>
-                <td>{{ item.name.kor }}</td>
-                <td>
-                    {% for ing_id in item.required_ingredient_ids %}
-                        {% for ingredient in data['ingredient'] %}
-                            {% if ingredient.id == ing_id %}
-                                <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name.kor }}</a><br>
-                            {% endif %}
-                        {% endfor %}
+        <div id="category-ingredient" class="category-table">
+            <h2>식재료 (Ingredient)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name (kor)</th>
+                        <th>Research IDs</th>
+                        <th>Calories</th>
+                        <th>Production Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data['ingredient'] %}
+                    <tr>
+                        <td><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=item.id) }}">{{ item.name.kor }}</a></td>
+                        <td>
+                            {% for research_id in item.research_ids %}
+                                {% for research in data['research-data'] %}
+                                    {% if research.id == research_id %}
+                                        <a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research.reference_data.title }}</a><br>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </td>
+                        <td>{{ item.nutrition_info.calories }}</td>
+                        <td>{{ item.production_time }}</td>
+                    </tr>
                     {% endfor %}
-                </td>
-                <td>
-                    {% set method_ids = item['cooking-method-ids'] if 'cooking-method-ids' in item else [] %}
-                    {% for method_id in method_ids %}
-                        {% for method in data['cooking-methods'] %}
-                            {% if method.id == method_id %}
-                                <a href="{{ url_for('visualize.cooking_method_detail', method_id=method_id) }}">{{ method.name.kor }}</a><br>
-                            {% endif %}
-                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="category-cooking" class="category-table">
+            <h2>조리 방법 (Cooking Methods)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name (kor)</th>
+                        <th>Description (kor)</th>
+                        <th>Research IDs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data['cooking-methods'] %}
+                    <tr>
+                        <td><a href="{{ url_for('visualize.cooking_method_detail', method_id=item.id) }}">{{ item.name.kor }}</a></td>
+                        <td>{{ item.description.kor }}</td>
+                        <td>
+                            {% for research_id in item.research_ids %}
+                                {% for research in data['research-data'] %}
+                                    {% if research.id == research_id %}
+                                        <a href="{{ url_for('visualize.research_detail', research_id=research_id) }}">{{ research.reference_data.title }}</a><br>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </td>
+                    </tr>
                     {% endfor %}
-                </td>
-                <td>
-                    {% set cal = 0 %}
-                    {% if item['nutrition_info'] %}
-                        {% for nut in item['nutrition_info'] %}
-                            {% if 'name' in nut and nut['name'] == 'Calories (Total)' and 'amount_per_dish' in nut %}
-                                {% set cal = nut['amount_per_dish'] %}
+                </tbody>
+            </table>
+        </div>
+
+        <div id="category-dish" class="category-table">
+            <h2>요리 (Dish)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name (kor)</th>
+                        <th>Required Ingredients</th>
+                        <th>Required Cooking Methods</th>
+                        <th>Calories</th>
+                        <th>Cooking Instructions (kor)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data['dish'] %}
+                    <tr>
+                        <td>{{ item.name.kor }}</td>
+                        <td>
+                            {% for ing_id in item.required_ingredient_ids %}
+                                {% for ingredient in data['ingredient'] %}
+                                    {% if ingredient.id == ing_id %}
+                                        <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name.kor }}</a><br>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% set method_ids = item['cooking-method-ids'] if 'cooking-method-ids' in item else [] %}
+                            {% for method_id in method_ids %}
+                                {% for method in data['cooking-methods'] %}
+                                    {% if method.id == method_id %}
+                                        <a href="{{ url_for('visualize.cooking_method_detail', method_id=method_id) }}">{{ method.name.kor }}</a><br>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% set ns = namespace(calo=0) %}
+                            {% if item['nutrition_info'] %}
+                                {% for nut in item['nutrition_info'] %}
+                                    {% if 'name' in nut and nut['name'] == 'Calories (Total)' and 'amount_per_dish' in nut %}
+                                        {% set ns.calo = nut['amount_per_dish'] %}
+                                    {% endif %}
+                                {% endfor %}
                             {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                    {{ cal }}
-                </td>
-                <td>
-                    {% if item.cooking_instructions is string %}
-                        {{ item.cooking_instructions }}
-                    {% elif item.cooking_instructions.kor is defined %}
-                        {{ item.cooking_instructions.kor }}
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endblock %}
+                            {{ ns.calo }}
+                        </td>
+                        <td>
+                            {% if item.cooking_instructions is string %}
+                                {{ item.cooking_instructions }}
+                            {% elif item.cooking_instructions.kor is defined %}
+                                {{ item.cooking_instructions.kor }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+        function showCategory(cat) {
+            const cats = ['research', 'ingredient', 'cooking', 'dish'];
+            cats.forEach(c => {
+                var div = document.getElementById('category-' + c);
+                if (div) div.style.display = 'none';
+                var btn = document.querySelector('.category-btns button[onclick*="' + c + '"]');
+                if (btn) btn.classList.remove('active');
+            });
+            var activeDiv = document.getElementById('category-' + cat);
+            if (activeDiv) activeDiv.style.display = 'block';
+            var activeBtn = document.querySelector('.category-btns button[onclick*="' + cat + '"]');
+            if (activeBtn) activeBtn.classList.add('active');
+            document.getElementById('search-bar').value = '';
+            filterTable();
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            showCategory('research');
+        });
+
+        function filterTable() {
+            const search = document.getElementById('search-bar').value.toLowerCase();
+            const cats = ['research', 'ingredient', 'cooking', 'dish'];
+            let activeCat = cats.find(cat => document.getElementById('category-' + cat).style.display === 'block');
+            if (!activeCat) return;
+            const tableDiv = document.getElementById('category-' + activeCat);
+            const trs = tableDiv.querySelectorAll('tbody tr');
+            trs.forEach(tr => {
+                let titleText = '';
+                if (activeCat === 'research') {
+                    // 1st column: Title
+                    let td = tr.querySelector('td');
+                    titleText = td ? td.textContent.toLowerCase() : '';
+                } else if (activeCat === 'ingredient') {
+                    // 1st column: Name (kor)
+                    let td = tr.querySelector('td');
+                    titleText = td ? td.textContent.toLowerCase() : '';
+                } else if (activeCat === 'cooking') {
+                    // 1st column: Name (kor)
+                    let td = tr.querySelector('td');
+                    titleText = td ? td.textContent.toLowerCase() : '';
+                } else if (activeCat === 'dish') {
+                    // 1st column: Name (kor)
+                    let td = tr.querySelector('td');
+                    titleText = td ? td.textContent.toLowerCase() : '';
+                }
+                tr.style.display = titleText.includes(search) ? '' : 'none';
+            });
+        }
+        </script>
+        {% endblock %}

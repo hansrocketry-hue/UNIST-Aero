@@ -50,8 +50,20 @@
             </div>
         </div>
 
-        <label for="processing_type">가공 방식:</label><br>
-        <input type="text" id="processing_type" name="processing_type" required><br><br>
+        <label for="processing_type">가공 방식 (Processing Method):</label><br>
+        <select id="processing_type" name="processing_type" required>
+            <option value="" disabled selected>-- 가공 방식 선택 --</option>
+            <option value="T">T - Thermostabilized (멸균·열처리 완전조리식)</option>
+            <option value="R">R - Rehydratable (동결건조·온수 재수화식)</option>
+            <option value="I">I - Intermediate Moisture (반건식·즉석 섭취 가능)</option>
+            <option value="N">N - Natural / Fresh (신선 과일·채소류)</option>
+            <option value="B">B - Beverage / Paste (액상·튜브형)</option>
+            <option value="F">F - Frozen / Baked (냉동 또는 오븐식)</option>
+            <option value="G">G - Germinated / Fresh Cultivated (재배식)</option>
+            <option value="P">P - Powdered / Nutrient Mix (분말형 영양식)</option>
+        </select>
+        <div id="processing_description" style="margin-top:6px; font-size:0.95em; color:#444">선택한 가공 방식에 대한 설명이 여기에 표시됩니다.</div>
+        <br>
 
         <button type="submit">추가하기</button>
     </form>

@@ -101,6 +101,32 @@ document.addEventListener('DOMContentLoaded', function() {
     storageIdSelect.addEventListener('change', updateFormForMode);
     startDateInput.addEventListener('change', updateEndDateConstraints);
     
+    // Processing type description handler
+    const processingSelect = document.getElementById('processing_type');
+    const processingDesc = document.getElementById('processing_description');
+    const processingMap = {
+        'T': 'T - Thermostabilized: 멸균·열처리된 완전조리식. 상온 보관 가능, 긴 수명(예: 스튜, 카레).',
+        'R': 'R - Rehydratable: 동결건조되어 물이나 온수로 재수화하는 식품(예: 리조또, 죽).',
+        'I': 'I - Intermediate Moisture: 반건식 스낵류로 바로 섭취 가능(예: 에너지바).',
+        'N': 'N - Natural / Fresh: 신선식품으로 냉장이 필요(예: 샐러드, 과일).',
+        'B': 'B - Beverage / Paste: 액상 또는 페이스트 형태(예: 소스, 튜브형 식품).',
+        'F': 'F - Frozen / Baked: 냉동 보관 또는 베이크 처리된 고열량 식품(예: 피자, 라자냐).',
+        'G': 'G - Germinated / Fresh Cultivated: 재배된 신선식품(우주내 재배).',
+        'P': 'P - Powdered / Nutrient Mix: 분말형 보충제 또는 믹스(예: 단백질 파우더).'
+    };
+
+    function updateProcessingDescription() {
+        if (!processingSelect || !processingDesc) return;
+        const v = processingSelect.value;
+        processingDesc.textContent = processingMap[v] || '선택한 가공 방식에 대한 설명이 여기에 표시됩니다.';
+    }
+
+    if (processingSelect) {
+        processingSelect.addEventListener('change', updateProcessingDescription);
+        // initialize
+        updateProcessingDescription();
+    }
+    
     // Initialize form state
     updateFormForMode();
 });

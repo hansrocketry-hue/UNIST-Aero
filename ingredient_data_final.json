@@ -8,7 +8,7 @@
         "research_ids": [
             5
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -65,11 +65,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 90,
-            "max": 120,
-            "producible": true
-        }
+        "production_time": "90–120"
     },
     {
         "id": 2,
@@ -80,7 +76,7 @@
         "research_ids": [
             62
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -137,11 +133,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 70,
-            "max": 90,
-            "producible": true
-        }
+        "production_time": "70-90"
     },
     {
         "id": 3,
@@ -156,7 +148,7 @@
             40,
             44
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -213,11 +205,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 70,
-            "max": 90,
-            "producible": true
-        }
+        "production_time": "70–90"
     },
     {
         "id": 4,
@@ -226,7 +214,7 @@
             "eng": "Quinoa"
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -283,11 +271,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 90,
-            "max": 120,
-            "producible": true
-        }
+        "production_time": "90–120"
     },
     {
         "id": 5,
@@ -300,7 +284,7 @@
             14,
             15
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -357,11 +341,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 90,
-            "max": 120,
-            "producible": true
-        }
+        "production_time": "90–120"
     },
     {
         "id": 6,
@@ -372,7 +352,7 @@
         "research_ids": [
             2
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -429,11 +409,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 25,
-            "max": 30,
-            "producible": true
-        }
+        "production_time": "25–30"
     },
     {
         "id": 7,
@@ -450,7 +426,7 @@
             33,
             37
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -507,11 +483,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 25,
-            "max": 35,
-            "producible": true
-        }
+        "production_time": "25–35"
     },
     {
         "id": 8,
@@ -525,7 +497,7 @@
             37,
             41
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -582,11 +554,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 20,
-            "max": 30,
-            "producible": true
-        }
+        "production_time": "20–30"
     },
     {
         "id": 9,
@@ -598,7 +566,7 @@
             8,
             63
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -655,11 +623,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 20,
-            "max": 25,
-            "producible": true
-        }
+        "production_time": "20–25"
     },
     {
         "id": 10,
@@ -675,7 +639,7 @@
             38,
             47
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -732,11 +696,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 60,
-            "max": 90,
-            "producible": true
-        }
+        "production_time": "60–90"
     },
     {
         "id": 11,
@@ -745,7 +705,7 @@
             "eng": "Eggplant"
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -802,11 +762,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 70,
-            "max": 90,
-            "producible": true
-        }
+        "production_time": "70–90"
     },
     {
         "id": 12,
@@ -815,7 +771,7 @@
             "eng": "Pumpkin"
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -872,11 +828,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 50,
-            "max": 70,
-            "producible": true
-        }
+        "production_time": "50–70"
     },
     {
         "id": 13,
@@ -888,7 +840,7 @@
             20,
             21
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -945,11 +897,7 @@
                 "amount_per_unit_mass": 0.1
             }
         ],
-        "production_time": {
-            "min": 20,
-            "max": 30,
-            "producible": true
-        }
+        "production_time": "20–30"
     },
     {
         "id": 14,
@@ -958,7 +906,7 @@
             "eng": "Onion"
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1015,11 +963,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 90,
-            "max": 120,
-            "producible": true
-        }
+        "production_time": "90–120"
     },
     {
         "id": 15,
@@ -1028,7 +972,7 @@
             "eng": ""
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1085,11 +1029,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 90,
-            "max": 120,
-            "producible": true
-        }
+        "production_time": "90–120"
     },
     {
         "id": 16,
@@ -1098,7 +1038,7 @@
             "eng": ""
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1155,11 +1095,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 60,
-            "max": 90,
-            "producible": true
-        }
+        "production_time": "60–90"
     },
     {
         "id": 17,
@@ -1168,7 +1104,7 @@
             "eng": ""
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1225,11 +1161,7 @@
                 "amount_per_unit_mass": 0.1
             }
         ],
-        "production_time": {
-            "min": 90,
-            "max": 180,
-            "producible": true
-        }
+        "production_time": "90–180"
     },
     {
         "id": 18,
@@ -1243,7 +1175,7 @@
             31,
             32
         ],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1300,11 +1232,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "min": 100,
-            "max": 120,
-            "producible": true
-        }
+        "production_time": "100–120"
     },
     {
         "id": 19,
@@ -1313,7 +1241,7 @@
             "eng": ""
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1370,10 +1298,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "producible": false,
-            "note": "(지구 생산)"
-        }
+        "production_time": "(지구 생산)"
     },
     {
         "id": 20,
@@ -1382,7 +1307,7 @@
             "eng": ""
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1439,10 +1364,7 @@
                 "amount_per_unit_mass": 0.025
             }
         ],
-        "production_time": {
-            "producible": false,
-            "note": "(지구 생산)"
-        }
+        "production_time": "(지구 생산)"
     },
     {
         "id": 21,
@@ -1451,7 +1373,7 @@
             "eng": ""
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1508,10 +1430,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "producible": false,
-            "note": "(지구 생산)"
-        }
+        "production_time": "(지구 생산)"
     },
     {
         "id": 22,
@@ -1520,7 +1439,7 @@
             "eng": ""
         },
         "research_ids": [],
-        "nutrition": [
+        "nutrition_info": [
             {
                 "name": "Calories",
                 "unit": "kcal",
@@ -1577,9 +1496,6 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": {
-            "producible": false,
-            "note": "–"
-        }
+        "production_time": "–"
     }
 ]

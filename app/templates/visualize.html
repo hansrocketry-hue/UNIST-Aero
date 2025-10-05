@@ -4,6 +4,7 @@
 
 {% block content %}
 <style>
+
     table {
         width: 100%;
         border-collapse: collapse;
@@ -61,6 +62,8 @@
                 font-size: 16px;
             }
         </style>
+
+        <a id="add-data-fab" href="{{ url_for('add_data.add_research_data_route') }}" class="fab">{% if session.get('lang','kor') == 'eng' %}Add Data{% else %}데이터 추가{% endif %}</a>
 
         <div class="category-btns">
 
@@ -284,6 +287,15 @@
         <script>
         function showCategory(cat) {
             const cats = ['research', 'ingredient', 'cooking', 'dish'];
+            const fab = document.getElementById('add-data-fab');
+            const addUrl = {
+                research: "{{ url_for('add_data.add_research_data_route') }}",
+                ingredient: "{{ url_for('add_data.add_ingredient_route') }}",
+                cooking: "{{ url_for('add_data.add_cooking_method_route') }}",
+                dish: "{{ url_for('add_data.add_dish_route') }}"
+            };
+            fab.href = addUrl[cat];
+
             cats.forEach(c => {
                 var div = document.getElementById('category-' + c);
                 if (div) div.style.display = 'none';
@@ -292,7 +304,7 @@
             });
             var activeDiv = document.getElementById('category-' + cat);
             if (activeDiv) activeDiv.style.display = 'block';
-            var activeBtn = document.querySelector('.category-btns button[onclick*="' + cat + '"]');
+            var activeBtn = document.querySelector('.category-btns button[onclick*="' + c + '"]');
             if (activeBtn) activeBtn.classList.add('active');
             document.getElementById('search-bar').value = '';
             filterTable();

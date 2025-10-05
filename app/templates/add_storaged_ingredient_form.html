@@ -13,20 +13,32 @@
             <label for="mode_production">생산</label><br><br>
         </div>
 
-        <label for="storage_id">식재료 종류:</label><br>
+        <label for="storage_id">식재료 또는 요리 종류:</label><br>
         <select id="storage_id" name="storage_id" required>
-            <option value="" disabled selected>-- 식재료 선택 --</option>
-            {% for ingredient in all_ingredients %}
-                <option value="{{ ingredient.id }}" 
-                        data-min-time="{{ ingredient.production_time.min if ingredient.production_time.producible else '' }}" 
-                        data-max-time="{{ ingredient.production_time.max if ingredient.production_time.producible else '' }}"
-                        data-producible="{{ 'true' if ingredient.production_time.producible else 'false' }}">
-                    {{ ingredient.name.kor }} (ID: {{ ingredient.id }})
-                    {% if ingredient.production_time.producible %}
-                        - 생산 시간: {{ ingredient.production_time.min }}~{{ ingredient.production_time.max }}일
-                    {% endif %}
-                </option>
-            {% endfor %}
+            <option value="" disabled selected>-- 선택 --</option>
+            <optgroup label="식재료">
+                {% for ingredient in all_ingredients %}
+                    <option value="{{ ingredient.id }}" 
+                            data-min-time="{{ ingredient.production_time.min if ingredient.production_time.producible else '' }}" 
+                            data-max-time="{{ ingredient.production_time.max if ingredient.production_time.producible else '' }}"
+                            data-producible="{{ 'true' if ingredient.production_time.producible else 'false' }}">
+                        {{ ingredient.name.kor }} (ID: {{ ingredient.id }})
+                        {% if ingredient.production_time.producible %}
+                            - 생산 시간: {{ ingredient.production_time.min }}~{{ ingredient.production_time.max }}일
+                        {% endif %}
+                    </option>
+                {% endfor %}
+            </optgroup>
+            <optgroup label="요리">
+                {% for dish in all_dishes %}
+                    <option value="{{ dish.id }}" 
+                            data-min-time="" 
+                            data-max-time=""
+                            data-producible="false">
+                        {{ dish.name.kor }} (ID: {{ dish.id }})
+                    </option>
+                {% endfor %}
+            </optgroup>
         </select><br><br>
 
         <label for="mass_g">보유 질량 (g):</label><br>

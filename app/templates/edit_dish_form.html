@@ -43,19 +43,30 @@
                             {% for req in dish.required_ingredients %}
                             <div class="row ingredient-row mb-2">
                                 <div class="col-md-6">
-                                    <select class="form-control ingredient-select" name="ingredient_ids[]" required>
-                                        <option value="">식재료 선택</option>
-                                        {% for ing in ingredients %}
-                                        <option value="{{ ing.id }}" 
-                                                {% if ing.id == req.id %}selected{% endif %}>
-                                            {{ ing.name.kor }} / {{ ing.name.eng }}
-                                        </option>
-                                        {% endfor %}
+                                    <input type="hidden" name="item_types[]" value="{{ req.type or 'ingredient' }}">
+                                    <select class="form-control ingredient-select" name="item_ids[]" required>
+                                        <option value="">항목 선택</option>
+                                        <optgroup label="Ingredients">
+                                            {% for ing in ingredients %}
+                                            <option value="{{ ing.id }}" data-type="ingredient"
+                                                    {% if (req.type or 'ingredient') == 'ingredient' and ing.id == req.id %}selected{% endif %}>
+                                                {{ ing.name.kor }} / {{ ing.name.eng }}
+                                            </option>
+                                            {% endfor %}
+                                        </optgroup>
+                                        <optgroup label="Dishes">
+                                            {% for d in all_dishes %}
+                                            <option value="{{ d.id }}" data-type="dish"
+                                                    {% if req.type == 'dish' and d.id == req.id %}selected{% endif %}>
+                                                {{ d.name.kor }} / {{ d.name.eng }}
+                                            </option>
+                                            {% endfor %}
+                                        </optgroup>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="input-group">
-                                        <input type="number" class="form-control" name="ingredient_amounts[]" 
+                                        <input type="number" class="form-control" name="item_amounts[]" 
                                                value="{{ req.amount_g }}" step="0.1" min="0" required>
                                         <div class="input-group-append">
                                             <span class="input-group-text">g</span>
@@ -128,16 +139,24 @@
 <template id="ingredientRowTemplate">
     <div class="row ingredient-row mb-2">
         <div class="col-md-6">
-            <select class="form-control ingredient-select" name="ingredient_ids[]" required>
-                <option value="">식재료 선택</option>
-                {% for ing in ingredients %}
-                <option value="{{ ing.id }}">{{ ing.name.kor }} / {{ ing.name.eng }}</option>
-                {% endfor %}
+            <input type="hidden" name="item_types[]" value="ingredient">
+            <select class="form-control ingredient-select" name="item_ids[]" required>
+                <option value="">항목 선택</option>
+                <optgroup label="Ingredients">
+                    {% for ing in ingredients %}
+                    <option value="{{ ing.id }}" data-type="ingredient">{{ ing.name.kor }} / {{ ing.name.eng }}</option>
+                    {% endfor %}
+                </optgroup>
+                <optgroup label="Dishes">
+                    {% for d in all_dishes %}
+                    <option value="{{ d.id }}" data-type="dish">{{ d.name.kor }} / {{ d.name.eng }}</option>
+                    {% endfor %}
+                </optgroup>
             </select>
         </div>
         <div class="col-md-4">
             <div class="input-group">
-                <input type="number" class="form-control" name="ingredient_amounts[]" 
+                <input type="number" class="form-control" name="item_amounts[]" 
                        value="0" step="0.1" min="0" required>
                 <div class="input-group-append">
                     <span class="input-group-text">g</span>
@@ -169,6 +188,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // 항목 선택 시 type hidden input 업데이트
+    ingredientList.addEventListener('change', function(e) {
+        if (e.target.matches('.ingredient-select')) {
+            const selectedOption = e.target.options[e.target.selectedIndex];
+            const type = selectedOption.getAttribute('data-type');
+            const row = e.target.closest('.ingredient-row');
+            row.querySelector('input[name="item_types[]"]').value = type;
+        }
+    });
+
     // 폼 제출 전 유효성 검사
     document.getElementById('dishForm').addEventListener('submit', function(e) {
         // 최소 하나의 재료가 있는지 확인
@@ -191,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let valid = true;
         ingredients.forEach(function(select) {
             const row = select.closest('.ingredient-row');
-            const amount = row.querySelector('input[name="ingredient_amounts[]"]');
+            const amount = row.querySelector('input[name="item_amounts[]"]');
             if (!select.value || !amount.value || amount.value <= 0) {
                 valid = false;
             }

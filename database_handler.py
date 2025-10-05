@@ -1,4 +1,3 @@
-
 import json
 import os
 from datetime import datetime
@@ -302,7 +301,7 @@ def add_dish(name, image_url, required_ingredients, required_cooking_method_ids,
     Parameters:
     - name: dict of language codes to names
     - image_url: optional string
-    - required_ingredient_ids: list of ingredient ids
+    - required_ingredients: list of dicts with 'type', 'id', and 'amount_g'
     - required_cooking_method_ids: list of cooking method ids
     - nutrition_data: list of nutrient dicts (each with 'name' and 'amount_per_dish')
     - cooking_instructions: optional dict of language codes to instructions
@@ -326,22 +325,36 @@ def add_dish(name, image_url, required_ingredients, required_cooking_method_ids,
         # Initialize sums for all categories
         nutrient_sums = {cat: 0.0 for cat in categories}
 
-        # Sum nutrients by name. Assume ingredient nutrition amounts are per gram (amount_per_unit_mass)
+        # Sum nutrients by name.
         for req in required_ingredients:
-            iid = req.get('id')
-            amt_g = req.get('amount_g', 0)
-            ing_nut = get_ingredient_nutrition(iid) or []
-            for nutr in ing_nut:
-                nutr_name = nutr.get('name')
-                per_g = nutr.get('amount_per_unit_mass') or nutr.get('amount_per_dish') or 0
-                added = per_g * amt_g
-                # If the category exists in categories, add, else create a new key
-                if nutr_name in nutrient_sums:
-                    nutrient_sums[nutr_name] += added
-                else:
-                    nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
+            item_id = req.get('id')
+            item_type = req.get('type', 'ingredient') # Default to ingredient
+            amount = req.get('amount_g', 0)
 
-        # convert sums to list structure expected by frontend; keep ordering from categories when possible
+            if item_type == 'ingredient':
+                ing_nut = get_ingredient_nutrition(item_id) or []
+                for nutr in ing_nut:
+                    nutr_name = nutr.get('name')
+                    per_g = nutr.get('amount_per_unit_mass', 0)
+                    added = per_g * amount
+                    if nutr_name in nutrient_sums:
+                        nutrient_sums[nutr_name] += added
+                    else:
+                        nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
+            elif item_type == 'dish':
+                sub_dish = next((d for d in data if d['id'] == item_id), None)
+                if sub_dish:
+                    sub_dish_nut = sub_dish.get('nutrition_info', [])
+                    for nutr in sub_dish_nut:
+                        nutr_name = nutr.get('name')
+                        amount_per_dish = nutr.get('amount_per_dish', 0)
+                        added = amount_per_dish * amount
+                        if nutr_name in nutrient_sums:
+                            nutrient_sums[nutr_name] += added
+                        else:
+                            nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
+
+        # convert sums to list structure expected by frontend
         final_nutrition = []
         seen = set()
         for cat in categories:
@@ -349,7 +362,6 @@ def add_dish(name, image_url, required_ingredients, required_cooking_method_ids,
             out_name = cat if cat != 'Calories' else 'Calories (Total)'
             final_nutrition.append({"name": out_name, "amount_per_dish": val})
             seen.add(out_name)
-        # add any remaining nutrient names found in ingredients but not in categories
         for k, v in nutrient_sums.items():
             if k not in seen and k != 'Calories':
                 final_nutrition.append({"name": k, "amount_per_dish": v})
@@ -381,7 +393,7 @@ def update_dish(dish_id, name, image_url, required_ingredients, required_cooking
     - dish_id: ID of the dish to update
     - name: dict of language codes to names
     - image_url: optional string
-    - required_ingredients: list of dicts with 'id' and 'amount_g'
+    - required_ingredients: list of dicts with 'type', 'id', and 'amount_g'
     - required_cooking_method_ids: list of cooking method ids
     - nutrition_data: list of nutrient dicts (each with 'name' and 'amount_per_dish')
     - cooking_instructions: optional dict of language codes to instructions
@@ -407,22 +419,36 @@ def update_dish(dish_id, name, image_url, required_ingredients, required_cooking
         # Initialize sums for all categories
         nutrient_sums = {cat: 0.0 for cat in categories}
 
-        # Sum nutrients by name. Assume ingredient nutrition amounts are per gram (amount_per_unit_mass)
+        # Sum nutrients by name.
         for req in required_ingredients:
-            iid = req.get('id')
-            amt_g = req.get('amount_g', 0)
-            ing_nut = get_ingredient_nutrition(iid) or []
-            for nutr in ing_nut:
-                nutr_name = nutr.get('name')
-                per_g = nutr.get('amount_per_unit_mass') or nutr.get('amount_per_dish') or 0
-                added = per_g * amt_g
-                # If the category exists in categories, add, else create a new key
-                if nutr_name in nutrient_sums:
-                    nutrient_sums[nutr_name] += added
-                else:
-                    nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
+            item_id = req.get('id')
+            item_type = req.get('type', 'ingredient') # Default to ingredient
+            amount = req.get('amount_g', 0)
 
-        # convert sums to list structure expected by frontend; keep ordering from categories when possible
+            if item_type == 'ingredient':
+                ing_nut = get_ingredient_nutrition(item_id) or []
+                for nutr in ing_nut:
+                    nutr_name = nutr.get('name')
+                    per_g = nutr.get('amount_per_unit_mass', 0)
+                    added = per_g * amount
+                    if nutr_name in nutrient_sums:
+                        nutrient_sums[nutr_name] += added
+                    else:
+                        nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
+            elif item_type == 'dish':
+                sub_dish = next((d for d in data if d['id'] == item_id), None)
+                if sub_dish:
+                    sub_dish_nut = sub_dish.get('nutrition_info', [])
+                    for nutr in sub_dish_nut:
+                        nutr_name = nutr.get('name')
+                        amount_per_dish = nutr.get('amount_per_dish', 0)
+                        added = amount_per_dish * amount
+                        if nutr_name in nutrient_sums:
+                            nutrient_sums[nutr_name] += added
+                        else:
+                            nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
+
+        # convert sums to list structure expected by frontend
         final_nutrition = []
         seen = set()
         for cat in categories:
@@ -430,7 +456,6 @@ def update_dish(dish_id, name, image_url, required_ingredients, required_cooking
             out_name = cat if cat != 'Calories' else 'Calories (Total)'
             final_nutrition.append({"name": out_name, "amount_per_dish": val})
             seen.add(out_name)
-        # add any remaining nutrient names found in ingredients but not in categories
         for k, v in nutrient_sums.items():
             if k not in seen and k != 'Calories':
                 final_nutrition.append({"name": k, "amount_per_dish": v})

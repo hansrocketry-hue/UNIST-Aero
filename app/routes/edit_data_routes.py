@@ -125,6 +125,7 @@ def edit_dish_route(dish_id):
         return redirect(url_for('visualize.visualize_home'))
     
     ingredients = db._load_table('ingredient')
+    all_dishes = db._load_table('dish')
     cooking_methods = db._load_table('cooking-methods')
     nutrition_categories = db.get_nutrition_categories()
     # Normalize dish['name'] into a dict for the template (kor/eng)
@@ -148,6 +149,7 @@ def edit_dish_route(dish_id):
     return render_template('edit_dish_form.html',
                          dish=dish,
                          ingredients=ingredients,
+                         all_dishes=all_dishes,
                          cooking_methods=cooking_methods,
                          nutrition_categories=nutrition_categories)
 
@@ -163,11 +165,13 @@ def edit_dish_submit(dish_id):
     
     # 재료 정보 수집
     required_ingredients = []
-    ingredient_ids = request.form.getlist('ingredient_ids[]')
-    ingredient_amounts = request.form.getlist('ingredient_amounts[]')
-    for id, amount in zip(ingredient_ids, ingredient_amounts):
-        if id and amount and amount.strip():
+    item_types = request.form.getlist('item_types[]')
+    item_ids = request.form.getlist('item_ids[]')
+    item_amounts = request.form.getlist('item_amounts[]')
+    for type, id, amount in zip(item_types, item_ids, item_amounts):
+        if type and id and amount and amount.strip():
             required_ingredients.append({
+                'type': type,
                 'id': int(id),
                 'amount_g': float(amount)
             })

@@ -91,9 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Set today as the min date for start_date
-    const today = new Date();
-    startDateInput.min = formatDate(today);
+
     
     // Event listeners
     modeStorage.addEventListener('change', updateFormForMode);

@@ -104,7 +104,13 @@ form button {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
-.chart-card, .timeline-card, .food-card {
+.chart-card {
+    background-color: #2e1c82;
+    padding: 1rem;
+    border-radius: 8px;
+    height: 200px;
+}
+.timeline-card, .food-card {
     background-color: #2e1c82;
     padding: 1rem;
     border-radius: 8px;

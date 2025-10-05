@@ -2,8 +2,8 @@
     {
         "id": 1,
         "name": {
-            "kor": "쌀",
-            "eng": "Rice"
+            "eng": "Rice",
+            "kor": "쌀"
         },
         "research_ids": [
             5
@@ -11,64 +11,41 @@
         "nutrition": [
             {
                 "name": "Calories",
-                "unit": "kcal",
                 "amount_per_unit_mass": 0.072
             },
             {
                 "name": "Protein",
-                "unit": "g",
                 "amount_per_unit_mass": 0.0016
             },
             {
                 "name": "Dietary Fiber",
-                "unit": "g",
                 "amount_per_unit_mass": 0.0002
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "unit": "mg",
                 "amount_per_unit_mass": 0.0016
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "unit": "mg",
                 "amount_per_unit_mass": 0.0004
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "unit": "mg",
                 "amount_per_unit_mass": 0.032
             },
             {
                 "name": "Vitamin B6",
-                "unit": "mg",
                 "amount_per_unit_mass": 0.003
             },
             {
                 "name": "Folate",
-                "unit": "mcg",
                 "amount_per_unit_mass": 0.16
-            },
-            {
-                "name": "Vitamin B12",
-                "unit": "mcg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin C",
-                "unit": "mg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin D",
-                "unit": "mcg",
-                "amount_per_unit_mass": 0.0
             }
         ],
         "production_time": {
-            "min": 90,
-            "max": 120,
-            "producible": true
+            "producible": true,
+            "min": "90",
+            "max": "120"
         }
     },
     {

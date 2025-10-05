@@ -206,16 +206,7 @@ function validateDishForm() {
             isValid = false;
         }
 
-        // 조리 설명 검사
-        if (!instructionsKor) {
-            errorMessage += '한글 조리 설명을 입력해주세요.\n';
-            isValid = false;
-        }
 
-        if (!instructionsEng) {
-            errorMessage += '영문 조리 설명을 입력해주세요.\n';
-            isValid = false;
-        }
 
         if (!isValid) {
             e.preventDefault();

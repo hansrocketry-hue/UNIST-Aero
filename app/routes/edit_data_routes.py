@@ -22,10 +22,7 @@ def edit_research_submit(research_id):
     """연구 자료 수정 처리"""
     reference_data = {
         'title': request.form.get('title'),
-        'authors': request.form.get('authors'),
-        'journal': request.form.get('journal'),
-        'year': request.form.get('year'),
-        'doi': request.form.get('doi')
+        'link': request.form.get('link')
     }
     summary = {
         'kor': request.form.get('summary_kor'),
@@ -52,10 +49,21 @@ def edit_ingredient_route(ingredient_id):
 @bp.route('/ingredient/<int:ingredient_id>', methods=['POST'])
 def edit_ingredient_submit(ingredient_id):
     """식재료 수정 처리"""
-    name = {
-        'kor': request.form.get('name_kor'),
-        'eng': request.form.get('name_eng')
-    }
+    # Build multilingual name dict from dynamic fields
+    name_codes = request.form.getlist('name_codes') or request.form.getlist('name_codes[]')
+    name_names = request.form.getlist('name_names') or request.form.getlist('name_names[]')
+    name = {}
+    for i in range(min(len(name_codes), len(name_names))):
+        code = name_codes[i]
+        val = name_names[i]
+        if code and val and val.strip():
+            name[code] = val.strip()
+
+    if not name:
+        # At least one language name required
+        from flask import flash
+        flash('최소 하나 이상의 언어로 이름을 입력해야 합니다.', 'danger')
+        return redirect(url_for('edit_data.edit_ingredient_route', ingredient_id=ingredient_id))
     research_ids = [int(id) for id in request.form.getlist('research_ids[]')]
     
     # 영양 정보 수집
@@ -73,9 +81,8 @@ def edit_ingredient_submit(ingredient_id):
     # 생산 시간 정보
     production_time = {
         'producible': bool(request.form.get('producible')),
-        'min_time': request.form.get('min_time'),
-        'max_time': request.form.get('max_time'),
-        'unit': request.form.get('time_unit', 'days')
+        'min': request.form.get('min') or request.form.get('min_time'),
+        'max': request.form.get('max') or request.form.get('max_time')
     }
 
     db.update_ingredient(ingredient_id, name, research_ids, nutrition_data, production_time)
@@ -161,9 +168,12 @@ def edit_dish_submit(dish_id):
     
     # 조리 설명
     cooking_instructions = {
-        'kor': request.form.get('instructions_kor'),
-        'eng': request.form.get('instructions_eng')
+        'kor': request.form.get('instructions_kor') or '',
+        'eng': request.form.get('instructions_eng') or ''
     }
+    # If both instruction fields are empty, treat cooking_instructions as None
+    if not (cooking_instructions.get('kor').strip() or cooking_instructions.get('eng').strip()):
+        cooking_instructions = None
     # Debug: log incoming form data to console to help diagnose save issues
     try:
         print(f"[edit_dish_submit] dish_id={dish_id}")

@@ -241,12 +241,17 @@ def add_storaged_ingredient_route():
                 storage_data['min_end_date'] = min_end_date.strftime('%Y-%m-%d')
                 storage_data['max_end_date'] = max_end_date.strftime('%Y-%m-%d')
             else:  # storage mode
-                # Get and validate end date and expiration date
-                end_date = request.form.get('end_date')
+                # Get and validate expiration date only (end_date removed; expiration_date represents the storage end)
                 expiration_date = request.form.get('expiration_date')
-                
+                if not expiration_date:
+                    flash("보관 모드에서는 보관 기한을 입력해야 합니다.", 'danger')
+                    all_ingredients = db._load_table('ingredient')
+                    processing_options = db.PROCESSING_OPTIONS
+                    return render_template('add_storaged_ingredient_form.html',
+                                        all_ingredients=all_ingredients,
+                                        processing_options=processing_options)
+
                 try:
-                    end_date_obj = datetime.strptime(end_date, '%Y-%m-%d')
                     expiration_date_obj = datetime.strptime(expiration_date, '%Y-%m-%d')
                 except ValueError:
                     flash("날짜 형식이 올바르지 않습니다. YYYY-MM-DD 형식으로 입력해주세요.", 'danger')
@@ -256,24 +261,15 @@ def add_storaged_ingredient_route():
                                         all_ingredients=all_ingredients,
                                         processing_options=processing_options)
 
-                end_date = end_date_obj.date()
-                if start_date != end_date:
-                    flash("보관 모드에서는 시작일과 종료일이 같아야 합니다.", 'danger')
+                # expiration_date must be after or equal to start_date (we consider same-day storage allowed)
+                if expiration_date_obj.date() <= start_date:
+                    flash("보관 기한은 시작일 이후여야 합니다.", 'danger')
                     all_ingredients = db._load_table('ingredient')
                     processing_options = db.PROCESSING_OPTIONS
                     return render_template('add_storaged_ingredient_form.html',
                                         all_ingredients=all_ingredients,
                                         processing_options=processing_options)
 
-                if expiration_date_obj.date() <= end_date:
-                    flash("보관 기한은 종료일 이후여야 합니다.", 'danger')
-                    all_ingredients = db._load_table('ingredient')
-                    processing_options = db.PROCESSING_OPTIONS
-                    return render_template('add_storaged_ingredient_form.html',
-                                        all_ingredients=all_ingredients,
-                                        processing_options=processing_options)
-                
-                storage_data['end_date'] = end_date.strftime('%Y-%m-%d')
                 storage_data['expiration_date'] = expiration_date
 
             # All validations passed, add the storaged ingredient

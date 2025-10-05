@@ -36,13 +36,18 @@
             <label for="start_date">시작일:</label><br>
             <input type="date" id="start_date" name="start_date" required><br><br>
 
-            <div id="end_date_container">
-                <label for="end_date">종료일:</label><br>
-                <input type="date" id="end_date" name="end_date" required><br><br>
+            <div id="production_dates" style="display:none;">
+                <label>생산 예상 종료 범위:</label><br>
+                <input type="date" id="min_end_date" name="min_end_date" readonly>
+                <small>최소</small><br>
+                <input type="date" id="max_end_date" name="max_end_date" readonly>
+                <small>최대</small><br><br>
             </div>
 
-            <label for="expiration_date">보관 기한:</label><br>
-            <input type="date" id="expiration_date" name="expiration_date" required><br><br>
+            <div id="expiration_container" class="storage-only">
+                <label for="expiration_date">보관 기한:</label><br>
+                <input type="date" id="expiration_date" name="expiration_date"><br><br>
+            </div>
         </div>
 
         <label for="processing_type">가공 방식:</label><br>

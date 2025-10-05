@@ -111,7 +111,7 @@
         "username": "gg",
         "password_hash": "scrypt:32768:8:1$dmhsHPqITVeMnQrs$406fa2b486d941300bfa868235350c3198031beb30246496fa725c34978be90118ac8df763ce8bba118c4da017391273f1197a79086180b2ff00a6ab7ecbafcb",
         "name": "gg",
-        "height": 123,
+        "height": 321,
         "weight": 123,
         "gender": "male",
         "activity_level": 4,

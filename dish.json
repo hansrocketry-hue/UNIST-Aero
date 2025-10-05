@@ -874,7 +874,7 @@
     {
         "id": 14,
         "name": {
-            "kor": "잡곡밥 ⭐",
+            "kor": "잡곡밥 ",
             "eng": "Multigrain Rice"
         },
         "required_ingredient_ids": [
@@ -941,7 +941,7 @@
     {
         "id": 15,
         "name": {
-            "kor": "해조국 ⭐",
+            "kor": "해조국 ",
             "eng": "Seaweed Soup"
         },
         "required_ingredient_ids": [
@@ -1694,7 +1694,7 @@
     {
         "id": 27,
         "name": {
-            "kor": "그라탕 ⭐",
+            "kor": "그라탕 ",
             "eng": "Gratin"
         },
         "required_ingredient_ids": [],
@@ -1729,7 +1729,7 @@
     {
         "id": 28,
         "name": {
-            "kor": "라자냐 ⭐",
+            "kor": "라자냐 ",
             "eng": "Lasagna"
         },
         "required_ingredient_ids": [],
@@ -1764,7 +1764,7 @@
     {
         "id": 29,
         "name": {
-            "kor": "미트볼 ⭐",
+            "kor": "미트볼 ",
             "eng": "Meatball"
         },
         "required_ingredient_ids": [
@@ -1836,7 +1836,7 @@
     {
         "id": 30,
         "name": {
-            "kor": "팬케이크/머핀 ⭐",
+            "kor": "팬케이크/머핀 ",
             "eng": "Pancakes / Muffins"
         },
         "required_ingredient_ids": [
@@ -2030,7 +2030,7 @@
     {
         "id": 33,
         "name": {
-            "kor": "짜장밥 ⭐",
+            "kor": "짜장밥 ",
             "eng": "Jajangbap (Black Bean Sauce Rice)"
         },
         "required_ingredient_ids": [
@@ -2097,7 +2097,7 @@
     {
         "id": 34,
         "name": {
-            "kor": "탕수육 대체 ⭐",
+            "kor": "탕수육 대체 ",
             "eng": "Sweet and Sour Pork Substitute"
         },
         "required_ingredient_ids": [
@@ -2155,7 +2155,7 @@
     {
         "id": 35,
         "name": {
-            "kor": "우동 ⭐",
+            "kor": "우동 ",
             "eng": "Udon"
         },
         "required_ingredient_ids": [
@@ -2193,7 +2193,7 @@
     {
         "id": 36,
         "name": {
-            "kor": "소바 ⭐",
+            "kor": "소바 ",
             "eng": "Soba (Buckwheat Noodles)"
         },
         "required_ingredient_ids": [
@@ -2231,7 +2231,7 @@
     {
         "id": 37,
         "name": {
-            "kor": "교자 만두 ⭐",
+            "kor": "교자 만두 ",
             "eng": "Gyoza Dumplings"
         },
         "required_ingredient_ids": [
@@ -2303,7 +2303,7 @@
     {
         "id": 38,
         "name": {
-            "kor": "채소롤/김말이 ⭐",
+            "kor": "채소롤/김말이 ",
             "eng": "Vegetable Roll / Gimbap"
         },
         "required_ingredient_ids": [
@@ -2369,7 +2369,7 @@
     {
         "id": 39,
         "name": {
-            "kor": "에너지바 ⭐",
+            "kor": "에너지바 ",
             "eng": "Energy Bar"
         },
         "required_ingredient_ids": [],
@@ -2403,7 +2403,7 @@
     {
         "id": 40,
         "name": {
-            "kor": "퓨전 카레 ⭐",
+            "kor": "퓨전 카레 ",
             "eng": "Fusion Curry"
         },
         "required_ingredient_ids": [
@@ -2471,7 +2471,7 @@
     {
         "id": 41,
         "name": {
-            "kor": "비건 치즈 ⭐",
+            "kor": "비건 치즈 ",
             "eng": "Vegan Cheese"
         },
         "required_ingredient_ids": [
@@ -2509,7 +2509,7 @@
     {
         "id": 42,
         "name": {
-            "kor": "요거트 ⭐",
+            "kor": "요거트 ",
             "eng": "Yogurt"
         },
         "required_ingredient_ids": [

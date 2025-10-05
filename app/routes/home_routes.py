@@ -311,7 +311,7 @@ def index():
         recommended_food.append({
             'id': dish_data.get('id'),
             'name': dish_name,
-            'image': dish_data.get('image_url') or 'https://via.placeholder.com/150'
+            'image': dish_data.get('image_url') or None
         })
 
     # END: Food Recommendation Algorithm

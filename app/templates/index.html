@@ -45,9 +45,15 @@
         <div class="grid-container">
             {% for food in recommended_food %}
             <div class="food-card">
+                {% if food.image %}
                 <img src="{{ food.image }}" alt="{{ food.name }}">
                 <h5>{{ food.name }}</h5>
-                <a href="#" class="btn-details">Details</a>
+                {% else %}
+                <div class="food-card-no-image">
+                    <h5>{{ food.name }}</h5>
+                </div>
+                {% endif %}
+                <a href="{{ url_for('visualize.dish_detail', dish_id=food.id) }}" class="btn-details">Details</a>
             </div>
             {% endfor %}
         </div>

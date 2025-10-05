@@ -141,15 +141,23 @@ form button {
     font-size: 20pt;
     font-family: "Apple Braille", sans-serif;
 }
-.btn-details {
-    background-color: #ffd835;
-    color: #0e1544;
-    padding: 0.5rem 1rem;
-    border: none;
+.food-card-no-image {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a0f5c;
     border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
+    border: 2px solid #ffd835;
+}
+.food-card-no-image h5 {
+    color: #ffd835;
+    margin: 0;
+    padding: 1rem;
+    font-size: 20pt;
     font-family: "Apple Braille", sans-serif;
+    text-align: center;
 }
 .timeline-card p {
     color: #f4f4f4;

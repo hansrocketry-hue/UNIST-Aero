@@ -135,10 +135,10 @@
                 </td>
                 <td>
                     {% set cal = 0 %}
-                    {% if item.nutrition_info %}
-                        {% for nut in item.nutrition_info %}
-                            {% if nut.amount_per_dish is defined %}
-                                {% set cal = cal + nut.amount_per_dish %}
+                    {% if item['nutrition_info'] %}
+                        {% for nut in item['nutrition_info'] %}
+                            {% if 'name' in nut and nut['name'] == 'Calories (Total)' and 'amount_per_dish' in nut %}
+                                {% set cal = nut['amount_per_dish'] %}
                             {% endif %}
                         {% endfor %}
                     {% endif %}

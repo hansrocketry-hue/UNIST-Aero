@@ -65,7 +65,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "90–120"
+        "production_time": {
+            "min": 90,
+            "max": 120
+        }
     },
     {
         "id": 2,
@@ -133,7 +136,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "70-90"
+        "production_time": {
+            "min": 70,
+            "max": 90
+        }
     },
     {
         "id": 3,
@@ -205,7 +211,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "70–90"
+        "production_time": {
+            "min": 70,
+            "max": 90
+        }
     },
     {
         "id": 4,
@@ -271,7 +280,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "90–120"
+        "production_time": {
+            "min": 90,
+            "max": 120
+        }
     },
     {
         "id": 5,
@@ -341,7 +353,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "90–120"
+        "production_time": {
+            "min": 90,
+            "max": 120
+        }
     },
     {
         "id": 6,
@@ -409,7 +424,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "25–30"
+        "production_time": {
+            "min": 25,
+            "max": 30
+        }
     },
     {
         "id": 7,
@@ -483,7 +501,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "25–35"
+        "production_time": {
+            "min": 25,
+            "max": 35
+        }
     },
     {
         "id": 8,
@@ -554,7 +575,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "20–30"
+        "production_time": {
+            "min": 20,
+            "max": 30
+        }
     },
     {
         "id": 9,
@@ -623,7 +647,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "20–25"
+        "production_time": {
+            "min": 20,
+            "max": 25
+        }
     },
     {
         "id": 10,
@@ -696,7 +723,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "60–90"
+        "production_time": {
+            "min": 60,
+            "max": 90
+        }
     },
     {
         "id": 11,
@@ -762,7 +792,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "70–90"
+        "production_time": {
+            "min": 70,
+            "max": 90
+        }
     },
     {
         "id": 12,
@@ -828,7 +861,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "50–70"
+        "production_time": {
+            "min": 50,
+            "max": 70
+        }
     },
     {
         "id": 13,
@@ -897,7 +933,10 @@
                 "amount_per_unit_mass": 0.1
             }
         ],
-        "production_time": "20–30"
+        "production_time": {
+            "min": 20,
+            "max": 30
+        }
     },
     {
         "id": 14,
@@ -963,7 +1002,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "90–120"
+        "production_time": {
+            "min": 90,
+            "max": 120
+        }
     },
     {
         "id": 15,
@@ -1029,7 +1071,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "90–120"
+        "production_time": {
+            "min": 90,
+            "max": 120
+        }
     },
     {
         "id": 16,
@@ -1095,7 +1140,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "60–90"
+        "production_time": {
+            "min": 60,
+            "max": 90
+        }
     },
     {
         "id": 17,
@@ -1161,7 +1209,10 @@
                 "amount_per_unit_mass": 0.1
             }
         ],
-        "production_time": "90–180"
+        "production_time": {
+            "min": 90,
+            "max": 180
+        }
     },
     {
         "id": 18,
@@ -1232,7 +1283,10 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "100–120"
+        "production_time": {
+            "min": 100,
+            "max": 120
+        }
     },
     {
         "id": 19,
@@ -1298,7 +1352,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "(지구 생산)"
+        "production_time": null
     },
     {
         "id": 20,
@@ -1364,7 +1418,7 @@
                 "amount_per_unit_mass": 0.025
             }
         ],
-        "production_time": "(지구 생산)"
+        "production_time": null
     },
     {
         "id": 21,
@@ -1430,7 +1484,7 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "(지구 생산)"
+        "production_time": null
     },
     {
         "id": 22,
@@ -1496,6 +1550,6 @@
                 "amount_per_unit_mass": 0.0
             }
         ],
-        "production_time": "–"
+        "production_time": null
     }
 ]

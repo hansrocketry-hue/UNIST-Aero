@@ -196,11 +196,92 @@ def index():
             "unit": NUTRIENT_UNITS.get(nutrient, '')
         }
     
-    # Recommended food (placeholder)
-    recommended_food = [
-        {"name": "우주 비빔밥", "image": "https://via.placeholder.com/150"},
-        {"name": "동결건조 과일 믹스", "image": "https://via.placeholder.com/150"}
-    ]
+    # START: Food Recommendation Algorithm
+    
+    # 1. Load data
+    all_dishes = db._load_table('dish')
+    stored_ingredients = db._load_table('storaged-ingredient')
+    
+    # 2. Aggregate stored ingredients
+    available_ingredients = {}
+    for item in stored_ingredients:
+        ingredient_id = item.get('storage-id')
+        mass = item.get('mass_g', 0)
+        if ingredient_id:
+            available_ingredients[ingredient_id] = available_ingredients.get(ingredient_id, 0) + mass
+
+    # 3. Filter makeable dishes and score them
+    scored_dishes = []
+    
+    like_ingredients = user.get('like', [])
+    forbid_ingredients = user.get('forbid', [])
+
+    for dish in all_dishes:
+        is_makeable = True
+        has_forbid_ingredient = False
+        
+        # Check for forbidden ingredients
+        if dish.get('required_ingredients'):
+            for req_ingredient in dish.get('required_ingredients', []):
+                if req_ingredient.get('id') in forbid_ingredients:
+                    has_forbid_ingredient = True
+                    break
+        
+        if has_forbid_ingredient:
+            continue # Skip dish with forbidden ingredient
+
+        # Check if ingredients are available
+        if dish.get('required_ingredients'):
+            for req_ingredient in dish.get('required_ingredients', []):
+                req_id = req_ingredient.get('id')
+                req_amount = req_ingredient.get('amount_g', 0)
+                if available_ingredients.get(req_id, 0) < req_amount:
+                    is_makeable = False
+                    break
+        
+        if is_makeable:
+            # 4. Calculate score
+            nutrition_score = 0
+            preference_score = 0
+            
+            # Nutrition Score
+            if dish.get('nutrition_info'):
+                for nutrient_info in dish['nutrition_info']:
+                    nutrient_name = nutrient_info.get('name')
+                    nutrient_amount = nutrient_info.get('amount_per_dish', 0)
+                    
+                    requirement = DAILY_REQUIREMENTS.get(nutrient_name, 0)
+                    intake = todays_intake_total.get(nutrient_name, 0)
+                    
+                    gap = requirement - intake
+                    if gap > 0 and requirement > 0:
+                        # Add score based on how much of the daily requirement is filled
+                        nutrition_score += (nutrient_amount / requirement) * 100
+
+            # Preference Score
+            if dish.get('required_ingredients'):
+                for req_ingredient in dish.get('required_ingredients', []):
+                    if req_ingredient.get('id') in like_ingredients:
+                        preference_score += 50 # Arbitrary bonus for liked ingredients
+
+            total_score = nutrition_score + preference_score
+            scored_dishes.append({'dish': dish, 'score': total_score})
+
+    # 5. Sort and get top 3 recommendations
+    scored_dishes.sort(key=lambda x: x['score'], reverse=True)
+    
+    recommended_food = []
+    for scored_dish in scored_dishes[:3]:
+        dish_data = scored_dish['dish']
+        lang = session.get('lang', 'kor')
+        dish_name = dish_data.get('name', {}).get(lang, 'N/A')
+        recommended_food.append({
+            'id': dish_data.get('id'),
+            'name': dish_name,
+            'image': dish_data.get('image_url') or 'https://via.placeholder.com/150'
+        })
+
+    # END: Food Recommendation Algorithm
 
     # Load all dishes for displaying names
     dishes = db._load_table('dish')

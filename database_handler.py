@@ -165,29 +165,55 @@ def get_nutrition_categories():
     with open('nutrition_category.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def add_dish(dish_type, name, image_url, required_ingredient_ids, required_cooking_method_ids, nutrition_data, cooking_instructions=None):
+def add_dish(name, image_url, required_ingredient_ids, required_cooking_method_ids, nutrition_data=None, cooking_instructions=None):
+    """Add a dish.
+
+    Parameters:
+    - name: dict of language codes to names
+    - image_url: optional string
+    - required_ingredient_ids: list of ingredient ids
+    - required_cooking_method_ids: list of cooking method ids
+    - nutrition_data: list of nutrient dicts (each with 'name' and 'amount_per_dish')
+    - cooking_instructions: optional dict of language codes to instructions
+    """
     data = _load_table('dish')
     new_id = _get_next_id('dish')
-    
-    # Calculate total nutrition info based on required ingredients
-    total_nutrition = {"nutrients": []}
-    for ingredient_id in required_ingredient_ids:
-        ingredient_nutrition = get_ingredient_nutrition(ingredient_id)
-        if ingredient_nutrition:
-            # Assuming we need to sum up the nutritional values
-            # This is a simplified version - you might want to add weight/portion calculations
-            if not total_nutrition["nutrients"]:
-                total_nutrition["nutrients"] = ingredient_nutrition
-            else:
-                for i, nutrient in enumerate(ingredient_nutrition):
-                    total_nutrition["nutrients"][i]["amount_per_unit_mass"] += nutrient["amount_per_unit_mass"]
-    
+
+    # If nutrition_data was provided by the caller and is non-empty, use it.
+    # Otherwise, compute totals based on ingredient nutrition.
+    final_nutrition = []
+    if nutrition_data:
+        final_nutrition = nutrition_data
+    else:
+        total_nutrition = {"nutrients": []}
+        for ingredient_id in required_ingredient_ids:
+            ingredient_nutrition = get_ingredient_nutrition(ingredient_id)
+            if ingredient_nutrition:
+                if not total_nutrition["nutrients"]:
+                    # copy to avoid mutating original
+                    total_nutrition["nutrients"] = [dict(n) for n in ingredient_nutrition]
+                else:
+                    # try to sum by matching nutrient names; fall back to positional
+                    for nutr in ingredient_nutrition:
+                        matched = next((x for x in total_nutrition["nutrients"] if x.get('name') == nutr.get('name')), None)
+                        if matched:
+                            # handle both amount_per_unit_mass and amount_per_dish keys
+                            if 'amount_per_unit_mass' in nutr:
+                                key = 'amount_per_unit_mass'
+                            else:
+                                key = 'amount_per_dish'
+                            matched[key] = matched.get(key, 0) + nutr.get(key, 0)
+                        else:
+                            total_nutrition["nutrients"].append(dict(nutr))
+        final_nutrition = total_nutrition["nutrients"]
+
     new_item = {
         "id": new_id,
         "name": name,
+        "image_url": image_url,
         "required_ingredient_ids": required_ingredient_ids,
         "cooking_instructions": cooking_instructions,
-        "nutrition_info": total_nutrition["nutrients"],
+        "nutrition_info": final_nutrition,
         "cooking-method-ids": required_cooking_method_ids
     }
     data.append(new_item)

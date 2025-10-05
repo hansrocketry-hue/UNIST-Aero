@@ -111,10 +111,14 @@ def add_dish_route():
             name_dict = dict(zip(name_codes, name_names))
 
             req_ing_ids = [int(x) for x in request.form.getlist('required_ingredient_ids')]
-            req_cook_ids = [int(x) for x in request.form.getlist('cooking-method-ids')]
-            cooking_instructions = request.form['cooking_instructions']
+            req_cook_ids = [int(x) for x in request.form.getlist('required_cooking_method_ids')]
 
-            # nutrition_info는 여러 nutrient를 리스트로 받음
+            # cooking_instructions provided by dynamic multilingual fields created by JS
+            ci_codes = request.form.getlist('cooking_instructions_codes')
+            ci_texts = request.form.getlist('cooking_instructions_names') or request.form.getlist('cooking_instructions_texts')
+            cooking_instructions = dict(zip(ci_codes, ci_texts)) if ci_codes and ci_texts else None
+
+            # nutrition_info: get list entries or fallback to single calories field
             nutrition_info = []
             nut_names = request.form.getlist('nutrient_name')
             nut_values = request.form.getlist('nutrient_value')
@@ -122,11 +126,23 @@ def add_dish_route():
                 if n and v:
                     nutrition_info.append({"name": n, "amount_per_dish": float(v)})
 
+            calories_field = request.form.get('calories')
+            if calories_field:
+                try:
+                    cal_val = float(calories_field)
+                    if not any(n.get('name') == 'Calories (Total)' for n in nutrition_info):
+                        nutrition_info.insert(0, {"name": "Calories (Total)", "amount_per_dish": cal_val})
+                except ValueError:
+                    pass
+
+            image_url = request.form.get('image_url') or None
+
             db.add_dish(
                 name=name_dict,
+                image_url=image_url,
                 required_ingredient_ids=req_ing_ids,
                 required_cooking_method_ids=req_cook_ids,
-                nutrition_info=nutrition_info,
+                nutrition_data=nutrition_info,
                 cooking_instructions=cooking_instructions
             )
             flash(f"'{name_dict.get('kor', list(name_dict.values())[0])}' 요리가 성공적으로 추가되었습니다.", 'success')

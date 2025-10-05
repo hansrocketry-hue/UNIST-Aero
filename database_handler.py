@@ -9,7 +9,7 @@ DATA_FILES = {
     'cooking-methods': 'cooking-methods.json',
     'research-data': 'research-data.json',
     'dish': 'dish.json',
-    'nutrition': 'nutrition.json'
+    'nutrition': 'nutrition.json'  # legacy; prefer embedding nutrition into ingredient.json
 }
 
 def _load_table(table_name):
@@ -34,73 +34,93 @@ def _get_next_id(table_name):
     return max(item.get('id', 0) for item in data) + 1
 
 def add_ingredient(name, research_ids, nutrition_data, production_time):
-    # First, add nutrition data
-    nutrition_data = {
-        "nutrients": nutrition_data
-    }
-    nutrition_id = add_nutrition(nutrition_data)
-    
-    # Then add ingredient with reference to nutrition
+    """Add ingredient and embed nutrition_data into the ingredient record.
+
+    nutrition_data: list of nutrients e.g. [{"name":.., "amount_per_unit_mass": ..}, ...]
+    """
     data = _load_table('ingredient')
     new_id = _get_next_id('ingredient')
+
+    # Embed nutrition directly into ingredient record (new format)
     new_item = {
         "id": new_id,
         "name": name,
         "research_ids": research_ids,
-        "nutrition_id": nutrition_id,
+        "nutrition": nutrition_data,
         "production_time": production_time
     }
     data.append(new_item)
     _save_table('ingredient', data)
-    
-    # Update nutrition record with ingredient reference
-    update_ingredient_nutrition_reference(new_id, nutrition_id)
-    
+
+    # For backwards compatibility, we do not create nutrition.json entries anymore.
     print(f"New ingredient '{name.get('kor', 'N/A')}' added with ID {new_id}.")
     return new_id
 
 def add_nutrition(nutrition_data):
-    data = _load_table('nutrition')
+    """Legacy helper kept for compatibility: writes to nutrition.json (deprecated).
+
+    Prefer embedding nutrition in ingredient.json; this function will still write to
+    nutrition.json if present, otherwise it's a no-op returning None.
+    """
+    try:
+        data = _load_table('nutrition')
+    except Exception:
+        return None
     new_id = _get_next_id('nutrition')
     new_item = {
         "id": new_id,
-        "ingredient_id": None,  # Will be updated when ingredient is created
-        "nutrients": nutrition_data["nutrients"]
+        "ingredient_id": None,
+        "nutrients": nutrition_data.get("nutrients", [])
     }
     data.append(new_item)
     _save_table('nutrition', data)
     return new_id
 
 def get_ingredient_nutrition(ingredient_id):
+    """Return the nutrition list for an ingredient.
+
+    New format: nutrition embedded in ingredient['nutrition'] as a list of nutrients.
+    Legacy fallback: read nutrition.json and match by ingredient['nutrition_id'].
+    """
     ingredient_data = _load_table('ingredient')
-    nutrition_data = _load_table('nutrition')
-    
-    # Find the ingredient
-    ingredient = next((item for item in ingredient_data if item['id'] == ingredient_id), None)
+    ingredient = next((item for item in ingredient_data if item.get('id') == ingredient_id), None)
     if not ingredient:
         return None
-        
-    # Find its nutrition data
-    nutrition = next((item for item in nutrition_data if item['id'] == ingredient['nutrition_id']), None)
-    return nutrition['nutrients'] if nutrition else None
+
+    # New format: look for embedded nutrition
+    if 'nutrition' in ingredient:
+        return ingredient['nutrition']
+
+    # Legacy format: try nutrition.json via nutrition_id
+    nut_id = ingredient.get('nutrition_id')
+    if not nut_id:
+        return None
+    nutrition_data = _load_table('nutrition')
+    nutrition = next((item for item in nutrition_data if item.get('id') == nut_id), None)
+    return nutrition.get('nutrients') if nutrition else None
 
 def update_ingredient_nutrition_reference(ingredient_id, nutrition_id):
-    """Update the ingredient's nutrition reference after creating both records"""
+    """Legacy helper: updates cross-reference in nutrition.json and ingredient.json.
+
+    With the new embedded format this is typically unnecessary; keep it for backwards
+    compatibility but do nothing if nutrition.json is absent.
+    """
+    nutrition_path = DATA_FILES.get('nutrition')
+    if not nutrition_path or not os.path.exists(nutrition_path):
+        return
     nutrition_data = _load_table('nutrition')
     ingredient_data = _load_table('ingredient')
-    
-    # Update nutrition record with ingredient_id
+
     for item in nutrition_data:
-        if item['id'] == nutrition_id:
+        if item.get('id') == nutrition_id:
             item['ingredient_id'] = ingredient_id
             break
-    
-    # Update ingredient record with nutrition_id
+
     for item in ingredient_data:
-        if item['id'] == ingredient_id:
+        if item.get('id') == ingredient_id:
             item['nutrition_id'] = nutrition_id
             break
-    
+
     _save_table('nutrition', nutrition_data)
     _save_table('ingredient', ingredient_data)
 

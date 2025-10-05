@@ -15,15 +15,12 @@ def visualize_home():
         'storaged-ingredient': db._load_table('storaged-ingredient'),
         'cooking-methods': db._load_table('cooking-methods'),
         'research-data': db._load_table('research-data'),
-        'dish': db._load_table('dish'),
-        'nutrition': db._load_table('nutrition')
+        'dish': db._load_table('dish')
     }
-    
-    # 각 식재료의 영양소 정보를 nutrition 테이블에서 가져와서 추가
+    # Ensure each ingredient has a 'nutrition_info' field from embedded nutrition if present
     for ingredient in data['ingredient']:
-        nutrition = next((n for n in data['nutrition'] if n['id'] == ingredient.get('nutrition_id')), None)
-        if nutrition:
-            ingredient['nutrition_info'] = nutrition['nutrients']
+        if 'nutrition' in ingredient:
+            ingredient['nutrition_info'] = ingredient['nutrition']
     
     ingredients = data['ingredient']
     cooking_methods = data['cooking-methods']
@@ -47,14 +44,11 @@ def research_detail(research_id):
 def ingredient_detail(ingredient_id):
     """식재료 상세 페이지"""
     ingredient_data = db._load_table('ingredient')
-    nutrition_data = db._load_table('nutrition')
-    
     ingredient = next((item for item in ingredient_data if item['id'] == ingredient_id), None)
     if ingredient:
-        # Get nutrition info
-        nutrition = next((item for item in nutrition_data if item['id'] == ingredient.get('nutrition_id')), None)
-        if nutrition:
-            ingredient['nutrition_info'] = nutrition['nutrients']
+        # Get nutrition info from embedded nutrition
+        if 'nutrition' in ingredient:
+            ingredient['nutrition_info'] = ingredient['nutrition']
             
         # Get related dishes
         dishes = db._load_table('dish')

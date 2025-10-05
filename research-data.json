@@ -835,7 +835,7 @@
             "eng": "Observed a 25–50% increase in vitamin C/E requirements in high-altitude and polar environments, along with increased hemoglobin and changes in iron metabolism. Suggested that extreme environments are similar to the space environment."
         }
     },
-        {
+    {
         "id": 77,
         "reference_data": {
             "link": "https://www.nasa.gov/wp-content/uploads/2023/04/nutritional-biochemistry-of-space-flight.pdf",
@@ -846,7 +846,7 @@
             "eng": "Essential nutrients needed during space flight"
         }
     },
-        {
+    {
         "id": 78,
         "reference_data": {
             "link": "https://ntrs.nasa.gov/citations/20250001897",

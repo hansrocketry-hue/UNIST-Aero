@@ -59,6 +59,12 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 2.6
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7,
+            8
         ]
     },
     {
@@ -116,6 +122,11 @@
                 "name": "Vitamin B6",
                 "amount_per_dish": 0.21
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -182,6 +193,11 @@
                 "name": "Vitamin D",
                 "amount_per_dish": 1.0
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -245,6 +261,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 5.0
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            7
         ]
     },
     {
@@ -306,6 +326,9 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.2
             }
+        ],
+        "cooking-method-ids": [
+            3
         ]
     },
     {
@@ -377,6 +400,11 @@
                 "name": "Vitamin D",
                 "amount_per_dish": 0.5
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -441,6 +469,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 4.3
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -503,6 +535,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 8.0
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -560,6 +596,10 @@
                 "name": "Vitamin B6",
                 "amount_per_dish": 0.21
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            7
         ]
     },
     {
@@ -621,7 +661,8 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.2
             }
-        ]
+        ],
+        "cooking-method-ids": []
     },
     {
         "id": 11,
@@ -689,6 +730,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 8.4
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -752,6 +798,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 1.2
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -814,6 +865,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 12.0
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -877,6 +932,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.4
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -910,6 +969,11 @@
                 "name": "Sodium",
                 "amount_per_dish": 20
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -971,6 +1035,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 4.2
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -1036,6 +1104,11 @@
                 "name": "Vitamin D",
                 "amount_per_dish": 1.0
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -1097,6 +1170,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 2.0
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -1159,6 +1236,9 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 16.0
             }
+        ],
+        "cooking-method-ids": [
+            4
         ]
     },
     {
@@ -1190,6 +1270,9 @@
                 "name": "Sodium",
                 "amount_per_dish": 3
             }
+        ],
+        "cooking-method-ids": [
+            7
         ]
     },
     {
@@ -1252,6 +1335,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 2.8
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -1318,6 +1406,11 @@
                 "name": "Vitamin D",
                 "amount_per_dish": 1.5
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -1379,6 +1472,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 2.8
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7,
+            8
         ]
     },
     {
@@ -1446,6 +1544,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 2.7
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7,
+            8
         ]
     },
     {
@@ -1512,6 +1615,12 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.6
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7,
+            8
         ]
     },
     {
@@ -1575,6 +1684,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 8.6
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -1606,6 +1720,10 @@
                 "name": "Sodium",
                 "amount_per_dish": 12
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -1637,6 +1755,10 @@
                 "name": "Sodium",
                 "amount_per_dish": 14
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -1703,6 +1825,12 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.6
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7,
+            8
         ]
     },
     {
@@ -1765,7 +1893,8 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 2.0
             }
-        ]
+        ],
+        "cooking-method-ids": []
     },
     {
         "id": 31,
@@ -1827,6 +1956,9 @@
                 "name": "Vitamin B6",
                 "amount_per_dish": 0.39
             }
+        ],
+        "cooking-method-ids": [
+            7
         ]
     },
     {
@@ -1889,6 +2021,10 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.1
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7
         ]
     },
     {
@@ -1951,6 +2087,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.8
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -2008,7 +2149,8 @@
                 "name": "Vitamin B6",
                 "amount_per_dish": 0.24
             }
-        ]
+        ],
+        "cooking-method-ids": []
     },
     {
         "id": 35,
@@ -2041,6 +2183,11 @@
                 "name": "Sodium",
                 "amount_per_dish": 12
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -2074,6 +2221,11 @@
                 "name": "Sodium",
                 "amount_per_dish": 10
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7
         ]
     },
     {
@@ -2140,6 +2292,12 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 0.6
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4,
+            7,
+            8
         ]
     },
     {
@@ -2202,6 +2360,10 @@
                 "name": "Vitamin B6",
                 "amount_per_dish": 0.24
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            8
         ]
     },
     {
@@ -2233,6 +2395,9 @@
                 "name": "Sodium",
                 "amount_per_dish": 5
             }
+        ],
+        "cooking-method-ids": [
+            8
         ]
     },
     {
@@ -2296,6 +2461,11 @@
                 "name": "Vitamin C",
                 "amount_per_dish": 4.6
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7,
+            8
         ]
     },
     {
@@ -2329,6 +2499,11 @@
                 "name": "Sodium",
                 "amount_per_dish": 40
             }
+        ],
+        "cooking-method-ids": [
+            4,
+            7,
+            8
         ]
     },
     {
@@ -2362,6 +2537,10 @@
                 "name": "Sodium",
                 "amount_per_dish": 12
             }
+        ],
+        "cooking-method-ids": [
+            3,
+            4
         ]
     }
 ]

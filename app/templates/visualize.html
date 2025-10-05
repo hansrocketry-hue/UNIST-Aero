@@ -115,7 +115,7 @@
                     <tr>
                         <th>{% if session.get('lang','kor') == 'eng' %}Name{% else %}이름{% endif %}</th>
                         <th>{% if session.get('lang','kor') == 'eng' %}Research IDs{% else %}연구 ID{% endif %}</th>
-                        <th>{% if session.get('lang','kor') == 'eng' %}Calories{% else %}칼로리{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Calories (per 100g){% else %}칼로리 (100g당){% endif %}</th>
                         <th>{% if session.get('lang','kor') == 'eng' %}Production Time{% else %}생산 시간{% endif %}</th>
                     </tr>
                 </thead>
@@ -133,27 +133,21 @@
                             {% endfor %}
                         </td>
                         <td>
-                            {# Safe extraction of calories from different possible data shapes #}
-                            {% set _cal = '' %}
-                            {% if item.nutrition_info is defined and item.nutrition_info %}
-                                {% if item.nutrition_info is mapping %}
-                                    {% if 'calories' in item.nutrition_info %}
-                                        {% set _cal = item.nutrition_info['calories'] %}
-                                    {% elif 'Calories (Total)' in item.nutrition_info %}
-                                        {% set _cal = item.nutrition_info['Calories (Total)'] %}
+                            {# Extract calories from item.nutrition and display per 100g #}
+                            {% set _cal_per_g = namespace(value=None) %}
+                            {% if item.nutrition is defined and item.nutrition is sequence %}
+                                {% for nut in item.nutrition %}
+                                    {% if nut.name == 'Calories' and _cal_per_g.value is none %}
+                                        {% set _cal_per_g.value = nut.amount_per_unit_mass %}
                                     {% endif %}
-                                {% elif item.nutrition_info is sequence %}
-                                    {% for nut in item.nutrition_info %}
-                                                {% if nut is mapping %}
-                                                    {% set nut_name = (nut.get('name') or nut.get('label') or '') %}
-                                                    {% if not _cal and nut_name in ['Calories (Total)', 'Calories', 'calories'] %}
-                                                        {% set _cal = (nut.get('amount_per_unit_mass') or nut.get('amount') or '') %}
-                                                    {% endif %}
-                                                {% endif %}
-                                    {% endfor %}
-                                {% endif %}
+                                {% endfor %}
                             {% endif %}
-                            {{ _cal if _cal else 'N/A' }}
+
+                            {% if _cal_per_g.value is not none %}
+                                {{ "%.2f"|format(_cal_per_g.value|float * 100) }} kcal
+                            {% else %}
+                                N/A
+                            {% endif %}
                         </td>
                         <td>
                             {# Friendly display for production_time which may be dict or simple value #}
@@ -217,7 +211,7 @@
                         <th>{% if session.get('lang','kor') == 'eng' %}Name{% else %}이름{% endif %}</th>
                         <th>Required Ingredients</th>
                         <th>Required Cooking Methods</th>
-                        <th>Calories</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Calories (per 100g){% else %}칼로리 (100g당){% endif %}</th>
                         <th>Cooking Instructions (kor)</th>
                     </tr>
                 </thead>
@@ -270,15 +264,20 @@
                             {% endfor %}
                         </td>
                         <td>
-                            {% set ns = namespace(calo=0) %}
-                            {% if item['nutrition_info'] %}
-                                {% for nut in item['nutrition_info'] %}
-                                    {% if 'name' in nut and nut['name'] == 'Calories (Total)' and 'amount_per_unit_mass' in nut %}
-                                        {% set ns.calo = nut['amount_per_unit_mass'] %}
+                            {% set calo_found = namespace(value=None) %}
+                            {% if item.nutrition_info is defined and item.nutrition_info is sequence %}
+                                {% for nut in item.nutrition_info %}
+                                    {% if nut.name == 'Calories (Total)' and calo_found.value is none %}
+                                        {% set calo_found.value = nut.amount_per_unit_mass %}
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}
-                            {{ ns.calo }}
+
+                            {% if calo_found.value is not none %}
+                                {{ "%.2f"|format(calo_found.value|float * 100) }} kcal
+                            {% else %}
+                                N/A
+                            {% endif %}
                         </td>
                         <td>
                             {% if item.cooking_instructions is string %}

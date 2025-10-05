@@ -1,16 +1,5 @@
 [
     {
-        "id": 1,
-        "reference_data": {
-            "link": "https://www.researchgate.net/publication/343905740_Kale_Review_on_nutritional_composition_bio-active_compounds_anti-nutritional_factors_health_beneficial_properties_and_value-added_products",
-            "title": "Kale: Review on Nutritional Composition, Bio-active Compounds, Anti-nutritional Factors (2020)"
-        },
-        "summary": {
-            "kor": "케일의 비타민, 미네랄, 항산화·항영양소 분석",
-            "eng": "Cale's vitamins, minerals, anti -oxids analysis"
-        }
-    },
-    {
         "id": 2,
         "reference_data": {
             "link": "https://www.ars.usda.gov/plains-area/gfnd/gfhnrc/docs/news-articles/2013/dark-green-leafy-vegetables",

@@ -99,6 +99,40 @@ def get_ingredient_nutrition(ingredient_id):
     nutrition = next((item for item in nutrition_data if item.get('id') == nut_id), None)
     return nutrition.get('nutrients') if nutrition else None
 
+def update_research_data(research_id, reference_data, summary):
+    """Update an existing research data entry.
+    
+    Args:
+        research_id: The ID of the research data to update
+        reference_data: Dictionary containing link and title
+        summary: Dictionary containing kor and eng summaries
+    """
+    data = _load_table('research-data')
+    for item in data:
+        if item['id'] == research_id:
+            # Preserve existing reference_data keys when the form omits them
+            existing_ref = item.get('reference_data', {}) or {}
+            merged_ref = existing_ref.copy()
+            # Only overwrite keys that are provided (non-None)
+            for k, v in (reference_data or {}).items():
+                if v is not None:
+                    merged_ref[k] = v
+
+            # Preserve existing summary keys similarly
+            existing_summary = item.get('summary', {}) or {}
+            merged_summary = existing_summary.copy()
+            for k, v in (summary or {}).items():
+                if v is not None:
+                    merged_summary[k] = v
+
+            item['reference_data'] = merged_ref
+            item['summary'] = merged_summary
+            _save_table('research-data', data)
+            print(f"Research data with ID {research_id} updated successfully.")
+            return True
+    print(f"Research data with ID {research_id} not found.")
+    return False
+
 def update_ingredient_nutrition_reference(ingredient_id, nutrition_id):
     """Legacy helper: updates cross-reference in nutrition.json and ingredient.json.
 
@@ -123,6 +157,30 @@ def update_ingredient_nutrition_reference(ingredient_id, nutrition_id):
 
     _save_table('nutrition', nutrition_data)
     _save_table('ingredient', ingredient_data)
+
+def update_ingredient(ingredient_id, name, research_ids, nutrition_data, production_time):
+    """Update an existing ingredient entry.
+
+    Parameters:
+    - ingredient_id: numeric id
+    - name: dict of language codes to names
+    - research_ids: list of research ids
+    - nutrition_data: list of nutrient dicts (name, amount_per_unit_mass)
+    - production_time: dict or other value to store in ingredient['production_time']
+    """
+    data = _load_table('ingredient')
+    for item in data:
+        if item.get('id') == ingredient_id:
+            # Replace fields provided. Use provided values directly so caller controls structure.
+            item['name'] = name
+            item['research_ids'] = research_ids
+            item['nutrition'] = nutrition_data
+            item['production_time'] = production_time
+            _save_table('ingredient', data)
+            print(f"Ingredient with ID {ingredient_id} updated.")
+            return True
+    print(f"Ingredient with ID {ingredient_id} not found.")
+    return False
 
 def add_storaged_ingredient(storage_id, mass_g, start_date, mode, processing_type=None,
                           expiration_date=None, min_end_date=None, max_end_date=None):
@@ -178,6 +236,20 @@ def add_cooking_method(name, description, research_ids):
     _save_table('cooking-methods', data)
     print(f"New cooking method '{name.get('kor', 'N/A')}' added with ID {new_id}.")
     return new_id
+
+def update_cooking_method(method_id, name, description, research_ids):
+    """Update an existing cooking method entry."""
+    data = _load_table('cooking-methods')
+    for item in data:
+        if item.get('id') == method_id:
+            item['name'] = name
+            item['description'] = description
+            item['research_ids'] = research_ids
+            _save_table('cooking-methods', data)
+            print(f"Cooking method with ID {method_id} updated.")
+            return True
+    print(f"Cooking method with ID {method_id} not found.")
+    return False
 
 def add_research_data(reference_data, summary):
     data = _load_table('research-data')

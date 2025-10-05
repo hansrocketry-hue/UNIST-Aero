@@ -14,14 +14,10 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="name_kor" class="form-label">이름 (한글)</label>
-                            <input type="text" class="form-control" id="name_kor" name="name_kor" 
-                                   value="{{ ingredient.name.kor }}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="name_eng" class="form-label">이름 (영문)</label>
-                            <input type="text" class="form-control" id="name_eng" name="name_eng" 
-                                   value="{{ ingredient.name.eng }}" required>
+                            <label class="form-label">이름 (다중 언어)</label>
+                            <div id="name-fields"></div>
+                            <button type="button" id="add-name-btn" class="btn btn-sm btn-outline-secondary mt-2">이름 추가</button>
+                            <small class="form-text text-muted">적어도 하나의 언어로 이름을 입력해야 합니다.</small>
                         </div>
                     </div>
                 </div>
@@ -78,27 +74,20 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="min_time" class="form-label">최소 생산 시간</label>
-                                        <input type="number" class="form-control" id="min_time" name="min_time"
-                                               value="{{ ingredient.production_time.min_time }}">
+                         <label for="min" class="form-label">최소 생산 시간</label>
+                         <input type="number" class="form-control" id="min" name="min"
+                             value="{{ ingredient.production_time.min or ingredient.production_time.min_time or '' }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3">
-                                        <label for="max_time" class="form-label">최대 생산 시간</label>
-                                        <input type="number" class="form-control" id="max_time" name="max_time"
-                                               value="{{ ingredient.production_time.max_time }}">
+                         <label for="max" class="form-label">최대 생산 시간</label>
+                         <input type="number" class="form-control" id="max" name="max"
+                             value="{{ ingredient.production_time.max or ingredient.production_time.max_time or '' }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label for="time_unit" class="form-label">시간 단위</label>
-                                        <select class="form-control" id="time_unit" name="time_unit">
-                                            <option value="days" {% if ingredient.production_time.unit == 'days' %}selected{% endif %}>일</option>
-                                            <option value="hours" {% if ingredient.production_time.unit == 'hours' %}selected{% endif %}>시간</option>
-                                            <option value="minutes" {% if ingredient.production_time.unit == 'minutes' %}selected{% endif %}>분</option>
-                                        </select>
-                                    </div>
+                                    <!-- time unit selection removed as per request -->
                                 </div>
                             </div>
                         </div>
@@ -119,6 +108,20 @@
 document.getElementById('producible').addEventListener('change', function() {
     const productionDetails = document.querySelector('.production-details');
     productionDetails.style.display = this.checked ? 'block' : 'none';
+});
+</script>
+<script src="{{ url_for('static', filename='js/dynamic_language_fields.js') }}"></script>
+<script>
+// Initialize dynamic multilingual name fields with existing ingredient.name
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const existingNames = {{ ingredient.name | tojson }};
+        const initialValues = Object.keys(existingNames || {}).map(k => ({code: k, value: existingNames[k]}));
+        const addNameField = createDynamicLanguageFields('name-fields', 'name', '이름', initialValues);
+        document.getElementById('add-name-btn').addEventListener('click', addNameField);
+    } catch (e) {
+        console.error('Failed to initialize name fields:', e);
+    }
 });
 </script>
 {% endblock %}

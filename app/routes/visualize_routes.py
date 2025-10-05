@@ -65,11 +65,32 @@ def dish_detail(dish_id):
     """레시피(요리) 상세 페이지"""
     dishes = db._load_table('dish')
     dish = next((d for d in dishes if d['id'] == dish_id), None)
+    ingredients = db._load_table('ingredient')
     cooking_methods = db._load_table('cooking-methods')
     # 필요한 조리방법 정보 추출
     method_ids = dish.get('cooking-method-ids', []) if dish else []
     required_methods = [m for m in cooking_methods if m['id'] in method_ids]
-    return render_template('dish_detail.html', dish=dish, required_methods=required_methods)
+    ingredient_ids = dish.get('required_ingredient_ids', []) if dish else []
+    required_ingredients = [i for i in ingredients if i['id'] in ingredient_ids]
+    # 칼로리 추출 (nutrition_info가 리스트이므로 Calories (Total) 항목 찾기)
+    calories = None
+    if dish and isinstance(dish.get('nutrition_info'), list):
+        for n in dish['nutrition_info']:
+            if n.get('name') == 'Calories (Total)':
+                calories = n.get('amount_per_dish')
+                break
+    # 조리설명(한글)
+    cooking_instructions_kor = dish.get('cooking_instructions')
+    if isinstance(cooking_instructions_kor, dict):
+        cooking_instructions_kor = cooking_instructions_kor.get('kor', '')
+    return render_template(
+        'dish_detail.html',
+        dish=dish,
+        required_methods=required_methods,
+        required_ingredients=required_ingredients,
+        calories=calories,
+        cooking_instructions_kor=cooking_instructions_kor
+    )
 
 @bp.route('/storaged-ingredient')
 def visualize_storaged_ingredient():

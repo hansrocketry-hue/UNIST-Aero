@@ -104,8 +104,6 @@
         <thead>
             <tr>
                 <th>Name (kor)</th>
-                <th>Type</th>
-                <th>Image</th>
                 <th>Required Ingredients</th>
                 <th>Required Cooking Methods</th>
                 <th>Calories</th>
@@ -116,12 +114,6 @@
             {% for item in data['dish'] %}
             <tr>
                 <td>{{ item.name.kor }}</td>
-                <td>{{ item.type }}</td>
-                <td>
-                    {% if item.image_url %}
-                        <img src="{{ item.image_url }}" alt="{{ item.name.kor }}" width="100">
-                    {% endif %}
-                </td>
                 <td>
                     {% for ing_id in item.required_ingredient_ids %}
                         {% for ingredient in data['ingredient'] %}
@@ -132,7 +124,8 @@
                     {% endfor %}
                 </td>
                 <td>
-                    {% for method_id in item.required_cooking_method_ids %}
+                    {% set method_ids = item['cooking-method-ids'] if 'cooking-method-ids' in item else [] %}
+                    {% for method_id in method_ids %}
                         {% for method in data['cooking-methods'] %}
                             {% if method.id == method_id %}
                                 <a href="{{ url_for('visualize.cooking_method_detail', method_id=method_id) }}">{{ method.name.kor }}</a><br>
@@ -140,8 +133,24 @@
                         {% endfor %}
                     {% endfor %}
                 </td>
-                <td>{{ item.nutrition_info.calories }}</td>
-                <td>{{ item.cooking_instructions.kor }}</td>
+                <td>
+                    {% set cal = 0 %}
+                    {% if item.nutrition_info is iterable and item.nutrition_info is not string and item.nutrition_info|length > 0 %}
+                        {% for n in item.nutrition_info %}
+                            {% if n.name == 'Calories (Total)' %}
+                                {% set cal = n.amount_per_dish %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {{ cal }}
+                </td>
+                <td>
+                    {% if item.cooking_instructions is string %}
+                        {{ item.cooking_instructions }}
+                    {% elif item.cooking_instructions.kor is defined %}
+                        {{ item.cooking_instructions.kor }}
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>

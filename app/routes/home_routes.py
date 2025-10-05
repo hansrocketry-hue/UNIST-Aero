@@ -7,6 +7,63 @@ import database_handler as db
 
 bp = Blueprint('home', __name__, url_prefix='/')
 
+@bp.route('/add-intake', methods=['GET', 'POST'])
+def add_intake():
+    if 'user_id' not in session:
+        return redirect(url_for('auth.login'))
+
+    if request.method == 'POST':
+        # Get form data
+        date = request.form.get('date')
+        time = request.form.get('time')
+        food_id = request.form.get('food_id')
+
+        # Load user and dish data
+        user = get_user_by_id(session['user_id'])
+        dishes = db._load_table('dish')
+        selected_dish = next((dish for dish in dishes if dish['id'] == int(food_id)), None)
+
+        if not selected_dish:
+            flash('Selected dish not found', 'error')
+            return redirect(url_for('home.add_intake'))
+
+        # Create intake entry with dish_id only
+        new_intake = {
+            "time": time,
+            "dish_id": int(food_id)
+        }
+
+        # Update user's food timeline
+        if 'food_timeline' not in user:
+            user['food_timeline'] = []
+
+        # Find or create date entry
+        date_entry = next((entry for entry in user['food_timeline'] if entry['date'] == date), None)
+        if date_entry:
+            if 'intake' not in date_entry:
+                date_entry['intake'] = []
+            date_entry['intake'].append(new_intake)
+        else:
+            user['food_timeline'].append({
+                'date': date,
+                'intake': [new_intake]
+            })
+
+        # Sort food timeline by date (most recent first)
+        user['food_timeline'].sort(key=lambda x: x['date'], reverse=True)
+
+        # Update user data
+        update_user(session['user_id'], user)
+        flash('{% if session.get("lang","kor") == "eng" %}Food intake added successfully{% else %}섭취 기록이 추가되었습니다{% endif %}', 'success')
+        return redirect(url_for('home.index'))
+
+    # GET request - show form
+    dishes = db._load_table('dish')
+    today = datetime.now().strftime('%Y-%m-%d')
+    return render_template('add_intake_form.html', 
+                         dishes=dishes, 
+                         today=today)
+
 # Define daily nutritional requirements
 DAILY_REQUIREMENTS = {
     "calories": 2000,
@@ -44,13 +101,20 @@ def index():
     yesterday_timeline = None
 
     if 'food_timeline' in user:
+        # Load dishes for nutrition lookup
+        dishes = db._load_table('dish')
+        dish_map = {dish['id']: dish for dish in dishes}
+
         for entry in user['food_timeline']:
             if entry['date'] == today_str:
                 today_timeline = entry
                 for intake_item in entry['intake']:
-                    for nutrient, value in intake_item['nutrients'].items():
-                        if nutrient in todays_intake_total:
-                            todays_intake_total[nutrient] += value
+                    # Get dish from dish_id and add its nutrition to totals
+                    dish = dish_map.get(intake_item.get('dish_id'))
+                    if dish and 'nutrition' in dish:
+                        for nutrient, value in dish['nutrition'].items():
+                            if nutrient in todays_intake_total:
+                                todays_intake_total[nutrient] += value
             elif entry['date'] == yesterday_str:
                 yesterday_timeline = entry
 
@@ -71,13 +135,18 @@ def index():
         {"name": "동결건조 과일 믹스", "image": "https://via.placeholder.com/150"}
     ]
 
+    # Load all dishes for displaying names
+    dishes = db._load_table('dish')
+    dish_map = {dish['id']: dish for dish in dishes}
+    
     return render_template(
         'index.html',
         user=user,
         nutrition_progress=nutrition_progress,
         recommended_food=recommended_food,
         today_timeline=today_timeline,
-        yesterday_timeline=yesterday_timeline
+        yesterday_timeline=yesterday_timeline,
+        dish_map=dish_map
     )
 
 @bp.route('/edit_profile', methods=['GET', 'POST'])

@@ -6,6 +6,17 @@
 <style>
     /* Styles are now in style.css, but keeping this for quick reference if needed */
     /* It's better to have all styles in the external CSS file */
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        border: none;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
 </style>
 
 <div class="profile-container">
@@ -41,14 +52,17 @@
 
     <!-- Food Timeline Section -->
     <div class="section">
-        <h2 class="section-title">Intake Log</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 class="section-title">{% if session.get('lang','kor') == 'eng' %}Intake Log{% else %}섭취 기록{% endif %}</h2>
+            <a href="{{ url_for('home.add_intake') }}" class="btn btn-primary">{% if session.get('lang','kor') == 'eng' %}Add Intake{% else %}섭취 기록 추가{% endif %}</a>
+        </div>
         <div class="grid-container">
             <div class="timeline-card">
                 <h4>Today</h4>
                 {% if today_timeline and today_timeline.intake %}
                     {% for item in today_timeline.intake %}
                     <div class="timeline-item">
-                        <span>{{ item.food_name }}</span>
+                        <span>{{ dish_map[item.dish_id].name[session.get('lang', 'kor')] if item.dish_id in dish_map else item.food_name }}</span>
                         <span>{{ item.time }}</span>
                     </div>
                     {% endfor %}
@@ -61,7 +75,7 @@
                 {% if yesterday_timeline and yesterday_timeline.intake %}
                     {% for item in yesterday_timeline.intake %}
                     <div class="timeline-item">
-                        <span>{{ item.food_name }}</span>
+                        <span>{{ dish_map[item.dish_id].name[session.get('lang', 'kor')] if item.dish_id in dish_map else item.food_name }}</span>
                         <span>{{ item.time }}</span>
                     </div>
                     {% endfor %}

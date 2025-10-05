@@ -42,8 +42,7 @@ def add_user(username, password, name, height, weight, gender, like_ids, forbid_
         "activity_level": activity_level,
         "language": language,
         "like": like_ids,
-        "forbid": forbid_ids,
-        "health": {} # health 정보는 비워둠
+        "forbid": forbid_ids
     }
     users.append(new_user)
     save_users(users)

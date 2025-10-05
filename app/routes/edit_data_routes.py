@@ -136,6 +136,15 @@ def edit_dish_route(dish_id):
     elif not dish.get('name'):
         dish['name'] = {'kor': '', 'eng': ''}
 
+    # Normalize dish['cooking_instructions'] as well
+    if isinstance(dish.get('cooking_instructions'), str):
+        dish['cooking_instructions'] = {
+            'kor': dish['cooking_instructions'],
+            'eng': dish['cooking_instructions']
+        }
+    elif not dish.get('cooking_instructions'):
+        dish['cooking_instructions'] = {'kor': '', 'eng': ''}
+
     return render_template('edit_dish_form.html',
                          dish=dish,
                          ingredients=ingredients,

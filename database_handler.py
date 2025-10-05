@@ -268,6 +268,34 @@ def get_nutrition_categories():
     with open('nutrition_category.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
+def add_nutrition_category(name, unit):
+    """새로운 영양 정보 카테고리를 추가합니다."""
+    try:
+        with open('nutrition_category.json', 'r+', encoding='utf-8') as f:
+            categories = json.load(f)
+            
+            # Check for duplicates
+            if any(c['name'].lower() == name.lower() for c in categories):
+                return None  # Category already exists
+
+            new_category = {'name': name, 'unit': unit}
+            categories.append(new_category)
+            
+            f.seek(0)
+            json.dump(categories, f, ensure_ascii=False, indent=4)
+            f.truncate()
+            
+            return new_category
+    except (FileNotFoundError, json.JSONDecodeError):
+        # If file doesn't exist or is empty, create a new one
+        new_category = {'name': name, 'unit': unit}
+        with open('nutrition_category.json', 'w', encoding='utf-8') as f:
+            json.dump([new_category], f, ensure_ascii=False, indent=4)
+        return new_category
+    except Exception as e:
+        print(f"Error adding nutrition category: {e}")
+        return None
+
 def add_dish(name, image_url, required_ingredients, required_cooking_method_ids, nutrition_data=None, cooking_instructions=None):
     """Add a dish.
 

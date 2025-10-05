@@ -34,9 +34,10 @@
                 </div>
 
                 <div class="card mb-4">
-                    <div class="card-header">
-                        <h5 class="card-title mb-0">필요 식재료</h5>
-                    </div>
+                    <details open>
+                        <summary class="card-header">
+                            <h5 class="card-title mb-0 d-inline-block">필요 식재료</h5>
+                        </summary>
                     <div class="card-body">
                         <div id="ingredientList">
                             {% for req in dish.required_ingredients %}
@@ -71,12 +72,14 @@
                             + 식재료 추가
                         </button>
                     </div>
+                    </details>
                 </div>
 
                 <div class="card mb-4">
-                    <div class="card-header">
-                        <h5 class="card-title mb-0">조리 방법</h5>
-                    </div>
+                    <details open>
+                        <summary class="card-header">
+                            <h5 class="card-title mb-0 d-inline-block">조리 방법</h5>
+                        </summary>
                     <div class="card-body">
                         {% for method in cooking_methods %}
                         <div class="form-check mb-2">
@@ -89,12 +92,14 @@
                         </div>
                         {% endfor %}
                     </div>
+                    </details>
                 </div>
 
                 <div class="card mb-4">
-                    <div class="card-header">
-                        <h5 class="card-title mb-0">조리 설명</h5>
-                    </div>
+                    <details open>
+                        <summary class="card-header">
+                            <h5 class="card-title mb-0 d-inline-block">조리 설명</h5>
+                        </summary>
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="instructions_kor" class="form-label">조리 설명 (한글)</label>
@@ -107,6 +112,7 @@
                                       rows="4">{{ dish.cooking_instructions.eng }}</textarea>
                         </div>
                     </div>
+                    </details>
                 </div>
 
                 <div class="mb-3">

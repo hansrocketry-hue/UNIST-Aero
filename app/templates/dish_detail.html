@@ -104,18 +104,19 @@
                 </tr>
                 {% endif %}
                 {% if dish.nutrition_info %}
-                {% for nutrient in dish.nutrition_info %}
-                {% if nutrient.name != 'Calories (Total)' %}
-                <tr>
-                    <td>{{ nutrient.name }}</td>
-                    <td>{{ "%.3f"|format(nutrient.amount_per_dish) }}</td>
-                </tr>
-                {% endif %}
-                {% endfor %}
+                    {% for nutrient in dish.nutrition_info %}
+                        {% if nutrient.name != 'Calories (Total)' %}
+                            <tr>
+                                <td>{{ nutrient.name }}</td>
+                                <td>{{ "%.3f"|format(nutrient.amount_per_unit_mass) }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
             </tbody>
         </table>
         {% endif %}
     {% else %}
         <h1>{% if session.get('lang','kor') == 'eng' %}Dish not found{% else %}요리를 찾을 수 없습니다{% endif %}</h1>
+    {% endif %}
 {% endblock %}

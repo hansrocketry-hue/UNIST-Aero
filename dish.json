@@ -1,5 +1,2367 @@
 [
-    {"id": 1, "type": "Main Course", 
-    "name": {"kor": "우주 비빔밥", "eng": "Space Bibimbap"}, 
-    "image_url": "http://example.com/images/space_bibimbap.jpg", "required_ingredient_ids": [1], "required_cooking_method_ids": [1], "nutrition_info": {"nutrients_per_unit_mass": {}, "calories": 350}, "cooking_instructions": "동결 건조 비빔밥에 뜨거운 물을 붓고 10분간 기다립니다."}
+    {
+        "id": 1,
+        "name": {
+            "kor": "된장 청경채국",
+            "eng": "Doenjang Bok Choy Soup"
+        },
+        "required_ingredient_ids": [
+            6,
+            15
+        ],
+        "cooking_instructions": "1.건조된 청경채(5g)를 밀폐 재수화 주머니에 넣고 174g 물로 5분간 재수화한다.\n2. 재수화된 청경채에 된장과 마늘 분말(1g)을 섞는다.\n3. 밀폐 용기에 넣고 푸드워머에서 80 °C로 약 8 분간 가열한다.\n4. 소금을 넣고 고르게 섞이도록 밀폐 주머니에서 잘 저은 후 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 91.35
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.003
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 4.9
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 23
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.006
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.0055
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.019
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 2.6
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": {
+            "kor": "된장 비빔밥",
+            "eng": "Doenjang Bibimbap"
+        },
+        "required_ingredient_ids": [
+            1
+        ],
+        "cooking_instructions": "1. 쌀(70g)과 채소(10g)를 밀폐 주머니에 넣고 200g 물로 쌀10분, 채소 5분간 재수화한다.\n2. 재수화된 혼합물에 된장(20g)을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 20분간 가열하여 맛을 낸다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 341.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.014
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 11.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 15
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.112
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.028
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.24
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.21
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": {
+            "kor": "간장 버섯밥",
+            "eng": "Soy Sauce Mushroom Rice"
+        },
+        "required_ingredient_ids": [
+            1,
+            13
+        ],
+        "cooking_instructions": "1. 쌀(70g)과 버섯(10g)을 밀폐 주머니에 넣고 물로 쌀 10분, 버섯 5분간 재수화한다.\n2. 간장(15g)을 고르게 섞는다.\n3. 푸드워머에서 80°C로 약 20분간 가열한다.\n4. 소금을 넣고 섞은 후 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 261.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.17
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.018
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 15.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 18
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.122
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.058
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.64
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.228
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.4
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_dish": 1.0
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": {
+            "kor": "무·청경채 절임",
+            "eng": "Pickled Radish and Bok Choy"
+        },
+        "required_ingredient_ids": [
+            6,
+            9,
+            15
+        ],
+        "cooking_instructions": "1.무(10g)와 청경채(5g)를 20g 물로 5분간 재수화한다.\n2. 남은 물을 제거하고 간장, 마늘 분말을 섞는다.\n3. 밀폐 용기에서 10분간 실온에 두어 절인다.\n4. 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 10.4
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.007
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 9.9
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 20
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.0095
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.1
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.033
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 5.0
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": {
+            "kor": "쌈장 페이스트",
+            "eng": "Ssamjang Paste"
+        },
+        "required_ingredient_ids": [
+            15
+        ],
+        "cooking_instructions": "1.된장20g, 고춧가루 3g, 마늘 분말 2g을 밀폐 용기에 넣는다.\n2. 균일한 페이스트가 될 때까지 섞는다.\n3. 양념으로 사용하기 위해 밀폐 주머니에 보관한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 30.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.11
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.002
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 0.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.08
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 30
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.004
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.001
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.2
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": {
+            "kor": "된장국(배양육)",
+            "eng": "Doenjang Soup (Cultured Meat)"
+        },
+        "required_ingredient_ids": [
+            13,
+            18,
+            19
+        ],
+        "cooking_instructions": "1. 버섯 5g, 대두 단백 10g, 배양육10g을 150g 물로 5분간(대두단백은 10분) 재수화한다.\n2. 된장을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 31.5
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 27.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 22
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.059
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.3
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.057
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.86
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.129
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.8
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_dish": 0.5
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": {
+            "kor": "야채죽",
+            "eng": "Vegetable Porridge (Yachaejuk)"
+        },
+        "required_ingredient_ids": [
+            1,
+            6,
+            8,
+            9
+        ],
+        "cooking_instructions": "1.쌀60g과 채소15g를 150g 물로 10분간(채소5분) 재수화한다.\n2. 밀폐 용기에서 부드럽게 될 때까지 블렌딩(휴대용 블렌더 사용 시).\n3. 푸드워머에서 70~80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 65.7
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.18
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0166
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 18.8
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 6
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.1038
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.0352
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.004
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.2002
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 4.3
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": {
+            "kor": "감자밥",
+            "eng": "Potato Rice (Gamjabap)"
+        },
+        "required_ingredient_ids": [
+            1,
+            3
+        ],
+        "cooking_instructions": "1. 쌀70g과 감자40g를 150g 물로 10분간 재수화한다.\n2. 푸드워머에서 80°C로 약 15~18분간 가열한다.\n3. 소금을 넣고 섞은 후 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 104.5
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0228
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 17.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 5
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.144
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.68
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.33
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 8.0
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": {
+            "kor": "라이스볼(된장)",
+            "eng": "Rice Ball (Doenjang)"
+        },
+        "required_ingredient_ids": [
+            1
+        ],
+        "cooking_instructions": "1. 쌀70g을 100g 물로 10분간 재수화한다.\n2. 된장20g을 고르게 섞는다.\n3. 미중력용 밀폐 성형 용기를 사용해 공 모양으로 만든다.\n4. 성형 용기에서 바로 제공하거나 밀폐 주머니로 옮긴다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 90.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.18
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.014
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 11.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 16
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.112
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.028
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.24
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.21
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": {
+            "kor": "칠리 된장 소스",
+            "eng": "Chili Doenjang Sauce"
+        },
+        "required_ingredient_ids": [
+            15
+        ],
+        "cooking_instructions": "1. 된장20g, 고춧가루3g, 마늘 분말2g을 밀폐 용기에 넣는다.\n2. 완전히 섞일 때까지 저어 소스를 만든다.\n3. 소스로 사용하기 위해 밀폐 주머니에 보관한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 30.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.11
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.002
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 0.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.08
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 30
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.004
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.001
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.2
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": {
+            "kor": "청경채 볶음밥",
+            "eng": "Bok Choy Fried Rice"
+        },
+        "required_ingredient_ids": [
+            1,
+            6,
+            18,
+            19
+        ],
+        "cooking_instructions": "1. 쌀70g, 청경채15g, 대두 단백15g, 배양육15g을 150g 물로 10분간(채소,배양육은 5분) 재수화한다.\n2. 푸드워머에서 80°C로 약 18분간 가열한다.3. 소금을 넣고 맛이 섞이도록 저은 후 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 126.5
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.17
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.047
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 62.8
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.09
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 14
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.205
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.45
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.106
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 3.32
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.417
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 8.4
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": {
+            "kor": "양파-마늘 스프",
+            "eng": "Onion-Garlic Soup"
+        },
+        "required_ingredient_ids": [
+            14,
+            15,
+            18
+        ],
+        "cooking_instructions": "1. 양파5g와 대두 단백10g을 150g 물로 10분간 재수화한다.\n2. 된장15g과 마늘 분말2g을 넣고 밀폐 용기에서 섞는다.\n3. 푸드 워머에서 80°C로 5분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 25.6
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0216
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 26.1
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 18
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.053
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.028
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.087
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 1.2
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": {
+            "kor": "케일죽",
+            "eng": "Kale Porridge"
+        },
+        "required_ingredient_ids": [
+            1,
+            7
+        ],
+        "cooking_instructions": "1. 쌀60g과 케일10g을 150g 물로 10분간 재수화한다.\n2. 밀폐 용기에서 부드럽게 블렌딩한다.\n3. 푸드워머에서 80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 63.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.18
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.018
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 27.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 4
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.106
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.042
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.1
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.21
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 12.0
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": {
+            "kor": "잡곡밥 ⭐",
+            "eng": "Multigrain Rice"
+        },
+        "required_ingredient_ids": [
+            1,
+            4,
+            5
+        ],
+        "cooking_instructions": "1. 쌀50g, 퀴노아20g, 보리20g를 150g 물로 10분간 재수화한다.\n2. 푸드워머에서 80°C로 약 15~18분간 가열한다.\n3. 섞은 후 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 90.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.18
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0564
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 35.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 7
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.212
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.092
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.84
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.282
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.4
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": {
+            "kor": "해조국 ⭐",
+            "eng": "Seaweed Soup"
+        },
+        "required_ingredient_ids": [
+            17
+        ],
+        "cooking_instructions": "1. 미역15g을 150g 물로 5분간 재수화한다.\n2. 된장10g과 간장10g, 김을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 75~80°C로 약 10분간 가열한다..\n4. 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 12.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 20
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": {
+            "kor": "토마토 파스타",
+            "eng": "Tomato Pasta"
+        },
+        "required_ingredient_ids": [
+            10
+        ],
+        "cooking_instructions": "1.파스타70g과 토마토30g를 150g 물로 토마토 8분 파스타 15분 재수화한다. \n2. 토마토를 밀폐된 주머니에서 부드럽게 주므르며 페이스트 질감 만든다\n3. 푸드워머에서 80°C로 약 18분간 가열한다.\n4. 섞은 후 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 110.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.21
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0045
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 4.5
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 6
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.018
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.006
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.18
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 4.2
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": {
+            "kor": "버섯 크림 파스타",
+            "eng": "Creamy Mushroom Pasta"
+        },
+        "required_ingredient_ids": [
+            13
+        ],
+        "cooking_instructions": "파스타70g과  버섯 10g을 150g 물로 15분간(버섯은 5분) 재수화한다.\n비유제품 우주용 크림 베이스를 넣고 밀폐 용기에서 섞는다.\n푸드워머로 65–75°C에서 20–30분 워밍한다.\n밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 108.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.004
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 4.0
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 8
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.4
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.018
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.4
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_dish": 1.0
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": {
+            "kor": "크림 감자 파스타",
+            "eng": "Cream Potato Pasta"
+        },
+        "required_ingredient_ids": [
+            3
+        ],
+        "cooking_instructions": "1. 파스타 70g를 재수화한다.\n2. 감자 10g을 큐브 모양으로 자른다.\n3. 두유 10g을 분말 또는 농축 형태로 준비한다.\n4. 섭취 시 물 150ml를 넣고 가열·재수화하여 크림 감자 파스타로 완성한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 117.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.22
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0022
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 1.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 7
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.008
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.003
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.11
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 2.0
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": {
+            "kor": "감자튀김(오븐)",
+            "eng": "Oven-Baked French Fries"
+        },
+        "required_ingredient_ids": [
+            3,
+            22
+        ],
+        "cooking_instructions": "1. 감자 80g을 자른다.\n2. 소금물을 바른다.\n3. 감자를 푸드프로세서로 저온 조리해 수분을 제거한다.\n4. 섭취 시 가열한 상태의 밀봉 형태로 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 97.2
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.26
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0176
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 12.8
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 7
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.064
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.024
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.88
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.24
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 16.0
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": {
+            "kor": "샐러드",
+            "eng": "Salad"
+        },
+        "required_ingredient_ids": [],
+        "cooking_instructions": "1. 채소를 60g 물로 5분간 재수화한다.\n2. 남은 물을 제거하고 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 20.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.005
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 3
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": {
+            "kor": "토마토 리조또",
+            "eng": "Tomato Risotto"
+        },
+        "required_ingredient_ids": [
+            1,
+            10
+        ],
+        "cooking_instructions": "1. 쌀과 토마토가 든 밀폐 주머니에 물 150g 넣고, 10분간 재수화하여 불린다.\n2. 재수화된 혼합물에 바질 분말을 추가하고, 주머니를 주물러 재료를 고르게 섞는다.\n3. 밀폐 주머니를 푸드워머에 넣고 80°C로 10분간 가열해 따뜻하게 만든다.\n4. 밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 91.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.19
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.017
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 14.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 6
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.124
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.032
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.36
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.23
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 2.8
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": {
+            "kor": "버섯 리조또",
+            "eng": "Mushroom Risotto"
+        },
+        "required_ingredient_ids": [
+            1,
+            13
+        ],
+        "cooking_instructions": "1. 쌀과 버섯을 150g 물로 10분간(버섯 5분) 재수화한다.\n2. 파슬리 분말을 넣고 밀폐 용기에서 섞는다.\n3. 밀폐 주머니를 푸드워머에 넣고 80°C로 10분간 가열해 따뜻하게 만든다.\n4.밀폐 주머니에 담아 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 94.6
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 17.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 5
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.127
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.073
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.84
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.237
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.6
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_dish": 1.5
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": {
+            "kor": "피자",
+            "eng": "Pizza"
+        },
+        "required_ingredient_ids": [
+            10
+        ],
+        "cooking_instructions": "1. 건조 토마토를 50g 물로 8분간 재수화한다.\n2. 토마토를 밀폐된 주머니에서 부드럽게 주무르며 페이스트 질감을 만든다.\n3. 건조 토르티야에 토마토 페이스트와 비건 치즈를 바른다.\n4. 푸드워머에서 80°C 3분 초벌구이로 치즈를 토르티야에 고정시킨다.\n5. 배양육, 양파, 버섯 등 토핑을 취향대로 치즈에 파묻어 고정시킨다. 치즈가 식어버리기 전에 빠르게 진행한다.\n6. 푸드워머에서 80°C 10분 가열한다.\n7. 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 165.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.25
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.003
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 3.0
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.08
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 14
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.012
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.004
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.12
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 2.8
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": {
+            "kor": "햄버거",
+            "eng": "Hamburger"
+        },
+        "required_ingredient_ids": [
+            10,
+            18,
+            19
+        ],
+        "cooking_instructions": "1. 건조 토르티야 여러 장 에 80°C 물을 넣어 고온에서 10분간 재수화시킨다.\n2. 재수화 토르티야를 반죽해 번 모양을 만든다.\n3. 물을 제거한 후 푸드워머에서 80°C로 30분 가열한다.\n4. 배양육 75g, 양상추 20g을 물로 10분간 재수화시킨다.\n5. 푸드워머에 80°C 15분 가열한다.\n6. 빵과 배양육 패티, 양상추를 조합해 햄버거를 완성한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 248.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.22
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.02025
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 31.05
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.1
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 16
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.093
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 1.2
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.093
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.25
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.315
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 2.7
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "name": {
+            "kor": "샌드위치",
+            "eng": "Sandwich"
+        },
+        "required_ingredient_ids": [
+            18,
+            19
+        ],
+        "cooking_instructions": "1. 밀폐 주머니에 배양육(30g), 대두 단백(10g), 채소(10g)를 넣고 150g 물을 넣고 밀봉하여 10분간 재수화한다.\n2. 재수화된 혼합물을 부드럽게 섞는다.\n3. 건조 토르티야 시트(80g)를 별도의 밀폐 주머니에 넣고 그 위에 섞은 혼합물을 중앙에 올리고, 내용물이 빠지지 않도록 단단히 말아 랩 형태로 만든다. \n4. 랩된 토르티야를 밀폐 주머니에 넣고 푸드워머에 삽입하여 80°C로 5분간 가열한다.\n5. 가열 후 밀폐 주머니 그대로 제공한다",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 195.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.24
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.018
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 27.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.09
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 15
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.074
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.9
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.074
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 1.66
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.24
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.6
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "name": {
+            "kor": "라따뚜이",
+            "eng": "Ratatouille"
+        },
+        "required_ingredient_ids": [
+            10,
+            11,
+            12
+        ],
+        "cooking_instructions": "1. 토마토, 가지, 호박을 100g 물로 10분간 재수화한다.\n2. 허브와 오일 젤을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 18분간 가열한다.\n4. 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 77.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.15
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0129
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 14.9
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 10
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.026
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.5
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.074
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 8.6
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "name": {
+            "kor": "그라탕 ⭐",
+            "eng": "Gratin"
+        },
+        "required_ingredient_ids": [],
+        "cooking_instructions": "1. 파스타 50g을 재수화한다.\n2. 버섯 10g을 슬라이스해 재수화한다.\n3. 치즈 10g을 재수화한다.\n4. 물 120ml를 넣고 푸드프로세서에서 가열·재수화하여 혼합 후 밀봉 용기에 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 98.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.08
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 12
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "name": {
+            "kor": "라자냐 ⭐",
+            "eng": "Lasagna"
+        },
+        "required_ingredient_ids": [],
+        "cooking_instructions": "1. 파스타 시트를 재수화한다.\n2. 토마토 기반 소스 50g을 재수화한다.\n3. 치즈 20g을 분말 또는 농축 페이스트로 준비한다.\n4. 섭취 시 시트, 소스, 치즈를 층층이 쌓고 물을 넣어 재수화 후 푸드프로세서를 가열해 밀폐 주머니 째로 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.22
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.09
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 14
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "name": {
+            "kor": "미트볼 ⭐",
+            "eng": "Meatball"
+        },
+        "required_ingredient_ids": [
+            18,
+            19
+        ],
+        "cooking_instructions": "1. 밀폐 주머니에 배양육(30g), 건조 토르티야 시트(10g)을 넣고, 10분간 재수화한 다음 반죽한다.\n2. 미중력용 밀폐 성형 용기를 사용해 공 모양으로 만든다.\n3. 푸드워머에 삽입해 80°C로 15분간 가열한다.\n4. 밀폐 주머니 째로 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 68.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.08
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.018
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 27.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.12
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 9
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.074
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.9
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.074
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 1.66
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.24
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.6
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "name": {
+            "kor": "팬케이크/머핀 ⭐",
+            "eng": "Pancakes / Muffins"
+        },
+        "required_ingredient_ids": [
+            2,
+            3
+        ],
+        "cooking_instructions": "",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 91.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.22
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0322
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 21.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 7
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.158
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.053
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.11
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.23
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 2.0
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "name": {
+            "kor": "스시",
+            "eng": "Sushi"
+        },
+        "required_ingredient_ids": [
+            1,
+            19
+        ],
+        "cooking_instructions": "1. 쌀, 배양육을 100g 물로 10분간 재수화한다.\n2. 미중력용 밀폐 성형 용기를 사용해 샤리 모양으로 만든다.\n3. 쌀 위에 배양육을 얹어 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 112.2
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.19
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.014
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 14.8
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 8
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.142
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.9
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.076
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 3.74
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.39
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "name": {
+            "kor": "라멘 육수",
+            "eng": "Ramen Broth"
+        },
+        "required_ingredient_ids": [
+            15,
+            22
+        ],
+        "cooking_instructions": "1. 배양육 (10g)을 200g 물로  80°C로 20분간 가열하며 재수화한다.\n2. 소금 2g, 간장 2g, 미소 5g, 마늘 0.5g을 밀폐 주머니에 넣고, 잘 섞어 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 9.45
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.001
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.005
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 0.3
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.02
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 25
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.002
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.0005
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.1
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "name": {
+            "kor": "짜장밥 ⭐",
+            "eng": "Jajangbap (Black Bean Sauce Rice)"
+        },
+        "required_ingredient_ids": [
+            1,
+            14
+        ],
+        "cooking_instructions": "1. 쌀을 100g 물로 10분간 재수화한다.\n2. 된장과 간장 10g씩을 고르게 섞어준다\n3. 푸드워머에서 80°C로 3분간 가열한다.\n4. 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 96.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0172
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 14.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.07
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 20
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.122
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.28
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.224
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.8
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "name": {
+            "kor": "탕수육 대체 ⭐",
+            "eng": "Sweet and Sour Pork Substitute"
+        },
+        "required_ingredient_ids": [
+            19
+        ],
+        "cooking_instructions": "",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 96.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.15
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 4.8
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.12
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 18
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 1.2
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.064
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.0
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.24
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "name": {
+            "kor": "우동 ⭐",
+            "eng": "Udon"
+        },
+        "required_ingredient_ids": [
+            2
+        ],
+        "cooking_instructions": "1. 배양육(10g), 우동 면발 팩을 각각 200g 물로  80°C로 20분간 가열하며 재수화한다.\n2. 간장 10g을 넣어 잘 섞어준다.\n3. 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 99.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.22
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 12
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "name": {
+            "kor": "소바 ⭐",
+            "eng": "Soba (Buckwheat Noodles)"
+        },
+        "required_ingredient_ids": [
+            2
+        ],
+        "cooking_instructions": "1. 소바 면발 팩을 각각 200g 물로  80°C로 20분간 가열하며 재수화한다.\n2. 차가운 물로 면발을 냉각한다.\n3. 간장 10g을 넣어 잘 섞어준다.\n4. 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 80.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.01
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.06
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 10
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "name": {
+            "kor": "교자 만두 ⭐",
+            "eng": "Gyoza Dumplings"
+        },
+        "required_ingredient_ids": [
+            18,
+            19
+        ],
+        "cooking_instructions": "1. 배양육과 양파, 청경채 등 채소를 물로 5분간 재수화한다.\n2. 배양육, 양파, 청경채, 버섯, 두부 등 재료를 밀폐 주머니에서 반죽한다.\n3. 건조 토르티야에 반죽을 얹고 만두 모양을 만들어준다.\n4. 푸드워머에서 80°C로 15분간 가열한다.\n5. 밀폐 주머니 째로 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 75.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.16
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.018
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 27.6
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.11
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 14
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.074
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.9
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.074
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 1.66
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.24
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.6
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "name": {
+            "kor": "채소롤/김말이 ⭐",
+            "eng": "Vegetable Roll / Gimbap"
+        },
+        "required_ingredient_ids": [
+            1,
+            19
+        ],
+        "cooking_instructions": "1. 쌀 40g을 전처리·가열 후 건조밥 시트 형태로 준비한다.\n2. 채소 10g을 푸드프로세서로 잘게 자른다.\n3. 배양육 20g을 압착 가열해 얇은 슬라이스로 만든다.\n4. 김 2장을 펼쳐 밥·채소·배양육을 층층이 올린 뒤 말아 밀봉 포장하여 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 86.4
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.18
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.008
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 8.8
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.08
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 9
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.084
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.6
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.048
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 2.28
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.24
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "name": {
+            "kor": "에너지바 ⭐",
+            "eng": "Energy Bar"
+        },
+        "required_ingredient_ids": [],
+        "cooking_instructions": "1. 곡류 40g과 콩 10g을 푸드프로세서로 분쇄·혼합한다.\n2. 견과 10g과 건과 10g을 푸드프로세서로 분쇄·혼합한다.\n3. 혼합물에 시럽(쌀엿·대체당 등) 10g을 넣고 점착성을 확보한다.\n4. 성형틀에 눌러 압착 후 저온 건조해 휴대용 에너지바의 형태로 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 245.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.55
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.12
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.15
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 5
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "name": {
+            "kor": "퓨전 카레 ⭐",
+            "eng": "Fusion Curry"
+        },
+        "required_ingredient_ids": [
+            1,
+            3,
+            18
+        ],
+        "cooking_instructions": "1. 쌀 50g과 대두 10g을 푸드프로세서를 이용해 분쇄·가공해 미리 익힌 건조밥 베이스를 준비한다.\n2.동결 건조한 감자를 준비한다.\n3. 커리분말과 소금물을 혼합해 분말 소스를 만든다.\n4. 섭취 시 물 또는 국물 150ml를 주입해 가열·재수화하여 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 96.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.22
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0324
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.04
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 35.2
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.08
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 11
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.14
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.052
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 1.98
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 0.27
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 4.6
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "name": {
+            "kor": "비건 치즈 ⭐",
+            "eng": "Vegan Cheese"
+        },
+        "required_ingredient_ids": [
+            18
+        ],
+        "cooking_instructions": "1. 동결건조한 대두(200g)를 푸드프로세서로 갈고 재수화한 후 푸드워머에서 끓여 두유를 만든다.\n2. 두유에 산성 용액을 넣어 응고시킨 뒤 미세 필터 파우치에 넣어 진공 펌프로 수분을 제거시켜 두부 형태로 만든다.\n3. 식힌 두부에 효모, 소금물을 넣고 푸드프로세서로 간다.\n4. 혼합물을 진공백에 넣고 푸드 워머로 25도 정도에 10시간 노출시킨 후 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.15
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.2
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 40
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "name": {
+            "kor": "요거트 ⭐",
+            "eng": "Yogurt"
+        },
+        "required_ingredient_ids": [
+            18
+        ],
+        "cooking_instructions": "1. 귀리 또는 대두(100g)를 곱게 갈고 밀폐 용기에 물 500mL과 같이 넣어 섞는다.\n2. 푸드워머에서 90도로 10분 간 가열한다.\n3. 가열을 멈추고 40도까지 식힌다.\n4. 유산균 스타터 1.5g을 넣고 섞는다.\n5. 40도에서 10시간 발효한 후 밀폐 주머니에 담아 제공한다.",
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.12
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.03
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.05
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 12
+            }
+        ]
+    }
 ]

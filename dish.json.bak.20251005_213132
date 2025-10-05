@@ -12,63 +12,63 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.09444444444444444
+                "amount_per_dish": 0.68
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.003333333333333333
+                "amount_per_dish": 0.024
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Saturated Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0011944444444444444
+                "amount_per_dish": 0.0086
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0020833333333333333
+                "amount_per_dish": 0.015000000000000001
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0013055555555555557
+                "amount_per_dish": 0.0094
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.01027777777777778
+                "amount_per_dish": 0.07400000000000001
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.002777777777777778
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.9444444444444445
+                "amount_per_dish": 6.800000000000001
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.8055555555555556
+                "amount_per_dish": 5.800000000000001
             },
             {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             }
         ],
         "cooking-method-ids": [
@@ -97,67 +97,67 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.06904109589041096
+                "amount_per_dish": 5.04
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0025205479452054796
+                "amount_per_dish": 0.184
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Saturated Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0005452054794520549
+                "amount_per_dish": 0.0398
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0021506849315068494
+                "amount_per_dish": 0.157
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0007698630136986301
+                "amount_per_dish": 0.0562
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.03372602739726028
+                "amount_per_dish": 2.462
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0036986301369863017
+                "amount_per_dish": 0.27
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.4328767123287671
+                "amount_per_dish": 31.6
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.23835616438356166
+                "amount_per_dish": 17.400000000000002
             },
             {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "amino acid",
-                "amount_per_unit_mass": 19.17808219178082
+                "amount_per_dish": 1400.0
             }
         ],
         "cooking-method-ids": [
@@ -192,67 +192,67 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.04
+                "amount_per_dish": 5.6
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0012000000000000001
+                "amount_per_dish": 0.168
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Saturated Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00030000000000000003
+                "amount_per_dish": 0.042
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0013
+                "amount_per_dish": 0.182
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0017
+                "amount_per_dish": 0.238
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.036000000000000004
+                "amount_per_dish": 5.040000000000001
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0024
+                "amount_per_dish": 0.33599999999999997
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.28
+                "amount_per_dish": 39.2
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02
+                "amount_per_dish": 2.8000000000000003
             },
             {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.05
+                "amount_per_dish": 7.0
             },
             {
                 "name": "amino acid",
-                "amount_per_unit_mass": 10.0
+                "amount_per_dish": 1400.0
             }
         ],
         "cooking-method-ids": [
@@ -282,51 +282,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.3466666666666667
+                "amount_per_dish": 10.4
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.002
+                "amount_per_dish": 0.06
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00023333333333333333
+                "amount_per_dish": 0.007
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0003333333333333333
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.33
+                "amount_per_dish": 9.9
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.001
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.6666666666666666
+                "amount_per_dish": 20
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0003333333333333333
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00031666666666666665
+                "amount_per_dish": 0.0095
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0033333333333333335
+                "amount_per_dish": 0.1
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0011
+                "amount_per_dish": 0.033
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.16666666666666666
+                "amount_per_dish": 5.0
             }
         ],
         "cooking-method-ids": [
@@ -358,51 +358,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.5
+                "amount_per_dish": 30.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0055
+                "amount_per_dish": 0.11
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0001
+                "amount_per_dish": 0.002
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0015
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.03
+                "amount_per_dish": 0.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.004
+                "amount_per_dish": 0.08
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 1.5
+                "amount_per_dish": 30
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0002
+                "amount_per_dish": 0.004
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 5e-05
+                "amount_per_dish": 0.001
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.001
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.001
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.01
+                "amount_per_dish": 0.2
             }
         ],
         "cooking-method-ids": [
@@ -425,59 +425,59 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 2.1
+                "amount_per_dish": 31.5
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.004
+                "amount_per_dish": 0.06
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0013333333333333333
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0013333333333333333
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 1.8133333333333332
+                "amount_per_dish": 27.2
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.004666666666666667
+                "amount_per_dish": 0.07
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 1.4666666666666666
+                "amount_per_dish": 22
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.003933333333333333
+                "amount_per_dish": 0.059
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.02
+                "amount_per_dish": 0.3
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0038
+                "amount_per_dish": 0.057
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.05733333333333333
+                "amount_per_dish": 0.86
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0086
+                "amount_per_dish": 0.129
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.05333333333333334
+                "amount_per_dish": 0.8
             },
             {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.03333333333333333
+                "amount_per_dish": 0.5
             }
         ],
         "cooking-method-ids": [
@@ -510,51 +510,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.365
+                "amount_per_dish": 65.7
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.001
+                "amount_per_dish": 0.18
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 9.222222222222222e-05
+                "amount_per_dish": 0.0166
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 5.555555555555556e-05
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.10444444444444445
+                "amount_per_dish": 18.8
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0002777777777777778
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.03333333333333333
+                "amount_per_dish": 6
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0005766666666666667
+                "amount_per_dish": 0.1038
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00019555555555555556
+                "amount_per_dish": 0.0352
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.011133333333333334
+                "amount_per_dish": 2.004
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0011122222222222221
+                "amount_per_dish": 0.2002
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.023888888888888887
+                "amount_per_dish": 4.3
             }
         ],
         "cooking-method-ids": [
@@ -590,51 +590,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.34833333333333333
+                "amount_per_dish": 104.5
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006666666666666668
+                "amount_per_dish": 0.2
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 7.6e-05
+                "amount_per_dish": 0.0228
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 3.3333333333333335e-05
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.05866666666666667
+                "amount_per_dish": 17.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0001666666666666667
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.016666666666666666
+                "amount_per_dish": 5
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00047999999999999996
+                "amount_per_dish": 0.144
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00013333333333333334
+                "amount_per_dish": 0.04
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.008933333333333333
+                "amount_per_dish": 2.68
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0011
+                "amount_per_dish": 0.33
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02666666666666667
+                "amount_per_dish": 8.0
             }
         ],
         "cooking-method-ids": [
@@ -662,47 +662,47 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.9
+                "amount_per_dish": 90.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0018
+                "amount_per_dish": 0.18
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00014000000000000001
+                "amount_per_dish": 0.014
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0002
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.11199999999999999
+                "amount_per_dish": 11.2
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0005
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.16
+                "amount_per_dish": 16
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0011200000000000001
+                "amount_per_dish": 0.112
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00028000000000000003
+                "amount_per_dish": 0.028
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.022400000000000003
+                "amount_per_dish": 2.24
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0021
+                "amount_per_dish": 0.21
             }
         ],
         "cooking-method-ids": [
@@ -726,51 +726,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.5
+                "amount_per_dish": 30.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0055
+                "amount_per_dish": 0.11
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0001
+                "amount_per_dish": 0.002
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0015
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.03
+                "amount_per_dish": 0.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.004
+                "amount_per_dish": 0.08
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 1.5
+                "amount_per_dish": 30
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0002
+                "amount_per_dish": 0.004
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 5e-05
+                "amount_per_dish": 0.001
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.001
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.001
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.01
+                "amount_per_dish": 0.2
             }
         ],
         "cooking-method-ids": [],
@@ -791,55 +791,55 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.5622222222222222
+                "amount_per_dish": 126.5
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0007555555555555556
+                "amount_per_dish": 0.17
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00020888888888888888
+                "amount_per_dish": 0.047
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 8.888888888888889e-05
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.2791111111111111
+                "amount_per_dish": 62.8
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00039999999999999996
+                "amount_per_dish": 0.09
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.06222222222222222
+                "amount_per_dish": 14
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.000911111111111111
+                "amount_per_dish": 0.205
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.002
+                "amount_per_dish": 0.45
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0004711111111111111
+                "amount_per_dish": 0.106
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.014755555555555555
+                "amount_per_dish": 3.32
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0018533333333333334
+                "amount_per_dish": 0.417
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.037333333333333336
+                "amount_per_dish": 8.4
             }
         ],
         "cooking-method-ids": [
@@ -876,51 +876,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.08258064516129032
+                "amount_per_dish": 25.6
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.00022580645161290324
+                "amount_per_dish": 0.07
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 6.967741935483871e-05
+                "amount_per_dish": 0.0216
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 6.451612903225807e-05
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.08419354838709678
+                "amount_per_dish": 26.1
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00022580645161290324
+                "amount_per_dish": 0.07
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.05806451612903226
+                "amount_per_dish": 18
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00017096774193548387
+                "amount_per_dish": 0.053
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 9.032258064516129e-05
+                "amount_per_dish": 0.028
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0006451612903225806
+                "amount_per_dish": 0.2
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00028064516129032256
+                "amount_per_dish": 0.087
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.003870967741935484
+                "amount_per_dish": 1.2
             }
         ],
         "cooking-method-ids": [
@@ -953,51 +953,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.21
+                "amount_per_dish": 63.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006
+                "amount_per_dish": 0.18
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 5.9999999999999995e-05
+                "amount_per_dish": 0.018
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 3.3333333333333335e-05
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.092
+                "amount_per_dish": 27.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0001666666666666667
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.013333333333333334
+                "amount_per_dish": 4
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0003533333333333333
+                "amount_per_dish": 0.106
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00014000000000000001
+                "amount_per_dish": 0.042
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.007
+                "amount_per_dish": 2.1
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0007
+                "amount_per_dish": 0.21
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.04
+                "amount_per_dish": 12.0
             }
         ],
         "cooking-method-ids": [
@@ -1025,51 +1025,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.6
+                "amount_per_dish": 90.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0012
+                "amount_per_dish": 0.18
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.000376
+                "amount_per_dish": 0.0564
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.00013333333333333334
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.2346666666666667
+                "amount_per_dish": 35.2
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0004666666666666667
+                "amount_per_dish": 0.07
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.04666666666666667
+                "amount_per_dish": 7
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0014133333333333333
+                "amount_per_dish": 0.212
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0006133333333333334
+                "amount_per_dish": 0.092
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.018933333333333333
+                "amount_per_dish": 2.84
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0018799999999999997
+                "amount_per_dish": 0.282
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.002666666666666667
+                "amount_per_dish": 0.4
             }
         ],
         "cooking-method-ids": [
@@ -1101,23 +1101,23 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.08
+                "amount_per_dish": 12.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0003333333333333334
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 6.666666666666667e-05
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0003333333333333334
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.13333333333333333
+                "amount_per_dish": 20
             }
         ],
         "cooking-method-ids": [
@@ -1142,51 +1142,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.7333333333333333
+                "amount_per_dish": 110.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0014
+                "amount_per_dish": 0.21
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 2.9999999999999997e-05
+                "amount_per_dish": 0.0045
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 6.666666666666667e-05
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.03
+                "amount_per_dish": 4.5
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0003333333333333334
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.04
+                "amount_per_dish": 6
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00011999999999999999
+                "amount_per_dish": 0.018
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 4e-05
+                "amount_per_dish": 0.006
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0012
+                "amount_per_dish": 0.18
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00019999999999999998
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.028
+                "amount_per_dish": 4.2
             }
         ],
         "cooking-method-ids": [
@@ -1210,55 +1210,55 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.72
+                "amount_per_dish": 108.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0013333333333333335
+                "amount_per_dish": 0.2
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 2.6666666666666667e-05
+                "amount_per_dish": 0.004
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.00019999999999999998
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.02666666666666667
+                "amount_per_dish": 4.0
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0004666666666666667
+                "amount_per_dish": 0.07
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.05333333333333334
+                "amount_per_dish": 8
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 6.666666666666667e-05
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00019999999999999998
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.002666666666666667
+                "amount_per_dish": 0.4
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00011999999999999999
+                "amount_per_dish": 0.018
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.002666666666666667
+                "amount_per_dish": 0.4
             },
             {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.006666666666666667
+                "amount_per_dish": 1.0
             }
         ],
         "cooking-method-ids": [
@@ -1283,51 +1283,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.6714285714285715
+                "amount_per_dish": 117.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.003142857142857143
+                "amount_per_dish": 0.22
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 3.142857142857143e-05
+                "amount_per_dish": 0.0022
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.00042857142857142855
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.022857142857142857
+                "amount_per_dish": 1.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0008571428571428571
+                "amount_per_dish": 0.06
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.1
+                "amount_per_dish": 7
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00011428571428571428
+                "amount_per_dish": 0.008
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 4.2857142857142856e-05
+                "amount_per_dish": 0.003
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0015714285714285715
+                "amount_per_dish": 0.11
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00042857142857142855
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02857142857142857
+                "amount_per_dish": 2.0
             }
         ],
         "cooking-method-ids": [
@@ -1351,51 +1351,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 2.43
+                "amount_per_dish": 97.2
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.006500000000000001
+                "amount_per_dish": 0.26
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00044
+                "amount_per_dish": 0.0176
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.00025
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.32
+                "amount_per_dish": 12.8
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0005
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.175
+                "amount_per_dish": 7
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0016
+                "amount_per_dish": 0.064
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0006000000000000001
+                "amount_per_dish": 0.024
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.022
+                "amount_per_dish": 0.88
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.006
+                "amount_per_dish": 0.24
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.4
+                "amount_per_dish": 16.0
             }
         ],
         "cooking-method-ids": [
@@ -1422,23 +1422,23 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 20.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.005
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 3
             }
         ],
         "cooking-method-ids": [
@@ -1456,51 +1456,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.30333333333333334
+                "amount_per_dish": 91.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006333333333333333
+                "amount_per_dish": 0.19
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 5.666666666666667e-05
+                "amount_per_dish": 0.017
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 3.3333333333333335e-05
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.04733333333333333
+                "amount_per_dish": 14.2
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0001666666666666667
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.02
+                "amount_per_dish": 6
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0004133333333333333
+                "amount_per_dish": 0.124
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00010666666666666667
+                "amount_per_dish": 0.032
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.007866666666666666
+                "amount_per_dish": 2.36
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0007666666666666667
+                "amount_per_dish": 0.23
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.009333333333333332
+                "amount_per_dish": 2.8
             }
         ],
         "cooking-method-ids": [
@@ -1529,55 +1529,55 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.3153333333333333
+                "amount_per_dish": 94.6
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006666666666666668
+                "amount_per_dish": 0.2
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 6.666666666666667e-05
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 6.666666666666667e-05
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.05733333333333333
+                "amount_per_dish": 17.2
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00019999999999999998
+                "amount_per_dish": 0.06
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.016666666666666666
+                "amount_per_dish": 5
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00042333333333333334
+                "amount_per_dish": 0.127
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00024333333333333333
+                "amount_per_dish": 0.073
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.009466666666666667
+                "amount_per_dish": 2.84
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00079
+                "amount_per_dish": 0.237
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.002
+                "amount_per_dish": 0.6
             },
             {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.005
+                "amount_per_dish": 1.5
             }
         ],
         "cooking-method-ids": [
@@ -1606,51 +1606,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 3.3
+                "amount_per_dish": 165.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.005
+                "amount_per_dish": 0.25
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 6e-05
+                "amount_per_dish": 0.003
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0008
+                "amount_per_dish": 0.04
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.06
+                "amount_per_dish": 3.0
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0016
+                "amount_per_dish": 0.08
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.28
+                "amount_per_dish": 14
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00024
+                "amount_per_dish": 0.012
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 8e-05
+                "amount_per_dish": 0.004
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0024
+                "amount_per_dish": 0.12
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0004
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.055999999999999994
+                "amount_per_dish": 2.8
             }
         ],
         "cooking-method-ids": [
@@ -1675,55 +1675,55 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 2.1565217391304348
+                "amount_per_dish": 248.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0019130434782608696
+                "amount_per_dish": 0.22
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00017608695652173914
+                "amount_per_dish": 0.02025
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0004347826086956522
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.27
+                "amount_per_dish": 31.05
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0008695652173913044
+                "amount_per_dish": 0.1
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.1391304347826087
+                "amount_per_dish": 16
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0008086956521739131
+                "amount_per_dish": 0.093
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.010434782608695651
+                "amount_per_dish": 1.2
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0008086956521739131
+                "amount_per_dish": 0.093
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.01956521739130435
+                "amount_per_dish": 2.25
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0027391304347826086
+                "amount_per_dish": 0.315
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02347826086956522
+                "amount_per_dish": 2.7
             }
         ],
         "cooking-method-ids": [
@@ -1756,55 +1756,55 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 3.25
+                "amount_per_dish": 195.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.004
+                "amount_per_dish": 0.24
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0003
+                "amount_per_dish": 0.018
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0006666666666666666
+                "amount_per_dish": 0.04
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.46
+                "amount_per_dish": 27.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0015
+                "amount_per_dish": 0.09
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.25
+                "amount_per_dish": 15
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0012333333333333332
+                "amount_per_dish": 0.074
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.015000000000000001
+                "amount_per_dish": 0.9
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0012333333333333332
+                "amount_per_dish": 0.074
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.027666666666666666
+                "amount_per_dish": 1.66
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.004
+                "amount_per_dish": 0.24
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.01
+                "amount_per_dish": 0.6
             }
         ],
         "cooking-method-ids": [
@@ -1834,51 +1834,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.25666666666666665
+                "amount_per_dish": 77.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0005
+                "amount_per_dish": 0.15
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 4.3e-05
+                "amount_per_dish": 0.0129
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 9.999999999999999e-05
+                "amount_per_dish": 0.03
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.049666666666666665
+                "amount_per_dish": 14.9
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00013333333333333334
+                "amount_per_dish": 0.04
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.03333333333333333
+                "amount_per_dish": 10
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00013333333333333334
+                "amount_per_dish": 0.04
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 8.666666666666667e-05
+                "amount_per_dish": 0.026
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0016666666666666668
+                "amount_per_dish": 0.5
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0002466666666666667
+                "amount_per_dish": 0.074
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.028666666666666667
+                "amount_per_dish": 8.6
             }
         ],
         "cooking-method-ids": [
@@ -1911,23 +1911,23 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 98.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.2
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.08
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 12
             }
         ],
         "cooking-method-ids": [
@@ -1946,23 +1946,23 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.22
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.06
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 0.09
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.0
+                "amount_per_dish": 14
             }
         ],
         "cooking-method-ids": [
@@ -1981,55 +1981,55 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.7
+                "amount_per_dish": 68.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.002
+                "amount_per_dish": 0.08
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00045
+                "amount_per_dish": 0.018
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0015
+                "amount_per_dish": 0.06
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.6900000000000001
+                "amount_per_dish": 27.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.003
+                "amount_per_dish": 0.12
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.225
+                "amount_per_dish": 9
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0018499999999999999
+                "amount_per_dish": 0.074
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0225
+                "amount_per_dish": 0.9
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0018499999999999999
+                "amount_per_dish": 0.074
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.041499999999999995
+                "amount_per_dish": 1.66
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.006
+                "amount_per_dish": 0.24
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.015
+                "amount_per_dish": 0.6
             }
         ],
         "cooking-method-ids": [
@@ -2059,51 +2059,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.91
+                "amount_per_dish": 91.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0022
+                "amount_per_dish": 0.22
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.000322
+                "amount_per_dish": 0.0322
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0004
+                "amount_per_dish": 0.04
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.21600000000000003
+                "amount_per_dish": 21.6
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0007000000000000001
+                "amount_per_dish": 0.07
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.07
+                "amount_per_dish": 7
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00158
+                "amount_per_dish": 0.158
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00053
+                "amount_per_dish": 0.053
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.021099999999999997
+                "amount_per_dish": 2.11
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0023
+                "amount_per_dish": 0.23
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02
+                "amount_per_dish": 2.0
             }
         ],
         "cooking-method-ids": [],
@@ -2128,51 +2128,51 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.122
+                "amount_per_dish": 112.2
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0019
+                "amount_per_dish": 0.19
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00014000000000000001
+                "amount_per_dish": 0.014
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0002
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.14800000000000002
+                "amount_per_dish": 14.8
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0007000000000000001
+                "amount_per_dish": 0.07
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.08
+                "amount_per_dish": 8
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0014199999999999998
+                "amount_per_dish": 0.142
             },
             {
                 "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.009000000000000001
+                "amount_per_dish": 0.9
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0007599999999999999
+                "amount_per_dish": 0.076
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0374
+                "amount_per_dish": 3.74
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0039000000000000003
+                "amount_per_dish": 0.39
             }
         ],
         "cooking-method-ids": [
@@ -2199,47 +2199,47 @@
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.3499999999999999
+                "amount_per_dish": 9.45
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0071428571428571435
+                "amount_per_dish": 0.05
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00014285714285714287
+                "amount_per_dish": 0.001
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0007142857142857143
+                "amount_per_dish": 0.005
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.04285714285714286
+                "amount_per_dish": 0.3
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.002857142857142857
+                "amount_per_dish": 0.02
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 3.5714285714285716
+                "amount_per_dish": 25
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00028571428571428574
+                "amount_per_dish": 0.002
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 7.142857142857143e-05
+                "amount_per_dish": 0.0005
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0014285714285714286
+                "amount_per_dish": 0.01
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0014285714285714286
+                "amount_per_dish": 0.01
             }
         ],
         "cooking-method-ids": [

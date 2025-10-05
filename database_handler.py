@@ -284,6 +284,20 @@ def add_research_data(reference_data, summary):
     print(f"New research data added with ID {new_id}.")
     return new_id
 
+def get_dish_total_mass(dish):
+    """Calculate total mass of a dish from its required_ingredients.
+    
+    Args:
+        dish: dish dict with 'required_ingredients' field
+    
+    Returns:
+        float: total mass in grams
+    """
+    total_mass = 0.0
+    for ing in dish.get('required_ingredients', []):
+        total_mass += ing.get('amount_g', 0)
+    return total_mass
+
 def get_nutrition_categories():
     with open('nutrition_category.json', 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -324,7 +338,7 @@ def add_dish(name, image_url, required_ingredients, required_cooking_method_ids,
     - image_url: optional string
     - required_ingredients: list of dicts with 'type', 'id', and 'amount_g'
     - required_cooking_method_ids: list of cooking method ids
-    - nutrition_data: list of nutrient dicts (each with 'name' and 'amount_per_dish')
+    - nutrition_data: list of nutrient dicts (each with 'name' and 'amount_per_unit_mass')
     - cooking_instructions: optional dict of language codes to instructions
     """
     data = _load_table('dish')
@@ -345,12 +359,14 @@ def add_dish(name, image_url, required_ingredients, required_cooking_method_ids,
 
         # Initialize sums for all categories
         nutrient_sums = {cat: 0.0 for cat in categories}
+        total_mass_g = 0.0
 
-        # Sum nutrients by name.
+        # Sum nutrients by name and calculate total mass
         for req in required_ingredients:
             item_id = req.get('id')
             item_type = req.get('type', 'ingredient') # Default to ingredient
             amount = req.get('amount_g', 0)
+            total_mass_g += amount
 
             if item_type == 'ingredient':
                 ing_nut = get_ingredient_nutrition(item_id) or []
@@ -368,24 +384,27 @@ def add_dish(name, image_url, required_ingredients, required_cooking_method_ids,
                     sub_dish_nut = sub_dish.get('nutrition_info', [])
                     for nutr in sub_dish_nut:
                         nutr_name = nutr.get('name')
-                        amount_per_dish = nutr.get('amount_per_dish', 0)
-                        added = amount_per_dish * amount
+                        # Sub-dish nutrition is now stored as amount_per_unit_mass
+                        per_g = nutr.get('amount_per_unit_mass', 0)
+                        added = per_g * amount
                         if nutr_name in nutrient_sums:
                             nutrient_sums[nutr_name] += added
                         else:
                             nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
 
-        # convert sums to list structure expected by frontend
+        # Convert total sums to per-gram values
         final_nutrition = []
         seen = set()
         for cat in categories:
-            val = nutrient_sums.get(cat, 0.0)
+            total_val = nutrient_sums.get(cat, 0.0)
+            per_g_val = total_val / total_mass_g if total_mass_g > 0 else 0.0
             out_name = cat if cat != 'Calories' else 'Calories (Total)'
-            final_nutrition.append({"name": out_name, "amount_per_dish": val})
+            final_nutrition.append({"name": out_name, "amount_per_unit_mass": per_g_val})
             seen.add(out_name)
         for k, v in nutrient_sums.items():
             if k not in seen and k != 'Calories':
-                final_nutrition.append({"name": k, "amount_per_dish": v})
+                per_g_val = v / total_mass_g if total_mass_g > 0 else 0.0
+                final_nutrition.append({"name": k, "amount_per_unit_mass": per_g_val})
 
     new_item = {
         "id": new_id,
@@ -416,7 +435,7 @@ def update_dish(dish_id, name, image_url, required_ingredients, required_cooking
     - image_url: optional string
     - required_ingredients: list of dicts with 'type', 'id', and 'amount_g'
     - required_cooking_method_ids: list of cooking method ids
-    - nutrition_data: list of nutrient dicts (each with 'name' and 'amount_per_dish')
+    - nutrition_data: list of nutrient dicts (each with 'name' and 'amount_per_unit_mass')
     - cooking_instructions: optional dict of language codes to instructions
     """
     data = _load_table('dish')
@@ -439,12 +458,14 @@ def update_dish(dish_id, name, image_url, required_ingredients, required_cooking
 
         # Initialize sums for all categories
         nutrient_sums = {cat: 0.0 for cat in categories}
+        total_mass_g = 0.0
 
-        # Sum nutrients by name.
+        # Sum nutrients by name and calculate total mass
         for req in required_ingredients:
             item_id = req.get('id')
             item_type = req.get('type', 'ingredient') # Default to ingredient
             amount = req.get('amount_g', 0)
+            total_mass_g += amount
 
             if item_type == 'ingredient':
                 ing_nut = get_ingredient_nutrition(item_id) or []
@@ -462,24 +483,27 @@ def update_dish(dish_id, name, image_url, required_ingredients, required_cooking
                     sub_dish_nut = sub_dish.get('nutrition_info', [])
                     for nutr in sub_dish_nut:
                         nutr_name = nutr.get('name')
-                        amount_per_dish = nutr.get('amount_per_dish', 0)
-                        added = amount_per_dish * amount
+                        # Sub-dish nutrition is now stored as amount_per_unit_mass
+                        per_g = nutr.get('amount_per_unit_mass', 0)
+                        added = per_g * amount
                         if nutr_name in nutrient_sums:
                             nutrient_sums[nutr_name] += added
                         else:
                             nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + added
 
-        # convert sums to list structure expected by frontend
+        # Convert total sums to per-gram values
         final_nutrition = []
         seen = set()
         for cat in categories:
-            val = nutrient_sums.get(cat, 0.0)
+            total_val = nutrient_sums.get(cat, 0.0)
+            per_g_val = total_val / total_mass_g if total_mass_g > 0 else 0.0
             out_name = cat if cat != 'Calories' else 'Calories (Total)'
-            final_nutrition.append({"name": out_name, "amount_per_dish": val})
+            final_nutrition.append({"name": out_name, "amount_per_unit_mass": per_g_val})
             seen.add(out_name)
         for k, v in nutrient_sums.items():
             if k not in seen and k != 'Calories':
-                final_nutrition.append({"name": k, "amount_per_dish": v})
+                per_g_val = v / total_mass_g if total_mass_g > 0 else 0.0
+                final_nutrition.append({"name": k, "amount_per_unit_mass": per_g_val})
 
     # Update the dish
     dish.update({

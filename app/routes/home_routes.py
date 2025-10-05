@@ -7,6 +7,42 @@ import database_handler as db
 
 bp = Blueprint('home', __name__, url_prefix='/')
 
+SCHOFIELD = {
+    'male': [
+        (0, 3, 59.512, -30.4),
+        (3, 10, 22.706, 504.3),
+        (10, 18, 17.686, 658.2),
+        (18, 30, 15.057, 692.2),
+        (30, 60, 11.472, 873.1),
+        (60, 120, 11.711, 587.7),  # older-adult coeff (Schofield includes >60 variant)
+    ],
+    'female': [
+        (0, 3, 58.317, -31.1),
+        (3, 10, 20.315, 485.9),
+        (10, 18, 13.384, 692.6),
+        (18, 30, 14.818, 486.6),
+        (30, 60, 8.126, 845.6),
+        (60, 120, 9.082, 658.5),
+    ]
+}
+
+def schofield_bmr(weight: float, age: int, sex: str) -> float:
+    sex = sex.lower()
+    if sex not in SCHOFIELD:
+        raise ValueError("sex must be 'male' or 'female'")
+    for (amin, amax, a, b) in SCHOFIELD[sex]:
+        if amin <= age <= amax:
+            return a * weight + b
+    # fallback to closest age bracket
+    brackets = SCHOFIELD[sex]
+    if age < brackets[0][0]:
+        a, b = brackets[0][2], brackets[0][3]
+    else:
+        a, b = brackets[-1][2], brackets[-1][3]
+    return a * weight + b
+
+PAL = [1.4, 1.55, 1.75, 1.9, 2.2]
+
 @bp.route('/add-intake', methods=['GET', 'POST'])
 def add_intake():
     if 'user_id' not in session:
@@ -120,6 +156,11 @@ def index():
 
     # Calculate percentage of daily requirement met
     nutrition_progress = {}
+
+    bmr = schofield_bmr(user['weight'], user['age'], user['gender'])
+    pal = user['activity_level']
+
+
     for nutrient, total in todays_intake_total.items():
         requirement = DAILY_REQUIREMENTS.get(nutrient, 1)
         percentage = (total / requirement) * 100 if requirement > 0 else 0
@@ -161,6 +202,7 @@ def edit_profile():
         try:
             height = int(request.form['height'])
             weight = int(request.form['weight'])
+            age = int(request.form.get('age', user.get('age', 30)))
             like_ids = [int(x) for x in request.form.getlist('like')]
             forbid_ids = [int(x) for x in request.form.getlist('forbid')]
             language = request.form.get('language', 'kor')
@@ -168,6 +210,7 @@ def edit_profile():
             update_fields = {
                 'height': height,
                 'weight': weight,
+                'age': age,
                 'like': like_ids,
                 'forbid': forbid_ids,
                 'language': language

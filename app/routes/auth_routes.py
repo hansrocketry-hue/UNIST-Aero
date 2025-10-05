@@ -23,6 +23,7 @@ def signup():
             name = request.form['name']
             height = int(request.form['height'])
             weight = int(request.form['weight'])
+            age = int(request.form.get('age', 30))
             gender = request.form['gender']
             activity_level = int(request.form['activity_level'])
             like_ids = [int(x) for x in request.form.getlist('like_ids')]
@@ -31,7 +32,7 @@ def signup():
             # language preference (default 'kor')
             language = request.form.get('language', 'kor')
 
-            if um.add_user(username, password, name, height, weight, gender, like_ids, forbid_ids, activity_level, language=language):
+            if um.add_user(username, password, name, height, weight, age, gender, like_ids, forbid_ids, activity_level, language=language):
                 flash('회원가입이 완료되었습니다. 로그인해주세요.', 'success')
                 return redirect(url_for('auth.login'))
             else:

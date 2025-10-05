@@ -20,6 +20,9 @@
         <label for="weight">{% if session.get('lang','kor') == 'eng' %}Weight (kg):{% else %}몸무게 (kg):{% endif %}</label><br>
         <input type="number" id="weight" name="weight" required><br><br>
 
+    <label for="age">{% if session.get('lang','kor') == 'eng' %}Age:{% else %}나이:{% endif %}</label><br>
+    <input type="number" id="age" name="age" min="0" max="120" required><br><br>
+
         <label for="gender">{% if session.get('lang','kor') == 'eng' %}Gender:{% else %}성별:{% endif %}</label><br>
         <select id="gender" name="gender" required>
             <option value="male">{% if session.get('lang','kor') == 'eng' %}Male{% else %}남성{% endif %}</option>

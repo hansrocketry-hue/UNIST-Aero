@@ -132,6 +132,7 @@ main {
     cursor: pointer;
     text-decoration: none;
     font-family: "Apple Braille", sans-serif;
+    font-weight: 600;
 }
 .timeline-card p {
     color: #f4f4f4;
@@ -167,7 +168,11 @@ input[type="text"], input[type="password"] {
     padding: 2rem;
     background-color: #2e1c82;
     border-radius: 15px;
-    color: #ffffff;
+    color: #f4f4f4;
+}
+
+.card-container p {
+    color: #f4f4f4;
 }
 
 .card-title {
@@ -187,6 +192,7 @@ input[type="text"], input[type="password"] {
     cursor: pointer;
     text-decoration: none;
     font-family: "Apple Braille", sans-serif;
+    font-weight: 600;
 }
 .btn-primary:hover {
     filter: brightness(0.95);
@@ -226,7 +232,11 @@ input[type="text"], input[type="password"] {
     border-radius: 6px;
     border: 1px solid #6c35c4;
     background-color: #0e1544;
-    color: #ffffff;
+    color: #f4f4f4;
+}
+
+.card-container small {
+    color: #f4f4f4;
 }
 .card-actions {
     display: flex;
@@ -254,5 +264,11 @@ input[type="text"], input[type="password"] {
     padding: 1.5rem 2rem;
     background-color: #2e1c82;
     border-radius: 15px;
-    color: #ffffff;
+    color: #f4f4f4;
+}
+
+.wide-card-container p,
+.wide-card-container td,
+.wide-card-container th {
+    color: #f4f4f4;
 }

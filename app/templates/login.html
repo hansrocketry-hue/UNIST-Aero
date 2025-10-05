@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %}{% if session.get('lang','kor') == 'eng' %}Login{% else %}로그인{% endif %}{% endblock %}
+{% block title %}{% if session.get('lang','eng') == 'eng' %}Login{% else %}로그인{% endif %}{% endblock %}
 
 {% block content %}
-    <div class="card-container">
-        <h1 class="card-title">{% if session.get('lang','kor') == 'eng' %}Login{% else %}로그인{% endif %}</h1>
-        <form method="POST">
-            <label for="username">{% if session.get('lang','kor') == 'eng' %}Username:{% else %}사용자 이름:{% endif %}</label>
-            <input type="text" id="username" name="username" required>
+        <h1 class="card-title">{% if session.get('lang','eng') == 'eng' %}Login{% else %}로그인{% endif %}</h1>
+        <form method="POST" class="form-centered">
+            <div class="form-group">
+                <label for="username">{% if session.get('lang','eng') == 'eng' %}Username:{% else %}사용자 이름:{% endif %}</label>
+                <input type="text" id="username" name="username" required>
+            </div>
 
-            <label for="password">{% if session.get('lang','kor') == 'eng' %}Password:{% else %}비밀번호:{% endif %}</label>
-            <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <label for="password">{% if session.get('lang','eng') == 'eng' %}Password:{% else %}비밀번호:{% endif %}</label>
+                <input type="password" id="password" name="password" required>
+            </div>
 
-            <button type="submit" class="btn-primary">{% if session.get('lang','kor') == 'eng' %}Login{% else %}로그인{% endif %}</button>
+            <button type="submit" class="btn-primary">{% if session.get('lang','eng') == 'eng' %}Login{% else %}로그인{% endif %}</button>
         </form>
-        <p style="margin-top: 1rem;">
-            {% if session.get('lang','kor') == 'eng' %}
-                Don't have an account? <a href="{{ url_for('auth.signup') }}">Sign up</a>
-            {% else %}
-                계정이 없으신가요? <a href="{{ url_for('auth.signup') }}">회원가입</a>
-            {% endif %}
-        </p>
-    </div>
+        <div class="card-actions" style="margin-top: 1.5rem; justify-content: center;">
+            <p>{% if session.get('lang','eng') == 'eng' %}Don't have an account?{% else %}계정이 없으신가요?{% endif %}</p>
+            <a href="{{ url_for('auth.signup') }}" class="btn-secondary">{% if session.get('lang','eng') == 'eng' %}Sign up{% else %}회원가입{% endif %}</a>
+        </div>
 {% endblock %}

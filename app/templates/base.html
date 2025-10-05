@@ -30,7 +30,9 @@
                 </div>
             {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
+        <div class="wide-card-container">
+            {% block content %}{% endblock %}
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/dynamic_language_fields.js') }}"></script>

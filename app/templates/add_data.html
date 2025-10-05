@@ -3,14 +3,12 @@
 {% block title %}데이터 추가 - 우주 식량 관리 시스템{% endblock %}
 
 {% block content %}
-    <div class="card-container">
         <h1 class="card-title">데이터 추가</h1>
         <p style="color:#f4f4f4; margin-bottom: 1rem;">어떤 종류의 데이터를 추가하시겠습니까?</p>
         <div class="card-actions" style="flex-wrap: wrap;">
-            <a class="btn-secondary" href="{{ url_for('add_data.add_ingredient_route') }}">식재료 (Ingredient)</a>
-            <a class="btn-secondary" href="{{ url_for('add_data.add_cooking_method_route') }}">조리 방법 (Cooking Method)</a>
-            <a class="btn-secondary" href="{{ url_for('add_data.add_research_data_route') }}">연구 자료 (Research Data)</a>
-            <a class="btn-secondary" href="{{ url_for('add_data.add_dish_route') }}">요리 (Dish)</a>
+            <a class="btn-primary" href="{{ url_for('add_data.add_ingredient_route') }}">식재료 (Ingredient)</a>
+            <a class="btn-primary" href="{{ url_for('add_data.add_cooking_method_route') }}">조리 방법 (Cooking Method)</a>
+            <a class="btn-primary" href="{{ url_for('add_data.add_research_data_route') }}">연구 자료 (Research Data)</a>
+            <a class="btn-primary" href="{{ url_for('add_data.add_dish_route') }}">요리 (Dish)</a>
         </div>
-    </div>
 {% endblock %}

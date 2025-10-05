@@ -2,19 +2,22 @@ body {
     font-family: sans-serif;
     line-height: 1.6;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #0e1544; /* Dark background for the whole page */
+    color: #f4f4f4;
 }
 
 nav {
-    background: #333;
+    background: #2e1c82; /* Match theme color */
     color: #fff;
     padding: 1rem;
+    font-family: "Apple Braille", sans-serif;
 }
 
 nav a {
-    color: #fff;
+    color: #ffd835; /* Accent color for links */
     text-decoration: none;
     margin-right: 1rem;
+    font-size: 14pt;
 }
 
 main {
@@ -45,28 +48,7 @@ main {
     border-color: #f5c6cb;
 }
 
-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-form input[type="text"], form input[type="number"], form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-}
-
-form button {
-    background: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+/* Generic form styles removed to favor .card-container specific styles */
 
 /* User Profile Page Styles */
 .profile-container {
@@ -249,6 +231,21 @@ input[type="text"], input[type="password"] {
 .card-actions {
     display: flex;
     gap: 10px;
+}
+
+/* Centered form style for login/signup */
+.form-centered {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-centered label {
+    text-align: left;
+}
+
+.form-centered .btn-primary {
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .wide-card-container {

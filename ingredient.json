@@ -1142,5 +1142,20 @@
             "producible": false,
             "note": "–"
         }
+    },
+    {
+        "id": "i23",
+        "name": {
+            "kor": "물",
+            "eng": "물"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 0.0
+            }
+        ],
+        "production_time": ""
     }
 ]

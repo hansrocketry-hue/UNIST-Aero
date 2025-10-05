@@ -53,7 +53,6 @@ def add_intake():
         date = request.form.get('date')
         time = request.form.get('time')
         food_id = request.form.get('food_id')
-
         # Load user and dish data
         user = get_user_by_id(session['user_id'])
         dishes = db._load_table('dish')
@@ -62,6 +61,37 @@ def add_intake():
         if not selected_dish:
             flash('Selected dish not found', 'error')
             return redirect(url_for('home.add_intake'))
+
+        # --- Start of ingredient deduction logic ---
+        storaged_ingredients = db._load_table('storaged-ingredient')
+        required_ingredients = selected_dish.get('required_ingredients', [])
+        
+        # 1. Check if all ingredients are in stock
+        for req_ing in required_ingredients:
+            req_id = req_ing.get('id')
+            req_amount = req_ing.get('amount_g', 0)
+
+            # Find the corresponding item in storage
+            stock_item = next((item for item in storaged_ingredients if item.get('storage-id') == req_id and item.get('mode') == 'production'), None)
+            
+            if not stock_item or stock_item.get('mass_g', 0) < req_amount:
+                ingredients = db._load_table('ingredient')
+                ingredient_name = next((ing['name'].get(session.get('lang', 'kor'), 'N/A') for ing in ingredients if ing['id'] == req_id), 'Unknown Ingredient')
+                flash(f'{ingredient_name} is out of stock.', 'error')
+                return redirect(url_for('home.add_intake'))
+
+        # 2. Deduct ingredients from stock (if all checks passed)
+        for req_ing in required_ingredients:
+            req_id = req_ing.get('id')
+            req_amount = req_ing.get('amount_g', 0)
+            
+            for item in storaged_ingredients:
+                if item.get('storage-id') == req_id and item.get('mode') == 'production':
+                    item['mass_g'] -= req_amount
+                    break
+        
+        db._save_table('storaged-ingredient', storaged_ingredients)
+        # --- End of ingredient deduction logic ---
 
         # Create intake entry with dish_id only
         new_intake = {
@@ -211,7 +241,7 @@ def index():
     for item in stored_ingredients:
         ingredient_id = item.get('storage-id')
         mass = item.get('mass_g', 0)
-        if item['mode'] == 'production':
+        if item['mode'] == 'storage':
             if ingredient_id:
                 available_ingredients[ingredient_id] = available_ingredients.get(ingredient_id, 0) + mass
 
@@ -287,7 +317,7 @@ def index():
         recommended_food.append({
             'id': dish_data.get('id'),
             'name': dish_name,
-            'image': dish_data.get('image_url') or 'https://via.placeholder.com/150'
+            'image': dish_data.get('image_url')
         })
 
     # END: Food Recommendation Algorithm

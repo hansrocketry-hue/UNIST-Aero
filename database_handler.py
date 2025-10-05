@@ -548,7 +548,8 @@ def recalculate_dish_nutrition(dish, all_ingredients, all_dishes):
     final_nutrition = []
     for name, total_val in nutrient_sums.items():
         per_g_val = total_val / total_mass_g if total_mass_g > 0 else 0.0
-        final_nutrition.append({"name": name, "amount_per_unit_mass": per_g_val})
+        output_name = 'Calories (Total)' if name == 'Calories' else name
+        final_nutrition.append({"name": output_name, "amount_per_unit_mass": per_g_val})
 
     dish['nutrition_info'] = final_nutrition
     return dish

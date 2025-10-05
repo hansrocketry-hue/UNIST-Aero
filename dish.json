@@ -11,7 +11,7 @@
         },
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 1.0555555555555556
             },
             {
@@ -84,8 +84,8 @@
         "cooking_instructions": null,
         "nutrition_info": [
             {
-                "name": "Calories",
-                "amount_per_unit_mass": 3.4954337899543377
+                "name": "Calories (Total)",
+                "amount_per_unit_mass": 3.452054794520548
             },
             {
                 "name": "Carbohydrates",
@@ -136,6 +136,10 @@
                 "amount_per_unit_mass": 19.17808219178082
             },
             {
+                "name": "Calories (Total)",
+                "amount_per_unit_mass": 0.04337899543378996
+            },
+            {
                 "name": "Vitamin C",
                 "amount_per_unit_mass": 0.03310502283105023
             }
@@ -171,7 +175,7 @@
         },
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 2.0
             },
             {
@@ -257,7 +261,7 @@
         "cooking_instructions": "1.무(10g)와 청경채(5g)를 20g 물로 5분간 재수화한다.\n2. 남은 물을 제거하고 간장, 마늘 분말을 섞는다.\n3. 밀폐 용기에서 10분간 실온에 두어 절인다.\n4. 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 0.6733333333333333
             },
             {
@@ -333,7 +337,7 @@
         "cooking_instructions": "1.된장20g, 고춧가루 3g, 마늘 분말 2g을 밀폐 용기에 넣는다.\n2. 균일한 페이스트가 될 때까지 섞는다.\n3. 양념으로 사용하기 위해 밀폐 주머니에 보관한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 1.5
             },
             {
@@ -400,7 +404,7 @@
         "cooking_instructions": "1. 버섯 5g, 대두 단백 10g, 배양육10g을 150g 물로 5분간(대두단백은 10분) 재수화한다.\n2. 된장을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 3.0
             },
             {
@@ -485,7 +489,7 @@
         "cooking_instructions": "1.쌀60g과 채소15g를 150g 물로 10분간(채소5분) 재수화한다.\n2. 밀폐 용기에서 부드럽게 될 때까지 블렌딩(휴대용 블렌더 사용 시).\n3. 푸드워머에서 70~80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 3.04
             },
             {
@@ -573,7 +577,7 @@
         "cooking_instructions": "1. 쌀70g과 감자40g를 150g 물로 10분간 재수화한다.\n2. 푸드워머에서 80°C로 약 15~18분간 가열한다.\n3. 소금을 넣고 섞은 후 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 2.2
             },
             {
@@ -653,7 +657,7 @@
         "cooking_instructions": "1. 쌀70g을 100g 물로 10분간 재수화한다.\n2. 된장20g을 고르게 섞는다.\n3. 미중력용 밀폐 성형 용기를 사용해 공 모양으로 만든다.\n4. 성형 용기에서 바로 제공하거나 밀폐 주머니로 옮긴다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 3.6
             },
             {
@@ -725,7 +729,7 @@
         "cooking_instructions": "1. 된장20g, 고춧가루3g, 마늘 분말2g을 밀폐 용기에 넣는다.\n2. 완전히 섞일 때까지 저어 소스를 만든다.\n3. 소스로 사용하기 위해 밀폐 주머니에 보관한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 1.5
             },
             {
@@ -790,7 +794,7 @@
         "cooking_instructions": "1. 쌀70g, 청경채15g, 대두 단백15g, 배양육15g을 150g 물로 10분간(채소,배양육은 5분) 재수화한다.\n2. 푸드워머에서 80°C로 약 18분간 가열한다.3. 소금을 넣고 맛이 섞이도록 저은 후 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 2.6355555555555554
             },
             {
@@ -883,7 +887,7 @@
         "cooking_instructions": "1. 양파5g와 대두 단백10g을 150g 물로 10분간 재수화한다.\n2. 된장15g과 마늘 분말2g을 넣고 밀폐 용기에서 섞는다.\n3. 푸드 워머에서 80°C로 5분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 1.8096774193548386
             },
             {
@@ -960,7 +964,7 @@
         "cooking_instructions": "1. 쌀60g과 케일10g을 150g 물로 10분간 재수화한다.\n2. 밀폐 용기에서 부드럽게 블렌딩한다.\n3. 푸드워머에서 80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 1.95
             },
             {
@@ -1040,7 +1044,7 @@
         "cooking_instructions": "1. 쌀50g, 퀴노아20g, 보리20g를 150g 물로 10분간 재수화한다.\n2. 푸드워머에서 80°C로 약 15~18분간 가열한다.\n3. 섞은 후 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 3.466666666666667
             },
             {
@@ -1124,7 +1128,7 @@
         "cooking_instructions": "1. 미역15g을 150g 물로 5분간 재수화한다.\n2. 된장10g과 간장10g, 김을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 75~80°C로 약 10분간 가열한다..\n4. 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 2.0
             },
             {
@@ -1197,7 +1201,7 @@
         "cooking_instructions": "1.파스타70g과 토마토30g를 150g 물로 토마토 8분 파스타 15분 재수화한다. \n2. 토마토를 밀폐된 주머니에서 부드럽게 주므르며 페이스트 질감 만든다\n3. 푸드워머에서 80°C로 약 18분간 가열한다.\n4. 섞은 후 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 0.2
             },
             {
@@ -1265,7 +1269,7 @@
         "cooking_instructions": "파스타70g과  버섯 10g을 150g 물로 15분간(버섯은 5분) 재수화한다.\n비유제품 우주용 크림 베이스를 넣고 밀폐 용기에서 섞는다.\n푸드워머로 65–75°C에서 20–30분 워밍한다.\n밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 0.4
             },
             {
@@ -1338,7 +1342,7 @@
         "cooking_instructions": "1. 파스타 70g를 재수화한다.\n2. 감자 10g을 큐브 모양으로 자른다.\n3. 두유 10g을 분말 또는 농축 형태로 준비한다.\n4. 섭취 시 물 150ml를 넣고 가열·재수화하여 크림 감자 파스타로 완성한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 0.8
             },
             {
@@ -1410,7 +1414,7 @@
         "cooking_instructions": "1. 감자 80g을 자른다.\n2. 소금물을 바른다.\n3. 감자를 푸드프로세서로 저온 조리해 수분을 제거한다.\n4. 섭취 시 가열한 상태의 밀봉 형태로 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 0.6
             },
             {
@@ -1498,7 +1502,7 @@
         "cooking_instructions": "1. 쌀과 토마토가 든 밀폐 주머니에 물 150g 넣고, 10분간 재수화하여 불린다.\n2. 재수화된 혼합물에 바질 분말을 추가하고, 주머니를 주물러 재료를 고르게 섞는다.\n3. 밀폐 주머니를 푸드워머에 넣고 80°C로 10분간 가열해 따뜻하게 만든다.\n4. 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 1.9
             },
             {
@@ -1579,7 +1583,7 @@
         "cooking_instructions": "1. 쌀과 버섯을 150g 물로 10분간(버섯 5분) 재수화한다.\n2. 파슬리 분말을 넣고 밀폐 용기에서 섞는다.\n3. 밀폐 주머니를 푸드워머에 넣고 80°C로 10분간 가열해 따뜻하게 만든다.\n4.밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 2.0
             },
             {
@@ -1664,7 +1668,7 @@
         "cooking_instructions": "1. 건조 토마토를 50g 물로 8분간 재수화한다.\n2. 토마토를 밀폐된 주머니에서 부드럽게 주무르며 페이스트 질감을 만든다.\n3. 건조 토르티야에 토마토 페이스트와 비건 치즈를 바른다.\n4. 푸드워머에서 80°C 3분 초벌구이로 치즈를 토르티야에 고정시킨다.\n5. 배양육, 양파, 버섯 등 토핑을 취향대로 치즈에 파묻어 고정시킨다. 치즈가 식어버리기 전에 빠르게 진행한다.\n6. 푸드워머에서 80°C 10분 가열한다.\n7. 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 0.2
             },
             {
@@ -1733,7 +1737,7 @@
         "cooking_instructions": "1. 건조 토르티야 여러 장 에 80°C 물을 넣어 고온에서 10분간 재수화시킨다.\n2. 재수화 토르티야를 반죽해 번 모양을 만든다.\n3. 물을 제거한 후 푸드워머에서 80°C로 30분 가열한다.\n4. 배양육 75g, 양상추 20g을 물로 10분간 재수화시킨다.\n5. 푸드워머에 80°C 15분 가열한다.\n6. 빵과 배양육 패티, 양상추를 조합해 햄버거를 완성한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 3.626086956521739
             },
             {
@@ -1814,7 +1818,7 @@
         "cooking_instructions": "1. 밀폐 주머니에 배양육(30g), 대두 단백(10g), 채소(10g)를 넣고 150g 물을 넣고 밀봉하여 10분간 재수화한다.\n2. 재수화된 혼합물을 부드럽게 섞는다.\n3. 건조 토르티야 시트(80g)를 별도의 밀폐 주머니에 넣고 그 위에 섞은 혼합물을 중앙에 올리고, 내용물이 빠지지 않도록 단단히 말아 랩 형태로 만든다. \n4. 랩된 토르티야를 밀폐 주머니에 넣고 푸드워머에 삽입하여 80°C로 5분간 가열한다.\n5. 가열 후 밀폐 주머니 그대로 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 4.3
             },
             {
@@ -1892,7 +1896,7 @@
         "cooking_instructions": "1. 토마토, 가지, 호박을 100g 물로 10분간 재수화한다.\n2. 허브와 오일 젤을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 18분간 가열한다.\n4. 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 0.23333333333333334
             },
             {
@@ -1997,7 +2001,7 @@
         "cooking_instructions": "1. 밀폐 주머니에 배양육(30g), 건조 토르티야 시트(10g)을 넣고, 10분간 재수화한 다음 반죽한다.\n2. 미중력용 밀폐 성형 용기를 사용해 공 모양으로 만든다.\n3. 푸드워머에 삽입해 80°C로 15분간 가열한다.\n4. 밀폐 주머니 째로 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 3.95
             },
             {
@@ -2075,7 +2079,7 @@
         "cooking_instructions": "",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 2.62
             },
             {
@@ -2148,7 +2152,7 @@
         "cooking_instructions": "1. 쌀, 배양육을 100g 물로 10분간 재수화한다.\n2. 미중력용 밀폐 성형 용기를 사용해 샤리 모양으로 만든다.\n3. 쌀 위에 배양육을 얹어 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 4.02
             },
             {
@@ -2227,7 +2231,7 @@
         "cooking_instructions": "1. 배양육 (10g)을 200g 물로  80°C로 20분간 가열하며 재수화한다.\n2. 소금 2g, 간장 2g, 미소 5g, 마늘 0.5g을 밀폐 주머니에 넣고, 잘 섞어 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories",
+                "name": "Calories (Total)",
                 "amount_per_unit_mass": 1.0714285714285714
             },
             {

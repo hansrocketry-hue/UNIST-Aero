@@ -20,6 +20,18 @@
     /* ensure charts have a predictable size so center text fits */
     .chart-card { width: 180px; height: 180px; display: inline-block; margin: 8px; }
     .chart-card canvas { width: 100% !important; height: 100% !important; }
+    .food-card .no-image {
+        height: 150px; /* Match image height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #3a3a3a;
+        border-radius: 0.25rem;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
 </style>
 
 <div class="profile-container">
@@ -38,16 +50,21 @@
             {% endfor %}
         </div>
     </div>
-
     <!-- Recommended Food Section -->
     <div class="section">
         <h2 class="section-title">Recommended Meals</h2>
         <div class="grid-container">
             {% for food in recommended_food %}
             <div class="food-card">
-                <img src="{{ food.image }}" alt="{{ food.name }}">
+                {% if food.image %}
+                <img src="{{ food.image }}" alt="{{ food.name }}" style="height: 150px; object-fit: cover; width: 100%; border-radius: 0.25rem; margin-bottom: 0.5rem;">
+                {% else %}
+                <div class="no-image">
+                    <span>{{ food.name }}</span>
+                </div>
+                {% endif %}
                 <h5>{{ food.name }}</h5>
-                <a href="#" class="btn-details">Details</a>
+                <a href="{{ url_for('visualize.dish_detail', dish_id=food.id) }}" class="btn-details">Details</a>
             </div>
             {% endfor %}
         </div>

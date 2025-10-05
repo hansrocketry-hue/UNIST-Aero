@@ -3,53 +3,59 @@
 {% block title %}{% if session.get('lang','kor') == 'eng' %}Sign up{% else %}회원가입{% endif %}{% endblock %}
 
 {% block content %}
-    <h1>{% if session.get('lang','kor') == 'eng' %}Sign up{% else %}회원가입{% endif %}</h1>
-    <form method="POST">
-        <label for="username">{% if session.get('lang','kor') == 'eng' %}Login ID:{% else %}로그인 ID:{% endif %}</label><br>
-        <input type="text" id="username" name="username" required><br><br>
+    <div class="card-container">
+        <h1 class="card-title">{% if session.get('lang','kor') == 'eng' %}Sign up{% else %}회원가입{% endif %}</h1>
+        <form method="POST">
+            <label for="username">{% if session.get('lang','kor') == 'eng' %}Login ID:{% else %}로그인 ID:{% endif %}</label>
+            <input type="text" id="username" name="username" required>
 
-        <label for="password">{% if session.get('lang','kor') == 'eng' %}Password:{% else %}비밀번호:{% endif %}</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+            <label for="password">{% if session.get('lang','kor') == 'eng' %}Password:{% else %}비밀번호:{% endif %}</label>
+            <input type="password" id="password" name="password" required>
 
-        <label for="name">{% if session.get('lang','kor') == 'eng' %}Name:{% else %}이름:{% endif %}</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+            <label for="name">{% if session.get('lang','kor') == 'eng' %}Name:{% else %}이름:{% endif %}</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="height">{% if session.get('lang','kor') == 'eng' %}Height (cm):{% else %}키 (cm):{% endif %}</label><br>
-        <input type="number" id="height" name="height" required><br><br>
+            <label for="height">{% if session.get('lang','kor') == 'eng' %}Height (cm):{% else %}키 (cm):{% endif %}</label>
+            <input type="number" id="height" name="height" required>
 
-        <label for="weight">{% if session.get('lang','kor') == 'eng' %}Weight (kg):{% else %}몸무게 (kg):{% endif %}</label><br>
-        <input type="number" id="weight" name="weight" required><br><br>
+            <label for="weight">{% if session.get('lang','kor') == 'eng' %}Weight (kg):{% else %}몸무게 (kg):{% endif %}</label>
+            <input type="number" id="weight" name="weight" required>
 
-    <label for="age">{% if session.get('lang','kor') == 'eng' %}Age:{% else %}나이:{% endif %}</label><br>
-    <input type="number" id="age" name="age" min="0" max="120" required><br><br>
+            <label for="age">{% if session.get('lang','kor') == 'eng' %}Age:{% else %}나이:{% endif %}</label>
+            <input type="number" id="age" name="age" min="0" max="120" required>
 
-        <label for="gender">{% if session.get('lang','kor') == 'eng' %}Gender:{% else %}성별:{% endif %}</label><br>
-        <select id="gender" name="gender" required>
-            <option value="male">{% if session.get('lang','kor') == 'eng' %}Male{% else %}남성{% endif %}</option>
-            <option value="female">{% if session.get('lang','kor') == 'eng' %}Female{% else %}여성{% endif %}</option>
-        </select><br><br>
+            <label for="gender">{% if session.get('lang','kor') == 'eng' %}Gender:{% else %}성별:{% endif %}</label>
+            <select id="gender" name="gender" required>
+                <option value="male">{% if session.get('lang','kor') == 'eng' %}Male{% else %}남성{% endif %}</option>
+                <option value="female">{% if session.get('lang','kor') == 'eng' %}Female{% else %}여성{% endif %}</option>
+            </select>
 
-        <label for="activity_level">활동 수준 (1-5):</label><br>
-        <input type="number" id="activity_level" name="activity_level" min="1" max="5" required><br><br>
-            <label for="language">Language / 언어 선택:</label><br>
+            <label for="activity_level">활동 수준 (1-5):</label>
+            <input type="number" id="activity_level" name="activity_level" min="1" max="5" required>
+
+            <label for="language">Language / 언어 선택:</label>
             <select id="language" name="language" required>
                 <option value="kor">한국어 (kor)</option>
                 <option value="eng">English (eng)</option>
-            </select><br><br>
-        <label for="like_ids">선호 재료:</label><br>
-        <select id="like_ids" name="like_ids" multiple size="5">
-            {% for ingredient in all_ingredients %}
-                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }}</option>
-            {% endfor %}
-        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
+            </select>
 
-        <label for="forbid_ids">금지 재료:</label><br>
-        <select id="forbid_ids" name="forbid_ids" multiple size="5">
-            {% for ingredient in all_ingredients %}
-                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }}</option>
-            {% endfor %}
-        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
+            <label for="like_ids">선호 재료:</label>
+            <select id="like_ids" name="like_ids" multiple size="5">
+                {% for ingredient in all_ingredients %}
+                    <option value="{{ ingredient.id }}">{{ ingredient.name.kor }}</option>
+                {% endfor %}
+            </select>
+            <small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small>
 
-        <button type="submit">가입하기</button>
-    </form>
+            <label for="forbid_ids">금지 재료:</label>
+            <select id="forbid_ids" name="forbid_ids" multiple size="5">
+                {% for ingredient in all_ingredients %}
+                    <option value="{{ ingredient.id }}">{{ ingredient.name.kor }}</option>
+                {% endfor %}
+            </select>
+            <small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small>
+
+            <button type="submit" class="btn-primary">가입하기</button>
+        </form>
+    </div>
 {% endblock %}

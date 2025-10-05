@@ -29,7 +29,8 @@
         background-color: #f2f2f2;
     }
 </style>
-    <h1>{% if session.get('lang','kor') == 'eng' %}Data Visualization{% else %}데이터 시각화{% endif %}</h1>
+    <div class="wide-card-container">
+        <h1 class="card-title" style="margin-bottom: 0.5rem;">{% if session.get('lang','kor') == 'eng' %}Data Visualization{% else %}데이터 시각화{% endif %}</h1>
         <style>
             table {
                 width: 100%;
@@ -92,6 +93,7 @@
             <input type="text" id="search-bar" placeholder="{% if session.get('lang','kor') == 'eng' %}Enter search term...{% else %}검색어를 입력하세요...{% endif %}" style="margin-right:8px;" onkeydown="if(event.key==='Enter'){filterTable();}">
             <button type="button" onclick="filterTable()">{% if session.get('lang','kor') == 'eng' %}Search{% else %}검색{% endif %}</button>
         </div>
+    </div>
 
         <div id="category-research" class="category-table">
             <h2>{% if session.get('lang','kor') == 'eng' %}Research Data{% else %}연구 자료{% endif %}</h2>

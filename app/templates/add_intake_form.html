@@ -3,28 +3,28 @@
 {% block title %}{% if session.get('lang','kor') == 'eng' %}Add Food Intake{% else %}섭취 기록 추가{% endif %}{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>{% if session.get('lang','kor') == 'eng' %}Add Food Intake{% else %}섭취 기록 추가{% endif %}</h1>
+<div class="card-container">
+    <h1 class="card-title">{% if session.get('lang','kor') == 'eng' %}Add Food Intake{% else %}섭취 기록 추가{% endif %}</h1>
     <form method="POST">
         <div class="form-group">
             <label for="date">{% if session.get('lang','kor') == 'eng' %}Date{% else %}날짜{% endif %}</label>
-            <input type="date" id="date" name="date" class="form-control" required value="{{ today }}">
+            <input type="date" id="date" name="date" required value="{{ today }}">
         </div>
         <div class="form-group">
             <label for="time">{% if session.get('lang','kor') == 'eng' %}Time{% else %}시간{% endif %}</label>
-            <input type="time" id="time" name="time" class="form-control" required>
+            <input type="time" id="time" name="time" required>
         </div>
         <div class="form-group">
             <label for="food">{% if session.get('lang','kor') == 'eng' %}Select Food{% else %}음식 선택{% endif %}</label>
-            <select id="food" name="food_id" class="form-control" required>
+            <select id="food" name="food_id" required>
                 <option value="">{% if session.get('lang','kor') == 'eng' %}Choose a dish...{% else %}요리를 선택하세요...{% endif %}</option>
                 {% for dish in dishes %}
                 <option value="{{ dish.id }}">{{ dish.display_name }}</option>
                 {% endfor %}
             </select>
         </div>
-                <div class="form-group">
-            <p class="text-muted">
+        <div class="form-group">
+            <p class="text-muted" style="color:#ddd;">
                 {% if session.get('lang','kor') == 'eng' %}
                     <b>Add Intake:</b> Records your meal and deducts the required ingredients from your storage.<br>
                     <b>Add Intake (Log Only):</b> Records your meal without deducting any ingredients.
@@ -34,8 +34,10 @@
                 {% endif %}
             </p>
         </div>
-        <button type="submit" name="intake_action" value="consume" class="btn btn-primary">{% if session.get('lang','kor') == 'eng' %}Add Intake{% else %}섭취 기록 추가{% endif %}</button>
-        <button type="submit" name="intake_action" value="log_only" class="btn btn-secondary">{% if session.get('lang','kor') == 'eng' %}Add Intake (Log Only){% else %}섭취 기록만 추가 (재료 미소진){% endif %}</button>
+        <div class="card-actions">
+            <button type="submit" name="intake_action" value="consume" class="btn btn-primary">{% if session.get('lang','kor') == 'eng' %}Add Intake{% else %}섭취 기록 추가{% endif %}</button>
+            <button type="submit" name="intake_action" value="log_only" class="btn btn-secondary">{% if session.get('lang','kor') == 'eng' %}Add Intake (Log Only){% else %}섭취 기록만 추가 (재료 미소진){% endif %}</button>
+        </div>
     </form>
 </div>
 {% endblock %}

@@ -177,3 +177,85 @@ input[type="text"], input[type="password"] {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     z-index: 1000;
 }
+
+/* Common UI components to match home page design */
+.card-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #2e1c82;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 28pt;
+    color: #ffd835;
+    font-family: "Apple Braille", sans-serif;
+    margin-bottom: 1.25rem;
+}
+
+.btn-primary {
+    background-color: #ffd835;
+    color: #0e1544;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Apple Braille", sans-serif;
+}
+.btn-primary:hover {
+    filter: brightness(0.95);
+}
+
+.btn-secondary {
+    background-color: #6c35c4;
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Apple Braille", sans-serif;
+}
+.btn-secondary:hover {
+    filter: brightness(1.1);
+}
+
+/* Form overrides inside dark card containers */
+.card-container form {
+    background: transparent;
+    padding: 0;
+}
+.card-container label {
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+    color: #ffd835;
+    font-family: "Apple Braille", sans-serif;
+}
+.card-container input,
+.card-container select,
+.card-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #6c35c4;
+    background-color: #0e1544;
+    color: #ffffff;
+}
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.wide-card-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background-color: #2e1c82;
+    border-radius: 15px;
+    color: #ffffff;
+}

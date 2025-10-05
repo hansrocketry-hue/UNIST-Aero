@@ -9,7 +9,7 @@
             5
         ],
         "nutrition": [
-            {
+            { 
                 "name": "Calories",
                 "amount_per_unit_mass": 3.6
             },

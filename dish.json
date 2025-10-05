@@ -2396,7 +2396,7 @@
             {
                 "name": "Vitamin B12",
                 "amount_per_unit_mass": 0.0045
-            },
+            }, 
             {
                 "name": "Vitamin C",
                 "amount_per_unit_mass": 0.013000000000000001

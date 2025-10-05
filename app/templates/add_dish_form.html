@@ -3,11 +3,12 @@
 {% block title %}{% if session.get('lang','kor') == 'eng' %}Add Dish{% else %}요리 추가{% endif %}{% endblock %}
 
 {% block content %}
-    <h1>{% if session.get('lang','kor') == 'eng' %}Add Dish{% else %}요리 (Dish) 추가{% endif %}</h1>
+    <div class="card-container">
+    <h1 class="card-title">{% if session.get('lang','kor') == 'eng' %}Add Dish{% else %}요리 (Dish) 추가{% endif %}</h1>
     <form method="POST">
         <label>{% if session.get('lang','kor') == 'eng' %}Name (multilingual):{% else %}이름 (다중 언어):{% endif %}</label><br>
         <div id="name-fields"></div>
-        <button type="button" id="add-name-btn">{% if session.get('lang','kor') == 'eng' %}Add Name{% else %}이름 추가{% endif %}</button><br><br>
+        <button type="button" id="add-name-btn" class="btn-secondary">{% if session.get('lang','kor') == 'eng' %}Add Name{% else %}이름 추가{% endif %}</button><br><br>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -92,7 +93,7 @@
                 </optgroup>
             </select>
             <input type="number" id="ingredient-amount" placeholder="{% if session.get('lang','kor') == 'eng' %}Amount (g){% else %}사용량(g){% endif %}" step="any" style="width:120px; margin-left:8px;">
-            <button type="button" id="add-ingredient-btn">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가{% endif %}</button>
+            <button type="button" id="add-ingredient-btn" class="btn-secondary">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가{% endif %}</button>
         </div>
         <div id="selected-ingredients" style="margin-top:8px;"></div>
         <!-- Hidden inputs will be created for item_types[], item_ids[], and item_amounts[] -->
@@ -109,8 +110,9 @@
 
         <label>{% if session.get('lang','kor') == 'eng' %}Cooking Instructions (multilingual):{% else %}조리 방법 설명 (다중 언어):{% endif %}</label><br>
         <div id="cooking-instructions-fields"></div>
-        <button type="button" id="add-cooking-instructions-btn">{% if session.get('lang','kor') == 'eng' %}Add Cooking Instructions{% else %}조리 방법 설명 추가{% endif %}</button><br><br>
+        <button type="button" id="add-cooking-instructions-btn" class="btn-secondary">{% if session.get('lang','kor') == 'eng' %}Add Cooking Instructions{% else %}조리 방법 설명 추가{% endif %}</button><br><br>
 
-        <button type="submit">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가하기{% endif %}</button>
+        <button type="submit" class="btn-primary">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가하기{% endif %}</button>
     </form>
+    </div>
 {% endblock %}

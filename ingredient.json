@@ -1581,5 +1581,230 @@
             "producible": false,
             "note": "–"
         }
+    },
+    {
+        "id": 23,
+        "name": {
+            "kor": "파스타",
+            "eng": "pasta"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 3.5
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 24,
+        "name": {
+            "kor": "빵",
+            "eng": "bread"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 2.5
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 25,
+        "name": {
+            "kor": "파슬리",
+            "eng": "Parsley"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 0.36
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 26,
+        "name": {
+            "kor": "된장",
+            "eng": "Doenjang"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 1.0
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 27,
+        "name": {
+            "kor": "간장",
+            "eng": "Soy sauce"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 0.5
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 28,
+        "name": {
+            "kor": "미소",
+            "eng": "Miso"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 1.2
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 29,
+        "name": {
+            "kor": "두유",
+            "eng": "Soy milk"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 0.5
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 30,
+        "name": {
+            "kor": "파스타시트",
+            "eng": "Pasta sheets"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 2.5
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 31,
+        "name": {
+            "kor": "시럽",
+            "eng": "Syrup"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 3.0
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 32,
+        "name": {
+            "kor": "토르띠아 시트",
+            "eng": "Tortilla"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 2.5
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 33,
+        "name": {
+            "kor": "우동면",
+            "eng": "Udon noodle"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 2.0
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 34,
+        "name": {
+            "kor": "메밀면",
+            "eng": "Buckwheat noodle"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 3.0
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 35,
+        "name": {
+            "kor": "견과",
+            "eng": "Nuts"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 5.0
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 36,
+        "name": {
+            "kor": "밀면",
+            "eng": "Wheat noodles"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 3.5
+            }
+        ],
+        "production_time": ""
+    },
+    {
+        "id": 37,
+        "name": {
+            "kor": "효모",
+            "eng": "Yeast"
+        },
+        "research_ids": [],
+        "nutrition": [
+            {
+                "name": "Calories",
+                "amount_per_unit_mass": 4.0
+            }
+        ],
+        "production_time": ""
     }
 ]

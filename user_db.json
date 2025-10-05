@@ -87,5 +87,42 @@
         "forbid": [
             "i3"
         ]
+    },
+    {
+        "id": 3,
+        "username": "choistory",
+        "password_hash": "scrypt:32768:8:1$TU71ToP6CJr7YHmn$1dbcbfbd335ab341aa6011a4530293eff66971e85c19a2d9fb26696628fb243904c91b71279d40b83d1628615921664682f9eba77e8a92b222f6424c1898423f",
+        "name": "최영준",
+        "height": 170,
+        "weight": 60,
+        "gender": "male",
+        "activity_level": 2,
+        "language": "kor",
+        "like": [
+            1
+        ],
+        "forbid": [
+            7
+        ],
+        "food_timeline": [
+            {
+                "date": "2025-10-05",
+                "intake": [
+                    {
+                        "time": "19:21",
+                        "dish_id": 7
+                    }
+                ]
+            },
+            {
+                "date": "2025-10-04",
+                "intake": [
+                    {
+                        "time": "09:23",
+                        "dish_id": 35
+                    }
+                ]
+            }
+        ]
     }
 ]

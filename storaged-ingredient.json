@@ -28,5 +28,14 @@
         "processing_type": "I",
         "min_end_date": "2026-01-21",
         "max_end_date": "2026-02-20"
+    },
+    {
+        "id": 4,
+        "storage-id": 15,
+        "mass_g": 400,
+        "mode": "storage",
+        "start_date": "2025-10-05",
+        "processing_type": "P",
+        "expiration_date": "2026-05-31"
     }
 ]

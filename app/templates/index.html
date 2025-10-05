@@ -17,6 +17,9 @@
     .btn-primary:hover {
         background-color: #0056b3;
     }
+    /* ensure charts have a predictable size so center text fits */
+    .chart-card { width: 180px; height: 180px; display: inline-block; margin: 8px; }
+    .chart-card canvas { width: 100% !important; height: 100% !important; }
 </style>
 
 <div class="profile-container">
@@ -89,19 +92,65 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+// Plugin to draw center text (percentage and amount) in doughnut charts
+const centerTextPlugin = {
+    id: 'centerTextPlugin',
+    afterDraw: (chart) => {
+        if (chart.config.type !== 'doughnut') return;
+        const ctx = chart.ctx;
+        const centerCfg = chart.config.options.plugins && chart.config.options.plugins.centerText;
+        if (!centerCfg) return;
+        
+        const text1 = centerCfg.text1;
+        const text2 = centerCfg.text2;
+
+        ctx.save();
+        
+        const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
+        const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
+
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        if (text1) {
+            const fontSize1 = centerCfg.fontSize1 || 20;
+            ctx.font = `bold ${fontSize1}px ${centerCfg.fontFamily || 'Arial'}`;
+            ctx.fillStyle = centerCfg.color1 || '#fff';
+            // Position text1 slightly above center if text2 exists
+            const y1 = text2 ? centerY - (fontSize1 / 2) : centerY;
+            ctx.fillText(text1, centerX, y1);
+        }
+
+        if (text2) {
+            const fontSize2 = centerCfg.fontSize2 || 14;
+            ctx.font = `${fontSize2}px ${centerCfg.fontFamily || 'Arial'}`;
+            ctx.fillStyle = centerCfg.color2 || '#ddd';
+            // Position text2 slightly below center
+            const y2 = text1 ? centerY + (fontSize2 / 2) + 5 : centerY;
+            ctx.fillText(text2, centerX, y2);
+        }
+
+        ctx.restore();
+    }
+};
+Chart.register(centerTextPlugin);
+
 document.addEventListener("DOMContentLoaded", function() {
     const nutritionData = {{ nutrition_progress | tojson }};
-    
+
     for (const nutrient in nutritionData) {
         const data = nutritionData[nutrient];
-        const ctx = document.getElementById('chart-' + nutrient).getContext('2d');
-        
+        const canvasId = 'chart-' + nutrient;
+        const ctx = document.getElementById(canvasId).getContext('2d');
+
+        const percent = Math.round(data.percentage);
+
         new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: [nutrient, 'Remaining'],
                 datasets: [{
-                    data: [data.percentage, 100 - data.percentage > 0 ? 100 - data.percentage : 0],
+                    data: [percent, 100 - percent > 0 ? 100 - percent : 0],
                     backgroundColor: ['#ffd835', '#6c35c4'],
                     borderColor: '#2e1c82',
                     borderWidth: 2
@@ -116,7 +165,16 @@ document.addEventListener("DOMContentLoaded", function() {
                         display: true,
                         text: `${nutrient.charAt(0).toUpperCase() + nutrient.slice(1)}`,
                         color: '#ffffff',
-                        font: { size: 16, family: "Apple Braille" }
+                        font: { size: 14, family: "Apple Braille" }
+                    },
+                    centerText: {
+                        text1: `${percent}%`,
+                        text2: `${data.total}${data.unit}`,
+                        color1: '#ffffff',
+                        fontSize1: 20,
+                        color2: '#dddddd',
+                        fontSize2: 14,
+                        fontFamily: 'Apple Braille'
                     }
                 },
                 cutout: '70%'

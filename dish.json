@@ -2792,5 +2792,85 @@
                 "amount_g": 100.0
             }
         ]
+    },
+    {
+        "id": 43,
+        "name": {
+            "kor": "비타민 알약",
+            "eng": "Vitamin Food"
+        },
+        "image_url": null,
+        "required_ingredients": [
+            {
+                "id": 5,
+                "amount_g": 1000.0
+            }
+        ],
+        "cooking_instructions": {
+            "kor": "d"
+        },
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_dish": 64.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 2.0
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 1.2
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 3.0
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 1.4
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 50.0
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_dish": 3.6
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 460.0
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_dish": 0.0
+            }
+        ],
+        "cooking-method-ids": []
     }
 ]

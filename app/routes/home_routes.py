@@ -118,6 +118,24 @@ DAILY_REQUIREMENTS = {
     "Sodium":2000
 }
 
+NUTRIENT_UNITS = {
+    "Calories (Total)": "kcal",
+    "Carbohydrates": "g",
+    "Protein": "g",
+    "Dietary Fiber": "g",
+    "Fat": "g",
+    "Sodium": "mg",
+    "Vitamin B1 (Thiamin)": "mg",
+    "Vitamin B2 (Riboflavin)": "mg",
+    "Vitamin B3 (Niacin)": "mg",
+    "Vitamin B6": "mg",
+    "Vitamin C": "mg",
+    "Folate": "μg",
+    "Vitamin B12": "μg",
+    "Vitamin D": "μg",
+    # 다른 영양소 단위도 필요시 추가
+}
+
 @bp.route('/')
 def index():
     if 'user_id' not in session:
@@ -151,7 +169,8 @@ def index():
                     dish = dish_map.get(intake_item.get('dish_id'))
                     if dish and 'nutrition_info' in dish:
                         for item in dish['nutrition_info']:
-                            todays_intake_total[item['name']] +=  item['amount_per_dish']
+                            if item['name'] in todays_intake_total:
+                                todays_intake_total[item['name']] +=  item['amount_per_dish']
             elif entry['date'] == yesterday_str:
                 yesterday_timeline = entry
         print(todays_intake_total)
@@ -162,6 +181,10 @@ def index():
     bmr = schofield_bmr(user['weight'], user['age'], user['gender'])
     pal = user['activity_level']
 
+    DAILY_REQUIREMENTS['Calories (Total)'] = bmr * pal
+    DAILY_REQUIREMENTS['Protein'] = bmr * pal * 0.25 / 4
+    DAILY_REQUIREMENTS['Fat'] = bmr * pal * 0.25 / 4
+    DAILY_REQUIREMENTS['Carbohydrates'] = bmr * pal * 0.5 / 4
 
     for nutrient, total in todays_intake_total.items():
         requirement = DAILY_REQUIREMENTS.get(nutrient, 1)
@@ -169,7 +192,8 @@ def index():
         nutrition_progress[nutrient] = {
             "total": round(total, 2),
             "percentage": round(percentage, 2),
-            "requirement": requirement
+            "requirement": requirement,
+            "unit": NUTRIENT_UNITS.get(nutrient, '')
         }
     
     # Recommended food (placeholder)

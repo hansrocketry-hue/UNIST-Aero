@@ -4,9 +4,9 @@
         "username": "a",
         "password_hash": "scrypt:32768:8:1$2ARpQHGUkM5Xeupk$25c92792562c7839518f4ef78c363572bc01362b520a1d3b30ba30fa86a14bc293dd8981b954cfb265f5896ad02a9d827d1b976e1f5e5e75cc9f3ad448685c92",
         "name": "2323",
-        "height": 2323,
-        "weight": 2323,
-        "age": 34,
+        "height": 123,
+        "weight": 123,
+        "age": 20,
         "gender": "male",
         "activity_level": 2,
         "language": "kor",
@@ -27,6 +27,10 @@
                     {
                         "time": "07:51",
                         "dish_id": 6
+                    },
+                    {
+                        "time": "21:31",
+                        "dish_id": 43
                     }
                 ]
             }

@@ -35,7 +35,10 @@
     }
 </style>
 
-<h1>Storaged Ingredient Visualization</h1>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>Storaged Ingredient Visualization</h1>
+    <a href="{{ url_for('add_data.add_storaged_ingredient_route') }}" class="btn btn-primary">Add Storaged Ingredient</a>
+</div>
 
 {% for item in storaged_ingredients %}
 <div class="ingredient-item">

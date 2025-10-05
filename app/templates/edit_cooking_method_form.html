@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Cooking Method{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1>조리 방법 수정</h1>
+            <form method="POST" id="cookingMethodForm">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">기본 정보</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name_kor" class="form-label">이름 (한글)</label>
+                            <input type="text" class="form-control" id="name_kor" name="name_kor" 
+                                   value="{{ method.name.kor }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name_eng" class="form-label">이름 (영문)</label>
+                            <input type="text" class="form-control" id="name_eng" name="name_eng" 
+                                   value="{{ method.name.eng }}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">설명</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="description_kor" class="form-label">설명 (한글)</label>
+                            <textarea class="form-control" id="description_kor" name="description_kor" 
+                                      rows="4" required>{{ method.description.kor }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description_eng" class="form-label">설명 (영문)</label>
+                            <textarea class="form-control" id="description_eng" name="description_eng" 
+                                      rows="4" required>{{ method.description.eng }}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">연관 연구 자료</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for research in research_data %}
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" name="research_ids[]" 
+                                   value="{{ research.id }}" id="research_{{ research.id }}"
+                                   {% if research.id in method.research_ids %}checked{% endif %}>
+                            <label class="form-check-label" for="research_{{ research.id }}">
+                                {{ research.reference_data.title }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">수정 완료</button>
+                    <a href="{{ url_for('visualize.cooking_method_detail', method_id=method.id) }}" 
+                       class="btn btn-secondary">취소</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

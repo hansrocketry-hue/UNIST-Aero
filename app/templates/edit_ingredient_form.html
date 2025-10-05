@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Ingredient{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1>식재료 정보 수정</h1>
+            <form method="POST" id="ingredientForm">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">기본 정보</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name_kor" class="form-label">이름 (한글)</label>
+                            <input type="text" class="form-control" id="name_kor" name="name_kor" 
+                                   value="{{ ingredient.name.kor }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name_eng" class="form-label">이름 (영문)</label>
+                            <input type="text" class="form-control" id="name_eng" name="name_eng" 
+                                   value="{{ ingredient.name.eng }}" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">연관 연구 자료</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for research in research_data %}
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" name="research_ids[]" 
+                                   value="{{ research.id }}" id="research_{{ research.id }}"
+                                   {% if research.id in ingredient.research_ids %}checked{% endif %}>
+                            <label class="form-check-label" for="research_{{ research.id }}">
+                                {{ research.reference_data.title }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">영양 정보 (100g당)</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for category in nutrition_categories %}
+                        <div class="mb-3">
+                            <label for="nutrition_{{ category.name }}" class="form-label">
+                                {{ category.name }}
+                                {% if category.unit %}({{ category.unit }}){% endif %}
+                            </label>
+                            <input type="number" step="0.01" class="form-control" 
+                                   id="nutrition_{{ category.name }}" 
+                                   name="nutrition_{{ category.name }}"
+                                   value="{{ ingredient.nutrition|selectattr('name', 'equalto', category.name)|map(attribute='amount_per_unit_mass')|first or '' }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">생산 정보</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="producible" name="producible"
+                                   {% if ingredient.production_time.producible %}checked{% endif %}>
+                            <label class="form-check-label" for="producible">생산 가능</label>
+                        </div>
+                        <div class="production-details" {% if not ingredient.production_time.producible %}style="display: none;"{% endif %}>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="min_time" class="form-label">최소 생산 시간</label>
+                                        <input type="number" class="form-control" id="min_time" name="min_time"
+                                               value="{{ ingredient.production_time.min_time }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="max_time" class="form-label">최대 생산 시간</label>
+                                        <input type="number" class="form-control" id="max_time" name="max_time"
+                                               value="{{ ingredient.production_time.max_time }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label for="time_unit" class="form-label">시간 단위</label>
+                                        <select class="form-control" id="time_unit" name="time_unit">
+                                            <option value="days" {% if ingredient.production_time.unit == 'days' %}selected{% endif %}>일</option>
+                                            <option value="hours" {% if ingredient.production_time.unit == 'hours' %}selected{% endif %}>시간</option>
+                                            <option value="minutes" {% if ingredient.production_time.unit == 'minutes' %}selected{% endif %}>분</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">수정 완료</button>
+                    <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ingredient.id) }}" 
+                       class="btn btn-secondary">취소</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('producible').addEventListener('change', function() {
+    const productionDetails = document.querySelector('.production-details');
+    productionDetails.style.display = this.checked ? 'block' : 'none';
+});
+</script>
+{% endblock %}

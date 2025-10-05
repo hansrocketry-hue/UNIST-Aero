@@ -10,10 +10,11 @@ def create_app():
     app.config['SECRET_KEY'] = os.urandom(24) # 세션을 위한 비밀 키 설정
 
     # 블루프린트 import 및 등록
-    from .routes import home_routes, add_data_routes, auth_routes, visualize_routes
+    from .routes import home_routes, add_data_routes, auth_routes, visualize_routes, edit_data_routes
     app.register_blueprint(home_routes.bp)
     app.register_blueprint(add_data_routes.bp)
     app.register_blueprint(auth_routes.bp)
     app.register_blueprint(visualize_routes.bp)
+    app.register_blueprint(edit_data_routes.bp)
 
     return app

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Research Data{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1>연구 자료 수정</h1>
+            <form method="POST" id="researchForm">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">참고 자료 정보</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">제목</label>
+                            <input type="text" class="form-control" id="title" name="title" 
+                                   value="{{ research.reference_data.title }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="authors" class="form-label">저자</label>
+                            <input type="text" class="form-control" id="authors" name="authors" 
+                                   value="{{ research.reference_data.authors }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="journal" class="form-label">저널명</label>
+                            <input type="text" class="form-control" id="journal" name="journal" 
+                                   value="{{ research.reference_data.journal }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">출판년도</label>
+                            <input type="text" class="form-control" id="year" name="year" 
+                                   value="{{ research.reference_data.year }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="doi" class="form-label">DOI</label>
+                            <input type="text" class="form-control" id="doi" name="doi" 
+                                   value="{{ research.reference_data.doi }}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">요약</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="summary_kor" class="form-label">한글 요약</label>
+                            <textarea class="form-control" id="summary_kor" name="summary_kor" 
+                                      rows="4" required>{{ research.summary.kor }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="summary_eng" class="form-label">영문 요약</label>
+                            <textarea class="form-control" id="summary_eng" name="summary_eng" 
+                                      rows="4" required>{{ research.summary.eng }}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">수정 완료</button>
+                    <a href="{{ url_for('visualize.research_detail', research_id=research.id) }}" 
+                       class="btn btn-secondary">취소</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

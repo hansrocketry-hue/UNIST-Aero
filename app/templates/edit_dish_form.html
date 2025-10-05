@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Dish{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1>요리 정보 수정</h1>
+            <form method="POST" id="dishForm">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">기본 정보</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name_kor" class="form-label">이름 (한글)</label>
+                            <input type="text" class="form-control" id="name_kor" name="name_kor" 
+                                   value="{{ dish.name.kor }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name_eng" class="form-label">이름 (영문)</label>
+                            <input type="text" class="form-control" id="name_eng" name="name_eng" 
+                                   value="{{ dish.name.eng }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image_url" class="form-label">이미지 URL</label>
+                            <input type="url" class="form-control" id="image_url" name="image_url" 
+                                   value="{{ dish.image_url }}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">필요 식재료</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="ingredientList">
+                            {% for req in dish.required_ingredients %}
+                            <div class="row ingredient-row mb-2">
+                                <div class="col-md-6">
+                                    <select class="form-control ingredient-select" name="ingredient_ids[]" required>
+                                        <option value="">식재료 선택</option>
+                                        {% for ing in ingredients %}
+                                        <option value="{{ ing.id }}" 
+                                                {% if ing.id == req.id %}selected{% endif %}>
+                                            {{ ing.name.kor }} / {{ ing.name.eng }}
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" name="ingredient_amounts[]" 
+                                               value="{{ req.amount_g }}" step="0.1" min="0" required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">g</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-danger remove-ingredient">삭제</button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button type="button" class="btn btn-secondary mt-2" id="addIngredient">
+                            + 식재료 추가
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">조리 방법</h5>
+                    </div>
+                    <div class="card-body">
+                        {% for method in cooking_methods %}
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" name="cooking_method_ids[]" 
+                                   value="{{ method.id }}" id="method_{{ method.id }}"
+                                   {% if method.id in dish['cooking-method-ids'] %}checked{% endif %}>
+                            <label class="form-check-label" for="method_{{ method.id }}">
+                                {{ method.name.kor }} / {{ method.name.eng }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">조리 설명</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="instructions_kor" class="form-label">조리 설명 (한글)</label>
+                            <textarea class="form-control" id="instructions_kor" name="instructions_kor" 
+                                      rows="4" required>{{ dish.cooking_instructions.kor }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="instructions_eng" class="form-label">조리 설명 (영문)</label>
+                            <textarea class="form-control" id="instructions_eng" name="instructions_eng" 
+                                      rows="4" required>{{ dish.cooking_instructions.eng }}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">수정 완료</button>
+                    <a href="{{ url_for('visualize.dish_detail', dish_id=dish.id) }}" 
+                       class="btn btn-secondary">취소</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<template id="ingredientRowTemplate">
+    <div class="row ingredient-row mb-2">
+        <div class="col-md-6">
+            <select class="form-control ingredient-select" name="ingredient_ids[]" required>
+                <option value="">식재료 선택</option>
+                {% for ing in ingredients %}
+                <option value="{{ ing.id }}">{{ ing.name.kor }} / {{ ing.name.eng }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <input type="number" class="form-control" name="ingredient_amounts[]" 
+                       value="0" step="0.1" min="0" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">g</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-danger remove-ingredient">삭제</button>
+        </div>
+    </div>
+</template>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ingredientList = document.getElementById('ingredientList');
+    const addButton = document.getElementById('addIngredient');
+    const template = document.getElementById('ingredientRowTemplate');
+
+    // 재료 추가 버튼 클릭 이벤트
+    addButton.addEventListener('click', function() {
+        const clone = template.content.cloneNode(true);
+        ingredientList.appendChild(clone);
+    });
+
+    // 재료 삭제 버튼 클릭 이벤트 (이벤트 위임)
+    ingredientList.addEventListener('click', function(e) {
+        if (e.target.matches('.remove-ingredient')) {
+            e.target.closest('.ingredient-row').remove();
+        }
+    });
+
+    // 폼 제출 전 유효성 검사
+    document.getElementById('dishForm').addEventListener('submit', function(e) {
+        // 최소 하나의 재료가 있는지 확인
+        const ingredients = document.querySelectorAll('.ingredient-select');
+        if (ingredients.length === 0) {
+            e.preventDefault();
+            alert('최소 하나의 재료를 추가해주세요.');
+            return;
+        }
+
+        // 최소 하나의 조리 방법이 선택되었는지 확인
+        const methods = document.querySelectorAll('input[name="cooking_method_ids[]"]:checked');
+        if (methods.length === 0) {
+            e.preventDefault();
+            alert('최소 하나의 조리 방법을 선택해주세요.');
+            return;
+        }
+
+        // 모든 재료 정보가 올바르게 입력되었는지 확인
+        let valid = true;
+        ingredients.forEach(function(select) {
+            const row = select.closest('.ingredient-row');
+            const amount = row.querySelector('input[name="ingredient_amounts[]"]');
+            if (!select.value || !amount.value || amount.value <= 0) {
+                valid = false;
+            }
+        });
+
+        if (!valid) {
+            e.preventDefault();
+            alert('모든 재료의 정보를 올바르게 입력해주세요.');
+            return;
+        }
+    });
+});
+</script>
+{% endblock %}

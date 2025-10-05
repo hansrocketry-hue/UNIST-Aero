@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if session.get('lang','kor') == 'eng' %}Dish Details{% else %}요리 상세 정보{% endif %}{% endblock %}
+
+{% block content %}
+    {% if dish %}
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <p class="mb-0"><em>{% if session.get('lang','kor') == 'eng' %}Category: Dish{% else %}카테고리: 요리{% endif %}</em></p>
+            <a href="{{ url_for('edit_data.edit_dish_route', dish_id=dish.id) }}" 
+               class="btn btn-primary">수정하기</a>
+        </div>
+        <h1>{{ dish.name[session.get('lang', 'kor')] }}</h1>
+        <p><strong>ID:</strong> {{ dish.id }}</p>
+        
+        {% if dish.image_url %}
+            <div class="mb-4">
+                <img src="{{ dish.image_url }}" alt="{{ dish.name[session.get('lang', 'kor')] }}" 
+                     class="img-fluid" style="max-width: 500px;">
+            </div>
+        {% endif %}
+
+        <h2>{% if session.get('lang','kor') == 'eng' %}Name{% else %}이름{% endif %}</h2>
+        <ul>
+            {% for lang, text in dish.name.items() %}
+                <li><strong>{{ lang.upper() }}:</strong> {{ text }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>{% if session.get('lang','kor') == 'eng' %}Required Ingredients{% else %}필요한 재료{% endif %}</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{% if session.get('lang','kor') == 'eng' %}Ingredient{% else %}식재료{% endif %}</th>
+                    <th>{% if session.get('lang','kor') == 'eng' %}Amount{% else %}필요량{% endif %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ingredient in required_ingredients %}
+                <tr>
+                    <td>
+                        <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ingredient.id) }}">
+                            {{ ingredient.name[session.get('lang', 'kor')] }}
+                        </a>
+                    </td>
+                    <td>{{ ingredient.used_amount_g }}g</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>{% if session.get('lang','kor') == 'eng' %}Cooking Methods{% else %}조리 방법{% endif %}</h2>
+        {% if required_methods %}
+            <ul>
+                {% for method in required_methods %}
+                    <li>
+                        <a href="{{ url_for('visualize.cooking_method_detail', method_id=method.id) }}">
+                            {{ method.name[session.get('lang', 'kor')] }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{% if session.get('lang','kor') == 'eng' %}No cooking methods specified.{% else %}지정된 조리 방법이 없습니다.{% endif %}</p>
+        {% endif %}
+
+        <h2>{% if session.get('lang','kor') == 'eng' %}Cooking Instructions{% else %}조리 설명{% endif %}</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                {% if cooking_instructions_kor %}
+                    <h5>한글</h5>
+                    <p style="white-space: pre-line;">{{ cooking_instructions_kor }}</p>
+                {% endif %}
+                {% if dish.cooking_instructions.eng %}
+                    <h5>English</h5>
+                    <p style="white-space: pre-line;">{{ dish.cooking_instructions.eng }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if calories is not none or dish.nutrition_info %}
+        <h2>{% if session.get('lang','kor') == 'eng' %}Nutrition Information{% else %}영양 정보{% endif %}</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{% if session.get('lang','kor') == 'eng' %}Nutrient{% else %}영양소{% endif %}</th>
+                    <th>{% if session.get('lang','kor') == 'eng' %}Amount per dish{% else %}1인분 기준 함량{% endif %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if calories is not none %}
+                <tr>
+                    <td>Calories (Total)</td>
+                    <td>{{ calories }}</td>
+                </tr>
+                {% endif %}
+                {% if dish.nutrition_info %}
+                {% for nutrient in dish.nutrition_info %}
+                {% if nutrient.name != 'Calories (Total)' %}
+                <tr>
+                    <td>{{ nutrient.name }}</td>
+                    <td>{{ nutrient.amount_per_dish }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        {% endif %}
+    {% else %}
+        <h1>{% if session.get('lang','kor') == 'eng' %}Dish not found{% else %}요리를 찾을 수 없습니다{% endif %}</h1>
+    {% endif %}
+{% endblock %}

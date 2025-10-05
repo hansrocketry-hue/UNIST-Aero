@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "storage-id": 1,
+        "storage-id": "i1",
         "mass_g": 2000,
         "mode": "storage",
         "start_date": "2024-01-01",
@@ -11,7 +11,7 @@
     },
     {
         "id": 2,
-        "storage-id": 2,
+        "storage-id": "i2",
         "mass_g": 10000,
         "mode": "storage",
         "start_date": "2024-01-01",
@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "storage-id": 1,
+        "storage-id": "i1",
         "mass_g": 20000,
         "mode": "production",
         "start_date": "2025-10-23",

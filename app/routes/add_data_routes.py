@@ -130,17 +130,19 @@ def add_dish_route():
             name_names = request.form.getlist('name_names')
             name_dict = dict(zip(name_codes, name_names))
 
-            # Parse required ingredients with amounts
-            raw_ing_ids = request.form.getlist('required_ingredient_ids')
-            raw_ing_amts = request.form.getlist('required_ingredient_amounts')
+            # Parse required ingredients with amounts and types
+            raw_item_types = request.form.getlist('item_types[]')
+            raw_item_ids = request.form.getlist('item_ids[]')
+            raw_item_amts = request.form.getlist('item_amounts[]')
             required_ingredients = []
-            for i in range(min(len(raw_ing_ids), len(raw_ing_amts))):
+            for i in range(min(len(raw_item_ids), len(raw_item_amts))):
                 try:
-                    iid = int(raw_ing_ids[i])
-                    amt = float(raw_ing_amts[i])
+                    item_type = raw_item_types[i] if i < len(raw_item_types) else 'ingredient'
+                    item_id = raw_item_ids[i]  # Keep as string (supports both "i1" and "d1" format)
+                    amt = float(raw_item_amts[i])
                 except (ValueError, TypeError):
                     continue
-                required_ingredients.append({"id": iid, "amount_g": amt})
+                required_ingredients.append({"type": item_type, "id": item_id, "amount_g": amt})
 
             req_cook_ids = [int(x) for x in request.form.getlist('required_cooking_method_ids')]
 
@@ -168,14 +170,15 @@ def add_dish_route():
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
     all_ingredients = db._load_table('ingredient')
+    all_dishes = db._load_table('dish')
     all_cooking_methods = db._load_table('cooking-methods')
-    return render_template('add_dish_form.html', all_ingredients=all_ingredients, all_cooking_methods=all_cooking_methods)
+    return render_template('add_dish_form.html', all_ingredients=all_ingredients, all_dishes=all_dishes, all_cooking_methods=all_cooking_methods)
 
 @bp.route('/storaged-ingredient', methods=['GET', 'POST'])
 def add_storaged_ingredient_route():
     if request.method == 'POST':
         try:
-            storage_id = int(request.form['storage_id'])
+            storage_id = request.form['storage_id']  # Keep as string (supports "i1" format)
             mass_g = int(request.form['mass_g'])
             mode = request.form['mode']
             start_date = request.form['start_date']

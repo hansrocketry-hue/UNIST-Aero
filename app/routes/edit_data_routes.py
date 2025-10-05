@@ -32,7 +32,7 @@ def edit_research_submit(research_id):
     db.update_research_data(research_id, reference_data, summary)
     return redirect(url_for('visualize.research_detail', research_id=research_id))
 
-@bp.route('/ingredient/<int:ingredient_id>')
+@bp.route('/ingredient/<ingredient_id>')
 def edit_ingredient_route(ingredient_id):
     """식재료 수정 페이지"""
     ingredient_data = db._load_table('ingredient')
@@ -46,7 +46,7 @@ def edit_ingredient_route(ingredient_id):
                          research_data=research_data,
                          nutrition_categories=nutrition_categories)
 
-@bp.route('/ingredient/<int:ingredient_id>', methods=['POST'])
+@bp.route('/ingredient/<ingredient_id>', methods=['POST'])
 def edit_ingredient_submit(ingredient_id):
     """식재료 수정 처리"""
     # Build multilingual name dict from dynamic fields
@@ -116,7 +116,7 @@ def edit_cooking_method_submit(method_id):
     db.update_cooking_method(method_id, name, description, research_ids)
     return redirect(url_for('visualize.cooking_method_detail', method_id=method_id))
 
-@bp.route('/dish/<int:dish_id>')
+@bp.route('/dish/<dish_id>')
 def edit_dish_route(dish_id):
     """요리 수정 페이지"""
     dish_data = db._load_table('dish')
@@ -154,7 +154,7 @@ def edit_dish_route(dish_id):
                          nutrition_categories=nutrition_categories)
 
 
-@bp.route('/dish/<int:dish_id>', methods=['POST'])
+@bp.route('/dish/<dish_id>', methods=['POST'])
 def edit_dish_submit(dish_id):
     """요리 수정 처리"""
     name = {
@@ -172,14 +172,12 @@ def edit_dish_submit(dish_id):
         if type and id and amount and amount.strip():
             required_ingredients.append({
                 'type': type,
-                'id': int(id),
+                'id': id,  # Keep as string (supports both "i1" and "d1" format)
                 'amount_g': float(amount)
             })
 
     # 조리 방법 ID 수집
     required_cooking_method_ids = [int(id) for id in request.form.getlist('cooking_method_ids[]')]
-    
-    # 조리 설명
     cooking_instructions = {
         'kor': request.form.get('instructions_kor') or '',
         'eng': request.form.get('instructions_eng') or ''

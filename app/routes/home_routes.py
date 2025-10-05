@@ -57,7 +57,7 @@ def add_intake():
         # Load user and dish data
         user = get_user_by_id(session['user_id'])
         dishes = db._load_table('dish')
-        selected_dish = next((dish for dish in dishes if dish['id'] == int(food_id)), None)
+        selected_dish = next((dish for dish in dishes if dish['id'] == food_id), None)
 
         if not selected_dish:
             flash('Selected dish not found', 'error')
@@ -66,7 +66,7 @@ def add_intake():
         # Create intake entry with dish_id only
         new_intake = {
             "time": time,
-            "dish_id": int(food_id)
+            "dish_id": food_id
         }
 
         # Update user's food timeline

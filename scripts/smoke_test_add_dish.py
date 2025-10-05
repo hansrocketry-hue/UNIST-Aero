@@ -8,10 +8,10 @@ if repo_root not in sys.path:
 import database_handler as db
 
 name = {'kor': '자동화 테스트 디시', 'eng': 'Automated Test Dish'}
-# choose two known ingredient ids from ingredient.json: 1 (Rice), 10 (Tomato)
+# choose two known ingredient ids from ingredient.json: i1 (Rice), i10 (Tomato)
 required_ingredients = [
-    {'id': 1, 'amount_g': 100.0},
-    {'id': 10, 'amount_g': 50.0}
+    {'id': 'i1', 'amount_g': 100.0},
+    {'id': 'i10', 'amount_g': 50.0}
 ]
 new_id = db.add_dish(
     name=name,

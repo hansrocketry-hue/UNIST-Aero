@@ -28,7 +28,9 @@
 
             function addIngredientEntry() {
                 const id = select.value;
-                const idText = select.options[select.selectedIndex].text;
+                const selectedOption = select.options[select.selectedIndex];
+                const idText = selectedOption.text;
+                const itemType = selectedOption.getAttribute('data-type') || 'ingredient';
                 const amountVal = amt.value ? parseFloat(amt.value) : 0;
                 if (!id) return;
 
@@ -41,16 +43,23 @@
                 remove.textContent = '삭제';
                 remove.addEventListener('click', () => { row.remove(); });
 
-                // hidden inputs
+                // hidden inputs for type, id, and amount
+                const hidType = document.createElement('input');
+                hidType.type = 'hidden';
+                hidType.name = 'item_types[]';
+                hidType.value = itemType;
+                
                 const hidId = document.createElement('input');
                 hidId.type = 'hidden';
-                hidId.name = 'required_ingredient_ids';
+                hidId.name = 'item_ids[]';
                 hidId.value = id;
+                
                 const hidAmt = document.createElement('input');
                 hidAmt.type = 'hidden';
-                hidAmt.name = 'required_ingredient_amounts';
+                hidAmt.name = 'item_amounts[]';
                 hidAmt.value = amountVal;
 
+                row.appendChild(hidType);
                 row.appendChild(hidId);
                 row.appendChild(hidAmt);
                 row.appendChild(remove);
@@ -68,18 +77,25 @@
         <label for="image_url">{% if session.get('lang','kor') == 'eng' %}Image URL:{% else %}이미지 URL:{% endif %}</label><br>
         <input type="text" id="image_url" name="image_url"><br><br>
 
-        <label>{% if session.get('lang','kor') == 'eng' %}Required Ingredients (ingredient + amount):{% else %}필요한 재료 (재료 + 사용량):{% endif %}</label><br>
+        <label>{% if session.get('lang','kor') == 'eng' %}Required Items (ingredients or dishes + amount):{% else %}필요한 항목 (재료 또는 요리 + 사용량):{% endif %}</label><br>
         <div>
             <select id="ingredient-select">
-                {% for ingredient in all_ingredients %}
-                    <option value="{{ ingredient.id }}">{{ ingredient.name[session.get('lang','kor')] }} (ID: {{ ingredient.id }})</option>
-                {% endfor %}
+                <optgroup label="{% if session.get('lang','kor') == 'eng' %}Ingredients{% else %}재료{% endif %}">
+                    {% for ingredient in all_ingredients %}
+                        <option value="{{ ingredient.id }}" data-type="ingredient">{{ ingredient.name[session.get('lang','kor')] }} (ID: {{ ingredient.id }})</option>
+                    {% endfor %}
+                </optgroup>
+                <optgroup label="{% if session.get('lang','kor') == 'eng' %}Dishes{% else %}요리{% endif %}">
+                    {% for dish in all_dishes %}
+                        <option value="{{ dish.id }}" data-type="dish">{{ dish.name[session.get('lang','kor')] }} (ID: {{ dish.id }})</option>
+                    {% endfor %}
+                </optgroup>
             </select>
             <input type="number" id="ingredient-amount" placeholder="{% if session.get('lang','kor') == 'eng' %}Amount (g){% else %}사용량(g){% endif %}" step="any" style="width:120px; margin-left:8px;">
             <button type="button" id="add-ingredient-btn">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가{% endif %}</button>
         </div>
         <div id="selected-ingredients" style="margin-top:8px;"></div>
-        <!-- Hidden inputs will be created for ingredient_ids[] and ingredient_amounts[] -->
+        <!-- Hidden inputs will be created for item_types[], item_ids[], and item_amounts[] -->
         <br>
 
         <label for="required_cooking_method_ids">{% if session.get('lang','kor') == 'eng' %}Required Cooking Methods:{% else %}필요한 조리 방법:{% endif %}</label><br>

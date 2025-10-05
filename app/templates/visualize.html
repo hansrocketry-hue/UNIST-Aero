@@ -2,6 +2,15 @@
 
 {% block title %}{% if session.get('lang','kor') == 'eng' %}Data Visualization{% else %}데이터 시각화{% endif %}{% endblock %}
 
+{# Macro for multilingual text with fallback #}
+{% macro get_text(obj, preferred_lang='kor') %}
+    {%- if obj is mapping -%}
+        {{- obj.get(preferred_lang) or obj.get('kor') or obj.get('eng') or obj.values()|first or 'N/A' -}}
+    {%- else -%}
+        {{- obj or 'N/A' -}}
+    {%- endif -%}
+{% endmacro %}
+
 {% block content %}
 <style>
 
@@ -92,7 +101,7 @@
                     <tr>
                         <td><a href="{{ url_for('visualize.research_detail', research_id=item.id) }}">{{ item.reference_data.title }}</a></td>
                         <td><a href="{{ item.reference_data.link }}" target="_blank">{{ item.reference_data.link }}</a></td>
-                        <td>{{ item.summary[session.get('lang', 'kor')] }}</td>
+                        <td>{{ get_text(item.summary, session.get('lang', 'kor')) }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -113,7 +122,7 @@
                 <tbody>
                     {% for item in data['ingredient'] %}
                     <tr>
-                        <td><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=item.id) }}">{{ item.name[session.get('lang', 'kor')] }}</a></td>
+                        <td><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=item.id) }}">{{ get_text(item.name, session.get('lang', 'kor')) }}</a></td>
                         <td>
                             {% for research_id in item.research_ids %}
                                 {% for research in data['research-data'] %}

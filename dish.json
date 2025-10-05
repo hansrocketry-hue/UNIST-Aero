@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "d1",
         "name": {
             "kor": "오 이거 바뀌나",
             "eng": "test"
@@ -77,18 +77,18 @@
         ],
         "required_ingredients": [
             {
-                "id": 6,
+                "id": "i6",
                 "amount_g": 5.0
             },
             {
-                "id": 16,
+                "id": "i16",
                 "amount_g": 2.2
             }
         ],
         "image_url": ""
     },
     {
-        "id": 2,
+        "id": "d2",
         "name": {
             "kor": "Vitamin D",
             "eng": "Vitamin D"
@@ -105,7 +105,7 @@
             },
             {
                 "name": "Protein",
-                "amount_per_dish": 0.112
+                "amount_per_dish": 0.184
             },
             {
                 "name": "Fat",
@@ -117,7 +117,7 @@
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_dish": 0.014
+                "amount_per_dish": 0.0398
             },
             {
                 "name": "Sodium",
@@ -125,23 +125,23 @@
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.112
+                "amount_per_dish": 0.157
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.028
+                "amount_per_dish": 0.0562
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 2.24
+                "amount_per_dish": 2.462
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_dish": 0.21
+                "amount_per_dish": 0.27
             },
             {
                 "name": "Folate",
-                "amount_per_dish": 11.200000000000001
+                "amount_per_dish": 31.6
             },
             {
                 "name": "Vitamin B12",
@@ -149,11 +149,15 @@
             },
             {
                 "name": "Vitamin C",
-                "amount_per_dish": 0.0
+                "amount_per_dish": 17.400000000000002
             },
             {
                 "name": "Vitamin D",
                 "amount_per_dish": 0.0
+            },
+            {
+                "name": "amino acid",
+                "amount_per_dish": 1400.0
             }
         ],
         "cooking-method-ids": [
@@ -163,14 +167,20 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "type": "ingredient",
+                "id": "i1",
                 "amount_g": 70.0
+            },
+            {
+                "type": "dish",
+                "id": "d1",
+                "amount_g": 3.0
             }
         ],
         "image_url": ""
     },
     {
-        "id": 3,
+        "id": "d3",
         "name": {
             "kor": "간장 버섯밥",
             "eng": "Soy Sauce Mushroom Rice"
@@ -252,18 +262,18 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 70.0
             },
             {
-                "id": 13,
+                "id": "i13",
                 "amount_g": 70.0
             }
         ],
         "image_url": ""
     },
     {
-        "id": 4,
+        "id": "d4",
         "name": {
             "kor": "무·청경채 절임",
             "eng": "Pickled Radish and Bok Choy"
@@ -325,21 +335,21 @@
         ],
         "required_ingredients": [
             {
-                "id": 6,
+                "id": "i6",
                 "amount_g": 10.0
             },
             {
-                "id": 9,
+                "id": "i9",
                 "amount_g": 10.0
             },
             {
-                "id": 15,
+                "id": "i15",
                 "amount_g": 10.0
             }
         ]
     },
     {
-        "id": 5,
+        "id": "d5",
         "name": {
             "kor": "쌈장 페이스트",
             "eng": "Ssamjang Paste"
@@ -400,13 +410,13 @@
         ],
         "required_ingredients": [
             {
-                "id": 15,
+                "id": "i15",
                 "amount_g": 20.0
             }
         ]
     },
     {
-        "id": 6,
+        "id": "d6",
         "name": {
             "kor": "된장국(배양육)",
             "eng": "Doenjang Soup (Cultured Meat)"
@@ -477,21 +487,21 @@
         ],
         "required_ingredients": [
             {
-                "id": 13,
+                "id": "i13",
                 "amount_g": 5.0
             },
             {
-                "id": 18,
+                "id": "i18",
                 "amount_g": 5.0
             },
             {
-                "id": 19,
+                "id": "i19",
                 "amount_g": 5.0
             }
         ]
     },
     {
-        "id": 7,
+        "id": "d7",
         "name": {
             "kor": "야채죽",
             "eng": "Vegetable Porridge (Yachaejuk)"
@@ -553,25 +563,25 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 150.0
             },
             {
-                "id": 6,
+                "id": "i6",
                 "amount_g": 10.0
             },
             {
-                "id": 8,
+                "id": "i8",
                 "amount_g": 10.0
             },
             {
-                "id": 9,
+                "id": "i9",
                 "amount_g": 10.0
             }
         ]
     },
     {
-        "id": 8,
+        "id": "d8",
         "name": {
             "kor": "감자밥",
             "eng": "Potato Rice (Gamjabap)"
@@ -633,17 +643,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 150.0
             },
             {
-                "id": 3,
+                "id": "i3",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 9,
+        "id": "d9",
         "name": {
             "kor": "라이스볼(된장)",
             "eng": "Rice Ball (Doenjang)"
@@ -701,13 +711,13 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 100.0
             }
         ]
     },
     {
-        "id": 10,
+        "id": "d10",
         "name": {
             "kor": "칠리 된장 소스",
             "eng": "Chili Doenjang Sauce"
@@ -766,13 +776,13 @@
         "cooking-method-ids": [],
         "required_ingredients": [
             {
-                "id": 15,
+                "id": "i15",
                 "amount_g": 20.0
             }
         ]
     },
     {
-        "id": 11,
+        "id": "d11",
         "name": {
             "kor": "청경채 볶음밥",
             "eng": "Bok Choy Fried Rice"
@@ -839,25 +849,25 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 70.0
             },
             {
-                "id": 6,
+                "id": "i6",
                 "amount_g": 70.0
             },
             {
-                "id": 18,
+                "id": "i18",
                 "amount_g": 70.0
             },
             {
-                "id": 19,
+                "id": "i19",
                 "amount_g": 15.0
             }
         ]
     },
     {
-        "id": 12,
+        "id": "d12",
         "name": {
             "kor": "양파-마늘 스프",
             "eng": "Onion-Garlic Soup"
@@ -920,21 +930,21 @@
         ],
         "required_ingredients": [
             {
-                "id": 14,
+                "id": "i14",
                 "amount_g": 150.0
             },
             {
-                "id": 15,
+                "id": "i15",
                 "amount_g": 10.0
             },
             {
-                "id": 18,
+                "id": "i18",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 13,
+        "id": "d13",
         "name": {
             "kor": "케일죽",
             "eng": "Kale Porridge"
@@ -996,17 +1006,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 150.0
             },
             {
-                "id": 7,
+                "id": "i7",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 14,
+        "id": "d14",
         "name": {
             "kor": "잡곡밥 ",
             "eng": "Multigrain Rice"
@@ -1068,21 +1078,21 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 50.0
             },
             {
-                "id": 4,
+                "id": "i4",
                 "amount_g": 50.0
             },
             {
-                "id": 5,
+                "id": "i5",
                 "amount_g": 50.0
             }
         ]
     },
     {
-        "id": 15,
+        "id": "d15",
         "name": {
             "kor": "해조국 ",
             "eng": "Seaweed Soup"
@@ -1117,13 +1127,13 @@
         ],
         "required_ingredients": [
             {
-                "id": 17,
+                "id": "i17",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 16,
+        "id": "d16",
         "name": {
             "kor": "토마토 파스타",
             "eng": "Tomato Pasta"
@@ -1185,13 +1195,13 @@
         ],
         "required_ingredients": [
             {
-                "id": 10,
+                "id": "i10",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 17,
+        "id": "d17",
         "name": {
             "kor": "버섯 크림 파스타",
             "eng": "Creamy Mushroom Pasta"
@@ -1258,13 +1268,13 @@
         ],
         "required_ingredients": [
             {
-                "id": 13,
+                "id": "i13",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 18,
+        "id": "d18",
         "name": {
             "kor": "크림 감자 파스타",
             "eng": "Cream Potato Pasta"
@@ -1326,13 +1336,13 @@
         ],
         "required_ingredients": [
             {
-                "id": 3,
+                "id": "i3",
                 "amount_g": 70.0
             }
         ]
     },
     {
-        "id": 19,
+        "id": "d19",
         "name": {
             "kor": "감자튀김(오븐)",
             "eng": "Oven-Baked French Fries"
@@ -1393,17 +1403,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 3,
+                "id": "i3",
                 "amount_g": 30.0
             },
             {
-                "id": 22,
+                "id": "i22",
                 "amount_g": 10.0
             }
         ]
     },
     {
-        "id": 20,
+        "id": "d20",
         "name": {
             "kor": "샐러드",
             "eng": "Salad"
@@ -1437,7 +1447,7 @@
         "required_ingredients": []
     },
     {
-        "id": 21,
+        "id": "d21",
         "name": {
             "kor": "토마토 리조또",
             "eng": "Tomato Risotto"
@@ -1500,17 +1510,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 150.0
             },
             {
-                "id": 10,
+                "id": "i10",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 22,
+        "id": "d22",
         "name": {
             "kor": "버섯 리조또",
             "eng": "Mushroom Risotto"
@@ -1577,17 +1587,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
+                "id": "i1",
                 "amount_g": 150.0
             },
             {
-                "id": 13,
+                "id": "i13",
                 "amount_g": 150.0
             }
         ]
     },
     {
-        "id": 23,
+        "id": "d23",
         "name": {
             "kor": "피자",
             "eng": "Pizza"
@@ -1650,13 +1660,13 @@
         ],
         "required_ingredients": [
             {
-                "id": 10,
+                "id": "i10",
                 "amount_g": 50.0
             }
         ]
     },
     {
-        "id": 24,
+        "id": "d24",
         "name": {
             "kor": "햄버거",
             "eng": "Hamburger"
@@ -1723,21 +1733,21 @@
         ],
         "required_ingredients": [
             {
-                "id": 10,
+                "id": "i10",
                 "amount_g": 30.0
             },
             {
-                "id": 18,
+                "id": "i18",
                 "amount_g": 10.0
             },
             {
-                "id": 19,
+                "id": "i19",
                 "amount_g": 75.0
             }
         ]
     },
     {
-        "id": 25,
+        "id": "d25",
         "name": {
             "kor": "샌드위치",
             "eng": "Sandwich"
@@ -1805,17 +1815,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 18,
+                "id": "i18",
                 "amount_g": 30.0
             },
             {
-                "id": 19,
+                "id": "i19",
                 "amount_g": 30.0
             }
         ]
     },
     {
-        "id": 26,
+        "id": "d26",
         "name": {
             "kor": "라따뚜이",
             "eng": "Ratatouille"
@@ -1878,21 +1888,21 @@
         ],
         "required_ingredients": [
             {
-                "id": 10,
+                "id": "i10",
                 "amount_g": 100.0
             },
             {
-                "id": 11,
+                "id": "i11",
                 "amount_g": 100.0
             },
             {
-                "id": 12,
+                "id": "i12",
                 "amount_g": 100.0
             }
         ]
     },
     {
-        "id": 27,
+        "id": "d27",
         "name": {
             "kor": "그라탕 ",
             "eng": "Gratin"
@@ -1927,7 +1937,7 @@
         "required_ingredients": []
     },
     {
-        "id": 28,
+        "id": "d28",
         "name": {
             "kor": "라자냐 ",
             "eng": "Lasagna"
@@ -1962,7 +1972,7 @@
         "required_ingredients": []
     },
     {
-        "id": 29,
+        "id": "d29",
         "name": {
             "kor": "미트볼 ",
             "eng": "Meatball"
@@ -2030,17 +2040,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 18,
-                "amount_g": 10.0
+                "id": "i18",
+                "amount_g": 30.0
             },
             {
-                "id": 19,
-                "amount_g": 30.0
+                "id": "i19",
+                "amount_g": 10.0
             }
         ]
     },
     {
-        "id": 30,
+        "id": "d30",
         "name": {
             "kor": "팬케이크/머핀 ",
             "eng": "Pancakes / Muffins"
@@ -2099,17 +2109,17 @@
         "cooking-method-ids": [],
         "required_ingredients": [
             {
-                "id": 2,
-                "amount_g": 10.0
+                "id": "i2",
+                "amount_g": 70.0
             },
             {
-                "id": 3,
+                "id": "i3",
                 "amount_g": 30.0
             }
         ]
     },
     {
-        "id": 31,
+        "id": "d31",
         "name": {
             "kor": "스시",
             "eng": "Sushi"
@@ -2170,17 +2180,17 @@
         ],
         "required_ingredients": [
             {
-                "id": 1,
-                "amount_g": 100.0
+                "id": "i1",
+                "amount_g": 70.0
             },
             {
-                "id": 19,
-                "amount_g": 100.0
+                "id": "i19",
+                "amount_g": 30.0
             }
         ]
     },
     {
-        "id": 32,
+        "id": "d32",
         "name": {
             "kor": "라멘 육수",
             "eng": "Ramen Broth"
@@ -2230,663 +2240,22 @@
             {
                 "name": "Vitamin B6",
                 "amount_per_dish": 0.01
-            },
-            {
-                "name": "Vitamin C",
-                "amount_per_dish": 0.1
             }
         ],
         "cooking-method-ids": [
+            3,
             4,
             7
         ],
         "required_ingredients": [
             {
-                "id": 15,
-                "amount_g": 2.0
+                "id": "i15",
+                "amount_g": 5.0
             },
             {
-                "id": 22,
+                "id": "i22",
                 "amount_g": 2.0
             }
         ]
-    },
-    {
-        "id": 33,
-        "name": {
-            "kor": "짜장밥 ",
-            "eng": "Jajangbap (Black Bean Sauce Rice)"
-        },
-        "cooking_instructions": "1. 쌀을 100g 물로 10분간 재수화한다.\n2. 된장과 간장 10g씩을 고르게 섞어준다\n3. 푸드워머에서 80°C로 3분간 가열한다.\n4. 밀폐 주머니에 담아 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 96.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.2
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_dish": 0.0172
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.04
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 14.2
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.07
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 20
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.122
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.03
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 2.28
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_dish": 0.224
-            },
-            {
-                "name": "Vitamin C",
-                "amount_per_dish": 0.8
-            }
-        ],
-        "cooking-method-ids": [
-            3,
-            4,
-            7
-        ],
-        "required_ingredients": [
-            {
-                "id": 1,
-                "amount_g": 100.0
-            },
-            {
-                "id": 14,
-                "amount_g": 30.0
-            }
-        ]
-    },
-    {
-        "id": 34,
-        "name": {
-            "kor": "탕수육 대체 ",
-            "eng": "Sweet and Sour Pork Substitute"
-        },
-        "cooking_instructions": "",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 96.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.15
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.06
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 4.8
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.12
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 18
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.04
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_dish": 1.2
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.064
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 2.0
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_dish": 0.24
-            }
-        ],
-        "cooking-method-ids": [],
-        "required_ingredients": [
-            {
-                "id": 19,
-                "amount_g": 10.0
-            }
-        ]
-    },
-    {
-        "id": 35,
-        "name": {
-            "kor": "우동 ",
-            "eng": "Udon"
-        },
-        "cooking_instructions": "1. 배양육(10g), 우동 면발 팩을 각각 200g 물로  80°C로 20분간 가열하며 재수화한다.\n2. 간장 10g을 넣어 잘 섞어준다.\n3. 밀폐 주머니에 담아 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 99.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.22
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.01
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.06
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 12
-            }
-        ],
-        "cooking-method-ids": [
-            3,
-            4,
-            7
-        ],
-        "required_ingredients": [
-            {
-                "id": 2,
-                "amount_g": 10.0
-            }
-        ]
-    },
-    {
-        "id": 36,
-        "name": {
-            "kor": "소바 ",
-            "eng": "Soba (Buckwheat Noodles)"
-        },
-        "cooking_instructions": "1. 소바 면발 팩을 각각 200g 물로  80°C로 20분간 가열하며 재수화한다.\n2. 차가운 물로 면발을 냉각한다.\n3. 간장 10g을 넣어 잘 섞어준다.\n4. 밀폐 주머니에 담아 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 80.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.2
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.01
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.06
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 10
-            }
-        ],
-        "cooking-method-ids": [
-            3,
-            4,
-            7
-        ],
-        "required_ingredients": [
-            {
-                "id": 2,
-                "amount_g": 200.0
-            }
-        ]
-    },
-    {
-        "id": 37,
-        "name": {
-            "kor": "교자 만두 ",
-            "eng": "Gyoza Dumplings"
-        },
-        "cooking_instructions": "1. 배양육과 양파, 청경채 등 채소를 물로 5분간 재수화한다.\n2. 배양육, 양파, 청경채, 버섯, 두부 등 재료를 밀폐 주머니에서 반죽한다.\n3. 건조 토르티야에 반죽을 얹고 만두 모양을 만들어준다.\n4. 푸드워머에서 80°C로 15분간 가열한다.\n5. 밀폐 주머니 째로 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 75.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.16
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_dish": 0.018
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.05
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 27.6
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.11
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 14
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.074
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_dish": 0.9
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.074
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 1.66
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_dish": 0.24
-            },
-            {
-                "name": "Vitamin C",
-                "amount_per_dish": 0.6
-            }
-        ],
-        "cooking-method-ids": [
-            3,
-            4,
-            7,
-            8
-        ],
-        "required_ingredients": [
-            {
-                "id": 18,
-                "amount_g": 10.0
-            },
-            {
-                "id": 19,
-                "amount_g": 10.0
-            }
-        ]
-    },
-    {
-        "id": 38,
-        "name": {
-            "kor": "채소롤/김말이 ",
-            "eng": "Vegetable Roll / Gimbap"
-        },
-        "cooking_instructions": "1. 쌀 40g을 전처리·가열 후 건조밥 시트 형태로 준비한다.\n2. 채소 10g을 푸드프로세서로 잘게 자른다.\n3. 배양육 20g을 압착 가열해 얇은 슬라이스로 만든다.\n4. 김 2장을 펼쳐 밥·채소·배양육을 층층이 올린 뒤 말아 밀봉 포장하여 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 86.4
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.18
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_dish": 0.008
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.03
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 8.8
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.08
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 9
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.084
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_dish": 0.6
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.048
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 2.28
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_dish": 0.24
-            }
-        ],
-        "cooking-method-ids": [
-            4,
-            8
-        ],
-        "required_ingredients": [
-            {
-                "id": 1,
-                "amount_g": 100.0
-            },
-            {
-                "id": 19,
-                "amount_g": 10.0
-            }
-        ]
-    },
-    {
-        "id": 39,
-        "name": {
-            "kor": "에너지바 ",
-            "eng": "Energy Bar"
-        },
-        "cooking_instructions": "1. 곡류 40g과 콩 10g을 푸드프로세서로 분쇄·혼합한다.\n2. 견과 10g과 건과 10g을 푸드프로세서로 분쇄·혼합한다.\n3. 혼합물에 시럽(쌀엿·대체당 등) 10g을 넣고 점착성을 확보한다.\n4. 성형틀에 눌러 압착 후 저온 건조해 휴대용 에너지바의 형태로 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 245.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.55
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.12
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.15
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 5
-            }
-        ],
-        "cooking-method-ids": [
-            8
-        ],
-        "required_ingredients": []
-    },
-    {
-        "id": 40,
-        "name": {
-            "kor": "퓨전 카레 ",
-            "eng": "Fusion Curry"
-        },
-        "cooking_instructions": "1. 쌀 50g과 대두 10g을 푸드프로세서를 이용해 분쇄·가공해 미리 익힌 건조밥 베이스를 준비한다.\n2.동결 건조한 감자를 준비한다.\n3. 커리분말과 소금물을 혼합해 분말 소스를 만든다.\n4. 섭취 시 물 또는 국물 150ml를 주입해 가열·재수화하여 밀폐 주머니에 담아 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 96.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.22
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_dish": 0.0324
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.04
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 35.2
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.08
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 11
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.14
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.052
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 1.98
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_dish": 0.27
-            },
-            {
-                "name": "Vitamin C",
-                "amount_per_dish": 4.6
-            }
-        ],
-        "cooking-method-ids": [
-            4,
-            7,
-            8
-        ],
-        "required_ingredients": [
-            {
-                "id": 1,
-                "amount_g": 100.0
-            },
-            {
-                "id": 3,
-                "amount_g": 30.0
-            },
-            {
-                "id": 18,
-                "amount_g": 10.0
-            }
-        ]
-    },
-    {
-        "id": 41,
-        "name": {
-            "kor": "비건 치즈 ",
-            "eng": "Vegan Cheese"
-        },
-        "cooking_instructions": "1. 동결건조한 대두(200g)를 푸드프로세서로 갈고 재수화한 후 푸드워머에서 끓여 두유를 만든다.\n2. 두유에 산성 용액을 넣어 응고시킨 뒤 미세 필터 파우치에 넣어 진공 펌프로 수분을 제거시켜 두부 형태로 만든다.\n3. 식힌 두부에 효모, 소금물을 넣고 푸드프로세서로 간다.\n4. 혼합물을 진공백에 넣고 푸드 워머로 25도 정도에 10시간 노출시킨 후 밀폐 주머니에 담아 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.05
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.15
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.2
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 40
-            }
-        ],
-        "cooking-method-ids": [
-            4,
-            7,
-            8
-        ],
-        "required_ingredients": [
-            {
-                "id": 18,
-                "amount_g": 200.0
-            }
-        ]
-    },
-    {
-        "id": 42,
-        "name": {
-            "kor": "요거트 ",
-            "eng": "Yogurt"
-        },
-        "cooking_instructions": "1. 귀리 또는 대두(100g)를 곱게 갈고 밀폐 용기에 물 500mL과 같이 넣어 섞는다.\n2. 푸드워머에서 90도로 10분 간 가열한다.\n3. 가열을 멈추고 40도까지 식힌다.\n4. 유산균 스타터 1.5g을 넣고 섞는다.\n5. 40도에서 10시간 발효한 후 밀폐 주머니에 담아 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.12
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.03
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.05
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 12
-            }
-        ],
-        "cooking-method-ids": [
-            3,
-            4
-        ],
-        "required_ingredients": [
-            {
-                "id": 18,
-                "amount_g": 100.0
-            }
-        ]
-    },
-    {
-        "id": 43,
-        "name": {
-            "kor": "비타민 알약",
-            "eng": "Vitamin Food"
-        },
-        "image_url": null,
-        "required_ingredients": [
-            {
-                "id": 5,
-                "amount_g": 1000.0
-            }
-        ],
-        "cooking_instructions": {
-            "kor": "d"
-        },
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_dish": 64.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 2.0
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Saturated Fat",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_dish": 1.2
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 3.0
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 1.4
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 50.0
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_dish": 3.6
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 460.0
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Vitamin C",
-                "amount_per_dish": 0.0
-            },
-            {
-                "name": "Vitamin D",
-                "amount_per_dish": 0.0
-            }
-        ],
-        "cooking-method-ids": []
     }
 ]

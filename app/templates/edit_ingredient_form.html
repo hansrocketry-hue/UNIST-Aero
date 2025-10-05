@@ -54,7 +54,7 @@
                                 {{ category.name }}
                                 {% if category.unit %}({{ category.unit }}){% endif %}
                             </label>
-                            <input type="number" step="0.01" class="form-control" 
+                            <input type="number" step="any" class="form-control" 
                                    id="nutrition_{{ category.name }}" 
                                    name="nutrition_{{ category.name }}"
                                    value="{{ ingredient.nutrition|selectattr('name', 'equalto', category.name)|map(attribute='amount_per_unit_mass')|first or '' }}">
@@ -181,7 +181,7 @@ document.getElementById('saveNewCategoryBtn').addEventListener('click', function
                     <label for="nutrition_${newCategory.name}" class="form-label">
                         ${newCategory.name} (${newCategory.unit})
                     </label>
-                    <input type="number" step="0.01" class="form-control" 
+                    <input type="number" step="any" class="form-control" 
                            id="nutrition_${newCategory.name}" 
                            name="nutrition_${newCategory.name}"
                            value="">

@@ -40,7 +40,7 @@ def research_detail(research_id):
     related_cooking_methods = [cm for cm in cooking_methods if research_id in cm.get('research_ids', [])]
     return render_template('research_detail.html', research=research, related_ingredients=related_ingredients, related_cooking_methods=related_cooking_methods)
 
-@bp.route('/ingredient/<int:ingredient_id>')
+@bp.route('/ingredient/<ingredient_id>')
 def ingredient_detail(ingredient_id):
     """식재료 상세 페이지"""
     ingredient_data = db._load_table('ingredient')
@@ -77,7 +77,7 @@ def cooking_method_detail(method_id):
     research_data = db._load_table('research-data')
     return render_template('cooking_method_detail.html', method=method, related_dishes=related_dishes, research_data=research_data)
 
-@bp.route('/dish/<int:dish_id>')
+@bp.route('/dish/<dish_id>')
 def dish_detail(dish_id):
     """레시피(요리) 상세 페이지"""
     dishes = db._load_table('dish')

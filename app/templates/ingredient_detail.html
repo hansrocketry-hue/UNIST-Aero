@@ -30,7 +30,7 @@
                 {% for nutrient in ingredient.nutrition_info %}
                 <tr>
                     <td>{{ nutrient.name }}</td>
-                    <td>{{ nutrient.amount_per_unit_mass }}</td>
+                    <td>{{ "%.3f"|format(nutrient.amount_per_unit_mass) }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

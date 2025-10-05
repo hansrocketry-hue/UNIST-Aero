@@ -25,12 +25,33 @@ def _save_table(table_name, data):
 
 def _get_next_id(table_name):
     data = _load_table(table_name)
+    prefix = ''
+    if table_name == 'ingredient':
+        prefix = 'i'
+    elif table_name == 'dish':
+        prefix = 'd'
+    elif table_name == 'nutrition':
+        prefix = 'N'
+    else:
+        if not data:
+            return 1
+        return max(item.get('id', 0) for item in data) + 1
+
     if not data:
-        return "N1" if table_name == 'nutrition' else 1
-    if table_name == 'nutrition':
-        # For nutrition, use N1, N2, etc.
-        return f"N{max(int(item['id'][1:]) for item in data) + 1}"
-    return max(item.get('id', 0) for item in data) + 1
+        return f"{prefix}1"
+
+    max_id = 0
+    for item in data:
+        item_id = item.get('id')
+        if isinstance(item_id, str) and item_id.startswith(prefix):
+            try:
+                num_part = int(item_id[len(prefix):])
+                if num_part > max_id:
+                    max_id = num_part
+            except (ValueError, TypeError):
+                continue
+    
+    return f"{prefix}{max_id + 1}"
 
 def add_ingredient(name, research_ids, nutrition_data, production_time):
     """Add ingredient and embed nutrition_data into the ingredient record.

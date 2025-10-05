@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
 
-{% block title %}식재료 추가 - 우주 식량 관리 시스템{% endblock %}
+{% block title %}{% if session.get('lang','kor') == 'eng' %}Add Ingredient - Space Food Management System{% else %}식재료 추가 - 우주 식량 관리 시스템{% endif %}{% endblock %}
 
 {% block content %}
-    <h1>식재료 (Ingredient) 추가</h1>
+    <h1>{% if session.get('lang','kor') == 'eng' %}Add Ingredient{% else %}식재료 (Ingredient) 추가{% endif %}</h1>
     <form method="POST">
-        <label>이름 (다중 언어):</label><br>
+        <label>{% if session.get('lang','kor') == 'eng' %}Name (multilingual):{% else %}이름 (다중 언어):{% endif %}</label><br>
         <div id="name-fields"></div>
-        <button type="button" id="add-name-btn">이름 추가</button><br><br>
+        <button type="button" id="add-name-btn">{% if session.get('lang','kor') == 'eng' %}Add Name{% else %}이름 추가{% endif %}</button><br><br>
 
-        <label for="research_ids">관련 연구 ID:</label><br>
+        <label for="research_ids">{% if session.get('lang','kor') == 'eng' %}Related Research IDs:{% else %}관련 연구 ID:{% endif %}</label><br>
         <select id="research_ids" name="research_ids" multiple size="5">
             {% for research in all_research %}
                 <option value="{{ research.id }}">{{ research.reference_data.title }} (ID: {{ research.id }})</option>
             {% endfor %}
-        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
+        </select><br><small>{% if session.get('lang','kor') == 'eng' %}Hold Ctrl or Shift to select multiple items{% else %}Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다{% endif %}</small><br><br>
 
-        <label>영양소 정보 (단위 질량당):</label><br>
+        <label>{% if session.get('lang','kor') == 'eng' %}Nutritional Information (per unit mass):{% else %}영양소 정보 (단위 질량당):{% endif %}</label><br>
         <div id="nutrition-fields"></div>
-        <button type="button" id="add-nutrition-btn">영양소 추가</button><br>
-        <small>각 영양소의 단위 질량당 함유량을 입력하세요. (예: 칼로리, 단백질, 비타민 등)</small><br><br>
+        <button type="button" id="add-nutrition-btn">{% if session.get('lang','kor') == 'eng' %}Add Nutrient{% else %}영양소 추가{% endif %}</button><br>
+        <small>{% if session.get('lang','kor') == 'eng' %}Enter the content per unit mass for each nutrient (e.g., calories, protein, vitamins etc.){% else %}각 영양소의 단위 질량당 함유량을 입력하세요. (예: 칼로리, 단백질, 비타민 등){% endif %}</small><br><br>
 
-        <label for="production_time">생산 소요 시간:</label><br>
+        <label for="production_time">{% if session.get('lang','kor') == 'eng' %}Production Time:{% else %}생산 소요 시간:{% endif %}</label><br>
         <input type="text" id="production_time" name="production_time"><br><br>
 
-        <button type="submit">추가하기</button>
+        <button type="submit">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가하기{% endif %}</button>
     </form>
 
     <script>

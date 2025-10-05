@@ -367,7 +367,7 @@
         "id": 6,
         "name": {
             "kor": "청경채",
-            "eng": ""
+            "eng": "Bok"
         },
         "research_ids": [
             2
@@ -517,7 +517,7 @@
         "id": 8,
         "name": {
             "kor": "상추",
-            "eng": ""
+            "eng": "lettuce"
         },
         "research_ids": [
             2,
@@ -592,7 +592,7 @@
         "id": 9,
         "name": {
             "kor": "무",
-            "eng": ""
+            "eng": "radish"
         },
         "research_ids": [
             8,
@@ -1025,7 +1025,7 @@
         "id": 15,
         "name": {
             "kor": "마늘",
-            "eng": ""
+            "eng": "garlic"
         },
         "research_ids": [],
         "nutrition": [
@@ -1095,7 +1095,7 @@
         "id": 16,
         "name": {
             "kor": "칠리페퍼",
-            "eng": ""
+            "eng": "Chili pepper"
         },
         "research_ids": [],
         "nutrition": [
@@ -1165,7 +1165,7 @@
         "id": 17,
         "name": {
             "kor": "김·미역",
-            "eng": ""
+            "eng": "Kim and seaweed"
         },
         "research_ids": [],
         "nutrition": [
@@ -1235,7 +1235,7 @@
         "id": 18,
         "name": {
             "kor": "대두",
-            "eng": ""
+            "eng": "Soybean"
         },
         "research_ids": [
             11,
@@ -1310,7 +1310,7 @@
         "id": 19,
         "name": {
             "kor": "배양육",
-            "eng": ""
+            "eng": "Cultivation"
         },
         "research_ids": [],
         "nutrition": [
@@ -1379,7 +1379,7 @@
         "id": 20,
         "name": {
             "kor": "치즈 분말",
-            "eng": ""
+            "eng": "Cheese powder"
         },
         "research_ids": [],
         "nutrition": [
@@ -1448,7 +1448,7 @@
         "id": 21,
         "name": {
             "kor": "오일 (대두/올리브)",
-            "eng": ""
+            "eng": "Oil (soybean/olive)"
         },
         "research_ids": [],
         "nutrition": [
@@ -1517,7 +1517,7 @@
         "id": 22,
         "name": {
             "kor": "소금",
-            "eng": ""
+            "eng": "salt"
         },
         "research_ids": [],
         "nutrition": [

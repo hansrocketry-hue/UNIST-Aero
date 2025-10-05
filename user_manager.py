@@ -26,7 +26,7 @@ def _get_next_id(users):
         return 1
     return max(user.get('id', 0) for user in users) + 1
 
-def add_user(username, password, name, height, weight, gender, like_ids, forbid_ids, activity_level):
+def add_user(username, password, name, height, weight, gender, like_ids, forbid_ids, activity_level, language='kor'):
     users = load_users()
     if get_user_by_username(username):
         return False  # 이미 존재하는 사용자
@@ -40,6 +40,7 @@ def add_user(username, password, name, height, weight, gender, like_ids, forbid_
         "weight": weight,
         "gender": gender,
         "activity_level": activity_level,
+        "language": language,
         "like": like_ids,
         "forbid": forbid_ids,
         "health": {} # health 정보는 비워둠

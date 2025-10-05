@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}식재료 상세 정보{% endblock %}
+{% block title %}{% if session.get('lang','kor') == 'eng' %}Ingredient Details{% else %}식재료 상세 정보{% endif %}{% endblock %}
 
 {% block content %}
     {% if ingredient %}
-        <p><em>Category: Ingredient</em></p>
-        <h1>{{ ingredient.name.kor }}</h1>
+        <p><em>{% if session.get('lang','kor') == 'eng' %}Category: Ingredient{% else %}카테고리: 식재료{% endif %}</em></p>
+        <h1>{{ ingredient.name[session.get('lang', 'kor')] }}</h1>
         <p><strong>ID:</strong> {{ ingredient.id }}</p>
         <h2>Name</h2>
         <ul>
@@ -13,13 +13,13 @@
                 <li><strong>{{ lang.upper() }}:</strong> {{ text }}</li>
             {% endfor %}
         </ul>
-        <h2>Nutrition Information</h2>
+        <h2>{% if session.get('lang','kor') == 'eng' %}Nutrition Information{% else %}영양정보{% endif %}</h2>
         {% if ingredient.nutrition_info %}
         <table class="table">
             <thead>
                 <tr>
-                    <th>Nutrient</th>
-                    <th>Amount per unit mass</th>
+                    <th>{% if session.get('lang','kor') == 'eng' %}Nutrient{% else %}영양소{% endif %}</th>
+                    <th>{% if session.get('lang','kor') == 'eng' %}Amount per unit mass{% else %}단위 질량 당 함량{% endif %}</th>
                 </tr>
             </thead>
             <tbody>

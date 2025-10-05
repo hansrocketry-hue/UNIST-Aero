@@ -28,7 +28,10 @@ def signup():
             like_ids = [int(x) for x in request.form.getlist('like_ids')]
             forbid_ids = [int(x) for x in request.form.getlist('forbid_ids')]
 
-            if um.add_user(username, password, name, height, weight, gender, like_ids, forbid_ids, activity_level):
+            # language preference (default 'kor')
+            language = request.form.get('language', 'kor')
+
+            if um.add_user(username, password, name, height, weight, gender, like_ids, forbid_ids, activity_level, language=language):
                 flash('회원가입이 완료되었습니다. 로그인해주세요.', 'success')
                 return redirect(url_for('auth.login'))
             else:
@@ -50,6 +53,8 @@ def login():
             if user:
                 session['user_id'] = user['id']
                 session['user'] = {'username': user['username'], 'id': user['id']}
+                # persist language in session
+                session['lang'] = user.get('language', 'kor')
                 return redirect(url_for('home.index'))
             else:
                 flash('사용자 정보를 가져오는 데 실패했습니다.', 'danger')
@@ -61,5 +66,6 @@ def login():
 @login_required
 def logout():
     session.pop('user', None)
+    session.pop('lang', None)
     flash('로그아웃되었습니다.', 'success')
     return redirect(url_for('auth.login'))

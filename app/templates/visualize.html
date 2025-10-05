@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}데이터 시각화{% endblock %}
+{% block title %}{% if session.get('lang','kor') == 'eng' %}Data Visualization{% else %}데이터 시각화{% endif %}{% endblock %}
 
 {% block content %}
 <style>
@@ -19,7 +19,7 @@
         background-color: #f2f2f2;
     }
 </style>
-    <h1>데이터 시각화</h1>
+    <h1>{% if session.get('lang','kor') == 'eng' %}Data Visualization{% else %}데이터 시각화{% endif %}</h1>
         <style>
             table {
                 width: 100%;
@@ -64,24 +64,24 @@
 
         <div class="category-btns">
 
-            <button type="button" class="active" onclick="showCategory('research')">연구자료</button>
-            <button type="button" onclick="showCategory('ingredient')">식재료</button>
-            <button type="button" onclick="showCategory('cooking')">조리방법</button>
-            <button type="button" onclick="showCategory('dish')">요리</button>
+            <button type="button" class="active" onclick="showCategory('research')">{% if session.get('lang','kor') == 'eng' %}Research Data{% else %}연구자료{% endif %}</button>
+            <button type="button" onclick="showCategory('ingredient')">{% if session.get('lang','kor') == 'eng' %}Ingredients{% else %}식재료{% endif %}</button>
+            <button type="button" onclick="showCategory('cooking')">{% if session.get('lang','kor') == 'eng' %}Cooking Methods{% else %}조리방법{% endif %}</button>
+            <button type="button" onclick="showCategory('dish')">{% if session.get('lang','kor') == 'eng' %}Dishes{% else %}요리{% endif %}</button>
         </div>
         <div style="margin-bottom:20px;">
-            <input type="text" id="search-bar" placeholder="검색어를 입력하세요..." style="margin-right:8px;" onkeydown="if(event.key==='Enter'){filterTable();}">
-            <button type="button" onclick="filterTable()">검색</button>
+            <input type="text" id="search-bar" placeholder="{% if session.get('lang','kor') == 'eng' %}Enter search term...{% else %}검색어를 입력하세요...{% endif %}" style="margin-right:8px;" onkeydown="if(event.key==='Enter'){filterTable();}">
+            <button type="button" onclick="filterTable()">{% if session.get('lang','kor') == 'eng' %}Search{% else %}검색{% endif %}</button>
         </div>
 
         <div id="category-research" class="category-table">
-            <h2>연구 자료 (Research Data)</h2>
+            <h2>{% if session.get('lang','kor') == 'eng' %}Research Data{% else %}연구 자료{% endif %}</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Link</th>
-                        <th>Summary (kor)</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Title{% else %}제목{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Link{% else %}링크{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Summary{% else %}요약{% endif %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,7 +89,7 @@
                     <tr>
                         <td><a href="{{ url_for('visualize.research_detail', research_id=item.id) }}">{{ item.reference_data.title }}</a></td>
                         <td><a href="{{ item.reference_data.link }}" target="_blank">{{ item.reference_data.link }}</a></td>
-                        <td>{{ item.summary.kor }}</td>
+                        <td>{{ item.summary[session.get('lang', 'kor')] }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -97,20 +97,20 @@
         </div>
 
         <div id="category-ingredient" class="category-table">
-            <h2>식재료 (Ingredient)</h2>
+            <h2>{% if session.get('lang','kor') == 'eng' %}Ingredients{% else %}식재료{% endif %}</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Name (kor)</th>
-                        <th>Research IDs</th>
-                        <th>Calories</th>
-                        <th>Production Time</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Name{% else %}이름{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Research IDs{% else %}연구 ID{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Calories{% else %}칼로리{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Production Time{% else %}생산 시간{% endif %}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in data['ingredient'] %}
                     <tr>
-                        <td><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=item.id) }}">{{ item.name.kor }}</a></td>
+                        <td><a href="{{ url_for('visualize.ingredient_detail', ingredient_id=item.id) }}">{{ item.name[session.get('lang', 'kor')] }}</a></td>
                         <td>
                             {% for research_id in item.research_ids %}
                                 {% for research in data['research-data'] %}
@@ -168,20 +168,20 @@
         </div>
 
         <div id="category-cooking" class="category-table">
-            <h2>조리 방법 (Cooking Methods)</h2>
+            <h2>{% if session.get('lang','kor') == 'eng' %}Cooking Methods{% else %}조리 방법{% endif %}</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Name (kor)</th>
-                        <th>Description (kor)</th>
-                        <th>Research IDs</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Name{% else %}이름{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Description{% else %}설명{% endif %}</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Research IDs{% else %}연구 ID{% endif %}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in data['cooking-methods'] %}
                     <tr>
-                        <td><a href="{{ url_for('visualize.cooking_method_detail', method_id=item.id) }}">{{ item.name.kor }}</a></td>
-                        <td>{{ item.description.kor }}</td>
+                        <td><a href="{{ url_for('visualize.cooking_method_detail', method_id=item.id) }}">{{ item.name[session.get('lang', 'kor')] }}</a></td>
+                        <td>{{ item.description[session.get('lang', 'kor')] }}</td>
                         <td>
                             {% for research_id in item.research_ids %}
                                 {% for research in data['research-data'] %}
@@ -198,11 +198,11 @@
         </div>
 
         <div id="category-dish" class="category-table">
-            <h2>요리 (Dish)</h2>
+            <h2>{% if session.get('lang','kor') == 'eng' %}Dishes{% else %}요리{% endif %}</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Name (kor)</th>
+                        <th>{% if session.get('lang','kor') == 'eng' %}Name{% else %}이름{% endif %}</th>
                         <th>Required Ingredients</th>
                         <th>Required Cooking Methods</th>
                         <th>Calories</th>
@@ -212,7 +212,7 @@
                 <tbody>
                     {% for item in data['dish'] %}
                     <tr>
-                        <td>{{ item.name.kor }}</td>
+                        <td>{{ item.name[session.get('lang', 'kor')] }}</td>
                         <td>
                             {# New schema: required_ingredients is list of {id, amount_g}. Keep fallback for legacy required_ingredient_ids. #}
                             {% if item.required_ingredients is defined %}
@@ -221,7 +221,7 @@
                                     {% set amt = req.amount_g if req.amount_g is defined else req.get('amount_g') %}
                                     {% for ingredient in data['ingredient'] %}
                                         {% if ingredient.id == ing_id %}
-                                            <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name.kor }}</a>
+                                            <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name[session.get('lang', 'kor')] }}</a>
                                             {% if amt %} — {{ amt }} g{% endif %}
                                             <br>
                                         {% endif %}
@@ -231,7 +231,7 @@
                                 {% for ing_id in item.required_ingredient_ids %}
                                     {% for ingredient in data['ingredient'] %}
                                         {% if ingredient.id == ing_id %}
-                                            <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name.kor }}</a><br>
+                                            <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name[session.get('lang', 'kor')] }}</a><br>
                                         {% endif %}
                                     {% endfor %}
                                 {% endfor %}
@@ -242,7 +242,7 @@
                             {% for method_id in method_ids %}
                                 {% for method in data['cooking-methods'] %}
                                     {% if method.id == method_id %}
-                                        <a href="{{ url_for('visualize.cooking_method_detail', method_id=method_id) }}">{{ method.name.kor }}</a><br>
+                                        <a href="{{ url_for('visualize.cooking_method_detail', method_id=method_id) }}">{{ method.name[session.get('lang', 'kor')] }}</a><br>
                                     {% endif %}
                                 {% endfor %}
                             {% endfor %}

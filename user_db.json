@@ -122,6 +122,30 @@
         "forbid": [
             3
         ],
+        "health": {},
+        "language": "eng"
+    },
+    {
+        "id": 4,
+        "username": "aa",
+        "password_hash": "scrypt:32768:8:1$HzNJl6uZJWpvjF4f$96b0ad4b8dbe48181011c4955abf82edf38eda057da13e210e0406abf745902ee5fb0641639f3bae7b474e4ecdbbe665d6536d9d88aadb0cc2d8e586154fd83d",
+        "name": "aa",
+        "height": 2,
+        "weight": 3,
+        "gender": "male",
+        "activity_level": 3,
+        "language": "kor",
+        "like": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "forbid": [
+            1,
+            2,
+            3
+        ],
         "health": {}
     }
 ]

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session
 import database_handler as db
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
@@ -107,16 +107,17 @@ def dish_detail(dish_id):
                 calories = n.get('amount_per_dish')
                 break
     # 조리설명(한글)
-    cooking_instructions_kor = dish.get('cooking_instructions')
-    if isinstance(cooking_instructions_kor, dict):
-        cooking_instructions_kor = cooking_instructions_kor.get('kor', '')
+    selected_lang = session.get('lang', 'kor')
+    cooking_instructions = dish.get('cooking_instructions')
+    if isinstance(cooking_instructions, dict):
+        cooking_instructions = cooking_instructions.get(selected_lang, '')
     return render_template(
         'dish_detail.html',
         dish=dish,
         required_methods=required_methods,
         required_ingredients=required_ingredients,
         calories=calories,
-        cooking_instructions_kor=cooking_instructions_kor
+        cooking_instructions=cooking_instructions
     )
 
 @bp.route('/storaged-ingredient')

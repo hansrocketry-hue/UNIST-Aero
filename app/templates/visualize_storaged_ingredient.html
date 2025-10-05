@@ -93,17 +93,17 @@
 </style>
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
-    <h1>Storaged Ingredient Visualization</h1>
-    <a href="{{ url_for('add_data.add_storaged_ingredient_route') }}" class="btn btn-primary">Add Storaged Ingredient</a>
+    <h1>{% if session.get('lang','kor') == 'eng' %}Stored Ingredient Visualization{% else %}보관 식재료 시각화{% endif %}</h1>
+    <a href="{{ url_for('add_data.add_storaged_ingredient_route') }}" class="btn btn-primary">{% if session.get('lang','kor') == 'eng' %}Add Stored Ingredient{% else %}보관 식재료 추가{% endif %}</a>
 </div>
 
 {% for item in storaged_ingredients %}
 <div class="ingredient-item">
     <h2>{{ item.name }}</h2>
-    <p>Mass: {{ item.mass_g }}g</p>
+    <p>{% if session.get('lang','kor') == 'eng' %}Mass{% else %}질량{% endif %}: {{ item.mass_g }}g</p>
     
-    <p>Production/Storage Start: {{ item.start_date }}</p>
-    <p>Expiration Date: {{ item.expiration_date }}</p>
+    <p>{% if session.get('lang','kor') == 'eng' %}Production/Storage Start{% else %}생산/저장 시작{% endif %}: {{ item.start_date }}</p>
+    <p>{% if session.get('lang','kor') == 'eng' %}Expiration Date{% else %}유통기한{% endif %}: {{ item.expiration_date }}</p>
 
     <div class="progress-section">
         <div class="progress-bar-container">
@@ -115,35 +115,35 @@
                 <div class="progress-bar-expected" style="left: {{ item.expected_left }}%; width: {{ item.expected_width }}%; background-color: #bbdefb; z-index:1;"></div>
                 <!-- green progress (from start to today) -->
                 <div class="progress-bar-production" style="left: {{ item.green_left }}%; width: {{ item.green_width }}%;"></div>
-                <div class="progress-text">{{ '%.1f'|format(item.green_width) }}% (생산 중)</div>
+                <div class="progress-text">{{ '%.1f'|format(item.green_width) }}% {% if session.get('lang','kor') == 'eng' %}(In Production){% else %}(생산 중){% endif %}</div>
             {% else %}
                 <!-- 저장 중인 경우 -->
                 <div class="progress-bar-storage" style="width: {{ item.current_progress }}%;"></div>
-                <div class="progress-text">{{ '%.1f'|format(item.current_progress) }}% (저장 중)</div>
+                <div class="progress-text">{{ '%.1f'|format(item.current_progress) }}% {% if session.get('lang','kor') == 'eng' %}(In Storage){% else %}(저장 중){% endif %}</div>
             {% endif %}
         </div>
         <!-- 날짜 마커들 -->
         <div class="date-markers">
         {% if item.is_production %}
             <div class="date-marker start" style="left: {{ item.start_pos }}%">
-                <span class="date-label">생산 시작</span>
+                <span class="date-label">{% if session.get('lang','kor') == 'eng' %}Production Start{% else %}생산 시작{% endif %}</span>
                 {{ item.start_date }}
             </div>
             <div class="date-marker current" style="left: {{ item.today_pos }}%">
-                <span class="date-label">현재</span>
+                <span class="date-label">{% if session.get('lang','kor') == 'eng' %}Current{% else %}현재{% endif %}</span>
                 {{ today }}
             </div>
             <div class="date-marker" style="left: {{ item.expected_left }}%">
-                <span class="date-label">최소 예상</span>
+                <span class="date-label">{% if session.get('lang','kor') == 'eng' %}Min Expected{% else %}최소 예상{% endif %}</span>
                 {{ item.min_end_date }}
             </div>
             <div class="date-marker end" style="left: 100%">
-                <span class="date-label">최대 예상</span>
+                <span class="date-label">{% if session.get('lang','kor') == 'eng' %}Max Expected{% else %}최대 예상{% endif %}</span>
                 {{ item.max_end_date }}
             </div>
         {% else %}
             <div class="date-marker start" style="left: 0%">
-                <span class="date-label">저장 시작</span>
+                <span class="date-label">{% if session.get('lang','kor') == 'eng' %}Storage Start{% else %}저장 시작{% endif %}</span>
                 {{ item.start_date }}
             </div>
             <div class="date-marker current" style="left: {{ item.current_progress }}%">
@@ -151,7 +151,7 @@
                 {{ today }}
             </div>
             <div class="date-marker end" style="left: 100%">
-                <span class="date-label">유통기한</span>
+                <span class="date-label">{% if session.get('lang','kor') == 'eng' %}Expiration Date{% else %}유통기한{% endif %}</span>
                 {{ item.expiration_date }}
             </div>
         {% endif %}

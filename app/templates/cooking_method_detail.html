@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}조리 방법 상세 정보{% endblock %}
+{% block title %}{% if session.get('lang','kor') == 'eng' %}Cooking Method Details{% else %}조리 방법 상세 정보{% endif %}{% endblock %}
 
 {% block content %}
     {% if method %}
-        <p><em>Category: Cooking Method</em></p>
-        <h1>{{ method.name.kor }}</h1>
+        <p><em>{% if session.get('lang','kor') == 'eng' %}Category: Cooking Method{% else %}카테고리: 조리 방법{% endif %}</em></p>
+        <h1>{{ method.name[session.get('lang', 'kor')] }}</h1>
         <p><strong>ID:</strong> {{ method.id }}</p>
         <h2>Name</h2>
         <ul>
@@ -20,7 +20,7 @@
             {% endfor %}
         </ul>
 
-        <h2>Related Research</h2>
+        <h2>{% if session.get('lang','kor') == 'eng' %}Related Research{% else %}관련 연구{% endif %}</h2>
         <ul>
             {% for research_id in method.research_ids %}
                 {% for research in research_data %}
@@ -31,11 +31,11 @@
             {% endfor %}
         </ul>
 
-        <h2>Used in Dishes</h2>
+        <h2>{% if session.get('lang','kor') == 'eng' %}Used in Dishes{% else %}사용되는 요리{% endif %}</h2>
         {% if related_dishes %}
             <ul>
                 {% for dish in related_dishes %}
-                    <li>{{ dish.name.kor }}</li>
+                    <li>{{ dish.name[session.get('lang', 'kor')] }}</li>
                 {% endfor %}
             </ul>
         {% else %}

@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}요리 추가{% endblock %}
+{% block title %}{% if session.get('lang','kor') == 'eng' %}Add Dish{% else %}요리 추가{% endif %}{% endblock %}
 
 {% block content %}
-    <h1>요리 (Dish) 추가</h1>
+    <h1>{% if session.get('lang','kor') == 'eng' %}Add Dish{% else %}요리 (Dish) 추가{% endif %}</h1>
     <form method="POST">
-        <label>이름 (다중 언어):</label><br>
+        <label>{% if session.get('lang','kor') == 'eng' %}Name (multilingual):{% else %}이름 (다중 언어):{% endif %}</label><br>
         <div id="name-fields"></div>
-        <button type="button" id="add-name-btn">이름 추가</button><br><br>
+        <button type="button" id="add-name-btn">{% if session.get('lang','kor') == 'eng' %}Add Name{% else %}이름 추가{% endif %}</button><br><br>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -65,36 +65,36 @@
 
     <!-- dish_type removed per new DB format -->
 
-        <label for="image_url">이미지 URL:</label><br>
+        <label for="image_url">{% if session.get('lang','kor') == 'eng' %}Image URL:{% else %}이미지 URL:{% endif %}</label><br>
         <input type="text" id="image_url" name="image_url"><br><br>
 
-        <label>필요한 재료 (재료 + 사용량):</label><br>
+        <label>{% if session.get('lang','kor') == 'eng' %}Required Ingredients (ingredient + amount):{% else %}필요한 재료 (재료 + 사용량):{% endif %}</label><br>
         <div>
             <select id="ingredient-select">
                 {% for ingredient in all_ingredients %}
-                    <option value="{{ ingredient.id }}">{{ ingredient.name.kor }} (ID: {{ ingredient.id }})</option>
+                    <option value="{{ ingredient.id }}">{{ ingredient.name[session.get('lang','kor')] }} (ID: {{ ingredient.id }})</option>
                 {% endfor %}
             </select>
-            <input type="number" id="ingredient-amount" placeholder="사용량(g)" step="any" style="width:120px; margin-left:8px;">
-            <button type="button" id="add-ingredient-btn">추가</button>
+            <input type="number" id="ingredient-amount" placeholder="{% if session.get('lang','kor') == 'eng' %}Amount (g){% else %}사용량(g){% endif %}" step="any" style="width:120px; margin-left:8px;">
+            <button type="button" id="add-ingredient-btn">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가{% endif %}</button>
         </div>
         <div id="selected-ingredients" style="margin-top:8px;"></div>
         <!-- Hidden inputs will be created for ingredient_ids[] and ingredient_amounts[] -->
         <br>
 
-        <label for="required_cooking_method_ids">필요한 조리 방법:</label><br>
+        <label for="required_cooking_method_ids">{% if session.get('lang','kor') == 'eng' %}Required Cooking Methods:{% else %}필요한 조리 방법:{% endif %}</label><br>
         <select id="required_cooking_method_ids" name="required_cooking_method_ids" multiple size="5">
             {% for method in all_cooking_methods %}
-                <option value="{{ method.id }}">{{ method.name.kor }} (ID: {{ method.id }})</option>
+                <option value="{{ method.id }}">{{ method.name[session.get('lang','kor')] }} (ID: {{ method.id }})</option>
             {% endfor %}
-        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
+        </select><br><small>{% if session.get('lang','kor') == 'eng' %}Hold Ctrl or Shift to select multiple items{% else %}Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다{% endif %}</small><br><br>
 
     {# calories input removed - backend will compute full nutrition automatically #}
 
-        <label>조리 방법 설명 (다중 언어):</label><br>
+        <label>{% if session.get('lang','kor') == 'eng' %}Cooking Instructions (multilingual):{% else %}조리 방법 설명 (다중 언어):{% endif %}</label><br>
         <div id="cooking-instructions-fields"></div>
-        <button type="button" id="add-cooking-instructions-btn">조리 방법 설명 추가</button><br><br>
+        <button type="button" id="add-cooking-instructions-btn">{% if session.get('lang','kor') == 'eng' %}Add Cooking Instructions{% else %}조리 방법 설명 추가{% endif %}</button><br><br>
 
-        <button type="submit">추가하기</button>
+        <button type="submit">{% if session.get('lang','kor') == 'eng' %}Add{% else %}추가하기{% endif %}</button>
     </form>
 {% endblock %}

@@ -94,15 +94,19 @@ def edit_profile():
             weight = int(request.form['weight'])
             like_ids = [int(x) for x in request.form.getlist('like')]
             forbid_ids = [int(x) for x in request.form.getlist('forbid')]
+            language = request.form.get('language', 'kor')
 
             update_fields = {
                 'height': height,
                 'weight': weight,
                 'like': like_ids,
-                'forbid': forbid_ids
+                'forbid': forbid_ids,
+                'language': language
             }
             
             if update_user(user_id, update_fields):
+                # update session language if changed
+                session['lang'] = language
                 flash('프로필이 성공적으로 업데이트되었습니다.', 'success')
                 return redirect(url_for('home.index'))
             else:

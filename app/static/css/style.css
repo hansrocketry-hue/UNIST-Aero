@@ -130,6 +130,7 @@ form button {
     border-radius: 5px;
 }
 .food-card h5 {
+    color: #f4f4f4;
     margin: 0.5rem 0;
     font-size: 20pt;
     font-family: "Apple Braille", sans-serif;

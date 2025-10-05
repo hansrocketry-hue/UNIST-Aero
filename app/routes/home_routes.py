@@ -168,9 +168,13 @@ def index():
                     # Get dish from dish_id and add its nutrition to totals
                     dish = dish_map.get(intake_item.get('dish_id'))
                     if dish and 'nutrition_info' in dish:
+                        # Calculate total mass of the dish
+                        dish_mass = db.get_dish_total_mass(dish)
                         for item in dish['nutrition_info']:
                             if item['name'] in todays_intake_total:
-                                todays_intake_total[item['name']] +=  item['amount_per_dish']
+                                # Multiply per-gram nutrition by total dish mass
+                                per_gram = item.get('amount_per_unit_mass', 0)
+                                todays_intake_total[item['name']] += per_gram * dish_mass
             elif entry['date'] == yesterday_str:
                 yesterday_timeline = entry
         print(todays_intake_total)
@@ -207,8 +211,9 @@ def index():
     for item in stored_ingredients:
         ingredient_id = item.get('storage-id')
         mass = item.get('mass_g', 0)
-        if ingredient_id:
-            available_ingredients[ingredient_id] = available_ingredients.get(ingredient_id, 0) + mass
+        if item['mode'] == 'production':
+            if ingredient_id:
+                available_ingredients[ingredient_id] = available_ingredients.get(ingredient_id, 0) + mass
 
     # 3. Filter makeable dishes and score them
     scored_dishes = []
@@ -246,9 +251,13 @@ def index():
             
             # Nutrition Score
             if dish.get('nutrition_info'):
+                # Calculate total mass of the dish
+                dish_mass = db.get_dish_total_mass(dish)
                 for nutrient_info in dish['nutrition_info']:
                     nutrient_name = nutrient_info.get('name')
-                    nutrient_amount = nutrient_info.get('amount_per_dish', 0)
+                    # Multiply per-gram nutrition by total dish mass
+                    per_gram = nutrient_info.get('amount_per_unit_mass', 0)
+                    nutrient_amount = per_gram * dish_mass
                     
                     requirement = DAILY_REQUIREMENTS.get(nutrient_name, 0)
                     intake = todays_intake_total.get(nutrient_name, 0)

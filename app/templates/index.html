@@ -82,7 +82,7 @@
                 {% if today_timeline and today_timeline.intake %}
                     {% for item in today_timeline.intake %}
                     <div class="timeline-item">
-                        <span>{{ dish_map[item.dish_id].name[session.get('lang', 'kor')] if item.dish_id in dish_map else item.food_name }}</span>
+                        <span>{{ get_display_name(dish_map[item.dish_id], session.get('lang', 'kor')) if item.dish_id in dish_map else 'Unknown Dish' }}</span>
                         <span>{{ item.time }}</span>
                     </div>
                     {% endfor %}
@@ -95,7 +95,7 @@
                 {% if yesterday_timeline and yesterday_timeline.intake %}
                     {% for item in yesterday_timeline.intake %}
                     <div class="timeline-item">
-                        <span>{{ dish_map[item.dish_id].name[session.get('lang', 'kor')] if item.dish_id in dish_map else item.food_name }}</span>
+                        <span>{{ get_display_name(dish_map[item.dish_id], session.get('lang', 'kor')) if item.dish_id in dish_map else 'Unknown Dish' }}</span>
                         <span>{{ item.time }}</span>
                     </div>
                     {% endfor %}

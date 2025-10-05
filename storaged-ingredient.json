@@ -2,7 +2,7 @@
     {
         "id": 1,
         "storage-id": "i1",
-        "mass_g": 2000,
+        "mass_g": 1985.0,
         "mode": "storage",
         "start_date": "2024-01-01",
         "end_date": "2024-01-01",
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "storage-id": "i2",
-        "mass_g": 10000,
+        "mass_g": 9992.0,
         "mode": "storage",
         "start_date": "2024-01-01",
         "end_date": "2024-01-01",

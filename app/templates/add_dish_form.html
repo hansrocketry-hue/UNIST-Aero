@@ -82,12 +82,12 @@
             <select id="ingredient-select">
                 <optgroup label="{% if session.get('lang','kor') == 'eng' %}Ingredients{% else %}재료{% endif %}">
                     {% for ingredient in all_ingredients %}
-                        <option value="{{ ingredient.id }}" data-type="ingredient">{{ ingredient.name[session.get('lang','kor')] }} (ID: {{ ingredient.id }})</option>
+                        <option value="{{ ingredient.id }}" data-type="ingredient">{{ ingredient.display_name }} (ID: {{ ingredient.id }})</option>
                     {% endfor %}
                 </optgroup>
                 <optgroup label="{% if session.get('lang','kor') == 'eng' %}Dishes{% else %}요리{% endif %}">
                     {% for dish in all_dishes %}
-                        <option value="{{ dish.id }}" data-type="dish">{{ dish.name[session.get('lang','kor')] }} (ID: {{ dish.id }})</option>
+                        <option value="{{ dish.id }}" data-type="dish">{{ dish.display_name }} (ID: {{ dish.id }})</option>
                     {% endfor %}
                 </optgroup>
             </select>
@@ -101,7 +101,7 @@
         <label for="required_cooking_method_ids">{% if session.get('lang','kor') == 'eng' %}Required Cooking Methods:{% else %}필요한 조리 방법:{% endif %}</label><br>
         <select id="required_cooking_method_ids" name="required_cooking_method_ids" multiple size="5">
             {% for method in all_cooking_methods %}
-                <option value="{{ method.id }}">{{ method.name[session.get('lang','kor')] }} (ID: {{ method.id }})</option>
+                <option value="{{ method.id }}">{{ method.display_name }} (ID: {{ method.id }})</option>
             {% endfor %}
         </select><br><small>{% if session.get('lang','kor') == 'eng' %}Hold Ctrl or Shift to select multiple items{% else %}Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다{% endif %}</small><br><br>
 

@@ -2851,5 +2851,237 @@
                 "amount_g": 2.0
             }
         ]
+    },
+    {
+        "id": "d33",
+        "name": {
+            "kor": "쌀밀 쓰는 요리"
+        },
+        "image_url": null,
+        "required_ingredients": [
+            {
+                "type": "ingredient",
+                "id": "i1",
+                "amount_g": 10.0
+            },
+            {
+                "type": "ingredient",
+                "id": "i2",
+                "amount_g": 8.0
+            }
+        ],
+        "cooking_instructions": {
+            "kor": "ㅇㅇ"
+        },
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_unit_mass": 3.511111111111111
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.7749999999999999
+            },
+            {
+                "name": "Protein",
+                "amount_per_unit_mass": 0.08
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.013888888888888888
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.007
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.018888888888888886
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_unit_mass": 0.0022222222222222222
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.0006666666666666666
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_unit_mass": 0.035555555555555556
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_unit_mass": 0.0034444444444444444
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.2666666666666667
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 11.11111111111111
+            }
+        ],
+        "cooking-method-ids": [
+            1
+        ]
+    },
+    {
+        "id": "d34",
+        "name": {
+            "kor": "먹을 요리"
+        },
+        "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.samsungsvc.co.kr%2Fsolution%2F2459658&psig=AOvVaw3IFg4Vm_ECxSRuicfALZuA&ust=1759758612912000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiZ6eeZjZADFQAAAAAdAAAAABAE",
+        "required_ingredients": [
+            {
+                "type": "dish",
+                "id": "d33",
+                "amount_g": 18.0
+            },
+            {
+                "type": "ingredient",
+                "id": "i1",
+                "amount_g": 5.0
+            }
+        ],
+        "cooking_instructions": {
+            "kor": "d"
+        },
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_unit_mass": 2.747826086956522
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.7845652173913042
+            },
+            {
+                "name": "Protein",
+                "amount_per_unit_mass": 0.07652173913043478
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.011956521739130435
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.006130434782608696
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.016956521739130433
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_unit_mass": 0.0020869565217391307
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.0006086956521739131
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_unit_mass": 0.034782608695652174
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_unit_mass": 0.0033478260869565218
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.24347826086956523
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 13.043478260869565
+            },
+            {
+                "name": "Calories (Total)",
+                "amount_per_unit_mass": 0.782608695652174
+            }
+        ],
+        "cooking-method-ids": [
+            2
+        ]
+    },
+    {
+        "id": "d35",
+        "name": {
+            "kor": "못만들 음식"
+        },
+        "image_url": null,
+        "required_ingredients": [
+            {
+                "type": "ingredient",
+                "id": "i7",
+                "amount_g": 10.0
+            }
+        ],
+        "cooking_instructions": {
+            "kor": "d"
+        },
+        "nutrition_info": [
+            {
+                "name": "Calories (Total)",
+                "amount_per_unit_mass": 0.3
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.086
+            },
+            {
+                "name": "Protein",
+                "amount_per_unit_mass": 0.03
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.03
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.0018
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_unit_mass": 0.018
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 1.8
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_unit_mass": 1.2
+            }
+        ],
+        "cooking-method-ids": [
+            3
+        ]
     }
 ]

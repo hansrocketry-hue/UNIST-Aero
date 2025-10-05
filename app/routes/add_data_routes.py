@@ -1,9 +1,15 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, session
 from .auth_routes import login_required
 import database_handler as db
 from datetime import datetime, timedelta
 
 bp = Blueprint('add_data', __name__, url_prefix='/add')
+
+def get_display_name(item, lang):
+    """Return the name in the specified language, with a fallback to other languages."""
+    if not isinstance(item.get('name'), dict):
+        return item.get('name', 'N/A')
+    return item['name'].get(lang) or item['name'].get('kor') or item['name'].get('eng') or list(item['name'].values())[0]
 
 @bp.route('/')
 @login_required
@@ -172,7 +178,16 @@ def add_dish_route():
     all_ingredients = db._load_table('ingredient')
     all_dishes = db._load_table('dish')
     all_cooking_methods = db._load_table('cooking-methods')
-    return render_template('add_dish_form.html', all_ingredients=all_ingredients, all_dishes=all_dishes, all_cooking_methods=all_cooking_methods)
+    
+    # Add display names for the current language
+    lang = session.get('lang', 'kor')
+    for item in all_ingredients + all_dishes + all_cooking_methods:
+        item['display_name'] = get_display_name(item, lang)
+        
+    return render_template('add_dish_form.html', 
+                           all_ingredients=all_ingredients, 
+                           all_dishes=all_dishes, 
+                           all_cooking_methods=all_cooking_methods)
 
 @bp.route('/storaged-ingredient', methods=['GET', 'POST'])
 def add_storaged_ingredient_route():

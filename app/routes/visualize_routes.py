@@ -102,13 +102,10 @@ def dish_detail(dish_id):
     # 칼로리 추출 (nutrition_info가 리스트이므로 Calories (Total) 항목 찾기)
     calories = None
     if dish and isinstance(dish.get('nutrition_info'), list):
-        # Calculate total mass of the dish
-        dish_mass = db.get_dish_total_mass(dish)
         for n in dish['nutrition_info']:
             if n.get('name') == 'Calories (Total)':
-                # Multiply per-gram calories by total dish mass
-                per_gram = n.get('amount_per_unit_mass', 0)
-                calories = per_gram * dish_mass
+                # Get per-gram calories
+                calories = n.get('amount_per_unit_mass', 0)
                 break
     # 조리설명(한글)
     selected_lang = session.get('lang', 'kor')

@@ -52,6 +52,21 @@
         ],
         "forbid": [
             2
+        ],
+        "food_timeline": [
+            {
+                "date": "2025-10-05",
+                "intake": [
+                    {
+                        "time": "21:54",
+                        "dish_id": "d2"
+                    },
+                    {
+                        "time": "21:54",
+                        "dish_id": "d6"
+                    }
+                ]
+            }
         ]
     }
 ]

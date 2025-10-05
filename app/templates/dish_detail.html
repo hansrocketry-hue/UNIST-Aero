@@ -93,7 +93,7 @@
             <thead>
                 <tr>
                     <th>{% if session.get('lang','kor') == 'eng' %}Nutrient{% else %}영양소{% endif %}</th>
-                    <th>{% if session.get('lang','kor') == 'eng' %}Amount per dish{% else %}1인분 기준 함량{% endif %}</th>
+                    <th>{% if session.get('lang','kor') == 'eng' %}Amount per gram{% else %}그램당 함량{% endif %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -108,7 +108,7 @@
                 {% if nutrient.name != 'Calories (Total)' %}
                 <tr>
                     <td>{{ nutrient.name }}</td>
-                    <td>{{ "%.3f"|format(nutrient.amount_per_dish) }}</td>
+                    <td>{{ "%.3f"|format(nutrient.amount_per_unit_mass) }}</td>
                 </tr>
                 {% endif %}
                 {% endfor %}
@@ -118,4 +118,5 @@
         {% endif %}
     {% else %}
         <h1>{% if session.get('lang','kor') == 'eng' %}Dish not found{% else %}요리를 찾을 수 없습니다{% endif %}</h1>
+    {% endif %}
 {% endblock %}

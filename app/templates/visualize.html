@@ -147,7 +147,7 @@
                                                 {% if nut is mapping %}
                                                     {% set nut_name = (nut.get('name') or nut.get('label') or '') %}
                                                     {% if not _cal and nut_name in ['Calories (Total)', 'Calories', 'calories'] %}
-                                                        {% set _cal = (nut.get('amount_per_unit_mass') or nut.get('amount_per_dish') or nut.get('amount') or '') %}
+                                                        {% set _cal = (nut.get('amount_per_unit_mass') or nut.get('amount') or '') %}
                                                     {% endif %}
                                                 {% endif %}
                                     {% endfor %}
@@ -273,8 +273,8 @@
                             {% set ns = namespace(calo=0) %}
                             {% if item['nutrition_info'] %}
                                 {% for nut in item['nutrition_info'] %}
-                                    {% if 'name' in nut and nut['name'] == 'Calories (Total)' and 'amount_per_dish' in nut %}
-                                        {% set ns.calo = nut['amount_per_dish'] %}
+                                    {% if 'name' in nut and nut['name'] == 'Calories (Total)' and 'amount_per_unit_mass' in nut %}
+                                        {% set ns.calo = nut['amount_per_unit_mass'] %}
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}

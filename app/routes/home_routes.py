@@ -165,16 +165,34 @@ def index():
             if entry['date'] == today_str:
                 today_timeline = entry
                 for intake_item in entry['intake']:
-                    # Get dish from dish_id and add its nutrition to totals
-                    dish = dish_map.get(intake_item.get('dish_id'))
-                    if dish and 'nutrition_info' in dish:
-                        # Calculate total mass of the dish
-                        dish_mass = db.get_dish_total_mass(dish)
-                        for item in dish['nutrition_info']:
-                            if item['name'] in todays_intake_total:
-                                # Multiply per-gram nutrition by total dish mass
-                                per_gram = item.get('amount_per_unit_mass', 0)
-                                todays_intake_total[item['name']] += per_gram * dish_mass
+                    # Get dish from dish_id and calculate its total nutrition
+                    dish_id = intake_item.get('dish_id')
+                    if dish_id:
+                        # Use recursive calculation to get exact nutrition totals
+                        nutrition_totals = db.calculate_dish_total_nutrition(dish_id)
+                        
+                        # Get the dish for fallback nutrition data
+                        dish = dish_map.get(dish_id)
+                        
+                        # Add to today's intake totals
+                        for nutrient_name, amount in nutrition_totals.items():
+                            # Normalize "Calories" to "Calories (Total)" for consistency
+                            normalized_name = "Calories (Total)" if nutrient_name == "Calories" else nutrient_name
+                            if normalized_name in todays_intake_total:
+                                todays_intake_total[normalized_name] += amount
+                        
+                        # Fallback: If ingredient-based calculation doesn't have certain nutrients,
+                        # use dish's pre-calculated nutrition_info (for nutrients like Carbohydrates)
+                        if dish and 'nutrition_info' in dish:
+                            dish_mass = db.get_dish_total_mass(dish)
+                            for nutrient_info in dish['nutrition_info']:
+                                nutrient_name = nutrient_info.get('name')
+                                # Only add if not already calculated from ingredients
+                                if nutrient_name not in nutrition_totals and nutrient_name != 'Calories':
+                                    per_gram = nutrient_info.get('amount_per_unit_mass', 0)
+                                    total_amount = per_gram * dish_mass
+                                    if nutrient_name in todays_intake_total:
+                                        todays_intake_total[nutrient_name] += total_amount
             elif entry['date'] == yesterday_str:
                 yesterday_timeline = entry
         print(todays_intake_total)
@@ -187,7 +205,7 @@ def index():
 
     DAILY_REQUIREMENTS['Calories (Total)'] = bmr * pal
     DAILY_REQUIREMENTS['Protein'] = bmr * pal * 0.25 / 4
-    DAILY_REQUIREMENTS['Fat'] = bmr * pal * 0.25 / 4
+    DAILY_REQUIREMENTS['Fat'] = bmr * pal * 0.25 / 9
     DAILY_REQUIREMENTS['Carbohydrates'] = bmr * pal * 0.5 / 4
 
     for nutrient, total in todays_intake_total.items():
@@ -250,22 +268,28 @@ def index():
             preference_score = 0
             
             # Nutrition Score
+            # Use recursive calculation to get exact nutrition totals
+            dish_nutrition = db.calculate_dish_total_nutrition(dish['id'])
+            
+            # Fallback: Add nutrients from dish's nutrition_info that aren't in ingredient-based calculation
             if dish.get('nutrition_info'):
-                # Calculate total mass of the dish
                 dish_mass = db.get_dish_total_mass(dish)
                 for nutrient_info in dish['nutrition_info']:
                     nutrient_name = nutrient_info.get('name')
-                    # Multiply per-gram nutrition by total dish mass
-                    per_gram = nutrient_info.get('amount_per_unit_mass', 0)
-                    nutrient_amount = per_gram * dish_mass
-                    
-                    requirement = DAILY_REQUIREMENTS.get(nutrient_name, 0)
-                    intake = todays_intake_total.get(nutrient_name, 0)
-                    
-                    gap = requirement - intake
-                    if gap > 0 and requirement > 0:
-                        # Add score based on how much of the daily requirement is filled
-                        nutrition_score += (nutrient_amount / requirement) * 100
+                    if nutrient_name not in dish_nutrition and nutrient_name != 'Calories':
+                        per_gram = nutrient_info.get('amount_per_unit_mass', 0)
+                        dish_nutrition[nutrient_name] = per_gram * dish_mass
+            
+            for nutrient_name, nutrient_amount in dish_nutrition.items():
+                # Normalize "Calories" to "Calories (Total)" for consistency
+                normalized_name = "Calories (Total)" if nutrient_name == "Calories" else nutrient_name
+                requirement = DAILY_REQUIREMENTS.get(normalized_name, 0)
+                intake = todays_intake_total.get(normalized_name, 0)
+                
+                gap = requirement - intake
+                if gap > 0 and requirement > 0:
+                    # Add score based on how much of the daily requirement is filled
+                    nutrition_score += (nutrient_amount / requirement) * 100
 
             # Preference Score
             if dish.get('required_ingredients'):

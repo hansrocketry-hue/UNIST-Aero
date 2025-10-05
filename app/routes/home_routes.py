@@ -3,6 +3,7 @@ from user_db_handler import get_user_by_id, update_user
 from datetime import datetime, timedelta
 import json
 import os
+import database_handler as db
 
 bp = Blueprint('home', __name__, url_prefix='/')
 
@@ -79,15 +80,6 @@ def index():
         yesterday_timeline=yesterday_timeline
     )
 
-# Helper to load main database for ingredients
-def load_main_db():
-    db_path = os.path.join(os.path.dirname(__file__), '..', '..' , 'main_db.json')
-    try:
-        with open(db_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return {}
-
 @bp.route('/edit_profile', methods=['GET', 'POST'])
 def edit_profile():
     if 'user_id' not in session:
@@ -123,6 +115,5 @@ def edit_profile():
         return redirect(url_for('home.edit_profile'))
 
     # GET request
-    main_db = load_main_db()
-    all_ingredients = main_db.get('ingredient', [])
+    all_ingredients = db._load_table('ingredient')
     return render_template('edit_profile.html', user=user, all_ingredients=all_ingredients)

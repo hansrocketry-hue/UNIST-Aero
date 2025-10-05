@@ -130,7 +130,18 @@ def add_dish_route():
             name_names = request.form.getlist('name_names')
             name_dict = dict(zip(name_codes, name_names))
 
-            req_ing_ids = [int(x) for x in request.form.getlist('required_ingredient_ids')]
+            # Parse required ingredients with amounts
+            raw_ing_ids = request.form.getlist('required_ingredient_ids')
+            raw_ing_amts = request.form.getlist('required_ingredient_amounts')
+            required_ingredients = []
+            for i in range(min(len(raw_ing_ids), len(raw_ing_amts))):
+                try:
+                    iid = int(raw_ing_ids[i])
+                    amt = float(raw_ing_amts[i])
+                except (ValueError, TypeError):
+                    continue
+                required_ingredients.append({"id": iid, "amount_g": amt})
+
             req_cook_ids = [int(x) for x in request.form.getlist('required_cooking_method_ids')]
 
             # cooking_instructions provided by dynamic multilingual fields created by JS
@@ -138,29 +149,16 @@ def add_dish_route():
             ci_texts = request.form.getlist('cooking_instructions_names') or request.form.getlist('cooking_instructions_texts')
             cooking_instructions = dict(zip(ci_codes, ci_texts)) if ci_codes and ci_texts else None
 
-            # nutrition_info: get list entries or fallback to single calories field
+            # nutrition_info form inputs are ignored for dish creation — the backend will compute full
+            # nutrition from ingredient g-per-nutrient values found in ingredient.json
             nutrition_info = []
-            nut_names = request.form.getlist('nutrient_name')
-            nut_values = request.form.getlist('nutrient_value')
-            for n, v in zip(nut_names, nut_values):
-                if n and v:
-                    nutrition_info.append({"name": n, "amount_per_dish": float(v)})
-
-            calories_field = request.form.get('calories')
-            if calories_field:
-                try:
-                    cal_val = float(calories_field)
-                    if not any(n.get('name') == 'Calories (Total)' for n in nutrition_info):
-                        nutrition_info.insert(0, {"name": "Calories (Total)", "amount_per_dish": cal_val})
-                except ValueError:
-                    pass
 
             image_url = request.form.get('image_url') or None
 
             db.add_dish(
                 name=name_dict,
                 image_url=image_url,
-                required_ingredient_ids=req_ing_ids,
+                required_ingredients=required_ingredients,
                 required_cooking_method_ids=req_cook_ids,
                 nutrition_data=nutrition_info,
                 cooking_instructions=cooking_instructions

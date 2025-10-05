@@ -196,7 +196,7 @@ def get_nutrition_categories():
     with open('nutrition_category.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def add_dish(name, image_url, required_ingredient_ids, required_cooking_method_ids, nutrition_data=None, cooking_instructions=None):
+def add_dish(name, image_url, required_ingredients, required_cooking_method_ids, nutrition_data=None, cooking_instructions=None):
     """Add a dish.
 
     Parameters:
@@ -210,44 +210,65 @@ def add_dish(name, image_url, required_ingredient_ids, required_cooking_method_i
     data = _load_table('dish')
     new_id = _get_next_id('dish')
 
-    # If nutrition_data was provided by the caller and is non-empty, use it.
-    # Otherwise, compute totals based on ingredient nutrition.
+    # If nutrition_data was provided explicitly, use it.
+    # Otherwise, compute totals based on required_ingredients which include amounts.
     final_nutrition = []
     if nutrition_data:
         final_nutrition = nutrition_data
     else:
-        total_nutrition = {"nutrients": []}
-        for ingredient_id in required_ingredient_ids:
-            ingredient_nutrition = get_ingredient_nutrition(ingredient_id)
-            if ingredient_nutrition:
-                if not total_nutrition["nutrients"]:
-                    # copy to avoid mutating original
-                    total_nutrition["nutrients"] = [dict(n) for n in ingredient_nutrition]
+        # Load nutrition categories to ensure we return a complete list (including zeros)
+        try:
+            with open('nutrition_category.json', 'r', encoding='utf-8') as f:
+                categories = [c.get('name') for c in __import__('json').load(f)]
+        except Exception:
+            categories = []
+
+        # Initialize sums for all categories
+        nutrient_sums = {name: 0.0 for name in categories}
+
+        # Sum nutrients by name. Assume ingredient nutrition amounts are per gram (amount_per_unit_mass)
+        for req in required_ingredients:
+            iid = req.get('id')
+            amt_g = req.get('amount_g', 0)
+            ing_nut = get_ingredient_nutrition(iid) or []
+            for nutr in ing_nut:
+                name = nutr.get('name')
+                per_g = nutr.get('amount_per_unit_mass') or nutr.get('amount_per_dish') or 0
+                added = per_g * amt_g
+                # If the category exists in categories, add, else create a new key
+                if name in nutrient_sums:
+                    nutrient_sums[name] += added
                 else:
-                    # try to sum by matching nutrient names; fall back to positional
-                    for nutr in ingredient_nutrition:
-                        matched = next((x for x in total_nutrition["nutrients"] if x.get('name') == nutr.get('name')), None)
-                        if matched:
-                            # handle both amount_per_unit_mass and amount_per_dish keys
-                            if 'amount_per_unit_mass' in nutr:
-                                key = 'amount_per_unit_mass'
-                            else:
-                                key = 'amount_per_dish'
-                            matched[key] = matched.get(key, 0) + nutr.get(key, 0)
-                        else:
-                            total_nutrition["nutrients"].append(dict(nutr))
-        final_nutrition = total_nutrition["nutrients"]
+                    nutrient_sums[name] = nutrient_sums.get(name, 0.0) + added
+
+        # convert sums to list structure expected by frontend; keep ordering from categories when possible
+        final_nutrition = []
+        seen = set()
+        for cat in categories:
+            val = nutrient_sums.get(cat, 0.0)
+            out_name = cat if cat != 'Calories' else 'Calories (Total)'
+            final_nutrition.append({"name": out_name, "amount_per_dish": val})
+            seen.add(out_name)
+        # add any remaining nutrient names found in ingredients but not in categories
+        for k, v in nutrient_sums.items():
+            if k not in seen and k != 'Calories':
+                final_nutrition.append({"name": k, "amount_per_dish": v})
 
     new_item = {
         "id": new_id,
         "name": name,
         "image_url": image_url,
-        "required_ingredient_ids": required_ingredient_ids,
+        "required_ingredients": required_ingredients,
         "cooking_instructions": cooking_instructions,
         "nutrition_info": final_nutrition,
         "cooking-method-ids": required_cooking_method_ids
     }
     data.append(new_item)
     _save_table('dish', data)
-    print(f"New dish '{name.get('kor', 'N/A')}' added with ID {new_id}.")
+    # name may sometimes be a plain string (legacy callers); handle both dict and str
+    try:
+        display_name = name.get('kor') if isinstance(name, dict) else str(name)
+    except Exception:
+        display_name = str(name)
+    print(f"New dish '{display_name or 'N/A'}' added with ID {new_id}.")
     return new_id

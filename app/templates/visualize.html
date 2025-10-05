@@ -214,13 +214,28 @@
                     <tr>
                         <td>{{ item.name.kor }}</td>
                         <td>
-                            {% for ing_id in item.required_ingredient_ids %}
-                                {% for ingredient in data['ingredient'] %}
-                                    {% if ingredient.id == ing_id %}
-                                        <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name.kor }}</a><br>
-                                    {% endif %}
+                            {# New schema: required_ingredients is list of {id, amount_g}. Keep fallback for legacy required_ingredient_ids. #}
+                            {% if item.required_ingredients is defined %}
+                                {% for req in item.required_ingredients %}
+                                    {% set ing_id = req.id if req.id is defined else req.get('id') %}
+                                    {% set amt = req.amount_g if req.amount_g is defined else req.get('amount_g') %}
+                                    {% for ingredient in data['ingredient'] %}
+                                        {% if ingredient.id == ing_id %}
+                                            <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name.kor }}</a>
+                                            {% if amt %} — {{ amt }} g{% endif %}
+                                            <br>
+                                        {% endif %}
+                                    {% endfor %}
                                 {% endfor %}
-                            {% endfor %}
+                            {% elif item.required_ingredient_ids is defined %}
+                                {% for ing_id in item.required_ingredient_ids %}
+                                    {% for ingredient in data['ingredient'] %}
+                                        {% if ingredient.id == ing_id %}
+                                            <a href="{{ url_for('visualize.ingredient_detail', ingredient_id=ing_id) }}">{{ ingredient.name.kor }}</a><br>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endif %}
                         </td>
                         <td>
                             {% set method_ids = item['cooking-method-ids'] if 'cooking-method-ids' in item else [] %}

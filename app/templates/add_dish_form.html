@@ -19,17 +19,68 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addBtn = document.getElementById('add-ingredient-btn');
+            const select = document.getElementById('ingredient-select');
+            const amt = document.getElementById('ingredient-amount');
+            const container = document.getElementById('selected-ingredients');
+
+            function addIngredientEntry() {
+                const id = select.value;
+                const idText = select.options[select.selectedIndex].text;
+                const amountVal = amt.value ? parseFloat(amt.value) : 0;
+                if (!id) return;
+
+                const row = document.createElement('div');
+                row.className = 'ingredient-row';
+                row.textContent = `${idText} — ${amountVal} g `;
+
+                const remove = document.createElement('button');
+                remove.type = 'button';
+                remove.textContent = '삭제';
+                remove.addEventListener('click', () => { row.remove(); });
+
+                // hidden inputs
+                const hidId = document.createElement('input');
+                hidId.type = 'hidden';
+                hidId.name = 'required_ingredient_ids';
+                hidId.value = id;
+                const hidAmt = document.createElement('input');
+                hidAmt.type = 'hidden';
+                hidAmt.name = 'required_ingredient_amounts';
+                hidAmt.value = amountVal;
+
+                row.appendChild(hidId);
+                row.appendChild(hidAmt);
+                row.appendChild(remove);
+                container.appendChild(row);
+
+                amt.value = '';
+            }
+
+            addBtn.addEventListener('click', addIngredientEntry);
+        });
+    </script>
+
     <!-- dish_type removed per new DB format -->
 
         <label for="image_url">이미지 URL:</label><br>
         <input type="text" id="image_url" name="image_url"><br><br>
 
-        <label for="required_ingredient_ids">필요한 재료:</label><br>
-        <select id="required_ingredient_ids" name="required_ingredient_ids" multiple size="5">
-            {% for ingredient in all_ingredients %}
-                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }} (ID: {{ ingredient.id }})</option>
-            {% endfor %}
-        </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
+        <label>필요한 재료 (재료 + 사용량):</label><br>
+        <div>
+            <select id="ingredient-select">
+                {% for ingredient in all_ingredients %}
+                    <option value="{{ ingredient.id }}">{{ ingredient.name.kor }} (ID: {{ ingredient.id }})</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="ingredient-amount" placeholder="사용량(g)" step="any" style="width:120px; margin-left:8px;">
+            <button type="button" id="add-ingredient-btn">추가</button>
+        </div>
+        <div id="selected-ingredients" style="margin-top:8px;"></div>
+        <!-- Hidden inputs will be created for ingredient_ids[] and ingredient_amounts[] -->
+        <br>
 
         <label for="required_cooking_method_ids">필요한 조리 방법:</label><br>
         <select id="required_cooking_method_ids" name="required_cooking_method_ids" multiple size="5">
@@ -38,8 +89,7 @@
             {% endfor %}
         </select><br><small>Ctrl 또는 Shift 키를 눌러 다중 선택할 수 있습니다.</small><br><br>
 
-        <label for="calories">칼로리:</label><br>
-        <input type="number" step="any" id="calories" name="calories" required><br><br>
+    {# calories input removed - backend will compute full nutrition automatically #}
 
         <label>조리 방법 설명 (다중 언어):</label><br>
         <div id="cooking-instructions-fields"></div>

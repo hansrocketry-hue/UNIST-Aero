@@ -50,9 +50,14 @@ def ingredient_detail(ingredient_id):
         if 'nutrition' in ingredient:
             ingredient['nutrition_info'] = ingredient['nutrition']
             
-        # Get related dishes
+        # Get related dishes (new schema: required_ingredients is list of {id, amount_g})
         dishes = db._load_table('dish')
-        related_dishes = [d for d in dishes if ingredient_id in d.get('required_ingredient_ids', [])]
+        related_dishes = []
+        for d in dishes:
+            for req in d.get('required_ingredients', []):
+                if req.get('id') == ingredient_id:
+                    related_dishes.append(d)
+                    break
     else:
         related_dishes = []
         
@@ -82,8 +87,18 @@ def dish_detail(dish_id):
     # 필요한 조리방법 정보 추출
     method_ids = dish.get('cooking-method-ids', []) if dish else []
     required_methods = [m for m in cooking_methods if m['id'] in method_ids]
-    ingredient_ids = dish.get('required_ingredient_ids', []) if dish else []
-    required_ingredients = [i for i in ingredients if i['id'] in ingredient_ids]
+    # dish.required_ingredients: list of {id, amount_g}
+    required_ingredients = []
+    if dish:
+        reqs = dish.get('required_ingredients', [])
+        for req in reqs:
+            iid = req.get('id')
+            info = next((ing for ing in ingredients if ing['id'] == iid), None)
+            if info:
+                # include amount for template
+                info_copy = dict(info)
+                info_copy['used_amount_g'] = req.get('amount_g')
+                required_ingredients.append(info_copy)
     # 칼로리 추출 (nutrition_info가 리스트이므로 Calories (Total) 항목 찾기)
     calories = None
     if dish and isinstance(dish.get('nutrition_info'), list):

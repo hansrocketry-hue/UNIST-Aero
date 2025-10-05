@@ -45,7 +45,7 @@
                 <div class="card mb-4">
                     <details open>
                         <summary class="card-header">
-                            <h5 class="card-title mb-0 d-inline-block">영양 정보 (100g당)</h5>
+                            <h5 class="card-title mb-0 d-inline-block">{% if session.get('lang', 'kor') == 'eng' %}Nutrition Information (per 1g){% else %}영양 정보 (1g당){% endif %}</h5>
                         </summary>
                     <div class="card-body">
                         {% for category in nutrition_categories %}

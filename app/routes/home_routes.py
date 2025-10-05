@@ -102,18 +102,20 @@ def add_intake():
 
 # Define daily nutritional requirements
 DAILY_REQUIREMENTS = {
-    "calories": 2000,
-    "carbohydrate": 300,
-    "protein": 50,
-    "dietary_fiber": 25,
-    "vitamin_b1": 1.2,
-    "vitamin_b2": 1.3,
-    "vitamin_b3": 16,
-    "vitamin_b6": 1.7,
-    "vitamin_b12": 2.4,
-    "folate": 400,
-    "vitamin_c": 90,
-    "vitamin_d": 15
+    "Calories (Total)": 2000,
+    "Carbohydrates": 300,
+    "Protein": 50,
+    "Dietary Fiber": 25,
+    "Vitamin B1 (Thiamin)": 1.2,
+    "Vitamin B2 (Riboflavin)": 1.3,
+    "Vitamin B3 (Niacin)": 16,
+    "Vitamin B6": 1.7,
+    "Vitamin D": 15,
+    "Folate": 400,
+    "Vitamin C": 90,
+    "Vitamin B12" : 2.4,
+    "Fat":0,
+    "Sodium":2000
 }
 
 @bp.route('/')
@@ -147,12 +149,12 @@ def index():
                 for intake_item in entry['intake']:
                     # Get dish from dish_id and add its nutrition to totals
                     dish = dish_map.get(intake_item.get('dish_id'))
-                    if dish and 'nutrition' in dish:
-                        for nutrient, value in dish['nutrition'].items():
-                            if nutrient in todays_intake_total:
-                                todays_intake_total[nutrient] += value
+                    if dish and 'nutrition_info' in dish:
+                        for item in dish['nutrition_info']:
+                            todays_intake_total[item['name']] +=  item['amount_per_dish']
             elif entry['date'] == yesterday_str:
                 yesterday_timeline = entry
+        print(todays_intake_total)
 
     # Calculate percentage of daily requirement met
     nutrition_progress = {}

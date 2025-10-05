@@ -1,4 +1,22 @@
 [
-    {"id": 1, "storage-id": 1, "mass_g": 2000, "start_date": "2024-01-01", "shelf_life": "1 year, 11 months, 30 days", "production_end_date": "2024-01-01", "processing_type": "Freeze-dried"},
-    {"id": 2, "storage-id": 2, "mass_g": 10000, "start_date": "2024-01-01", "shelf_life": "2 years, 9 months, 0 days", "production_end_date": "2024-01-01", "processing_type": "Powdered"}
+    {
+        "id": 1,
+        "storage-id": 1,
+        "mass_g": 2000,
+        "mode": "storage",
+        "start_date": "2024-01-01",
+        "end_date": "2024-01-01",
+        "expiration_date": "2025-12-31",
+        "processing_type": "Freeze-dried"
+    },
+    {
+        "id": 2,
+        "storage-id": 2,
+        "mass_g": 10000,
+        "mode": "storage",
+        "start_date": "2024-01-01",
+        "end_date": "2024-01-01",
+        "expiration_date": "2026-10-01",
+        "processing_type": "Powdered"
+    }
 ]

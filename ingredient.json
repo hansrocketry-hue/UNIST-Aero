@@ -11,7 +11,8 @@
         "nutrition_id": "N1",
         "production_time": {
             "min": 90,
-            "max": 120
+            "max": 120,
+            "producible": true
         }
     },
     {
@@ -26,7 +27,8 @@
         "nutrition_id": "N2",
         "production_time": {
             "min": 70,
-            "max": 90
+            "max": 90,
+            "producible": true
         }
     },
     {
@@ -45,7 +47,8 @@
         "nutrition_id": "N3",
         "production_time": {
             "min": 70,
-            "max": 90
+            "max": 90,
+            "producible": true
         }
     },
     {
@@ -58,7 +61,8 @@
         "nutrition_id": "N4",
         "production_time": {
             "min": 90,
-            "max": 120
+            "max": 120,
+            "producible": true
         }
     },
     {
@@ -75,7 +79,8 @@
         "nutrition_id": "N5",
         "production_time": {
             "min": 90,
-            "max": 120
+            "max": 120,
+            "producible": true
         }
     },
     {
@@ -90,7 +95,8 @@
         "nutrition_id": "N6",
         "production_time": {
             "min": 25,
-            "max": 30
+            "max": 30,
+            "producible": true
         }
     },
     {
@@ -111,7 +117,20 @@
         "nutrition_id": "N7",
         "production_time": {
             "min": 20,
-            "max": 30
+            "max": 30,
+            "producible": true
+        }
+    },
+    {
+        "id": 8,
+        "name": {
+            "kor": "소금",
+            "eng": "Salt"
+        },
+        "research_ids": [],
+        "nutrition_id": "N8",
+        "production_time": {
+            "producible": false
         }
     }
 ]

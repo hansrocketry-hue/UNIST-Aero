@@ -5,26 +5,50 @@
 {% block content %}
     <h1>보관 식재료 (Storaged Ingredient) 추가</h1>
     <form method="POST">
+        <div class="mode-selection">
+            <label>모드 선택:</label><br>
+            <input type="radio" id="mode_storage" name="mode" value="storage" checked>
+            <label for="mode_storage">보관</label>
+            <input type="radio" id="mode_production" name="mode" value="production">
+            <label for="mode_production">생산</label><br><br>
+        </div>
+
         <label for="storage_id">식재료 종류:</label><br>
         <select id="storage_id" name="storage_id" required>
             <option value="" disabled selected>-- 식재료 선택 --</option>
             {% for ingredient in all_ingredients %}
-                <option value="{{ ingredient.id }}">{{ ingredient.name.kor }} (ID: {{ ingredient.id }})</option>
+                <option value="{{ ingredient.id }}" 
+                        data-min-time="{{ ingredient.production_time.min if ingredient.production_time.producible else '' }}" 
+                        data-max-time="{{ ingredient.production_time.max if ingredient.production_time.producible else '' }}"
+                        data-producible="{{ 'true' if ingredient.production_time.producible else 'false' }}">
+                    {{ ingredient.name.kor }} (ID: {{ ingredient.id }})
+                    {% if ingredient.production_time.producible %}
+                        - 생산 시간: {{ ingredient.production_time.min }}~{{ ingredient.production_time.max }}일
+                    {% endif %}
+                </option>
             {% endfor %}
         </select><br><br>
 
         <label for="mass_g">보유 질량 (g):</label><br>
         <input type="number" id="mass_g" name="mass_g" required><br><br>
 
-        <label for="expiration_date">보관 기한:</label><br>
-        <input type="date" id="expiration_date" name="expiration_date" required><br><br>
+        <div class="dates-container">
+            <label for="start_date">시작일:</label><br>
+            <input type="date" id="start_date" name="start_date" required><br><br>
 
-        <label for="production_end_date">생산 종료일:</label><br>
-        <input type="date" id="production_end_date" name="production_end_date" required><br><br>
+            <div id="end_date_container">
+                <label for="end_date">종료일:</label><br>
+                <input type="date" id="end_date" name="end_date" required><br><br>
+            </div>
+
+            <label for="expiration_date">보관 기한:</label><br>
+            <input type="date" id="expiration_date" name="expiration_date" required><br><br>
+        </div>
 
         <label for="processing_type">가공 방식:</label><br>
         <input type="text" id="processing_type" name="processing_type" required><br><br>
 
         <button type="submit">추가하기</button>
     </form>
+    <script src="{{ url_for('static', filename='js/production_time_handler.js') }}"></script>
 {% endblock %}

@@ -120,8 +120,47 @@
                                 {% endfor %}
                             {% endfor %}
                         </td>
-                        <td>{{ item.nutrition_info.calories }}</td>
-                        <td>{{ item.production_time }}</td>
+                        <td>
+                            {# Safe extraction of calories from different possible data shapes #}
+                            {% set _cal = '' %}
+                            {% if item.nutrition_info is defined and item.nutrition_info %}
+                                {% if item.nutrition_info is mapping %}
+                                    {% if 'calories' in item.nutrition_info %}
+                                        {% set _cal = item.nutrition_info['calories'] %}
+                                    {% elif 'Calories (Total)' in item.nutrition_info %}
+                                        {% set _cal = item.nutrition_info['Calories (Total)'] %}
+                                    {% endif %}
+                                {% elif item.nutrition_info is sequence %}
+                                    {% for nut in item.nutrition_info %}
+                                                {% if nut is mapping %}
+                                                    {% set nut_name = (nut.get('name') or nut.get('label') or '') %}
+                                                    {% if not _cal and nut_name in ['Calories (Total)', 'Calories', 'calories'] %}
+                                                        {% set _cal = (nut.get('amount_per_unit_mass') or nut.get('amount_per_dish') or nut.get('amount') or '') %}
+                                                    {% endif %}
+                                                {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endif %}
+                            {{ _cal if _cal else 'N/A' }}
+                        </td>
+                        <td>
+                            {# Friendly display for production_time which may be dict or simple value #}
+                            {% if item.production_time is defined and item.production_time %}
+                                {% if item.production_time is mapping %}
+                                    {% if 'producible' in item.production_time and item.production_time.producible %}
+                                        {{ item.production_time.min }}~{{ item.production_time.max }}일
+                                    {% elif 'producible' in item.production_time and not item.production_time.producible %}
+                                        생산 불가
+                                    {% else %}
+                                        {{ item.production_time }}
+                                    {% endif %}
+                                {% else %}
+                                    {{ item.production_time }}
+                                {% endif %}
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>

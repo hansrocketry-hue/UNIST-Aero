@@ -104,21 +104,34 @@ def update_ingredient_nutrition_reference(ingredient_id, nutrition_id):
     _save_table('nutrition', nutrition_data)
     _save_table('ingredient', ingredient_data)
 
-def add_storaged_ingredient(storage_id, mass_g, expiration_date, production_end_date, processing_type):
+def add_storaged_ingredient(storage_id, mass_g, start_date, end_date, expiration_date, mode, processing_type):
     data = _load_table('storaged-ingredient')
+    ingredients = _load_table('ingredient')
+    
+    # Find the ingredient
+    ingredient = next((item for item in ingredients if item['id'] == storage_id), None)
+    if not ingredient:
+        raise ValueError(f"Ingredient with ID {storage_id} not found.")
+    
+    # For production mode, check if the ingredient is producible
+    if mode == "production":
+        if not ingredient.get('production_time', {}).get('producible', False):
+            raise ValueError(f"Ingredient {ingredient['name'].get('kor', 'N/A')} cannot be produced.")
+    
     new_id = _get_next_id('storaged-ingredient')
     new_item = {
         "id": new_id,
         "storage-id": storage_id,
         "mass_g": mass_g,
-        "start_date": production_end_date,
+        "mode": mode,
+        "start_date": start_date,
+        "end_date": end_date,
         "expiration_date": expiration_date,
-        "production_end_date": production_end_date,
         "processing_type": processing_type
     }
     data.append(new_item)
     _save_table('storaged-ingredient', data)
-    print(f"New storaged ingredient batch added with ID {new_id}.")
+    print(f"New {mode} ingredient batch added with ID {new_id}.")
     return new_id
 
 def add_cooking_method(name, description, research_ids):

@@ -143,27 +143,80 @@ def add_storaged_ingredient_route():
         try:
             storage_id = int(request.form['storage_id'])
             mass_g = int(request.form['mass_g'])
+            mode = request.form['mode']
+            start_date = request.form['start_date']
+            end_date = request.form['end_date']
             expiration_date = request.form['expiration_date']
-            production_end_date = request.form['production_end_date']
             processing_type = request.form['processing_type']
 
+            # Validate dates format
             try:
-                datetime.strptime(expiration_date, '%Y-%m-%d')
-                datetime.strptime(production_end_date, '%Y-%m-%d')
+                start_date_obj = datetime.strptime(start_date, '%Y-%m-%d')
+                end_date_obj = datetime.strptime(end_date, '%Y-%m-%d')
+                expiration_date_obj = datetime.strptime(expiration_date, '%Y-%m-%d')
             except ValueError:
                 flash("날짜 형식이 올바르지 않습니다. YYYY-MM-DD 형식으로 입력해주세요.", 'danger')
                 all_ingredients = db._load_table('ingredient')
                 return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
 
+            # Get ingredient data for validation
+            ingredient = next((item for item in db._load_table('ingredient') if item['id'] == storage_id), None)
+            if not ingredient:
+                flash(f"해당 ID({storage_id})의 식재료를 찾을 수 없습니다.", 'danger')
+                all_ingredients = db._load_table('ingredient')
+                return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
+
+            # Additional validations based on mode
+            today = datetime.now().date()
+            start_date = start_date_obj.date()
+            end_date = end_date_obj.date()
+
+            if start_date < today:
+                flash("시작일은 오늘 이후여야 합니다.", 'danger')
+                all_ingredients = db._load_table('ingredient')
+                return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
+
+            if expiration_date_obj.date() <= end_date:
+                flash("보관 기한은 종료일 이후여야 합니다.", 'danger')
+                all_ingredients = db._load_table('ingredient')
+                return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
+
+            if mode == 'production':
+                # Check if ingredient is producible
+                if not ingredient.get('production_time', {}).get('producible', False):
+                    flash(f"선택한 식재료({ingredient['name'].get('kor', 'N/A')})는 생산이 불가능합니다.", 'danger')
+                    all_ingredients = db._load_table('ingredient')
+                    return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
+
+                # Validate production time
+                days_diff = (end_date - start_date).days
+                min_time = ingredient['production_time'].get('min', 0)
+                max_time = ingredient['production_time'].get('max', 0)
+
+                if days_diff < min_time or days_diff > max_time:
+                    flash(f"생산 기간이 유효하지 않습니다. {ingredient['name'].get('kor', 'N/A')}의 생산 기간은 {min_time}~{max_time}일입니다.", 'danger')
+                    all_ingredients = db._load_table('ingredient')
+                    return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
+            else:  # storage mode
+                if start_date != end_date:
+                    flash("보관 모드에서는 시작일과 종료일이 같아야 합니다.", 'danger')
+                    all_ingredients = db._load_table('ingredient')
+                    return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
+
+            # All validations passed, add the storaged ingredient
             db.add_storaged_ingredient(
                 storage_id=storage_id,
                 mass_g=mass_g,
+                start_date=start_date.strftime('%Y-%m-%d'),
+                end_date=end_date.strftime('%Y-%m-%d'),
                 expiration_date=expiration_date,
-                production_end_date=production_end_date,
+                mode=mode,
                 processing_type=processing_type
             )
-            flash(f"보관 식재료가 성공적으로 추가되었습니다.", 'success')
+            flash(f"{mode.capitalize()} 식재료가 성공적으로 추가되었습니다.", 'success')
             return redirect(url_for('add_data.add_storaged_ingredient_route'))
+        except ValueError as e:
+            flash(str(e), 'danger')
         except Exception as e:
             flash(f"오류가 발생했습니다: {e}", 'danger')
     all_ingredients = db._load_table('ingredient')

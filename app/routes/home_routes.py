@@ -211,8 +211,9 @@ def index():
     for item in stored_ingredients:
         ingredient_id = item.get('storage-id')
         mass = item.get('mass_g', 0)
-        if ingredient_id:
-            available_ingredients[ingredient_id] = available_ingredients.get(ingredient_id, 0) + mass
+        if item['mode'] == 'production':
+            if ingredient_id:
+                available_ingredients[ingredient_id] = available_ingredients.get(ingredient_id, 0) + mass
 
     # 3. Filter makeable dishes and score them
     scored_dishes = []

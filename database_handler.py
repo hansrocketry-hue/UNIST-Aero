@@ -97,13 +97,11 @@ def add_dish(dish_type, name, image_url, required_ingredient_ids, required_cooki
     new_id = _get_next_id('dish')
     new_item = {
         "id": new_id,
-        "type": dish_type,
         "name": name,
-        "image_url": image_url,
         "required_ingredient_ids": required_ingredient_ids,
-        "required_cooking_method_ids": required_cooking_method_ids,
+        "cooking_instructions": cooking_instructions,
         "nutrition_info": nutrition_info,
-        "cooking_instructions": cooking_instructions
+        "cooking-method-ids": required_cooking_method_ids
     }
     data.append(new_item)
     _save_table('dish', data)

@@ -17,7 +17,10 @@ def visualize_home():
         'research-data': db._load_table('research-data'),
         'dish': db._load_table('dish'),
     }
-    return render_template('visualize.html', data=data)
+    ingredients = data['ingredient']
+    cooking_methods = data['cooking-methods']
+    dishes = data['dish']
+    return render_template('visualize.html', data=data, ingredients=ingredients, cooking_methods=cooking_methods, dishes=dishes)
 
 @bp.route('/research/<int:research_id>')
 def research_detail(research_id):
@@ -52,9 +55,21 @@ def cooking_method_detail(method_id):
     related_dishes = []
     if method:
         dishes = db._load_table('dish')
-        related_dishes = [d for d in dishes if method_id in d.get('required_cooking_method_ids', [])]
+        # dish의 조리방법 필드명 변경 반영
+        related_dishes = [d for d in dishes if method_id in d.get('cooking-method-ids', [])]
     research_data = db._load_table('research-data')
     return render_template('cooking_method_detail.html', method=method, related_dishes=related_dishes, research_data=research_data)
+
+@bp.route('/dish/<int:dish_id>')
+def dish_detail(dish_id):
+    """레시피(요리) 상세 페이지"""
+    dishes = db._load_table('dish')
+    dish = next((d for d in dishes if d['id'] == dish_id), None)
+    cooking_methods = db._load_table('cooking-methods')
+    # 필요한 조리방법 정보 추출
+    method_ids = dish.get('cooking-method-ids', []) if dish else []
+    required_methods = [m for m in cooking_methods if m['id'] in method_ids]
+    return render_template('dish_detail.html', dish=dish, required_methods=required_methods)
 
 @bp.route('/storaged-ingredient')
 def visualize_storaged_ingredient():

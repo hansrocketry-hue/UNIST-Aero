@@ -106,27 +106,28 @@ def add_research_data_route():
 def add_dish_route():
     if request.method == 'POST':
         try:
-            dish_type = request.form['dish_type']
             name_codes = request.form.getlist('name_codes')
             name_names = request.form.getlist('name_names')
             name_dict = dict(zip(name_codes, name_names))
 
-            image_url = request.form['image_url']
             req_ing_ids = [int(x) for x in request.form.getlist('required_ingredient_ids')]
-            req_cook_ids = [int(x) for x in request.form.getlist('required_cooking_method_ids')]
-            calories = float(request.form['calories'])
-            cooking_instructions_codes = request.form.getlist('cooking_instructions_codes')
-            cooking_instructions_names = request.form.getlist('cooking_instructions_names')
-            cooking_instructions_dict = dict(zip(cooking_instructions_codes, cooking_instructions_names))
+            req_cook_ids = [int(x) for x in request.form.getlist('cooking-method-ids')]
+            cooking_instructions = request.form['cooking_instructions']
+
+            # nutrition_info는 여러 nutrient를 리스트로 받음
+            nutrition_info = []
+            nut_names = request.form.getlist('nutrient_name')
+            nut_values = request.form.getlist('nutrient_value')
+            for n, v in zip(nut_names, nut_values):
+                if n and v:
+                    nutrition_info.append({"name": n, "amount_per_dish": float(v)})
 
             db.add_dish(
-                dish_type=dish_type,
                 name=name_dict,
-                image_url=image_url,
                 required_ingredient_ids=req_ing_ids,
                 required_cooking_method_ids=req_cook_ids,
-                nutrition_info={"calories": calories, "nutrients_per_unit_mass": {}},
-                cooking_instructions=cooking_instructions_dict
+                nutrition_info=nutrition_info,
+                cooking_instructions=cooking_instructions
             )
             flash(f"'{name_dict.get('kor', list(name_dict.values())[0])}' 요리가 성공적으로 추가되었습니다.", 'success')
             return redirect(url_for('add_data.add_dish_route'))

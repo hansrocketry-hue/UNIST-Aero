@@ -16,34 +16,54 @@ def add_data_home():
 def add_ingredient_route():
     if request.method == 'POST':
         try:
+            # Build multilingual name dict safely
             name_codes = request.form.getlist('name_codes')
             name_names = request.form.getlist('name_names')
-            name_dict = dict(zip(name_codes, name_names))
+            name_dict = {}
+            # Zip by index to be resilient against mismatched lengths
+            for i in range(min(len(name_codes), len(name_names))):
+                code = name_codes[i]
+                val = name_names[i]
+                if code and val:
+                    name_dict[code] = val
 
             if not name_dict or not any(name_dict.values()):
                 flash('최소 하나 이상의 언어로 이름을 입력해야 합니다.', 'danger')
                 return redirect(url_for('add_data.add_ingredient_route'))
 
-            research_ids = [int(x) for x in request.form.getlist('research_ids')]
-            details = request.form['details']
-            production_time = request.form['production_time']
-            
+            # Parse research ids safely (ignore invalid values)
+            research_ids = []
+            for raw in request.form.getlist('research_ids'):
+                try:
+                    research_ids.append(int(raw))
+                except (ValueError, TypeError):
+                    continue
+
+            # details and production_time may be optional in the form; use .get to avoid KeyError
+            details = request.form.get('details', '')
+            production_time = request.form.get('production_time', '')
+
+            # Parse nutrition fields robustly
             nutrient_names = request.form.getlist('nutrient_name')
             nutrient_values = request.form.getlist('nutrient_value')
-            
-            # Create nutrients list for the new format
             nutrition_info = []
-            for name, value in zip(nutrient_names, nutrient_values):
-                if name and value:
-                    nutrition_info.append({
-                        "name": name,
-                        "amount_per_unit_mass": float(value)
-                    })
+            for n, v in zip(nutrient_names, nutrient_values):
+                if not n:
+                    continue
+                try:
+                    fv = float(v)
+                except (ValueError, TypeError):
+                    # skip invalid numeric values
+                    continue
+                nutrition_info.append({
+                    "name": n,
+                    "amount_per_unit_mass": fv
+                })
 
             db.add_ingredient(
                 name=name_dict,
                 research_ids=research_ids,
-                nutrition_info=nutrition_info,
+                nutrition_data=nutrition_info,
                 production_time=production_time
             )
             

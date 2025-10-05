@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
 from .auth_routes import login_required
 import database_handler as db
 from datetime import datetime, timedelta
@@ -280,3 +280,24 @@ def add_storaged_ingredient_route():
             flash(f"오류가 발생했습니다: {e}", 'danger')
     all_ingredients = db._load_table('ingredient')
     return render_template('add_storaged_ingredient_form.html', all_ingredients=all_ingredients)
+
+@bp.route('/nutrition-category', methods=['POST'])
+@login_required
+def add_nutrition_category_route():
+    """새로운 영양 정보 카테고리 추가"""
+    try:
+        name = request.form.get('name')
+        unit = request.form.get('unit')
+
+        if not name or not unit:
+            return jsonify({'success': False, 'message': 'Name and unit are required.'}), 400
+
+        new_category = db.add_nutrition_category(name, unit)
+        
+        if new_category:
+            return jsonify({'success': True, 'category': new_category})
+        else:
+            return jsonify({'success': False, 'message': 'Category already exists or another error occurred.'}), 409
+
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500

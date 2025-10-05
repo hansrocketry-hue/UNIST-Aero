@@ -40,6 +40,10 @@
             {
                 "name": "Folate",
                 "amount_per_unit_mass": 0.16
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 20.0
             }
         ],
         "production_time": {

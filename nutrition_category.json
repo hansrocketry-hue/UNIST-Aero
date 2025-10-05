@@ -73,5 +73,9 @@
         "name": "Vitamin D",
         "unit": "mcg",
         "recommended_daily_intake": 15
+    },
+    {
+        "name": "amino acid",
+        "unit": "g"
     }
 ]

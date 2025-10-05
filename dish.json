@@ -175,59 +175,74 @@
             "kor": "간장 버섯밥",
             "eng": "Soy Sauce Mushroom Rice"
         },
-        "cooking_instructions": "1. 쌀(70g)과 버섯(10g)을 밀폐 주머니에 넣고 물로 쌀 10분, 버섯 5분간 재수화한다.\n2. 간장(15g)을 고르게 섞는다.\n3. 푸드워머에서 80°C로 약 20분간 가열한다.\n4. 소금을 넣고 섞은 후 밀폐 주머니에 담아 제공한다",
+        "cooking_instructions": {
+            "kor": "1. 쌀(70g)과 버섯(10g)을 밀폐 주머니에 넣고 물로 쌀 10분, 버섯 5분간 재수화한다.\r\n2. 간장(15g)을 고르게 섞는다.\r\n3. 푸드워머에서 80°C로 약 20분간 가열한다.\r\n4. 소금을 넣고 섞은 후 밀폐 주머니에 담아 제공한다",
+            "eng": "1. 쌀(70g)과 버섯(10g)을 밀폐 주머니에 넣고 물로 쌀 10분, 버섯 5분간 재수화한다.\r\n2. 간장(15g)을 고르게 섞는다.\r\n3. 푸드워머에서 80°C로 약 20분간 가열한다.\r\n4. 소금을 넣고 섞은 후 밀폐 주머니에 담아 제공한다"
+        },
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_dish": 261.0
+                "amount_per_dish": 5.6
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_dish": 0.17
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_dish": 0.018
-            },
-            {
-                "name": "Fat",
-                "amount_per_dish": 0.01
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 15.2
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Protein",
-                "amount_per_dish": 0.05
+                "amount_per_dish": 0.168
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.042
             },
             {
                 "name": "Sodium",
-                "amount_per_dish": 18
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.122
+                "amount_per_dish": 0.182
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.058
+                "amount_per_dish": 0.238
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 2.64
+                "amount_per_dish": 5.040000000000001
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_dish": 0.228
+                "amount_per_dish": 0.33599999999999997
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 39.2
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_dish": 0.4
+                "amount_per_dish": 2.8000000000000003
             },
             {
                 "name": "Vitamin D",
-                "amount_per_dish": 1.0
+                "amount_per_dish": 7.0
+            },
+            {
+                "name": "amino acid",
+                "amount_per_dish": 1400.0
             }
         ],
         "cooking-method-ids": [
@@ -244,7 +259,8 @@
                 "id": 13,
                 "amount_g": 70.0
             }
-        ]
+        ],
+        "image_url": ""
     },
     {
         "id": 4,

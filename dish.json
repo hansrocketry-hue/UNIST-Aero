@@ -2,65 +2,78 @@
     {
         "id": 1,
         "name": {
-            "kor": "된장 청경채국",
-            "eng": "Doenjang Bok Choy Soup"
+            "kor": "오 이거 바뀌나",
+            "eng": "test"
         },
-        "cooking_instructions": "1.건조된 청경채(5g)를 밀폐 재수화 주머니에 넣고 174g 물로 5분간 재수화한다.\n2. 재수화된 청경채에 된장과 마늘 분말(1g)을 섞는다.\n3. 밀폐 용기에 넣고 푸드워머에서 80 °C로 약 8 분간 가열한다.\n4. 소금을 넣고 고르게 섞이도록 밀폐 주머니에서 잘 저은 후 제공한다",
+        "cooking_instructions": {
+            "kor": "나중에 삭제할 항목",
+            "eng": "b"
+        },
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_dish": 91.35
+                "amount_per_dish": 0.68
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_dish": 0.05
+                "amount_per_dish": 0.0
             },
             {
-                "name": "Dietary Fiber",
-                "amount_per_dish": 0.003
+                "name": "Protein",
+                "amount_per_dish": 0.024
             },
             {
                 "name": "Fat",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_dish": 0.0086
+            },
+            {
+                "name": "Sodium",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_dish": 0.015000000000000001
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_dish": 0.0094
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_dish": 0.07400000000000001
+            },
+            {
+                "name": "Vitamin B6",
                 "amount_per_dish": 0.02
             },
             {
                 "name": "Folate",
-                "amount_per_dish": 4.9
+                "amount_per_dish": 6.800000000000001
             },
             {
-                "name": "Protein",
-                "amount_per_dish": 0.04
-            },
-            {
-                "name": "Sodium",
-                "amount_per_dish": 23
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_dish": 0.006
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_dish": 0.0055
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_dish": 0.04
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_dish": 0.019
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_dish": 2.6
+                "amount_per_dish": 5.800000000000001
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_dish": 0.0
             }
         ],
         "cooking-method-ids": [
             3,
-            4,
-            7,
-            8
+            4
         ],
         "required_ingredients": [
             {
@@ -68,46 +81,47 @@
                 "amount_g": 5.0
             },
             {
-                "id": 15,
-                "amount_g": 1.0
+                "id": 16,
+                "amount_g": 2.2
             }
-        ]
+        ],
+        "image_url": ""
     },
     {
         "id": 2,
-        "name": {
-            "kor": "된장 비빔밥",
-            "eng": "Doenjang Bibimbap"
+        "name": "Vitamin D",
+        "cooking_instructions": {
+            "kor": "-",
+            "eng": "-"
         },
-        "cooking_instructions": "1. 쌀(70g)과 채소(10g)를 밀폐 주머니에 넣고 200g 물로 쌀10분, 채소 5분간 재수화한다.\n2. 재수화된 혼합물에 된장(20g)을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 20분간 가열하여 맛을 낸다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
                 "name": "Calories (Total)",
-                "amount_per_dish": 341.0
+                "amount_per_dish": 5.04
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_dish": 0.2
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Protein",
+                "amount_per_dish": 0.112
+            },
+            {
+                "name": "Fat",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Dietary Fiber",
                 "amount_per_dish": 0.014
             },
             {
-                "name": "Fat",
-                "amount_per_dish": 0.02
-            },
-            {
-                "name": "Folate",
-                "amount_per_dish": 11.2
-            },
-            {
-                "name": "Protein",
-                "amount_per_dish": 0.06
-            },
-            {
                 "name": "Sodium",
-                "amount_per_dish": 15
+                "amount_per_dish": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -124,6 +138,22 @@
             {
                 "name": "Vitamin B6",
                 "amount_per_dish": 0.21
+            },
+            {
+                "name": "Folate",
+                "amount_per_dish": 11.200000000000001
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_dish": 0.0
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_dish": 0.0
             }
         ],
         "cooking-method-ids": [
@@ -136,7 +166,8 @@
                 "id": 1,
                 "amount_g": 70.0
             }
-        ]
+        ],
+        "image_url": ""
     },
     {
         "id": 3,

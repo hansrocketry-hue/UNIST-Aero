@@ -9,22 +9,32 @@
             <a href="{{ url_for('edit_data.edit_dish_route', dish_id=dish.id) }}" 
                class="btn btn-primary">수정하기</a>
         </div>
-        <h1>{{ dish.name[session.get('lang', 'kor')] }}</h1>
+        <h1>
+            {% if dish.name is mapping %}
+                {{ dish.name[session.get('lang', 'kor')] }}
+            {% else %}
+                {{ dish.name }}
+            {% endif %}
+        </h1>
         <p><strong>ID:</strong> {{ dish.id }}</p>
         
         {% if dish.image_url %}
             <div class="mb-4">
-                <img src="{{ dish.image_url }}" alt="{{ dish.name[session.get('lang', 'kor')] }}" 
+                <img src="{{ dish.image_url }}" alt="{% if dish.name is mapping %}{{ dish.name[session.get('lang', 'kor')] }}{% else %}{{ dish.name }}{% endif %}" 
                      class="img-fluid" style="max-width: 500px;">
             </div>
         {% endif %}
 
         <h2>{% if session.get('lang','kor') == 'eng' %}Name{% else %}이름{% endif %}</h2>
-        <ul>
-            {% for lang, text in dish.name.items() %}
-                <li><strong>{{ lang.upper() }}:</strong> {{ text }}</li>
-            {% endfor %}
-        </ul>
+        {% if dish.name is mapping %}
+            <ul>
+                {% for lang, text in dish.name.items() %}
+                    <li><strong>{{ lang.upper() }}:</strong> {{ text }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ dish.name }}</p>
+        {% endif %}
 
         <h2>{% if session.get('lang','kor') == 'eng' %}Required Ingredients{% else %}필요한 재료{% endif %}</h2>
         <table class="table">

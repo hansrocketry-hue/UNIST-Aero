@@ -212,7 +212,17 @@
                 <tbody>
                     {% for item in data['dish'] %}
                     <tr>
-                        <td>{{ item.name[session.get('lang', 'kor')] }}</td>
+                        <td>
+                            <a href="{{ url_for('visualize.dish_detail', dish_id=item.id) }}" class="btn btn-sm {% if item.name is mapping and item.name.get(session.get('lang', 'kor')) %}btn-outline-primary{% else %}btn-primary{% endif %}">
+                                {% if item.name is mapping %}
+                                    {{ item.name[session.get('lang', 'kor')] }}
+                                {% elif item.name is string %}
+                                    {{ item.name }}
+                                {% else %}
+                                    {% if session.get('lang','kor') == 'eng' %}View Details{% else %}상세 보기{% endif %}
+                                {% endif %}
+                            </a>
+                        </td>
                         <td>
                             {# New schema: required_ingredients is list of {id, amount_g}. Keep fallback for legacy required_ingredient_ids. #}
                             {% if item.required_ingredients is defined %}

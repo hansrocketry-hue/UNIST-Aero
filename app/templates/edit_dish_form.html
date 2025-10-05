@@ -16,12 +16,14 @@
                         <div class="mb-3">
                             <label for="name_kor" class="form-label">이름 (한글)</label>
                             <input type="text" class="form-control" id="name_kor" name="name_kor" 
-                                   value="{{ dish.name.kor }}" required>
+                                   value="{% if dish.name is mapping %}{{ dish.name.kor }}{% elif dish.name is string %}{{ dish.name }}{% endif %}" 
+                                   required>
                         </div>
                         <div class="mb-3">
                             <label for="name_eng" class="form-label">이름 (영문)</label>
                             <input type="text" class="form-control" id="name_eng" name="name_eng" 
-                                   value="{{ dish.name.eng }}" required>
+                                   value="{% if dish.name is mapping %}{{ dish.name.eng }}{% elif dish.name is string %}{{ dish.name }}{% endif %}"
+                                   required>
                         </div>
                         <div class="mb-3">
                             <label for="image_url" class="form-label">이미지 URL</label>

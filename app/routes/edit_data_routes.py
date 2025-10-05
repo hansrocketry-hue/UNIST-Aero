@@ -2,7 +2,7 @@
 edit_data_routes.py - 데이터 수정을 위한 라우트 모듈
 """
 
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 import database_handler as db
 from datetime import datetime
 
@@ -120,12 +120,21 @@ def edit_dish_route(dish_id):
     ingredients = db._load_table('ingredient')
     cooking_methods = db._load_table('cooking-methods')
     nutrition_categories = db.get_nutrition_categories()
-    
+    # Normalize dish['name'] into a dict for the template (kor/eng)
+    if isinstance(dish.get('name'), str):
+        dish['name'] = {
+            'kor': dish['name'],
+            'eng': dish['name']
+        }
+    elif not dish.get('name'):
+        dish['name'] = {'kor': '', 'eng': ''}
+
     return render_template('edit_dish_form.html',
                          dish=dish,
                          ingredients=ingredients,
                          cooking_methods=cooking_methods,
                          nutrition_categories=nutrition_categories)
+
 
 @bp.route('/dish/<int:dish_id>', methods=['POST'])
 def edit_dish_submit(dish_id):
@@ -155,10 +164,24 @@ def edit_dish_submit(dish_id):
         'kor': request.form.get('instructions_kor'),
         'eng': request.form.get('instructions_eng')
     }
+    # Debug: log incoming form data to console to help diagnose save issues
+    try:
+        print(f"[edit_dish_submit] dish_id={dish_id}")
+        print(f"[edit_dish_submit] name={name}")
+        print(f"[edit_dish_submit] image_url={image_url}")
+        print(f"[edit_dish_submit] required_ingredients={required_ingredients}")
+        print(f"[edit_dish_submit] required_cooking_method_ids={required_cooking_method_ids}")
+        print(f"[edit_dish_submit] cooking_instructions={cooking_instructions}")
+    except Exception as e:
+        print('[edit_dish_submit] error printing form data:', e)
 
     # 영양 정보는 자동 계산되도록 None으로 전달
-    db.update_dish(dish_id, name, image_url, required_ingredients, 
-                  required_cooking_method_ids, nutrition_data=None,
-                  cooking_instructions=cooking_instructions)
-                  
+    try:
+        db.update_dish(dish_id, name, image_url, required_ingredients,
+                      required_cooking_method_ids, nutrition_data=None,
+                      cooking_instructions=cooking_instructions)
+    except Exception as e:
+        # Log error and return to detail page with no crash
+        print(f"[edit_dish_submit] update_dish raised exception: {e}")
+    
     return redirect(url_for('visualize.dish_detail', dish_id=dish_id))

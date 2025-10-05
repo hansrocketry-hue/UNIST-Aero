@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% if session.get('lang','kor') == 'eng' %}Edit Dish{% else %}요리 정보 수정{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>{% if session.get('lang','kor') == 'eng' %}Edit Dish{% else %}요리 정보 수정{% endif %}</h1>
+    
+    <form method="POST" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="name_kor" class="form-label">{% if session.get('lang','kor') == 'eng' %}Name (Korean){% else %}이름 (한국어){% endif %}</label>
+            <input type="text" class="form-control" id="name_kor" name="name_kor" value="{{ dish.name.kor }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="name_eng" class="form-label">{% if session.get('lang','kor') == 'eng' %}Name (English){% else %}이름 (영어){% endif %}</label>
+            <input type="text" class="form-control" id="name_eng" name="name_eng" value="{{ dish.name.eng }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{% if session.get('lang','kor') == 'eng' %}Required Ingredients{% else %}필요한 재료{% endif %}</label>
+            <div id="ingredients-container">
+                {% if dish.required_ingredients %}
+                    {% for req in dish.required_ingredients %}
+                        <div class="input-group mb-2">
+                            <select class="form-select ingredient-select" name="ingredient_ids[]" required>
+                                <option value="">{% if session.get('lang','kor') == 'eng' %}Select ingredient{% else %}재료 선택{% endif %}</option>
+                                {% for ingredient in ingredients %}
+                                    <option value="{{ ingredient.id }}" {% if ingredient.id == req.id %}selected{% endif %}>
+                                        {{ ingredient.name[session.get('lang', 'kor')] }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <input type="number" class="form-control" name="ingredient_amounts[]" 
+                                   placeholder="{% if session.get('lang','kor') == 'eng' %}Amount (g){% else %}양 (g){% endif %}" 
+                                   value="{{ req.amount_g }}" required>
+                            <button type="button" class="btn btn-danger" onclick="removeIngredient(this)">-</button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="addIngredient()">
+                {% if session.get('lang','kor') == 'eng' %}Add Ingredient{% else %}재료 추가{% endif %}
+            </button>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{% if session.get('lang','kor') == 'eng' %}Cooking Methods{% else %}조리 방법{% endif %}</label>
+            <div id="methods-container">
+                {% for method_id in dish['cooking-method-ids'] %}
+                    <div class="input-group mb-2">
+                        <select class="form-select method-select" name="cooking_method_ids[]" required>
+                            <option value="">{% if session.get('lang','kor') == 'eng' %}Select method{% else %}방법 선택{% endif %}</option>
+                            {% for method in cooking_methods %}
+                                <option value="{{ method.id }}" {% if method.id == method_id %}selected{% endif %}>
+                                    {{ method.name[session.get('lang', 'kor')] }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <button type="button" class="btn btn-danger" onclick="removeMethod(this)">-</button>
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="addMethod()">
+                {% if session.get('lang','kor') == 'eng' %}Add Method{% else %}방법 추가{% endif %}
+            </button>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{% if session.get('lang','kor') == 'eng' %}Nutrition Information{% else %}영양 정보{% endif %}</label>
+            <div id="nutrition-container">
+                {% if dish.nutrition_info %}
+                    {% for nutrient in dish.nutrition_info %}
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" name="nutrient_names[]" placeholder="Name" value="{{ nutrient.name }}" required>
+                            <input type="number" step="0.01" class="form-control" name="nutrient_amounts[]" placeholder="Amount" value="{{ nutrient.amount_per_dish }}" required>
+                            <input type="text" class="form-control" name="nutrient_units[]" placeholder="Unit" value="{{ nutrient.unit }}" required>
+                            <button type="button" class="btn btn-danger" onclick="removeNutrient(this)">-</button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <button type="button" class="btn btn-secondary" onclick="addNutrient()">
+                {% if session.get('lang','kor') == 'eng' %}Add Nutrient{% else %}영양소 추가{% endif %}
+            </button>
+        </div>
+
+        <div class="mb-3">
+            <label for="cooking_instructions_kor" class="form-label">{% if session.get('lang','kor') == 'eng' %}Cooking Instructions (Korean){% else %}조리 방법 (한국어){% endif %}</label>
+            <textarea class="form-control" id="cooking_instructions_kor" name="cooking_instructions_kor" rows="4" required>{{ dish.cooking_instructions.kor if dish.cooking_instructions is mapping else dish.cooking_instructions }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="cooking_instructions_eng" class="form-label">{% if session.get('lang','kor') == 'eng' %}Cooking Instructions (English){% else %}조리 방법 (영어){% endif %}</label>
+            <textarea class="form-control" id="cooking_instructions_eng" name="cooking_instructions_eng" rows="4">{{ dish.cooking_instructions.eng if dish.cooking_instructions is mapping }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">{% if session.get('lang','kor') == 'eng' %}Save{% else %}저장{% endif %}</button>
+        <a href="{{ url_for('visualize.dish_detail', dish_id=dish.id) }}" class="btn btn-secondary ms-2">
+            {% if session.get('lang','kor') == 'eng' %}Cancel{% else %}취소{% endif %}
+        </a>
+    </form>
+</div>
+
+<script>
+function addIngredient() {
+    const container = document.getElementById('ingredients-container');
+    const div = document.createElement('div');
+    div.className = 'input-group mb-2';
+    div.innerHTML = `
+        <select class="form-select ingredient-select" name="ingredient_ids[]" required>
+            <option value="">{% if session.get('lang','kor') == 'eng' %}Select ingredient{% else %}재료 선택{% endif %}</option>
+            {% for ingredient in ingredients %}
+                <option value="{{ ingredient.id }}">{{ ingredient.name[session.get('lang', 'kor')] }}</option>
+            {% endfor %}
+        </select>
+        <input type="number" class="form-control" name="ingredient_amounts[]" 
+               placeholder="{% if session.get('lang','kor') == 'eng' %}Amount (g){% else %}양 (g){% endif %}" required>
+        <button type="button" class="btn btn-danger" onclick="removeIngredient(this)">-</button>
+    `;
+    container.appendChild(div);
+}
+
+function removeIngredient(button) {
+    button.parentElement.remove();
+}
+
+function addMethod() {
+    const container = document.getElementById('methods-container');
+    const div = document.createElement('div');
+    div.className = 'input-group mb-2';
+    div.innerHTML = `
+        <select class="form-select method-select" name="cooking_method_ids[]" required>
+            <option value="">{% if session.get('lang','kor') == 'eng' %}Select method{% else %}방법 선택{% endif %}</option>
+            {% for method in cooking_methods %}
+                <option value="{{ method.id }}">{{ method.name[session.get('lang', 'kor')] }}</option>
+            {% endfor %}
+        </select>
+        <button type="button" class="btn btn-danger" onclick="removeMethod(this)">-</button>
+    `;
+    container.appendChild(div);
+}
+
+function removeMethod(button) {
+    button.parentElement.remove();
+}
+
+function addNutrient() {
+    const container = document.getElementById('nutrition-container');
+    const div = document.createElement('div');
+    div.className = 'input-group mb-2';
+    div.innerHTML = `
+        <input type="text" class="form-control" name="nutrient_names[]" placeholder="Name" required>
+        <input type="number" step="0.01" class="form-control" name="nutrient_amounts[]" placeholder="Amount" required>
+        <input type="text" class="form-control" name="nutrient_units[]" placeholder="Unit" required>
+        <button type="button" class="btn btn-danger" onclick="removeNutrient(this)">-</button>
+    `;
+    container.appendChild(div);
+}
+
+function removeNutrient(button) {
+    button.parentElement.remove();
+}
+
+// Form validation
+(function() {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms)
+        .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
+</script>
+{% endblock %}

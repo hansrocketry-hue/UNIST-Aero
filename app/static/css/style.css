@@ -152,3 +152,7 @@ form button {
 .nutrition-grid {
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
 }
+input[type="text"], input[type="password"] {
+  width: 200px !important;/* 원하는 고정 너비 */
+  box-sizing: border-box !important; /* padding/border를 포함하도록 */
+}

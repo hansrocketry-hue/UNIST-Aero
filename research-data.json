@@ -154,17 +154,6 @@
         }
     },
     {
-        "id": 16,
-        "reference_data": {
-            "link": "None",
-            "title": "Nutritional and Bioactive Compounds of Bok-choy: Beneficial Effects …"
-        },
-        "summary": {
-            "kor": "비타민, 미네랄, 섬유소, 플라보노이드 등 구성 정리됨",
-            "eng": "Vitamins, minerals, fiber, flavonoids, etc. are organized"
-        }
-    },
-    {
         "id": 17,
         "reference_data": {
             "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7410185/",
@@ -198,50 +187,6 @@
         }
     },
     {
-        "id": 20,
-        "reference_data": {
-            "link": "None",
-            "title": "Nutritional and post-harvest quality preservation of mushrooms"
-        },
-        "summary": {
-            "kor": "수확 후 버섯의 영양소 보존 방법 (건조, 보관 등) 연구됨.  ",
-            "eng": "After harvesting, the nutrient preservation method (drying, storage, etc.) is studied."
-        }
-    },
-    {
-        "id": 21,
-        "reference_data": {
-            "link": "None",
-            "title": "Calcium Enrichment in Edible Mushrooms: A Review"
-        },
-        "summary": {
-            "kor": "버섯에 칼슘을 강화해서 재배했을 때의 성장, 대사물 변화 연구됨.  ",
-            "eng": "Growth when cultivated by strengthening calcium in mushrooms and changes in metabolites."
-        }
-    },
-    {
-        "id": 22,
-        "reference_data": {
-            "link": "None",
-            "title": "Kale: Review on nutritional composition, bio-active compounds, anti-nutritional factors, health beneficial properties and value-added products"
-        },
-        "summary": {
-            "kor": "케일의 비타민·미네랄·섬유·항영양소 등 광범위 정리됨.  ",
-            "eng": "Kale's vitamins, minerals, textiles, and anti -lime are organized."
-        }
-    },
-    {
-        "id": 23,
-        "reference_data": {
-            "link": "None",
-            "title": "Improving the Health-Benefits of Kales (Brassica oleracea var. acephala)"
-        },
-        "summary": {
-            "kor": "케일의 식물성 영양소, 항산화물질(폴리페놀, 글루코시놀레이트 등) 분석됨.  ",
-            "eng": "Cale's vegetable nutrients, antioxidants (polyphenols, glucocinolates, etc.) are analyzed."
-        }
-    },
-    {
         "id": 24,
         "reference_data": {
             "link": "https://www.sciencedirect.com/science/article/pii/S2405844022033813",
@@ -256,11 +201,11 @@
         "id": 25,
         "reference_data": {
             "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10052545/",
-            "title": "버섯의 칼슘 강화 재배 및 대사 영향"
+            "title": "Calcium Enrichment in Edible Mushrooms: A Review"
         },
         "summary": {
-            "kor": "None",
-            "eng": ""
+            "kor": "칼슘 강화된 버섯의 재배에 관한 연구",
+            "eng": "Calcium Enrichment in Edible Mushrooms"
         }
     },
     {
@@ -278,11 +223,11 @@
         "id": 27,
         "reference_data": {
             "link": "https://www.ars.usda.gov/news-events/news/research-news/2024/how-might-tomatoes-provide-health-benefits/",
-            "title": "토마토 섭취 후 대사·유전자 변화"
+            "title": "How Might Tomatoes Provide Health Benefits?"
         },
         "summary": {
-            "kor": "None",
-            "eng": ""
+            "kor": "토마토 섭취 후 대사, 유전자 변화",
+            "eng": "Metabolic and genetic changes after tomato consumption"
         }
     },
     {
@@ -294,17 +239,6 @@
         "summary": {
             "kor": "백미/현미 영양성분 및 비타민 B군 수치",
             "eng": "White America/Brown rice nutrition and vitamin B group figures"
-        }
-    },
-    {
-        "id": 29,
-        "reference_data": {
-            "link": "https://tools.myfooddata.com/nutrition-comparison/168875-168878/100g-100g",
-            "title": "백미와 현미의 비타민·미네랄 비교"
-        },
-        "summary": {
-            "kor": "None",
-            "eng": ""
         }
     },
     {
@@ -399,7 +333,7 @@
         "id": 38,
         "reference_data": {
             "link": "https://arxiv.org/abs/2505.16890",
-            "title": "Inkspot 변종 토마토 (외계 재배 조건 모사)"
+            "title": "Inkspot: A stress-resilient, anthocyanin rich, dwarf tomato variant for off-world cultivation"
         },
         "summary": {
             "kor": "달/화성 토양 유사 환경 하에서 스트레스 저항성 변종 토마토 실험됨 — 우주 적용 가능성 탐구됨.",
@@ -495,17 +429,6 @@
         }
     },
     {
-        "id": 47,
-        "reference_data": {
-            "link": "https://arxiv.org/abs/2505.16890",
-            "title": "Inkspot: A stress-resilient, anthocyanin rich, dwarf tomato variant for off-world cultivation"
-        },
-        "summary": {
-            "kor": "달/우주 유사 조건 하 토마토 변종 ‘Inkspot’의 내성 실험.  ",
-            "eng": "Resistance experiments of 'INKSPOT', a tomato variant under the moon/space similar conditions."
-        }
-    },
-    {
         "id": 48,
         "reference_data": {
             "link": "https://en.wikipedia.org/wiki/SVET_plant_growth_system",
@@ -517,32 +440,10 @@
         }
     },
     {
-        "id": 49,
-        "reference_data": {
-            "link": "https://www.esa.int/gsp/ACT/doc/ARI/ARI Study Report/ACT-RPT-HAB-ARI-16-6101-Fungi_structures.pdf",
-            "title": "자실체(mushroom fruiting body)와 균사체(mycelia)의 공간 구조, 성장 가능성, 미세중력 조건 하에서의 구조 변화 등을 연구"
-        },
-        "summary": {
-            "kor": "NaN",
-            "eng": ""
-        }
-    },
-    {
         "id": 50,
         "reference_data": {
             "link": "https://www.davidmoore.org.uk/Assets/Printed_documents/my_reprints/1991_Moore_mushrooms_in_microgravityMycologist.pdf",
             "title": "방향성(gravity sensing), 버섯의 기울기 응답(gravitropism), 중력이 없는 조건에서의 자실체 형성 가능성 탐구"
-        },
-        "summary": {
-            "kor": "NaN",
-            "eng": ""
-        }
-    },
-    {
-        "id": 51,
-        "reference_data": {
-            "link": "None",
-            "title": "최초로 우주에서 굴뚝버섯(oyster mushroom)을 자랄지 실험 계획됨. microgravity 하에서 fruiting 가능성 확인 시도"
         },
         "summary": {
             "kor": "NaN",

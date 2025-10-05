@@ -36,7 +36,8 @@ def signup():
         except Exception as e:
             flash(f"입력 중 오류가 발생했습니다: {e}", 'danger')
     
-    all_ingredients = db.load_db().get('ingredient', [])
+    # load ingredient list from database_handler
+    all_ingredients = db._load_table('ingredient')
     return render_template('signup.html', all_ingredients=all_ingredients)
 
 @bp.route('/login', methods=['GET', 'POST'])

@@ -7,6 +7,35 @@ import database_handler as db
 
 bp = Blueprint('home', __name__, url_prefix='/')
 
+def get_all_base_ingredients(dish_id, all_dishes_map):
+    """Recursively find all base ingredients and their total amounts for a given dish."""
+    base_ingredients = {}
+    dish = all_dishes_map.get(dish_id)
+    if not dish or 'required_ingredients' not in dish:
+        return {}
+
+    for item in dish.get('required_ingredients', []):
+        item_id = item.get('id')
+        item_type = item.get('type')
+        amount = item.get('amount_g', 0)
+
+        if item_type == 'ingredient':
+            base_ingredients[item_id] = base_ingredients.get(item_id, 0) + amount
+        elif item_type == 'dish':
+            sub_ingredients = get_all_base_ingredients(item_id, all_dishes_map)
+            # The amount of the sub-dish itself is not used here, as we are calculating the base ingredients.
+            # If you needed to scale sub-ingredients by the sub-dish amount, you would do it here.
+            for sub_id, sub_amount in sub_ingredients.items():
+                base_ingredients[sub_id] = base_ingredients.get(sub_id, 0) + sub_amount
+    
+    return base_ingredients
+
+def get_display_name(item, lang):
+    """Return the name in the specified language, with a fallback to other languages."""
+    if not isinstance(item.get('name'), dict):
+        return item.get('name', 'N/A')
+    return item['name'].get(lang) or item['name'].get('kor') or item['name'].get('eng') or list(item['name'].values())[0]
+
 SCHOFIELD = {
     'male': [
         (0, 3, 59.512, -30.4),
@@ -49,11 +78,11 @@ def add_intake():
         return redirect(url_for('auth.login'))
 
     if request.method == 'POST':
-        # Get form data
         date = request.form.get('date')
         time = request.form.get('time')
         food_id = request.form.get('food_id')
-        # Load user and dish data
+        intake_action = request.form.get('intake_action')  # Differentiate between 'consume' and 'log_only'
+
         user = get_user_by_id(session['user_id'])
         dishes = db._load_table('dish')
         selected_dish = next((dish for dish in dishes if dish['id'] == food_id), None)
@@ -62,73 +91,55 @@ def add_intake():
             flash('Selected dish not found', 'error')
             return redirect(url_for('home.add_intake'))
 
-        # --- Start of ingredient deduction logic ---
-        storaged_ingredients = db._load_table('storaged-ingredient')
-        required_ingredients = selected_dish.get('required_ingredients', [])
-        
-        # 1. Check if all ingredients are in stock
-        for req_ing in required_ingredients:
-            req_id = req_ing.get('id')
-            req_amount = req_ing.get('amount_g', 0)
+        if intake_action == 'consume':
+            all_dishes_map = {dish['id']: dish for dish in dishes}
+            total_required_ingredients = get_all_base_ingredients(food_id, all_dishes_map)
 
-            # Find the corresponding item in storage
-            stock_item = next((item for item in storaged_ingredients if item.get('storage-id') == req_id and item.get('mode') == 'production'), None)
+            storaged_ingredients = db._load_table('storaged-ingredient')
             
-            if not stock_item or stock_item.get('mass_g', 0) < req_amount:
-                ingredients = db._load_table('ingredient')
-                ingredient_name = next((ing['name'].get(session.get('lang', 'kor'), 'N/A') for ing in ingredients if ing['id'] == req_id), 'Unknown Ingredient')
-                flash(f'{ingredient_name} is out of stock.', 'error')
-                return redirect(url_for('home.add_intake'))
+            # 1. Check stock for all base ingredients
+            for ing_id, ing_amount in total_required_ingredients.items():
+                stock_item = next((item for item in storaged_ingredients if item.get('storage-id') == ing_id and item.get('mode') == 'storage'), None)
+                if not stock_item or stock_item.get('mass_g', 0) < ing_amount:
+                    ingredients = db._load_table('ingredient')
+                    ingredient = next((ing for ing in ingredients if ing['id'] == ing_id), None)
+                    ingredient_name = get_display_name(ingredient, session.get('lang', 'kor')) if ingredient else 'Unknown Ingredient'
+                    flash(f'"{ingredient_name}" is out of stock to make this dish.', 'error')
+                    return redirect(url_for('home.add_intake'))
 
-        # 2. Deduct ingredients from stock (if all checks passed)
-        for req_ing in required_ingredients:
-            req_id = req_ing.get('id')
-            req_amount = req_ing.get('amount_g', 0)
+            # 2. Deduct all base ingredients from stock
+            for ing_id, ing_amount in total_required_ingredients.items():
+                for item in storaged_ingredients:
+                    if item.get('storage-id') == ing_id and item.get('mode') == 'storage':
+                        item['mass_g'] -= ing_amount
+                        break
             
-            for item in storaged_ingredients:
-                if item.get('storage-id') == req_id and item.get('mode') == 'production':
-                    item['mass_g'] -= req_amount
-                    break
-        
-        db._save_table('storaged-ingredient', storaged_ingredients)
-        # --- End of ingredient deduction logic ---
+            db._save_table('storaged-ingredient', storaged_ingredients)
 
-        # Create intake entry with dish_id only
-        new_intake = {
-            "time": time,
-            "dish_id": food_id
-        }
+        new_intake = {"time": time, "dish_id": food_id}
 
-        # Update user's food timeline
         if 'food_timeline' not in user:
             user['food_timeline'] = []
 
-        # Find or create date entry
         date_entry = next((entry for entry in user['food_timeline'] if entry['date'] == date), None)
         if date_entry:
             if 'intake' not in date_entry:
                 date_entry['intake'] = []
             date_entry['intake'].append(new_intake)
         else:
-            user['food_timeline'].append({
-                'date': date,
-                'intake': [new_intake]
-            })
+            user['food_timeline'].append({'date': date, 'intake': [new_intake]})
 
-        # Sort food timeline by date (most recent first)
         user['food_timeline'].sort(key=lambda x: x['date'], reverse=True)
-
-        # Update user data
         update_user(session['user_id'], user)
         flash('{% if session.get("lang","kor") == "eng" %}Food intake added successfully{% else %}섭취 기록이 추가되었습니다{% endif %}', 'success')
         return redirect(url_for('home.index'))
 
-    # GET request - show form
     dishes = db._load_table('dish')
+    lang = session.get('lang', 'kor')
+    for dish in dishes:
+        dish['display_name'] = get_display_name(dish, lang)
     today = datetime.now().strftime('%Y-%m-%d')
-    return render_template('add_intake_form.html', 
-                         dishes=dishes, 
-                         today=today)
+    return render_template('add_intake_form.html', dishes=dishes, today=today)
 
 # Define daily nutritional requirements
 DAILY_REQUIREMENTS = {
@@ -175,10 +186,8 @@ def index():
     user = get_user_by_id(user_id)
 
     if not user:
-        # This case might happen if the user was deleted but the session still exists
         return redirect(url_for('auth.logout'))
 
-    # Calculate today's total nutrient intake
     today_str = datetime.now().strftime('%Y-%m-%d')
     yesterday_str = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
     todays_intake_total = {key: 0 for key in DAILY_REQUIREMENTS.keys()}
@@ -187,31 +196,24 @@ def index():
     yesterday_timeline = None
 
     if 'food_timeline' in user:
-        # Load dishes for nutrition lookup
         dishes = db._load_table('dish')
         dish_map = {dish['id']: dish for dish in dishes}
 
         for entry in user['food_timeline']:
             if entry['date'] == today_str:
                 today_timeline = entry
-                for intake_item in entry['intake']:
-                    # Get dish from dish_id and add its nutrition to totals
+                for intake_item in entry.get('intake', []):
                     dish = dish_map.get(intake_item.get('dish_id'))
                     if dish and 'nutrition_info' in dish:
-                        # Calculate total mass of the dish
                         dish_mass = db.get_dish_total_mass(dish)
                         for item in dish['nutrition_info']:
                             if item['name'] in todays_intake_total:
-                                # Multiply per-gram nutrition by total dish mass
                                 per_gram = item.get('amount_per_unit_mass', 0)
                                 todays_intake_total[item['name']] += per_gram * dish_mass
             elif entry['date'] == yesterday_str:
                 yesterday_timeline = entry
-        print(todays_intake_total)
 
-    # Calculate percentage of daily requirement met
     nutrition_progress = {}
-
     bmr = schofield_bmr(user['weight'], user['age'], user['gender'])
     pal = user['activity_level']
 
@@ -230,24 +232,18 @@ def index():
             "unit": NUTRIENT_UNITS.get(nutrient, '')
         }
     
-    # START: Food Recommendation Algorithm
-    
-    # 1. Load data
     all_dishes = db._load_table('dish')
     stored_ingredients = db._load_table('storaged-ingredient')
     
-    # 2. Aggregate stored ingredients
     available_ingredients = {}
     for item in stored_ingredients:
-        ingredient_id = item.get('storage-id')
-        mass = item.get('mass_g', 0)
-        if item['mode'] == 'storage':
+        if item.get('mode') == 'storage':
+            ingredient_id = item.get('storage-id')
+            mass = item.get('mass_g', 0)
             if ingredient_id:
                 available_ingredients[ingredient_id] = available_ingredients.get(ingredient_id, 0) + mass
 
-    # 3. Filter makeable dishes and score them
     scored_dishes = []
-    
     like_ingredients = user.get('like', [])
     forbid_ingredients = user.get('forbid', [])
 
@@ -255,74 +251,55 @@ def index():
         is_makeable = True
         has_forbid_ingredient = False
         
-        # Check for forbidden ingredients
         if dish.get('required_ingredients'):
-            for req_ingredient in dish.get('required_ingredients', []):
-                if req_ingredient.get('id') in forbid_ingredients:
+            for req in dish['required_ingredients']:
+                if req.get('id') in forbid_ingredients:
                     has_forbid_ingredient = True
                     break
-        
         if has_forbid_ingredient:
-            continue # Skip dish with forbidden ingredient
+            continue
 
-        # Check if ingredients are available
         if dish.get('required_ingredients'):
-            for req_ingredient in dish.get('required_ingredients', []):
-                req_id = req_ingredient.get('id')
-                req_amount = req_ingredient.get('amount_g', 0)
-                if available_ingredients.get(req_id, 0) < req_amount:
+            for req in dish['required_ingredients']:
+                if available_ingredients.get(req.get('id'), 0) < req.get('amount_g', 0):
                     is_makeable = False
                     break
         
         if is_makeable:
-            # 4. Calculate score
             nutrition_score = 0
             preference_score = 0
-            
-            # Nutrition Score
             if dish.get('nutrition_info'):
-                # Calculate total mass of the dish
                 dish_mass = db.get_dish_total_mass(dish)
-                for nutrient_info in dish['nutrition_info']:
-                    nutrient_name = nutrient_info.get('name')
-                    # Multiply per-gram nutrition by total dish mass
-                    per_gram = nutrient_info.get('amount_per_unit_mass', 0)
+                for info in dish['nutrition_info']:
+                    nutrient_name = info.get('name')
+                    per_gram = info.get('amount_per_unit_mass', 0)
                     nutrient_amount = per_gram * dish_mass
-                    
                     requirement = DAILY_REQUIREMENTS.get(nutrient_name, 0)
                     intake = todays_intake_total.get(nutrient_name, 0)
-                    
                     gap = requirement - intake
                     if gap > 0 and requirement > 0:
-                        # Add score based on how much of the daily requirement is filled
                         nutrition_score += (nutrient_amount / requirement) * 100
 
-            # Preference Score
             if dish.get('required_ingredients'):
-                for req_ingredient in dish.get('required_ingredients', []):
-                    if req_ingredient.get('id') in like_ingredients:
-                        preference_score += 50 # Arbitrary bonus for liked ingredients
+                for req in dish['required_ingredients']:
+                    if req.get('id') in like_ingredients:
+                        preference_score += 50
 
             total_score = nutrition_score + preference_score
             scored_dishes.append({'dish': dish, 'score': total_score})
 
-    # 5. Sort and get top 3 recommendations
     scored_dishes.sort(key=lambda x: x['score'], reverse=True)
     
     recommended_food = []
+    lang = session.get('lang', 'kor')
     for scored_dish in scored_dishes[:3]:
         dish_data = scored_dish['dish']
-        lang = session.get('lang', 'kor')
-        dish_name = dish_data.get('name', {}).get(lang, 'N/A')
         recommended_food.append({
             'id': dish_data.get('id'),
-            'name': dish_name,
+            'name': get_display_name(dish_data, lang),
             'image': dish_data.get('image_url')
         })
 
-    # END: Food Recommendation Algorithm
-
-    # Load all dishes for displaying names
     dishes = db._load_table('dish')
     dish_map = {dish['id']: dish for dish in dishes}
     
@@ -333,7 +310,8 @@ def index():
         recommended_food=recommended_food,
         today_timeline=today_timeline,
         yesterday_timeline=yesterday_timeline,
-        dish_map=dish_map
+        dish_map=dish_map,
+        get_display_name=get_display_name
     )
 
 @bp.route('/edit_profile', methods=['GET', 'POST'])

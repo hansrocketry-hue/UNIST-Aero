@@ -13,7 +13,28 @@
                 <li><strong>{{ lang.upper() }}:</strong> {{ text }}</li>
             {% endfor %}
         </ul>
-        <p><strong>Calories:</strong> {{ ingredient.nutrition_info.calories }}</p>
+        <h2>Nutrition Information</h2>
+        {% if ingredient.nutrition_info %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nutrient</th>
+                    <th>Amount per unit mass</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nutrient in ingredient.nutrition_info %}
+                <tr>
+                    <td>{{ nutrient.name }}</td>
+                    <td>{{ nutrient.amount_per_unit_mass }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No nutrition information available.</p>
+        {% endif %}
+        
         <p><strong>Production Time:</strong> {{ ingredient.production_time }}</p>
         
         <h2>Related Research</h2>

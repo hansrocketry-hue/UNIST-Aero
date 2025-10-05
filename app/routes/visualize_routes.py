@@ -16,7 +16,15 @@ def visualize_home():
         'cooking-methods': db._load_table('cooking-methods'),
         'research-data': db._load_table('research-data'),
         'dish': db._load_table('dish'),
+        'nutrition': db._load_table('nutrition')
     }
+    
+    # 각 식재료의 영양소 정보를 nutrition 테이블에서 가져와서 추가
+    for ingredient in data['ingredient']:
+        nutrition = next((n for n in data['nutrition'] if n['id'] == ingredient.get('nutrition_id')), None)
+        if nutrition:
+            ingredient['nutrition_info'] = nutrition['nutrients']
+    
     ingredients = data['ingredient']
     cooking_methods = data['cooking-methods']
     dishes = data['dish']
@@ -39,11 +47,21 @@ def research_detail(research_id):
 def ingredient_detail(ingredient_id):
     """식재료 상세 페이지"""
     ingredient_data = db._load_table('ingredient')
+    nutrition_data = db._load_table('nutrition')
+    
     ingredient = next((item for item in ingredient_data if item['id'] == ingredient_id), None)
-    related_dishes = []
     if ingredient:
+        # Get nutrition info
+        nutrition = next((item for item in nutrition_data if item['id'] == ingredient.get('nutrition_id')), None)
+        if nutrition:
+            ingredient['nutrition_info'] = nutrition['nutrients']
+            
+        # Get related dishes
         dishes = db._load_table('dish')
         related_dishes = [d for d in dishes if ingredient_id in d.get('required_ingredient_ids', [])]
+    else:
+        related_dishes = []
+        
     research_data = db._load_table('research-data')
     return render_template('ingredient_detail.html', ingredient=ingredient, related_dishes=related_dishes, research_data=research_data)
 

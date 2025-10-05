@@ -30,15 +30,15 @@ def add_ingredient_route():
             
             nutrient_names = request.form.getlist('nutrient_name')
             nutrient_values = request.form.getlist('nutrient_value')
-            nutrients_per_unit_mass = {name: float(value) for name, value in zip(nutrient_names, nutrient_values) if name and value}
-
-            calories = nutrients_per_unit_mass.pop('Calories', 0.0)
-
-            nutrition_info = {
-                "calories": calories,
-                "nutrients_per_unit_mass": nutrients_per_unit_mass,
-                "details": details
-            }
+            
+            # Create nutrients list for the new format
+            nutrition_info = []
+            for name, value in zip(nutrient_names, nutrient_values):
+                if name and value:
+                    nutrition_info.append({
+                        "name": name,
+                        "amount_per_unit_mass": float(value)
+                    })
 
             db.add_ingredient(
                 name=name_dict,

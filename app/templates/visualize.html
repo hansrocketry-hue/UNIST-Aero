@@ -64,7 +64,15 @@
                         {% endfor %}
                     {% endfor %}
                 </td>
-                <td>{{ item.nutrition_info.calories }}</td>
+                <td>
+                    {% if item.nutrition_info %}
+                        {% for nutrient in item.nutrition_info %}
+                            {% if nutrient.name == 'Calories' %}
+                                {{ nutrient.amount_per_unit_mass }}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </td>
                 <td>{{ item.production_time }}</td>
             </tr>
             {% endfor %}

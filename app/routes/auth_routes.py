@@ -26,8 +26,8 @@ def signup():
             age = int(request.form.get('age', 30))
             gender = request.form['gender']
             activity_level = int(request.form['activity_level'])
-            like_ids = [int(x) for x in request.form.getlist('like_ids')]
-            forbid_ids = [int(x) for x in request.form.getlist('forbid_ids')]
+            like_ids = request.form.getlist('like_ids')
+            forbid_ids = request.form.getlist('forbid_ids')
 
             # language preference (default 'kor')
             language = request.form.get('language', 'kor')

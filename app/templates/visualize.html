@@ -70,6 +70,13 @@
                 width: 300px;
                 font-size: 16px;
             }
+            #category-dish .btn {
+                width: 180px; /* Fixed width for consistency */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                text-align: center;
+            }
         </style>
 
         <a id="add-data-fab" href="{{ url_for('add_data.add_research_data_route') }}" class="fab">{% if session.get('lang','kor') == 'eng' %}Add Data{% else %}데이터 추가{% endif %}</a>

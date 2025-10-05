@@ -518,3 +518,37 @@ def update_dish(dish_id, name, image_url, required_ingredients, required_cooking
     _save_table('dish', data)
     dish_name = name.get('kor', 'N/A') if isinstance(name, dict) else str(name)
     print(f"Dish '{dish_name}' (ID: {dish_id}) updated.")
+
+def recalculate_dish_nutrition(dish, all_ingredients, all_dishes):
+    """Recalculates the nutrition for a single dish based on its ingredients."""
+    nutrient_sums = {}
+    total_mass_g = 0.0
+
+    for req in dish.get('required_ingredients', []):
+        item_id = req.get('id')
+        item_type = req.get('type', 'ingredient')
+        amount = req.get('amount_g', 0)
+        total_mass_g += amount
+
+        if item_type == 'ingredient':
+            ingredient = next((ing for ing in all_ingredients if ing['id'] == item_id), None)
+            if ingredient:
+                for nutr in ingredient.get('nutrition', []):
+                    nutr_name = nutr.get('name')
+                    per_g = nutr.get('amount_per_unit_mass', 0)
+                    nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + (per_g * amount)
+        elif item_type == 'dish':
+            sub_dish = next((d for d in all_dishes if d['id'] == item_id), None)
+            if sub_dish:
+                for nutr in sub_dish.get('nutrition_info', []):
+                    nutr_name = nutr.get('name')
+                    per_g = nutr.get('amount_per_unit_mass', 0)
+                    nutrient_sums[nutr_name] = nutrient_sums.get(nutr_name, 0.0) + (per_g * amount)
+
+    final_nutrition = []
+    for name, total_val in nutrient_sums.items():
+        per_g_val = total_val / total_mass_g if total_mass_g > 0 else 0.0
+        final_nutrition.append({"name": name, "amount_per_unit_mass": per_g_val})
+
+    dish['nutrition_info'] = final_nutrition
+    return dish

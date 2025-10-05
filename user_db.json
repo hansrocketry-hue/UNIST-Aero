@@ -64,5 +64,24 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 3,
+        "username": "t",
+        "password_hash": "scrypt:32768:8:1$oisFloMUsKsWJrcE$b77cd64315d9b2032fb8ddfa42b259026ff82494555068a822eba8257f333bdf7a020e2e3da8f30cef9ea0fdfdb2b9626228a738ccc03a66e931e62de463a3cc",
+        "name": "tt",
+        "height": 123,
+        "weight": 23,
+        "age": 21,
+        "gender": "male",
+        "activity_level": 2,
+        "language": "kor",
+        "like": [
+            "i1",
+            "i2"
+        ],
+        "forbid": [
+            "i3"
+        ]
     }
 ]

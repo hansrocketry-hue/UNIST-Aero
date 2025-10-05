@@ -11,32 +11,28 @@
         },
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.09444444444444444
+                "name": "Calories",
+                "amount_per_unit_mass": 1.0555555555555556
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.03833333333333334
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.003333333333333333
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.0019166666666666666
             },
             {
                 "name": "Saturated Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.00030555555555555555
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0011944444444444444
-            },
-            {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.023055555555555555
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -59,16 +55,8 @@
                 "amount_per_unit_mass": 0.9444444444444445
             },
             {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0
-            },
-            {
                 "name": "Vitamin C",
                 "amount_per_unit_mass": 0.8055555555555556
-            },
-            {
-                "name": "Vitamin D",
-                "amount_per_unit_mass": 0.0
             }
         ],
         "cooking-method-ids": [
@@ -96,28 +84,28 @@
         "cooking_instructions": null,
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.06904109589041096
+                "name": "Calories",
+                "amount_per_unit_mass": 3.4954337899543377
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.7869178082191781
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0025205479452054796
+                "amount_per_unit_mass": 0.06178082191780823
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.004873287671232877
             },
             {
                 "name": "Saturated Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.002889269406392694
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0005452054794520549
+                "amount_per_unit_mass": 0.010536529680365298
             },
             {
                 "name": "Sodium",
@@ -125,39 +113,31 @@
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0021506849315068494
+                "amount_per_unit_mass": 0.0016198630136986302
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0007698630136986301
+                "amount_per_unit_mass": 0.00043721461187214616
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.03372602739726028
+                "amount_per_unit_mass": 0.03110730593607306
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0036986301369863017
+                "amount_per_unit_mass": 0.0029908675799086757
             },
             {
                 "name": "Folate",
-                "amount_per_unit_mass": 0.4328767123287671
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin C",
-                "amount_per_unit_mass": 0.23835616438356166
-            },
-            {
-                "name": "Vitamin D",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.19223744292237446
             },
             {
                 "name": "amino acid",
                 "amount_per_unit_mass": 19.17808219178082
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_unit_mass": 0.03310502283105023
             }
         ],
         "cooking-method-ids": [
@@ -191,28 +171,28 @@
         },
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.04
+                "name": "Calories",
+                "amount_per_unit_mass": 2.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.411
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0012000000000000001
+                "amount_per_unit_mass": 0.05200000000000001
             },
             {
                 "name": "Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.004
             },
             {
                 "name": "Saturated Fat",
-                "amount_per_unit_mass": 0.0
+                "amount_per_unit_mass": 0.002
             },
             {
                 "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00030000000000000003
+                "amount_per_unit_mass": 0.015000000000000001
             },
             {
                 "name": "Sodium",
@@ -239,8 +219,8 @@
                 "amount_per_unit_mass": 0.28
             },
             {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0
+                "name": "amino acid",
+                "amount_per_unit_mass": 10.0
             },
             {
                 "name": "Vitamin C",
@@ -249,10 +229,6 @@
             {
                 "name": "Vitamin D",
                 "amount_per_unit_mass": 0.05
-            },
-            {
-                "name": "amino acid",
-                "amount_per_unit_mass": 10.0
             }
         ],
         "cooking-method-ids": [
@@ -281,52 +257,52 @@
         "cooking_instructions": "1.무(10g)와 청경채(5g)를 20g 물로 5분간 재수화한다.\n2. 남은 물을 제거하고 간장, 마늘 분말을 섞는다.\n3. 밀폐 용기에서 10분간 실온에 두어 절인다.\n4. 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.3466666666666667
+                "name": "Calories",
+                "amount_per_unit_mass": 0.6733333333333333
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.002
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00023333333333333333
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0003333333333333333
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.33
+                "amount_per_unit_mass": 0.033
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.001
+                "amount_per_unit_mass": 0.007000000000000001
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.6666666666666666
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0026666666666666666
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0013333333333333333
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.016666666666666666
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0003333333333333333
+                "amount_per_unit_mass": 0.0010666666666666667
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00031666666666666665
+                "amount_per_unit_mass": 0.0006333333333333333
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0033333333333333335
+                "amount_per_unit_mass": 0.007333333333333333
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0011
+                "amount_per_unit_mass": 0.0044
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.5733333333333335
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.16666666666666666
+                "amount_per_unit_mass": 0.28
             }
         ],
         "cooking-method-ids": [
@@ -357,52 +333,52 @@
         "cooking_instructions": "1.된장20g, 고춧가루 3g, 마늘 분말 2g을 밀폐 용기에 넣는다.\n2. 균일한 페이스트가 될 때까지 섞는다.\n3. 양념으로 사용하기 위해 밀폐 주머니에 보관한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
+                "name": "Calories",
                 "amount_per_unit_mass": 1.5
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0055
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0001
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0015
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.03
+                "amount_per_unit_mass": 0.009
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.004
+                "amount_per_unit_mass": 0.001
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 1.5
+                "name": "Fat",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0002
+                "amount_per_unit_mass": 0.002
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 5e-05
+                "amount_per_unit_mass": 0.0005
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.001
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.001
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.3
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.01
+                "amount_per_unit_mass": 0.1
             }
         ],
         "cooking-method-ids": [
@@ -424,60 +400,60 @@
         "cooking_instructions": "1. 버섯 5g, 대두 단백 10g, 배양육10g을 150g 물로 5분간(대두단백은 10분) 재수화한다.\n2. 된장을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 2.1
+                "name": "Calories",
+                "amount_per_unit_mass": 3.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.004
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0013333333333333333
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0013333333333333333
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 1.8133333333333332
+                "amount_per_unit_mass": 0.02766666666666667
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.004666666666666667
+                "amount_per_unit_mass": 0.028333333333333335
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 1.4666666666666666
+                "name": "Fat",
+                "amount_per_unit_mass": 0.03733333333333333
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.010333333333333335
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.03666666666666666
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.003933333333333333
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.02
+                "amount_per_unit_mass": 0.0021333333333333334
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0038
+                "amount_per_unit_mass": 0.0024
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.05733333333333333
+                "amount_per_unit_mass": 0.035333333333333335
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0086
+                "amount_per_unit_mass": 0.004600000000000001
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.9733333333333333
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.05333333333333334
+                "amount_per_unit_mass": 0.03333333333333333
             },
             {
                 "name": "Vitamin D",
                 "amount_per_unit_mass": 0.03333333333333333
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_unit_mass": 0.01
             }
         ],
         "cooking-method-ids": [
@@ -509,52 +485,60 @@
         "cooking_instructions": "1.쌀60g과 채소15g를 150g 물로 10분간(채소5분) 재수화한다.\n2. 밀폐 용기에서 부드럽게 될 때까지 블렌딩(휴대용 블렌더 사용 시).\n3. 푸드워머에서 70~80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.365
+                "name": "Calories",
+                "amount_per_unit_mass": 3.04
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.001
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 9.222222222222222e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 5.555555555555556e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.10444444444444445
+                "amount_per_unit_mass": 0.6902777777777778
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0002777777777777778
+                "amount_per_unit_mass": 0.055555555555555546
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.004333333333333333
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0026111111111111114
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.011111111111111112
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.03333333333333333
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0005766666666666667
+                "amount_per_unit_mass": 0.0014333333333333333
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00019555555555555556
+                "amount_per_unit_mass": 0.000488888888888889
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.011133333333333334
+                "amount_per_unit_mass": 0.027777777777777773
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0011122222222222221
+                "amount_per_unit_mass": 0.002755555555555556
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.2511111111111111
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 16.666666666666668
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.023888888888888887
+                "amount_per_unit_mass": 0.052222222222222225
             }
         ],
         "cooking-method-ids": [
@@ -589,52 +573,60 @@
         "cooking_instructions": "1. 쌀70g과 감자40g를 150g 물로 10분간 재수화한다.\n2. 푸드워머에서 80°C로 약 15~18분간 가열한다.\n3. 소금을 넣고 섞은 후 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.34833333333333333
+                "name": "Calories",
+                "amount_per_unit_mass": 2.2
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006666666666666668
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 7.6e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 3.3333333333333335e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.05866666666666667
+                "amount_per_unit_mass": 0.48299999999999993
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0001666666666666667
+                "amount_per_unit_mass": 0.041999999999999996
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0025
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0015
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.016
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.016666666666666666
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00047999999999999996
+                "amount_per_unit_mass": 0.0012000000000000001
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00013333333333333334
+                "amount_per_unit_mass": 0.00035000000000000005
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.008933333333333333
+                "amount_per_unit_mass": 0.0215
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0011
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.16
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 10.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02666666666666667
+                "amount_per_unit_mass": 0.1
             }
         ],
         "cooking-method-ids": [
@@ -661,48 +653,56 @@
         "cooking_instructions": "1. 쌀70g을 100g 물로 10분간 재수화한다.\n2. 된장20g을 고르게 섞는다.\n3. 미중력용 밀폐 성형 용기를 사용해 공 모양으로 만든다.\n4. 성형 용기에서 바로 제공하거나 밀폐 주머니로 옮긴다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.9
+                "name": "Calories",
+                "amount_per_unit_mass": 3.6
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0018
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00014000000000000001
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0002
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.11199999999999999
+                "amount_per_unit_mass": 0.819
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0005
+                "amount_per_unit_mass": 0.064
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.005
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.16
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0011200000000000001
+                "amount_per_unit_mass": 0.0016
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00028000000000000003
+                "amount_per_unit_mass": 0.0004
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.022400000000000003
+                "amount_per_unit_mass": 0.032
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0021
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.16
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 20.0
             }
         ],
         "cooking-method-ids": [
@@ -725,52 +725,52 @@
         "cooking_instructions": "1. 된장20g, 고춧가루3g, 마늘 분말2g을 밀폐 용기에 넣는다.\n2. 완전히 섞일 때까지 저어 소스를 만든다.\n3. 소스로 사용하기 위해 밀폐 주머니에 보관한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
+                "name": "Calories",
                 "amount_per_unit_mass": 1.5
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0055
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0001
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0015
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.03
+                "amount_per_unit_mass": 0.009
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.004
+                "amount_per_unit_mass": 0.001
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 1.5
+                "name": "Fat",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0002
+                "amount_per_unit_mass": 0.002
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 5e-05
+                "amount_per_unit_mass": 0.0005
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.001
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.001
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.3
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.01
+                "amount_per_unit_mass": 0.1
             }
         ],
         "cooking-method-ids": [],
@@ -790,56 +790,64 @@
         "cooking_instructions": "1. 쌀70g, 청경채15g, 대두 단백15g, 배양육15g을 150g 물로 10분간(채소,배양육은 5분) 재수화한다.\n2. 푸드워머에서 80°C로 약 18분간 가열한다.3. 소금을 넣고 맛이 섞이도록 저은 후 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.5622222222222222
+                "name": "Calories",
+                "amount_per_unit_mass": 2.6355555555555554
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0007555555555555556
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00020888888888888888
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 8.888888888888889e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.2791111111111111
+                "amount_per_unit_mass": 0.2859111111111111
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00039999999999999996
+                "amount_per_unit_mass": 0.03066666666666667
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.031133333333333332
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.007822222222222222
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.037333333333333336
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.06222222222222222
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.000911111111111111
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.002
+                "amount_per_unit_mass": 0.002182222222222222
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0004711111111111111
+                "amount_per_unit_mass": 0.0013511111111111113
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.014755555555555555
+                "amount_per_unit_mass": 0.020133333333333333
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0018533333333333334
+                "amount_per_unit_mass": 0.00376
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 1.090666666666667
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 6.222222222222222
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.037333333333333336
+                "amount_per_unit_mass": 0.17422222222222222
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_unit_mass": 0.0019999999999999996
             }
         ],
         "cooking-method-ids": [
@@ -875,52 +883,52 @@
         "cooking_instructions": "1. 양파5g와 대두 단백10g을 150g 물로 10분간 재수화한다.\n2. 된장15g과 마늘 분말2g을 넣고 밀폐 용기에서 섞는다.\n3. 푸드 워머에서 80°C로 5분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.08258064516129032
+                "name": "Calories",
+                "amount_per_unit_mass": 1.8096774193548386
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.00022580645161290324
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 6.967741935483871e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 6.451612903225807e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.08419354838709678
+                "amount_per_unit_mass": 0.0878709677419355
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00022580645161290324
+                "amount_per_unit_mass": 0.01890322580645161
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.05806451612903226
+                "name": "Fat",
+                "amount_per_unit_mass": 0.04374193548387097
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.009774193548387097
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.05161290322580645
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00017096774193548387
+                "amount_per_unit_mass": 0.00267741935483871
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 9.032258064516129e-05
+                "amount_per_unit_mass": 0.0013709677419354836
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0006451612903225806
+                "amount_per_unit_mass": 0.009999999999999998
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00028064516129032256
+                "amount_per_unit_mass": 0.0039032258064516127
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 1.3161290322580645
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.003870967741935484
+                "amount_per_unit_mass": 0.07096774193548387
             }
         ],
         "cooking-method-ids": [
@@ -952,52 +960,60 @@
         "cooking_instructions": "1. 쌀60g과 케일10g을 150g 물로 10분간 재수화한다.\n2. 밀폐 용기에서 부드럽게 블렌딩한다.\n3. 푸드워머에서 80°C로 약 10~12분간 가열한다.\n4. 소금을 넣고 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.21
+                "name": "Calories",
+                "amount_per_unit_mass": 1.95
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 5.9999999999999995e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 3.3333333333333335e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.092
+                "amount_per_unit_mass": 0.4525
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0001666666666666667
+                "amount_per_unit_mass": 0.047
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0055
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.02
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.013333333333333334
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0003533333333333333
+                "amount_per_unit_mass": 0.0013
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00014000000000000001
+                "amount_per_unit_mass": 0.0011
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.007
+                "amount_per_unit_mass": 0.025
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0007
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.98
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 10.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.04
+                "amount_per_unit_mass": 0.6
             }
         ],
         "cooking-method-ids": [
@@ -1024,52 +1040,60 @@
         "cooking_instructions": "1. 쌀50g, 퀴노아20g, 보리20g를 150g 물로 10분간 재수화한다.\n2. 푸드워머에서 80°C로 약 15~18분간 가열한다.\n3. 섞은 후 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.6
+                "name": "Calories",
+                "amount_per_unit_mass": 3.466666666666667
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0012
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.000376
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.00013333333333333334
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.2346666666666667
+                "amount_per_unit_mass": 0.596
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0004666666666666667
+                "amount_per_unit_mass": 0.072
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.01966666666666667
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.008
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.043333333333333335
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.04666666666666667
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0014133333333333333
+                "amount_per_unit_mass": 0.0027333333333333337
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0006133333333333334
+                "amount_per_unit_mass": 0.0013333333333333335
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.018933333333333333
+                "amount_per_unit_mass": 0.03133333333333333
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0018799999999999997
+                "amount_per_unit_mass": 0.0031999999999999997
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.5066666666666667
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 6.666666666666667
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.002666666666666667
+                "amount_per_unit_mass": 0.006666666666666667
             }
         ],
         "cooking-method-ids": [
@@ -1100,24 +1124,56 @@
         "cooking_instructions": "1. 미역15g을 150g 물로 5분간 재수화한다.\n2. 된장10g과 간장10g, 김을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 75~80°C로 약 10분간 가열한다..\n4. 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.08
+                "name": "Calories",
+                "amount_per_unit_mass": 2.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0003333333333333334
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 6.666666666666667e-05
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0003333333333333334
+                "amount_per_unit_mass": 0.01
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.13333333333333333
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.16
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_unit_mass": 0.04
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 3.6
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_unit_mass": 0.4
+            },
+            {
+                "name": "Vitamin D",
+                "amount_per_unit_mass": 0.1
             }
         ],
         "cooking-method-ids": [
@@ -1141,52 +1197,52 @@
         "cooking_instructions": "1.파스타70g과 토마토30g를 150g 물로 토마토 8분 파스타 15분 재수화한다. \n2. 토마토를 밀폐된 주머니에서 부드럽게 주므르며 페이스트 질감 만든다\n3. 푸드워머에서 80°C로 약 18분간 가열한다.\n4. 섞은 후 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.7333333333333333
+                "name": "Calories",
+                "amount_per_unit_mass": 0.2
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0014
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 2.9999999999999997e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 6.666666666666667e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.03
+                "amount_per_unit_mass": 0.039
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0003333333333333334
+                "amount_per_unit_mass": 0.008
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.04
+                "name": "Fat",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.015
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00011999999999999999
+                "amount_per_unit_mass": 0.0006
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 4e-05
+                "amount_per_unit_mass": 0.0002
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0012
+                "amount_per_unit_mass": 0.006
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00019999999999999998
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.15
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.028
+                "amount_per_unit_mass": 0.14
             }
         ],
         "cooking-method-ids": [
@@ -1209,56 +1265,56 @@
         "cooking_instructions": "파스타70g과  버섯 10g을 150g 물로 15분간(버섯은 5분) 재수화한다.\n비유제품 우주용 크림 베이스를 넣고 밀폐 용기에서 섞는다.\n푸드워머로 65–75°C에서 20–30분 워밍한다.\n밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.72
+                "name": "Calories",
+                "amount_per_unit_mass": 0.4
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0013333333333333335
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 2.6666666666666667e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.00019999999999999998
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.02666666666666667
+                "amount_per_unit_mass": 0.003
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0004666666666666667
+                "amount_per_unit_mass": 0.04
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.05333333333333334
+                "name": "Fat",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.02
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 6.666666666666667e-05
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00019999999999999998
+                "amount_per_unit_mass": 0.003
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.002666666666666667
+                "amount_per_unit_mass": 0.04
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00011999999999999999
+                "amount_per_unit_mass": 0.0018000000000000002
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.4
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.002666666666666667
+                "amount_per_unit_mass": 0.04
             },
             {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.006666666666666667
+                "amount_per_unit_mass": 0.1
             }
         ],
         "cooking-method-ids": [
@@ -1282,52 +1338,56 @@
         "cooking_instructions": "1. 파스타 70g를 재수화한다.\n2. 감자 10g을 큐브 모양으로 자른다.\n3. 두유 10g을 분말 또는 농축 형태로 준비한다.\n4. 섭취 시 물 150ml를 넣고 가열·재수화하여 크림 감자 파스타로 완성한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.6714285714285715
+                "name": "Calories",
+                "amount_per_unit_mass": 0.8
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.003142857142857143
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 3.142857142857143e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.00042857142857142855
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.022857142857142857
+                "amount_per_unit_mass": 0.147
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0008571428571428571
+                "amount_per_unit_mass": 0.02
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.022
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.1
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00011428571428571428
+                "amount_per_unit_mass": 0.0008
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 4.2857142857142856e-05
+                "amount_per_unit_mass": 0.0003
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0015714285714285715
+                "amount_per_unit_mass": 0.011
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00042857142857142855
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.16
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02857142857142857
+                "amount_per_unit_mass": 0.2
             }
         ],
         "cooking-method-ids": [
@@ -1350,52 +1410,56 @@
         "cooking_instructions": "1. 감자 80g을 자른다.\n2. 소금물을 바른다.\n3. 감자를 푸드프로세서로 저온 조리해 수분을 제거한다.\n4. 섭취 시 가열한 상태의 밀봉 형태로 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 2.43
+                "name": "Calories",
+                "amount_per_unit_mass": 0.6
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.006500000000000001
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00044
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.00025
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.32
+                "amount_per_unit_mass": 0.11025
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0005
+                "amount_per_unit_mass": 0.015
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.016499999999999997
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.175
+                "amount_per_unit_mass": 0.25
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0016
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
                 "amount_per_unit_mass": 0.0006000000000000001
             },
             {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.000225
+            },
+            {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.022
+                "amount_per_unit_mass": 0.008249999999999999
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.006
+                "amount_per_unit_mass": 0.00225
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.12
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.4
+                "amount_per_unit_mass": 0.15
             }
         ],
         "cooking-method-ids": [
@@ -1419,28 +1483,7 @@
             "eng": "Salad"
         },
         "cooking_instructions": "1. 채소를 60g 물로 5분간 재수화한다.\n2. 남은 물을 제거하고 밀폐 주머니에 담아 제공한다",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Protein",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.0
-            }
-        ],
+        "nutrition_info": [],
         "cooking-method-ids": [
             7
         ],
@@ -1455,52 +1498,60 @@
         "cooking_instructions": "1. 쌀과 토마토가 든 밀폐 주머니에 물 150g 넣고, 10분간 재수화하여 불린다.\n2. 재수화된 혼합물에 바질 분말을 추가하고, 주머니를 주물러 재료를 고르게 섞는다.\n3. 밀폐 주머니를 푸드워머에 넣고 80°C로 10분간 가열해 따뜻하게 만든다.\n4. 밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.30333333333333334
+                "name": "Calories",
+                "amount_per_unit_mass": 1.9
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006333333333333333
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 5.666666666666667e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 3.3333333333333335e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.04733333333333333
+                "amount_per_unit_mass": 0.42899999999999994
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0001666666666666667
+                "amount_per_unit_mass": 0.036
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0035
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.0125
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.02
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0004133333333333333
+                "amount_per_unit_mass": 0.0011
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00010666666666666667
+                "amount_per_unit_mass": 0.00030000000000000003
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.007866666666666666
+                "amount_per_unit_mass": 0.019
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0007666666666666667
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.155
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 10.0
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.009333333333333332
+                "amount_per_unit_mass": 0.07
             }
         ],
         "cooking-method-ids": [
@@ -1528,56 +1579,64 @@
         "cooking_instructions": "1. 쌀과 버섯을 150g 물로 10분간(버섯 5분) 재수화한다.\n2. 파슬리 분말을 넣고 밀폐 용기에서 섞는다.\n3. 밀폐 주머니를 푸드워머에 넣고 80°C로 10분간 가열해 따뜻하게 만든다.\n4.밀폐 주머니에 담아 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.3153333333333333
+                "name": "Calories",
+                "amount_per_unit_mass": 2.0
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0006666666666666668
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 6.666666666666667e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 6.666666666666667e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.05733333333333333
+                "amount_per_unit_mass": 0.411
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00019999999999999998
+                "amount_per_unit_mass": 0.052
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.016666666666666666
+                "name": "Fat",
+                "amount_per_unit_mass": 0.004
             },
             {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00042333333333333334
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00024333333333333333
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.009466666666666667
-            },
-            {
-                "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.00079
-            },
-            {
-                "name": "Vitamin C",
+                "name": "Saturated Fat",
                 "amount_per_unit_mass": 0.002
             },
             {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.015
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_unit_mass": 0.0013
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.0017000000000000001
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_unit_mass": 0.036000000000000004
+            },
+            {
+                "name": "Vitamin B6",
+                "amount_per_unit_mass": 0.0024
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.28
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 10.0
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_unit_mass": 0.02
+            },
+            {
                 "name": "Vitamin D",
-                "amount_per_unit_mass": 0.005
+                "amount_per_unit_mass": 0.05
             }
         ],
         "cooking-method-ids": [
@@ -1605,52 +1664,52 @@
         "cooking_instructions": "1. 건조 토마토를 50g 물로 8분간 재수화한다.\n2. 토마토를 밀폐된 주머니에서 부드럽게 주무르며 페이스트 질감을 만든다.\n3. 건조 토르티야에 토마토 페이스트와 비건 치즈를 바른다.\n4. 푸드워머에서 80°C 3분 초벌구이로 치즈를 토르티야에 고정시킨다.\n5. 배양육, 양파, 버섯 등 토핑을 취향대로 치즈에 파묻어 고정시킨다. 치즈가 식어버리기 전에 빠르게 진행한다.\n6. 푸드워머에서 80°C 10분 가열한다.\n7. 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 3.3
+                "name": "Calories",
+                "amount_per_unit_mass": 0.2
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.005
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 6e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0008
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.06
+                "amount_per_unit_mass": 0.039
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0016
+                "amount_per_unit_mass": 0.008
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.28
+                "name": "Fat",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.015
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00024
+                "amount_per_unit_mass": 0.0006
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 8e-05
+                "amount_per_unit_mass": 0.0002
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0024
+                "amount_per_unit_mass": 0.006
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0004
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.15
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.055999999999999994
+                "amount_per_unit_mass": 0.14
             }
         ],
         "cooking-method-ids": [
@@ -1674,56 +1733,56 @@
         "cooking_instructions": "1. 건조 토르티야 여러 장 에 80°C 물을 넣어 고온에서 10분간 재수화시킨다.\n2. 재수화 토르티야를 반죽해 번 모양을 만든다.\n3. 물을 제거한 후 푸드워머에서 80°C로 30분 가열한다.\n4. 배양육 75g, 양상추 20g을 물로 10분간 재수화시킨다.\n5. 푸드워머에 80°C 15분 가열한다.\n6. 빵과 배양육 패티, 양상추를 조합해 햄버거를 완성한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 2.1565217391304348
+                "name": "Calories",
+                "amount_per_unit_mass": 3.626086956521739
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0019130434782608696
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00017608695652173914
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0004347826086956522
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.27
+                "amount_per_unit_mass": 0.017130434782608697
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0008695652173913044
+                "amount_per_unit_mass": 0.020695652173913042
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.1391304347826087
+                "name": "Fat",
+                "amount_per_unit_mass": 0.020739130434782607
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.008521739130434783
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.011739130434782608
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0008086956521739131
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.010434782608695651
+                "amount_per_unit_mass": 0.001191304347826087
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0008086956521739131
+                "amount_per_unit_mass": 0.0013217391304347827
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.01956521739130435
+                "amount_per_unit_mass": 0.035565217391304346
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0027391304347826086
+                "amount_per_unit_mass": 0.0046956521739130435
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.32608695652173914
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02347826086956522
+                "amount_per_unit_mass": 0.041739130434782605
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_unit_mass": 0.01956521739130435
             }
         ],
         "cooking-method-ids": [
@@ -1755,56 +1814,56 @@
         "cooking_instructions": "1. 밀폐 주머니에 배양육(30g), 대두 단백(10g), 채소(10g)를 넣고 150g 물을 넣고 밀봉하여 10분간 재수화한다.\n2. 재수화된 혼합물을 부드럽게 섞는다.\n3. 건조 토르티야 시트(80g)를 별도의 밀폐 주머니에 넣고 그 위에 섞은 혼합물을 중앙에 올리고, 내용물이 빠지지 않도록 단단히 말아 랩 형태로 만든다. \n4. 랩된 토르티야를 밀폐 주머니에 넣고 푸드워머에 삽입하여 80°C로 5분간 가열한다.\n5. 가열 후 밀폐 주머니 그대로 제공한다",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 3.25
+                "name": "Calories",
+                "amount_per_unit_mass": 4.3
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.004
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.0003
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0006666666666666666
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.46
+                "amount_per_unit_mass": 0.04
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0015
+                "amount_per_unit_mass": 0.0225
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.25
+                "name": "Fat",
+                "amount_per_unit_mass": 0.05449999999999999
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.014999999999999998
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.045
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0012333333333333332
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.015000000000000001
+                "amount_per_unit_mass": 0.0027
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0012333333333333332
+                "amount_per_unit_mass": 0.0021
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.027666666666666666
+                "amount_per_unit_mass": 0.033
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.004
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 1.26
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.01
+                "amount_per_unit_mass": 0.029999999999999995
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_unit_mass": 0.014999999999999998
             }
         ],
         "cooking-method-ids": [
@@ -1833,52 +1892,52 @@
         "cooking_instructions": "1. 토마토, 가지, 호박을 100g 물로 10분간 재수화한다.\n2. 허브와 오일 젤을 넣고 밀폐 용기에서 섞는다.\n3. 푸드워머에서 80°C로 약 18분간 가열한다.\n4. 밀폐 주머니에 담아 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.25666666666666665
+                "name": "Calories",
+                "amount_per_unit_mass": 0.23333333333333334
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0005
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 4.3e-05
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 9.999999999999999e-05
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.049666666666666665
+                "amount_per_unit_mass": 0.016666666666666666
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.00013333333333333334
+                "amount_per_unit_mass": 0.009333333333333332
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.03333333333333333
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00013333333333333334
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 8.666666666666667e-05
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
+                "name": "Fat",
                 "amount_per_unit_mass": 0.0016666666666666668
             },
             {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0010000000000000002
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.019
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_unit_mass": 0.0005666666666666666
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.0004
+            },
+            {
+                "name": "Vitamin B3 (Niacin)",
+                "amount_per_unit_mass": 0.007333333333333334
+            },
+            {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0002466666666666667
+                "amount_per_unit_mass": 0.0010666666666666665
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.22333333333333333
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.028666666666666667
+                "amount_per_unit_mass": 0.12
             }
         ],
         "cooking-method-ids": [
@@ -1908,28 +1967,7 @@
             "eng": "Gratin"
         },
         "cooking_instructions": "1. 파스타 50g을 재수화한다.\n2. 버섯 10g을 슬라이스해 재수화한다.\n3. 치즈 10g을 재수화한다.\n4. 물 120ml를 넣고 푸드프로세서에서 가열·재수화하여 혼합 후 밀봉 용기에 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Protein",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.0
-            }
-        ],
+        "nutrition_info": [],
         "cooking-method-ids": [
             4,
             7
@@ -1943,28 +1981,7 @@
             "eng": "Lasagna"
         },
         "cooking_instructions": "1. 파스타 시트를 재수화한다.\n2. 토마토 기반 소스 50g을 재수화한다.\n3. 치즈 20g을 분말 또는 농축 페이스트로 준비한다.\n4. 섭취 시 시트, 소스, 치즈를 층층이 쌓고 물을 넣어 재수화 후 푸드프로세서를 가열해 밀폐 주머니 째로 제공한다.",
-        "nutrition_info": [
-            {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Protein",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.0
-            }
-        ],
+        "nutrition_info": [],
         "cooking-method-ids": [
             4,
             7
@@ -1980,56 +1997,56 @@
         "cooking_instructions": "1. 밀폐 주머니에 배양육(30g), 건조 토르티야 시트(10g)을 넣고, 10분간 재수화한 다음 반죽한다.\n2. 미중력용 밀폐 성형 용기를 사용해 공 모양으로 만든다.\n3. 푸드워머에 삽입해 80°C로 15분간 가열한다.\n4. 밀폐 주머니 째로 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.7
+                "name": "Calories",
+                "amount_per_unit_mass": 3.95
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.002
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00045
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0015
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.6900000000000001
+                "amount_per_unit_mass": 0.06
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.003
+                "amount_per_unit_mass": 0.020749999999999998
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 0.225
+                "name": "Fat",
+                "amount_per_unit_mass": 0.07225
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.017499999999999998
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.06749999999999999
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0018499999999999999
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.0225
+                "amount_per_unit_mass": 0.00355
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.0018499999999999999
+                "amount_per_unit_mass": 0.00235
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.041499999999999995
+                "amount_per_unit_mass": 0.0245
             },
             {
                 "name": "Vitamin B6",
                 "amount_per_unit_mass": 0.006
             },
             {
+                "name": "Folate",
+                "amount_per_unit_mass": 1.83
+            },
+            {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.015
+                "amount_per_unit_mass": 0.045
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_unit_mass": 0.0075
             }
         ],
         "cooking-method-ids": [
@@ -2058,52 +2075,56 @@
         "cooking_instructions": "",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 0.91
+                "name": "Calories",
+                "amount_per_unit_mass": 2.62
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0022
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.000322
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0004
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.21600000000000003
+                "amount_per_unit_mass": 0.5481
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0007000000000000001
+                "amount_per_unit_mass": 0.076
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0175
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0084
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.0276
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.07
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00158
+                "amount_per_unit_mass": 0.00234
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 0.00053
+                "amount_per_unit_mass": 0.00079
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.021099999999999997
+                "amount_per_unit_mass": 0.0313
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0023
+                "amount_per_unit_mass": 0.0037
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.32799999999999996
             },
             {
                 "name": "Vitamin C",
-                "amount_per_unit_mass": 0.02
+                "amount_per_unit_mass": 0.06
             }
         ],
         "cooking-method-ids": [],
@@ -2127,40 +2148,36 @@
         "cooking_instructions": "1. 쌀, 배양육을 100g 물로 10분간 재수화한다.\n2. 미중력용 밀폐 성형 용기를 사용해 샤리 모양으로 만든다.\n3. 쌀 위에 배양육을 얹어 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.122
+                "name": "Calories",
+                "amount_per_unit_mass": 4.02
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0019
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00014000000000000001
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0002
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.14800000000000002
+                "amount_per_unit_mass": 0.5733
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.0007000000000000001
+                "amount_per_unit_mass": 0.05260000000000001
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0092
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0051
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.007000000000000001
             },
             {
                 "name": "Sodium",
-                "amount_per_unit_mass": 0.08
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.0014199999999999998
-            },
-            {
-                "name": "Vitamin B12",
-                "amount_per_unit_mass": 0.009000000000000001
+                "amount_per_unit_mass": 0.0014200000000000003
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
@@ -2173,6 +2190,18 @@
             {
                 "name": "Vitamin B6",
                 "amount_per_unit_mass": 0.0039000000000000003
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.14800000000000002
+            },
+            {
+                "name": "amino acid",
+                "amount_per_unit_mass": 14.0
+            },
+            {
+                "name": "Vitamin B12",
+                "amount_per_unit_mass": 0.009
             }
         ],
         "cooking-method-ids": [
@@ -2198,48 +2227,56 @@
         "cooking_instructions": "1. 배양육 (10g)을 200g 물로  80°C로 20분간 가열하며 재수화한다.\n2. 소금 2g, 간장 2g, 미소 5g, 마늘 0.5g을 밀폐 주머니에 넣고, 잘 섞어 제공한다.",
         "nutrition_info": [
             {
-                "name": "Calories (Total)",
-                "amount_per_unit_mass": 1.3499999999999999
+                "name": "Calories",
+                "amount_per_unit_mass": 1.0714285714285714
             },
             {
                 "name": "Carbohydrates",
-                "amount_per_unit_mass": 0.0071428571428571435
-            },
-            {
-                "name": "Dietary Fiber",
-                "amount_per_unit_mass": 0.00014285714285714287
-            },
-            {
-                "name": "Fat",
-                "amount_per_unit_mass": 0.0007142857142857143
-            },
-            {
-                "name": "Folate",
-                "amount_per_unit_mass": 0.04285714285714286
+                "amount_per_unit_mass": 0.0064285714285714285
             },
             {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.002857142857142857
+                "amount_per_unit_mass": 0.0007142857142857143
             },
             {
-                "name": "Sodium",
-                "amount_per_unit_mass": 3.5714285714285716
+                "name": "Fat",
+                "amount_per_unit_mass": 0.004285714285714286
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.002142857142857143
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.0071428571428571435
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
-                "amount_per_unit_mass": 0.00028571428571428574
+                "amount_per_unit_mass": 0.0014285714285714286
             },
             {
                 "name": "Vitamin B2 (Riboflavin)",
-                "amount_per_unit_mass": 7.142857142857143e-05
+                "amount_per_unit_mass": 0.00035714285714285714
             },
             {
                 "name": "Vitamin B3 (Niacin)",
-                "amount_per_unit_mass": 0.0014285714285714286
+                "amount_per_unit_mass": 0.0071428571428571435
             },
             {
                 "name": "Vitamin B6",
-                "amount_per_unit_mass": 0.0014285714285714286
+                "amount_per_unit_mass": 0.0071428571428571435
+            },
+            {
+                "name": "Folate",
+                "amount_per_unit_mass": 0.21428571428571427
+            },
+            {
+                "name": "Vitamin C",
+                "amount_per_unit_mass": 0.07142857142857142
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.2857142857142857
             }
         ],
         "cooking-method-ids": [

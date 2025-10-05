@@ -1,3 +1,9 @@
+"""
+백업: 2025년 10월 5일
+수정된 visualize_routes.py의 게이지 계산 로직이 포함된 백업 파일
+주요 변경사항: storaged-ingredient 시각화의 생산/저장 모드별 게이지 계산 로직
+"""
+
 from flask import Blueprint, render_template
 import database_handler as db
 from datetime import datetime
@@ -5,119 +11,6 @@ from dateutil.relativedelta import relativedelta
 import re
 
 bp = Blueprint('visualize', __name__, url_prefix='/visualize')
-
-@bp.route('/')
-def visualize_home():
-    """데이터 시각화 메인 페이지"""
-    # 분할 DB에 맞게 각 테이블별로 불러오기
-    data = {
-        'ingredient': db._load_table('ingredient'),
-        'storaged-ingredient': db._load_table('storaged-ingredient'),
-        'cooking-methods': db._load_table('cooking-methods'),
-        'research-data': db._load_table('research-data'),
-        'dish': db._load_table('dish')
-    }
-    # Ensure each ingredient has a 'nutrition_info' field from embedded nutrition if present
-    for ingredient in data['ingredient']:
-        if 'nutrition' in ingredient:
-            ingredient['nutrition_info'] = ingredient['nutrition']
-    
-    ingredients = data['ingredient']
-    cooking_methods = data['cooking-methods']
-    dishes = data['dish']
-    return render_template('visualize.html', data=data, ingredients=ingredients, cooking_methods=cooking_methods, dishes=dishes)
-
-@bp.route('/research/<int:research_id>')
-def research_detail(research_id):
-    """연구 자료 상세 페이지"""
-    research_data = db._load_table('research-data')
-    research = next((item for item in research_data if item['id'] == research_id), None)
-    # Get related ingredients
-    ingredients = db._load_table('ingredient')
-    related_ingredients = [ing for ing in ingredients if research_id in ing.get('research_ids', [])]
-    # Get related cooking methods
-    cooking_methods = db._load_table('cooking-methods')
-    related_cooking_methods = [cm for cm in cooking_methods if research_id in cm.get('research_ids', [])]
-    return render_template('research_detail.html', research=research, related_ingredients=related_ingredients, related_cooking_methods=related_cooking_methods)
-
-@bp.route('/ingredient/<int:ingredient_id>')
-def ingredient_detail(ingredient_id):
-    """식재료 상세 페이지"""
-    ingredient_data = db._load_table('ingredient')
-    ingredient = next((item for item in ingredient_data if item['id'] == ingredient_id), None)
-    if ingredient:
-        # Get nutrition info from embedded nutrition
-        if 'nutrition' in ingredient:
-            ingredient['nutrition_info'] = ingredient['nutrition']
-            
-        # Get related dishes (new schema: required_ingredients is list of {id, amount_g})
-        dishes = db._load_table('dish')
-        related_dishes = []
-        for d in dishes:
-            for req in d.get('required_ingredients', []):
-                if req.get('id') == ingredient_id:
-                    related_dishes.append(d)
-                    break
-    else:
-        related_dishes = []
-        
-    research_data = db._load_table('research-data')
-    return render_template('ingredient_detail.html', ingredient=ingredient, related_dishes=related_dishes, research_data=research_data)
-
-@bp.route('/cooking-method/<int:method_id>')
-def cooking_method_detail(method_id):
-    """조리 방법 상세 페이지"""
-    cooking_method_data = db._load_table('cooking-methods')
-    method = next((item for item in cooking_method_data if item['id'] == method_id), None)
-    related_dishes = []
-    if method:
-        dishes = db._load_table('dish')
-        # dish의 조리방법 필드명 변경 반영
-        related_dishes = [d for d in dishes if method_id in d.get('cooking-method-ids', [])]
-    research_data = db._load_table('research-data')
-    return render_template('cooking_method_detail.html', method=method, related_dishes=related_dishes, research_data=research_data)
-
-@bp.route('/dish/<int:dish_id>')
-def dish_detail(dish_id):
-    """레시피(요리) 상세 페이지"""
-    dishes = db._load_table('dish')
-    dish = next((d for d in dishes if d['id'] == dish_id), None)
-    ingredients = db._load_table('ingredient')
-    cooking_methods = db._load_table('cooking-methods')
-    # 필요한 조리방법 정보 추출
-    method_ids = dish.get('cooking-method-ids', []) if dish else []
-    required_methods = [m for m in cooking_methods if m['id'] in method_ids]
-    # dish.required_ingredients: list of {id, amount_g}
-    required_ingredients = []
-    if dish:
-        reqs = dish.get('required_ingredients', [])
-        for req in reqs:
-            iid = req.get('id')
-            info = next((ing for ing in ingredients if ing['id'] == iid), None)
-            if info:
-                # include amount for template
-                info_copy = dict(info)
-                info_copy['used_amount_g'] = req.get('amount_g')
-                required_ingredients.append(info_copy)
-    # 칼로리 추출 (nutrition_info가 리스트이므로 Calories (Total) 항목 찾기)
-    calories = None
-    if dish and isinstance(dish.get('nutrition_info'), list):
-        for n in dish['nutrition_info']:
-            if n.get('name') == 'Calories (Total)':
-                calories = n.get('amount_per_dish')
-                break
-    # 조리설명(한글)
-    cooking_instructions_kor = dish.get('cooking_instructions')
-    if isinstance(cooking_instructions_kor, dict):
-        cooking_instructions_kor = cooking_instructions_kor.get('kor', '')
-    return render_template(
-        'dish_detail.html',
-        dish=dish,
-        required_methods=required_methods,
-        required_ingredients=required_ingredients,
-        calories=calories,
-        cooking_instructions_kor=cooking_instructions_kor
-    )
 
 @bp.route('/storaged-ingredient')
 def visualize_storaged_ingredient():
@@ -232,7 +125,6 @@ def visualize_storaged_ingredient():
             current_time = min(today, expiration_date)
             current_time = max(current_time, start_date)  # 시작일보다 이전이면 시작일 사용
             current_progress = ((current_time - start_date).days / total_duration) * 100
-            current_progress = max(0, min(current_progress, 100))
 
             processed_item = {
                 'name': ingredient_info['name'].get('kor', 'N/A'),
@@ -248,5 +140,3 @@ def visualize_storaged_ingredient():
     return render_template('visualize_storaged_ingredient.html', 
                        storaged_ingredients=processed_storaged_ingredients,
                        today=today.strftime('%Y-%m-%d'))
-
-    return render_template('visualize_storaged_ingredient.html', storaged_ingredients=processed_storaged_ingredients)

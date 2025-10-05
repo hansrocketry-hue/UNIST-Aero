@@ -135,10 +135,10 @@
                 </td>
                 <td>
                     {% set cal = 0 %}
-                    {% if item.nutrition_info is iterable and item.nutrition_info is not string and item.nutrition_info|length > 0 %}
-                        {% for n in item.nutrition_info %}
-                            {% if n.name == 'Calories (Total)' %}
-                                {% set cal = n.amount_per_dish %}
+                    {% if item.nutrition_info %}
+                        {% for nut in item.nutrition_info %}
+                            {% if nut.amount_per_dish is defined %}
+                                {% set cal = cal + nut.amount_per_dish %}
                             {% endif %}
                         {% endfor %}
                     {% endif %}

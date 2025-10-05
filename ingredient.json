@@ -14,12 +14,28 @@
                 "amount_per_unit_mass": 3.6
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.819
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.08
+                "amount_per_unit_mass": 0.064
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.005
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
             },
             {
                 "name": "Dietary Fiber",
                 "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -67,12 +83,28 @@
                 "amount_per_unit_mass": 3.4
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.72
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.1
             },
             {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.025
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.012
+            },
+            {
                 "name": "Dietary Fiber",
                 "amount_per_unit_mass": 0.03
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -120,12 +152,28 @@
                 "amount_per_unit_mass": 0.8
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.147
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.02
             },
             {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
                 "name": "Dietary Fiber",
                 "amount_per_unit_mass": 0.022
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -171,12 +219,28 @@
                 "amount_per_unit_mass": 3.6
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.689
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.12
+                "amount_per_unit_mass": 0.13
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.05
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.02
             },
             {
                 "name": "Dietary Fiber",
                 "amount_per_unit_mass": 0.06
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -226,8 +290,20 @@
                 "amount_per_unit_mass": 3.2
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.28
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.1
+                "amount_per_unit_mass": 0.022
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -275,8 +351,20 @@
                 "amount_per_unit_mass": 0.2
             },
             {
-                "name": "Protein",
+                "name": "Carbohydrates",
                 "amount_per_unit_mass": 0.02
+            },
+            {
+                "name": "Protein",
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Dietary Fiber",
@@ -331,8 +419,20 @@
                 "amount_per_unit_mass": 0.3
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.086
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.03
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
             },
             {
                 "name": "Dietary Fiber",
@@ -387,8 +487,20 @@
                 "amount_per_unit_mass": 0.2
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.05
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.02
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -441,8 +553,20 @@
                 "amount_per_unit_mass": 0.32
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.07
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.02
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -498,8 +622,20 @@
                 "amount_per_unit_mass": 0.2
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.039
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.01
+                "amount_per_unit_mass": 0.008
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -549,8 +685,20 @@
                 "amount_per_unit_mass": 0.25
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.005
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.002
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -600,8 +748,20 @@
                 "amount_per_unit_mass": 0.25
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.006
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -651,8 +811,20 @@
                 "amount_per_unit_mass": 0.4
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.003
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.04
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.003
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -706,8 +878,20 @@
                 "amount_per_unit_mass": 0.04
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.101
+            },
+            {
                 "name": "Protein",
                 "amount_per_unit_mass": 0.02
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Dietary Fiber",
@@ -757,8 +941,20 @@
                 "amount_per_unit_mass": 1.5
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.009
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.06
+                "amount_per_unit_mass": 0.001
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.006
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.003
             },
             {
                 "name": "Dietary Fiber",
@@ -808,8 +1004,20 @@
                 "amount_per_unit_mass": 3.0
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.08
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.1
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.004
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.001
             },
             {
                 "name": "Dietary Fiber",
@@ -859,8 +1067,20 @@
                 "amount_per_unit_mass": 2.0
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.01
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.2
+                "amount_per_unit_mass": 0.01
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.0
             },
             {
                 "name": "Dietary Fiber",
@@ -919,8 +1139,20 @@
                 "amount_per_unit_mass": 3.6
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.08
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.32
+                "amount_per_unit_mass": 0.019
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.09
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.02
             },
             {
                 "name": "Dietary Fiber",
@@ -960,7 +1192,7 @@
     {
         "id": "i19",
         "name": {
-            "eng": "Cultivation",
+            "eng": "Lab-grown meat",
             "kor": "배양육"
         },
         "research_ids": [],
@@ -970,8 +1202,20 @@
                 "amount_per_unit_mass": 5.0
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.0
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.4
+                "amount_per_unit_mass": 0.026
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.019
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -1017,8 +1261,20 @@
                 "amount_per_unit_mass": 4.0
             },
             {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.0
+            },
+            {
                 "name": "Protein",
-                "amount_per_unit_mass": 0.25
+                "amount_per_unit_mass": 0.038
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 0.056
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 0.01
             },
             {
                 "name": "Vitamin B1 (Thiamin)",
@@ -1066,6 +1322,38 @@
             {
                 "name": "Calories",
                 "amount_per_unit_mass": 9.0
+            },
+            {
+                "name": "Carbohydrates",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Protein",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Fat",
+                "amount_per_unit_mass": 1.0
+            },
+            {
+                "name": "Saturated Fat",
+                "amount_per_unit_mass": 1.0
+            },
+            {
+                "name": "Dietary Fiber",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Sodium",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B1 (Thiamin)",
+                "amount_per_unit_mass": 0.0
+            },
+            {
+                "name": "Vitamin B2 (Riboflavin)",
+                "amount_per_unit_mass": 0.0
             }
         ],
         "production_time": {
@@ -1077,70 +1365,20 @@
     {
         "id": "i22",
         "name": {
-            "kor": "소금",
-            "eng": "salt"
+            "eng": "salt",
+            "kor": "소금"
         },
         "research_ids": [],
         "nutrition": [
             {
-                "name": "Calories",
-                "unit": "kcal",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Protein",
-                "unit": "g",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Dietary Fiber",
-                "unit": "g",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin B1 (Thiamin)",
-                "unit": "mg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin B2 (Riboflavin)",
-                "unit": "mg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin B3 (Niacin)",
-                "unit": "mg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin B6",
-                "unit": "mg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Folate",
-                "unit": "mcg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin B12",
-                "unit": "mcg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin C",
-                "unit": "mg",
-                "amount_per_unit_mass": 0.0
-            },
-            {
-                "name": "Vitamin D",
-                "unit": "mcg",
-                "amount_per_unit_mass": 0.0
+                "name": "Sodium",
+                "amount_per_unit_mass": 1.0
             }
         ],
         "production_time": {
             "producible": false,
-            "note": "–"
+            "min": null,
+            "max": null
         }
     },
     {
